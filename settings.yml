@@ -1,0 +1,133 @@
+hero_banner:
+  type: string
+  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/1X/fce9624408297d20c6a27a91007a4f449f44f8e9.jpeg"
+  description:
+    en:
+      'The source url for the hero banner. Tip: You can upload an image to your main theme and use the url from that,
+      but make sure that you do not use "Uploads" section of this component. Any uploads added to this component will be
+      deleted whenever it is updated.'
+additional_banner_urls:
+  type: list
+  description: Additional URLs to include hero banner
+  default: ""
+expand_button_text:
+  type: string
+  default: "Expand"
+  description: Text for expand button
+collapse_button_text:
+  type: string
+  default: "Minimize"
+  description: Text for expand button
+cover_title_expanded:
+  type: string
+  default: "The Level Playing Field by STEM-Away®"
+cover_subtitle_expanded:
+  type: string
+  default: "A full-scale career hub for students to learn, participate, and prove their value based on their merit and ability."
+# HTML doesn't get parsed in these
+cover_text_expanded:
+  type: string
+  default: ""
+cover_title_collapsed:
+  type: string
+  default: "The STEM-Away® Career Pathways"
+cover_subtitle_collapsed:
+  type: string
+  default: "No subtitle"
+cover_text_collapsed:
+  type: string
+  default: "This is some collapsed text."
+engagement_box_section_heading:
+  type: string
+  default: ""
+ebox_1_text:
+  type: string
+  default: Starting Blocks
+ebox_1_icon_url:
+  type: string
+  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/1X/0b46a4400f619cc5ec5cb63857c0925aa7566320.svg"
+  description: Link to box 1 icon
+ebox_1_link:
+  type: string
+  default: https://stemaway.com/c/site-feedback/starting-blocks
+ebox_2_text:
+  type: string
+  default: About Us
+ebox_2_icon_url:
+  type: string
+  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/1X/51912dd7693f850aa79839cc85b7a1a5d1340691.svg"
+  description: Link to box 1 icon
+ebox_2_link:
+  type: string
+  default: https://info.stemaway.com/about-us
+ebox_3_text:
+  type: string
+  default: Student Wall
+ebox_3_icon_url:
+  type: string
+  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/1X/e87d73af46473afa6f2ed9f877dff4eb7de59cdc.svg"
+  description: Link to box 1 icon
+ebox_3_link:
+  type: string
+  default: https://info.stemaway.com/student-wall
+ebox_4_text:
+  type: string
+  default: Company Portal
+ebox_4_icon_url:
+  type: string
+  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/1X/f8fd5db878fdde217c14762efbc4e43b4ea56f89.svg"
+  description: Link to box 1 icon
+ebox_4_link:
+  type: string
+  default: https://info.stemaway.com/company-portal
+topic_list_3_header:
+  type: string
+  default: Topics from our Top Mentors
+topic_list_3_content_url:
+  type: string
+  default: "/tags/topic_list_3.json"
+  description: "topics to display, URL must return a topic_list"
+topic_list_3_background_color:
+  type: string
+  default: "#eeeeee"
+topic_list_2_header:
+  type: string
+  default: Effective Showcasing
+topic_list_2_content_url:
+  type: string
+  default: "/top.json?q=%23pandimensional-resume"
+  description: "topics to display, URL must return a topic_list"
+topic_list_2_more_link:
+  type: string
+  default: "/top?q=%23pandimensional-resume"
+  description: link button below topic list
+topic_list_1_header:
+  type: string
+  default: Learning/Guidance
+topic_list_1_content_url:
+  type: string
+  default: "/latest.json?tags%3Ahardware-engineering%2Cadvanced-biology"
+  description: "topics to display, URL must return a topic_list"
+topic_list_1_more_link:
+  type: string
+  default: "/search?q=tags%3Amentoring%2Cbls"
+  description: link button below topic list
+delete_this_sample_enum:
+  type: enum
+  default: none
+  choices:
+    - one
+    - two
+    - three
+  description:
+    en: "In case I need one."
+delete_primary_text_color:
+  type: string
+  default: "#000"
+  description:
+    en: "The main text color of the banner"
+delete_secondary_text_color:
+  type: string
+  default: "#FF6C00"
+  description:
+    en: "The text color of the icon and text headings, and the button background color."

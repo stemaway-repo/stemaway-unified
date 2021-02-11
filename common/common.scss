@@ -17,6 +17,105 @@ $unity-colors: (
   gray-500: #464141,
 );
 
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --font-family: "Nunito Sans", sans-serif;
+  --heading-font-family: "Nunito Sans", sans-serif;
+}
+
+.jumbotron {
+  background-color: map-get($unity-colors, primary-200);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-image {
+    // flex: 1 0 5%;
+    margin: 1rem 0;
+    // background-color: map-get($unity-colors, primary-400);
+    width: 332px;
+    height: 432px;
+  }
+
+  &-titles {
+    margin: 1rem 1rem 1rem 0;
+    // flex: 1 0 28%;
+    h1 {
+      font-size: 3.125rem;
+      color: map-get($unity-colors, primary-400);
+      font-weight: 900;
+    }
+
+    h2 {
+      max-width: 75%;
+      color: map-get($unity-colors, secondary-500);
+      font-weight: 300;
+    }
+  }
+
+  &-quick-links {
+    flex: 3 0 27%;
+    position: relative;
+    z-index: 1;
+
+    &-container {
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0px 4px 37px rgba(0, 0, 0, 0.13);
+      border-radius: 11px 0px 0px 11px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0px 4px 37px rgba(0, 0, 0, 0.13);
+        border-radius: 11px;
+
+        width: 100%;
+        height: 80%;
+        top: 10%;
+        left: -8%;
+        z-index: -1;
+      }
+
+      h3 {
+        margin-bottom: 0;
+        text-align: center;
+        padding: 0.8rem 2rem;
+        display: block;
+        border-radius: 8px;
+        color: map-get($unity-colors, primary-400);
+        background-color: map-get($unity-colors, primary-100);
+      }
+      ul {
+        margin-left: 0;
+        list-style: none;
+        font-size: 1.2rem;
+
+        li {
+          cursor: pointer;
+          border-radius: 8px;
+          margin-top: 0.25rem;
+          display: block;
+          padding: 1rem;
+          a {
+            margin: 0.5rem;
+            color: map-get($unity-colors, secondary-300);
+            svg {
+              margin-right: 1rem;
+            }
+          }
+          &:hover {
+            background-color: rgba(210, 216, 230, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
 // .below-site-header-outlet.experts-homepage,
 // .below-site-header-outlet.experts-homepage.hidden {
 //   -webkit-transition: all 0.5s ease;
@@ -525,7 +624,9 @@ $unity-colors: (
     padding: 0.5rem;
     // border-radius: 100%;
     // border-left: 1.25px solid rgba(210, 216, 230, 0.5);
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       background-color: #edf2f7;
       border-radius: 100%;
       .d-icon {

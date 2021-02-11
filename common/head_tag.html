@@ -64,82 +64,28 @@
   data-template-name="/connectors/below-site-header/experts-homepage"
 >
   {{#if displayCustomHomepageHeader}}
-      <div class="experts-homepage-wrapper">
-          <div id="homepage-banner">
-              <div id="homepage-banner-inner">
-                  <div id="homepage-banner-content">
-                      <div id="homepage-banner-content-inner">
-
-      {{#if collapseHomepage}}
-                          <h1 id="cover_title">{{{theme-setting 'cover_title_collapsed'}}}</h1>
-                          <h2 id="cover_subtitle">{{{theme-setting 'cover_subtitle_collapsed'}}}</h2>
-                          <div class="homepage-banner-cover-text-collapsed">
-                          <div class="cover-text-collapsed">
-                           {{{theme-setting 'cover_text_collapsed'}}}
-                            </div>
-                          </div>
-      {{else}}
-                          <h1 id="cover_title">{{{theme-setting 'cover_title_expanded'}}}</h1>
-                          <h2 id="cover_subtitle">{{{theme-setting 'cover_subtitle_expanded'}}}</h2>
-                          <div class="homepage-banner-cover-text-expanded">
-                            {{{theme-setting 'cover_text_expanded'}}}
-                          </div>
-      {{/if}}
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-      {{#if collapseHomepage}}
-          {{#d-button action="showHomepage" id="show-homepage"
-          class="btn" icon="minus"}}{{theme-setting 'expand_button_text'}}{{/d-button}}
-      {{else}}
-          {{#d-button action="hideHomepage" id="hide-homepage"
-          class="btn" icon="plus"}}{{theme-setting 'collapse_button_text'}}{{/d-button}}
-      {{/if}}
-      {{#if displayCustomHomepageBlocks}}
-      <div class="homepage-container">
-          <div class="container engagement-boxes center">
-              <div class="wrap">
-                  <h2>{{{theme-setting 'engagement_box_section_heading'}}}</h2>
-                  <div class="box box-4">
-                      <a href="{{theme-setting 'ebox_1_link'}}">
-                        <div class="icon-wrapper">
-                        <img src="{{theme-setting 'ebox_1_icon_url'}}" />
-                        </div>
-                          <span>{{{theme-setting 'ebox_1_text'}}}</span>
-                      </a>
-                  </div>
-                  <div class="box box-4">
-                      <a href="{{theme-setting 'ebox_2_link'}}">
-                        <div class="icon-wrapper">
-                        <img src="{{theme-setting 'ebox_2_icon_url'}}" />
-                        </div>
-                          <span>{{{theme-setting 'ebox_2_text'}}}</span>
-                      </a>
-                  </div>
-                  <div class="box box-4">
-                      <a href="{{theme-setting 'ebox_3_link'}}">
-                        <div class="icon-wrapper">
-                        <img src="{{theme-setting 'ebox_3_icon_url'}}" />
-                        </div>
-                          <span>{{{theme-setting 'ebox_3_text'}}}</span>
-                      </a>
-                  </div>
-                  <div class="box box-4">
-                      <a href="{{theme-setting 'ebox_4_link'}}">
-                        <div class="icon-wrapper">
-                        <img src="{{theme-setting 'ebox_4_icon_url'}}" />
-                        </div>
-                          <span>{{{theme-setting 'ebox_4_text'}}}</span>
-                      </a>
-                  </div>
-              </div>
-          </div>
-         </div>
-      {{/if}}
+  <section class="jumbotron experts-homepage">
+      <div class="jumbotron-image">
+          <img loading="lazy" src="{{ theme-setting 'hero_image' }}" alt="">
       </div>
-  {{/if}}
+      <div class="jumbotron-titles">
+        <h1 id="cover_title">{{{theme-setting 'cover_title_collapsed'}}}</h1>
+        <h2 id="cover_subtitle">{{{theme-setting 'cover_subtitle_collapsed'}}}</h2>
+      </div>
+      <div class="jumbotron-quick-links">
+          <div class="jumbotron-quick-links-container">
+              <h3>Quick Links</h3>
+              <ul>
+
+                  <li><a href=""><svg class="fa d-icon d-icon-{{ theme-setting 'ebox_1_icon_url' }} svg-icon svg-node" aria-hidden="true"><use xlink:href="#{{ theme-setting 'ebox_1_icon_url' }}"></use></svg>{{theme-setting 'ebox_1_text'}}</a></li>
+                  <li><a href=""><svg class="fa d-icon d-icon-{{ theme-setting 'ebox_2_icon_url' }} svg-icon svg-node" aria-hidden="true"><use xlink:href="#{{ theme-setting 'ebox_2_icon_url' }}"></use></svg>{{theme-setting 'ebox_2_text'}}</a></li>
+                  <li><a href=""><svg class="fa d-icon d-icon-{{ theme-setting 'ebox_3_icon_url' }} svg-icon svg-node" aria-hidden="true"><use xlink:href="#{{ theme-setting 'ebox_3_icon_url' }}"></use></svg>{{theme-setting 'ebox_3_text'}}</a></li>
+                  <li><a href=""><svg class="fa d-icon d-icon-{{ theme-setting 'ebox_4_icon_url' }} svg-icon svg-node" aria-hidden="true"><use xlink:href="#{{ theme-setting 'ebox_4_icon_url' }}"></use></svg>{{theme-setting 'ebox_4_text'}}</a></li>
+              </ul>
+          </div>
+      </div>
+    </section>
+    {{/if}}
 </script>
 <script type="text/javascript">
   $(document).ready(function (e) {
@@ -264,81 +210,4 @@
           });
       }
   });
-</script>
-<script
-  type="text/x-handlebars"
-  data-template-name="/connectors/above-footer/experts-homepage"
->
-  {{#if displayCustomHomepage}}
-      <div class="experts-homepage-wrapper">
-
-      <div class="homepage-container">
-
-              {{#unless site.mobileView}}
-          <div class="container topic-lists">
-              <div class="wrap">
-                  <div class="box box-2">
-                      <div class="header-wrapper">
-                          <h3 class="inline">{{{theme-setting 'topic_list_1_header'}}}</h3>
-                      </div>
-                      {{topic-list topics=topicListOne showPosters=true}}
-                      {{#if site.mobileView}}
-                          <a href="{{theme-setting 'topic_list_1_more_link'}}" class="btn-primary btn full-width">MORE</a>
-                      {{/if}}
-                  </div>
-                  <div class="box box-2">
-                      <div class="header-wrapper">
-                          <h3 class="inline">{{{theme-setting 'topic_list_2_header'}}}</h3>
-                      </div>
-                      {{topic-list topics=topicListTwo showPosters=true}}
-                      {{#if site.mobileView}}
-                          <a href="{{theme-setting 'topic_list_2_more_link'}}" class="btn-primary btn full-width">MORE</a>
-                      {{/if}}
-                  </div>
-              </div>
-                  <div class="wrap">
-                      <div class="box box-2">
-                          <a href="{{theme-setting 'topic_list_1_more_link'}}" class="btn-primary btn full-width">MORE</a>
-                      </div>
-                      <div class="box box-2">
-                          <a href="{{theme-setting 'topic_list_2_more_link'}}" class="btn-primary btn full-width">MORE</a>
-                      </div>
-                  </div>
-          </div>
-              {{/unless}}
-          <div class="container topic-list-3 homepage-title center">
-              <div class="wrap">
-                  <h2>{{{theme-setting 'topic_list_3_header'}}}</h2>
-                  <div class="container">
-                      <div class="postsContainerFlex">
-                          {{#each topicListThree as |topic|}}
-                              <div class="postContainer">
-                                  <div class="postShadow">
-                                      <div class="image-section">
-                                          <a href="/t/{{topic.slug}}/{{topic.id}}/{{topic.last_read_post_number}}"><img src="/user_avatar/{{hostname}}/{{topic.last_poster_username}}/370/617_1.png" class="teammember_img" /></a>
-                                      </div>
-                                      <div class="postTitle">
-                                          <div class="postDate">{{format-date topic.created_at}}</div>
-                                          <a href="/t/{{topic.slug}}/{{topic.id}}/{{topic.last_read_post_number}}">{{topic.title}}</a>
-                                      </div>
-                                      <div class="postInfo">
-                                          <div class="postAuthor">by <a href="/users/{{topic.last_poster_username}}/activity">{{topic.last_poster_username}}</a></div>
-                                          <div class="postComments">
-                                              <span class="likes"><i class="fa fa-thumbs-up"></i>{{topic.like_count}}</span>
-                                              <a href="/t/{{topic.slug}}/{{topic.id}}/{{topic.last_read_post_number}}">
-                                                  <span class="comments"><i class="fa fa-comments"></i>{{topic.posts_count}}</span>
-                                              </a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          {{/each}}
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      </div>
-  {{/if}}
 </script>

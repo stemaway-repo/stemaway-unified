@@ -1,4 +1,4 @@
-hero_banner:
+hero_image:
   type: string
   default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/1X/fce9624408297d20c6a27a91007a4f449f44f8e9.jpeg"
   description:

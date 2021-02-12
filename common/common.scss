@@ -200,19 +200,22 @@ $unity-colors: (
 
   h2 {
     text-align: center;
-    max-width: 45%;
+    @media screen and (min-width: 600px) {
+      max-width: 45%;
+    }
     color: map-get($unity-colors, secondary-500);
   }
 
   &-images {
     border-bottom: 2px solid #eff1f6;
-    // background-color: red;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
 
     a {
+      //   flex-basis: 20%;
+      //   padding: 2rem;
       padding: 2.25rem;
       @include image-logo;
     }
@@ -224,11 +227,31 @@ $unity-colors: (
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem;
+  padding: 1rem;
+  flex-flow: row wrap;
+
+  @media screen and (min-width: 935px) {
+    padding: 3rem;
+    flex-flow: row nowrap;
+  }
 
   .university-title {
     text-align: left;
-    flex-basis: 30%;
+    // flex-basis: 30%;
+    @media screen and (min-width: 530px) {
+      flex-basis: 50%;
+    }
+
+    @media screen and (min-width: 840px) {
+      flex-basis: 30%;
+      margin-right: 1rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      flex-basis: 20%;
+    }
+    margin-bottom: 1rem;
+    text-align: center;
     background-color: rgba(210, 216, 230, 0.3);
     border-radius: 8px;
     padding: 1.5rem;
@@ -242,6 +265,8 @@ $unity-colors: (
     align-items: center;
 
     a {
+      flex-basis: 25%;
+      padding: 1rem;
       margin: 1.5rem 0;
       @include image-logo;
     }

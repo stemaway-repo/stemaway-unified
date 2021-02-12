@@ -64,7 +64,8 @@
   data-template-name="/connectors/below-site-header/experts-homepage"
 >
   {{#if displayCustomHomepageHeader}}
-  <section class="jumbotron experts-homepage">
+  <section class="homepage-jumbotron experts-homepage">
+      <div class="jumbotron">
       <div class="jumbotron-image">
           <img loading="lazy" src="{{ theme-setting 'hero_image' }}" alt="">
       </div>
@@ -83,6 +84,7 @@
               </ul>
           </div>
       </div>
+    </div>
     </section>
     <section class="partners">
         <h2>{{ theme-setting 'partners_title' }}</h2>

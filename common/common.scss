@@ -325,10 +325,57 @@ $unity-colors: (
   }
 }
 
-// .btn-primary {
-//   background-color: map-get($unity-colors, primary-400);
-//   border-radius: 5px;
-// }
+.btn-rollback {
+  background-color: map-get($unity-colors, secondary-400);
+  color: white;
+  .d-icon {
+    color: white;
+  }
+  .discourse-no-touch & {
+    &:hover {
+      background: map-get($unity-colors, secondary-500);
+      color: white;
+      .d-icon,
+      &[href] {
+        color: white;
+      }
+    }
+  }
+}
+
+.btn-rollback[disabled] {
+  background-color: map-get($unity-colors, secondary-400);
+  &:hover {
+    background: map-get($unity-colors, secondary-400);
+  }
+}
+
+.select-kit-collection {
+  box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
+}
+
+.alert.alert-info {
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+  //   border-radius: 5px;
+  border-top: 1px solid #2b6cb0;
+  border-bottom: 1px solid #2b6cb0;
+}
+
+.widget-button {
+  border-radius: 5px;
+}
+
+.double-button {
+  button:nth-child(1) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  button:nth-child(2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
 
 .btn-primary {
   background-color: map-get($unity-colors, primary-400);

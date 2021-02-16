@@ -35,6 +35,8 @@
       }
   });
 </script>
+
+<!-- Above Header -->
 <script
   type="text/x-handlebars"
   data-template-name="/connectors/below-site-header/experts-homepage"
@@ -62,23 +64,6 @@
       </div>
     </div>
     </section>
-    <section class="partners">
-        <h2>{{ theme-setting 'partners_title' }}</h2>
-        <div class="partners-images">
-            <a href="{{ theme-setting 'partner_1_url' }}" target="_blank">
-                <img src="{{ theme-setting 'partner_1_image' }}" alt="">
-            </a>
-            <a href="{{ theme-setting 'partner_2_url' }}" target="_blank">
-                <img src="{{ theme-setting 'partner_2_image' }}" alt="">
-            </a>
-            <a href="{{ theme-setting 'partner_3_url' }}" target="_blank">
-                <img src="{{ theme-setting 'partner_3_image' }}" alt="">
-            </a>
-            <a href="{{ theme-setting 'partner_4_url' }}" target="_blank">
-                <img src="{{ theme-setting 'partner_4_image' }}" alt="">
-            </a>
-        </div>
-    </section>
     <section class="universities">
         <div class="university-title">
             <h2>{{ theme-setting 'universities_title' }}</h2>
@@ -105,4 +90,28 @@
         </div>
     </section>
     {{/if}}
+</script>
+
+<!-- Above Footer -->
+<script
+  type="text/x-handlebars"
+  data-template-name="/connectors/above-footer/stemaway-partners-section"
+>
+      <section class="partners stemaway-partners-section">
+      <h2>{{ theme-setting 'partners_title' }}</h2>
+      <div class="partners-images">
+          <a href="{{ theme-setting 'partner_1_url' }}" target="_blank">
+              <img src="{{ theme-setting 'partner_1_image' }}" alt="">
+          </a>
+          <a href="{{ theme-setting 'partner_2_url' }}" target="_blank">
+              <img src="{{ theme-setting 'partner_2_image' }}" alt="">
+          </a>
+          <a href="{{ theme-setting 'partner_3_url' }}" target="_blank">
+              <img src="{{ theme-setting 'partner_3_image' }}" alt="">
+          </a>
+          <a href="{{ theme-setting 'partner_4_url' }}" target="_blank">
+              <img src="{{ theme-setting 'partner_4_image' }}" alt="">
+          </a>
+      </div>
+  </section>
 </script>

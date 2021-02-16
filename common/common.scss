@@ -191,6 +191,7 @@ $unity-colors: (
 }
 
 .partners {
+  border-top: 2px solid #eff1f6;
   background: rgba(235, 236, 243, 0.2);
   padding: 2rem 1rem 1rem 1rem;
   display: flex;
@@ -207,7 +208,6 @@ $unity-colors: (
   }
 
   &-images {
-    border-bottom: 2px solid #eff1f6;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -463,6 +463,7 @@ $unity-colors: (
     width: 9px;
   }
 }
+
 .panel-body {
   .results {
     border-radius: 8px;
@@ -473,6 +474,7 @@ $unity-colors: (
 .header-dropdown-toggle:nth-child(4) {
   order: 3;
 }
+
 .d-header-icons .header-dropdown-toggle:not(:last-child) {
   font-size: 0.75rem;
 }
@@ -517,6 +519,7 @@ $unity-colors: (
     }
   }
 }
+
 .user-menu {
   .quick-access-panel {
     border-top: none;
@@ -856,6 +859,7 @@ div.menu-links-header .menu-links-row li.glyphs a {
   border-bottom: none;
   //   padding-right: 10px;
 }
+
 .small-action {
   border-top: none;
 }

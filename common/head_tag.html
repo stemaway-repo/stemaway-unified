@@ -115,3 +115,19 @@
       </div>
   </section>
 </script>
+
+<script>
+  // ! TODO: Find out how to display category bullet instead of bar
+  Discourse.DiscoveryCategorysView.reopen({
+    didInsertElement: function () {
+      var $categories = $(".category");
+      this._super(); // Calls the didInsertElement method from the super class
+
+      $categories.each(function () {
+        var categoryColor = $(this).css("border-color");
+        // Do something with the category color
+        $(this).css("color", categoryColor);
+      });
+    },
+  });
+</script>

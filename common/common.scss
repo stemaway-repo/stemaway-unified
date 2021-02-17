@@ -399,6 +399,40 @@ nav.post-controls .actions button.create .d-icon {
   }
 }
 
+.nav {
+  li a {
+    color: map-get($unity-colors, secondary-400);
+  }
+}
+
+.nav-stacked {
+  li a {
+  }
+}
+
+.user-secondary-navigation .nav-stacked a {
+  color: map-get($unity-colors, secondary-300);
+  border-radius: 5px;
+  transition: background-color 0.25s ease-out;
+  &:hover {
+    background-color: #dfe4e95a;
+  }
+
+  &.active {
+    color: map-get($unity-colors, secondary-500);
+  }
+}
+
+.user-additional-controls {
+  .btn-default {
+    color: map-get($unity-colors, secondary-500);
+    background-color: map-get($unity-colors, secondary-200);
+    .svg-icon {
+      color: map-get($unity-colors, secondary-500);
+    }
+  }
+}
+
 // Topic List Item
 table.topic-list,
 .latest-topic-list-item {

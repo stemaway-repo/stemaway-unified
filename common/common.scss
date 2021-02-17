@@ -653,6 +653,19 @@ table.topic-list,
 // Navigation Bar Header Styling
 .d-header {
   box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.07);
+  .extra-info-wrapper {
+    margin-left: 1rem;
+    .header-title a {
+      color: map-get($unity-colors, secondary-400);
+      margin-bottom: 0.25rem;
+    }
+    .topic-header-extra .discourse-tags .discourse-tag.box {
+      background-color: map-get($unity-colors, primary-200) !important;
+      color: map-get($unity-colors, primary-400) !important;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+  }
 }
 .d-header-icons {
   display: flex;

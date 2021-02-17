@@ -650,6 +650,18 @@ table.topic-list,
   }
 }
 
+// Suggested Topics
+h3.suggested-topics-message {
+  color: map-get($unity-colors, secondary-500);
+  font-weight: 400;
+  a {
+    color: map-get($unity-colors, primary-400);
+    position: relative;
+    font-weight: 800;
+    @include hoverable-underline(#96b67b);
+  }
+}
+
 // Navigation Bar Header Styling
 .d-header {
   box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.07);

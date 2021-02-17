@@ -166,3 +166,31 @@
     },
   });
 </script>
+
+<!-- <script type="text/discourse-plugin" version="0.8.13">
+  const h = require('virtual-dom').h;
+  I18n.translations.en.js.user.my_link = "My Link";
+  api.reopenWidget('user-menu', {
+      myLinkAction() {
+          console.log("Hello there!"); // handle click on the link here
+      },
+      panelContents() {
+        const sup = this._super(...arguments);
+        sup.push(
+          h('div.my-link', [
+            h('ul.menu-links',
+              h('li',
+                this.attach('link', {
+                  action: 'myLinkAction',
+                  className: 'my-link',
+                  icon: 'link',
+                  label: 'user.my_link'
+                })
+              )
+            )
+          ])
+        );
+        return sup;
+      }
+  })
+</script> -->

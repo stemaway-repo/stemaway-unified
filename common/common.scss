@@ -1557,3 +1557,23 @@ input[type="password"]:focus {
     padding: 1rem 0;
   }
 }
+
+// Selected Choice
+.select-kit.multi-select .choices .selected-name {
+  background-color: map-get($unity-colors, primary-200);
+  color: map-get($unity-colors, primary-400);
+  border-radius: 5px;
+  padding: 0.25em 0.5rem;
+  border: 2px solid transparent;
+  transition: border 0.25s ease;
+
+  .svg-icon {
+    color: map-get($unity-colors, primary-400);
+  }
+  &:hover {
+    border: 2px solid map-get($unity-colors, primary-400);
+    .svg-icon {
+      color: map-get($unity-colors, primary-500) !important;
+    }
+  }
+}

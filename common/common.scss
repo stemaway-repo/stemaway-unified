@@ -547,7 +547,7 @@ table.topic-list,
 }
 
 // Topic Timers
-.topic-status-info {
+.topic-status-info:not(:empty) {
   border-top: none;
   background-color: map-get($unity-colors, secondary-200);
   border-radius: 8px;
@@ -1375,12 +1375,6 @@ div.menu-links-header .menu-links-row li.glyphs a {
       padding: 1rem;
       font-weight: bold;
     }
-  }
-}
-
-.topic-statuses {
-  a {
-    color: red;
   }
 }
 

@@ -400,7 +400,8 @@ nav.post-controls .actions button.create .d-icon {
 }
 
 // Topic List Item
-table.topic-list {
+table.topic-list,
+.latest-topic-list-item {
   margin-top: 1rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   background-color: map-get($unity-colors, secondary-100);
@@ -479,6 +480,50 @@ table.topic-list {
     color: map-get($unity-colors, primary-400);
     position: relative;
     @include hoverable-underline(#96b67b);
+  }
+}
+
+// Topic Timers
+.topic-status-info {
+  border-top: none;
+  background-color: map-get($unity-colors, secondary-200);
+  border-radius: 8px;
+  color: map-get($unity-colors, secondary-500);
+  .svg-icon {
+    margin-right: 1rem;
+    color: map-get($unity-colors, secondary-500);
+  }
+  span {
+    padding: 0.5rem 1.25rem;
+  }
+}
+
+// Topic Map
+.topic-map {
+  border-radius: 8px;
+  border: 1px solid map-get($unity-colors, secondary-200);
+  .map {
+    border-top: none;
+    background-color: map-get($unity-colors, secondary-100);
+    .buttons button {
+      background-color: transparent;
+      border: transparent;
+      border-radius: 0;
+      &:hover {
+        background-color: map-get($unity-colors, secondary-200);
+      }
+    }
+    span.number {
+      font-weight: 900;
+      color: map-get($unity-colors, secondary-400);
+    }
+    li h4 {
+      color: map-get($unity-colors, secondary-300);
+    }
+  }
+  .topic-links .badge-notification {
+    background-color: map-get($unity-colors, primary-200);
+    color: map-get($unity-colors, primary-400);
   }
 }
 

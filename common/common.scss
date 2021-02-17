@@ -316,6 +316,7 @@ $unity-colors: (
 
   .blurb {
     color: rgba(255, 255, 255, 0.5) !important;
+    margin-bottom: 1rem;
   }
 }
 
@@ -647,9 +648,8 @@ table.topic-list,
 .alert.alert-info {
   background-color: #ebf8ff;
   color: #2b6cb0;
-  //   border-radius: 5px;
-  border-top: 1px solid #2b6cb0;
-  border-bottom: 1px solid #2b6cb0;
+  border-radius: 5px;
+  padding: 1rem;
 }
 
 .widget-button {

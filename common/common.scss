@@ -829,13 +829,13 @@ h3.suggested-topics-message {
   transition: background-color ease 0.25s;
 
   .menu-links-row .glyphs {
-    border-radius: 50px;
+    border-radius: 5px;
     background-color: map-get($unity-colors, primary-100);
     .d-icon {
       color: map-get($unity-colors, primary-400);
     }
     .widget-button {
-      border-radius: 0px;
+      border-radius: 5px;
       &:hover {
         background-color: map-get($unity-colors, primary-300);
       }
@@ -846,12 +846,12 @@ h3.suggested-topics-message {
       }
     }
     .widget-button:first-child {
-      border-top-left-radius: 50px;
-      border-bottom-left-radius: 50px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
     }
     .widget-button:last-child {
-      border-top-right-radius: 50px;
-      border-bottom-right-radius: 50px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
     button.active {
       .d-icon {
@@ -881,6 +881,17 @@ h3.suggested-topics-message {
 }
 
 div.menu-links-header .menu-links-row li.glyphs a {
+  display: none;
+}
+
+.user-menu .menu-links-row {
+  button.user-notifications-link {
+    display: none;
+  }
+}
+
+.widget-button.btn-flat.user-notifications-link.no-text.btn-icon,
+.widget-button.btn-flat.user-pms-link.no-text.btn-icon {
   display: none;
 }
 
@@ -1135,7 +1146,7 @@ div.menu-links-header .menu-links-row li.glyphs a {
       }
     }
     /* as a big ol' click target, don't let text inside be selected */
-    @include unselectable;
+    // @include unselectable;
 
     &.quick-access-profile {
       li:not(.show-all) a {

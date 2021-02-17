@@ -953,7 +953,7 @@ div.menu-links-header .menu-links-row li.glyphs a {
   }
 
   .dismiss-link {
-    display: inline-block;
+    // display: inline-block;
     float: right;
   }
 }
@@ -1250,13 +1250,11 @@ div.menu-links-header .menu-links-row li.glyphs a {
     color: map-get($unity-colors, secondary-300);
     font-size: 0.8rem;
   }
-  table {
-  }
 
   .category-name {
     position: relative;
     &::before {
-      // content: "";
+      content: "";
       // display: inline-block;
       // width: 10px;
       // height: 10px;

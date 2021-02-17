@@ -399,6 +399,7 @@ nav.post-controls .actions button.create .d-icon {
   }
 }
 
+// Navigation Related
 .nav {
   li a {
     color: map-get($unity-colors, secondary-400);
@@ -433,6 +434,33 @@ nav.post-controls .actions button.create .d-icon {
   }
 }
 
+// Badge Styling
+.badge-card {
+  background-color: map-get($unity-colors, secondary-100);
+  border-radius: 5px;
+  border-color: map-get($unity-colors, secondary-200);
+
+  &:hover {
+    box-shadow: 0px 4px 37px rgba(0, 0, 0, 0.07) !important;
+  }
+
+  .svg-icon {
+    max-width: 45px;
+  }
+
+  .badge-contents {
+    .badge-link {
+      color: map-get($unity-colors, primary-400);
+    }
+    .badge-summary {
+      color: map-get($unity-colors, secondary-400);
+    }
+  }
+}
+
+.badge-card .badge-contents .badge-icon.badge-type-bronze .fa {
+  color: map-get($unity-colors, primary-400) !important;
+}
 // Topic List Item
 table.topic-list,
 .latest-topic-list-item {

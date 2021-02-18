@@ -17,13 +17,18 @@ A theme component to have a unified design language/style for the [STEM-Away&reg
 
 ## Installation
 
-1. On your discourse website, navigate to: <br> `Admin > Customize > Themes`
+1. On your discourse website, navigate to:
+
+   ```
+   Admin > Customize > Themes
+   ```
 
 2. Click `Install` and select `From a git repository`
 
-3. Paste in the following link: <br>
-   `https://github.com/stemaway-repo/stemaway-unified.git`
-
+3. Paste in the following link:
+   ```
+   https://github.com/stemaway-repo/stemaway-unified.git
+   ```
 4. Navigate to your current theme and select it
 
 5. Include the `STEM-Away Unified` component on your theme.

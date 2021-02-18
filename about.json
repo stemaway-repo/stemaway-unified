@@ -11,6 +11,18 @@
     "stem-bulb": "assets/stem-bulb.png"
   },
   "color_schemes": {
+    "Unity Light": {
+      "primary": "222222",
+      "secondary": "ffffff",
+      "tertiary": "56656F",
+      "quaternary": "96b67b",
+      "header_background": "ffffff",
+      "header_primary": "333333",
+      "highlight": "edf2e9",
+      "danger": "F34B4B",
+      "success": "96b67b",
+      "love": "96b67b"
+    }
   }
 }
 

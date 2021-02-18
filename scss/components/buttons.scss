@@ -1,0 +1,91 @@
+// Button Styling
+.btn-default {
+  background: map-get($unity-colors, gray-200);
+  color: map-get($unity-colors, gray-400);
+  border-radius: 5px;
+
+  &[href],
+  .d-icon-thumb-tack {
+    color: map-get($unity-colors, gray-400);
+  }
+  .d-icon {
+    color: map-get($unity-colors, gray-400);
+  }
+  .discourse-no-touch & {
+    &:hover {
+      background: map-get($unity-colors, primary-300);
+      color: map-get($unity-colors, primary-500);
+      .d-icon,
+      &[href] {
+        color: map-get($unity-colors, primary-500);
+      }
+    }
+  }
+}
+
+.btn-rollback {
+  background-color: map-get($unity-colors, secondary-400);
+  color: white;
+  .d-icon {
+    color: white;
+  }
+  .discourse-no-touch & {
+    &:hover {
+      background: map-get($unity-colors, secondary-500);
+      color: white;
+      .d-icon,
+      &[href] {
+        color: white;
+      }
+    }
+  }
+}
+
+.btn-rollback[disabled] {
+  background-color: map-get($unity-colors, secondary-400);
+  &:hover {
+    background: map-get($unity-colors, secondary-400);
+  }
+}
+
+.widget-button {
+  border-radius: 5px;
+}
+
+.double-button {
+  button:nth-child(1) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  button:nth-child(2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.btn-primary {
+  background-color: map-get($unity-colors, primary-400);
+  color: white;
+  border-radius: 5px;
+  .d-icon {
+    color: white;
+  }
+  .discourse-no-touch & {
+    &:hover {
+      background-color: map-get($unity-colors, primary-500);
+      color: map-get($unity-colors, primary-100);
+      .d-icon {
+        color: map-get($unity-colors, primary-100);
+      }
+    }
+  }
+}
+
+.btn {
+  border-radius: 5px;
+}
+
+.widget-button.btn-flat.user-notifications-link.no-text.btn-icon,
+.widget-button.btn-flat.user-pms-link.no-text.btn-icon {
+  display: none;
+}

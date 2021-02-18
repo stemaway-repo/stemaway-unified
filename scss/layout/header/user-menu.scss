@@ -1,0 +1,23 @@
+.user-menu {
+  .quick-access-panel {
+    border-top: none;
+    .d-icon,
+    .d-icon.active {
+      color: map-get($unity-colors, secondary-300);
+    }
+
+    div,
+    button {
+      color: map-get($unity-colors, secondary-400);
+      &:hover {
+        color: map-get($unity-colors, secondary-400);
+      }
+    }
+  }
+}
+
+.user-menu .menu-links-row {
+  button.user-notifications-link {
+    display: none;
+  }
+}

@@ -1,0 +1,18 @@
+.post-controls {
+  .widget-button {
+    .svg-icon {
+      color: map-get($unity-colors, secondary-300);
+    }
+    .d-button-label {
+      transition: color 0.25s ease;
+      color: map-get($unity-colors, secondary-300);
+      &:hover {
+        color: map-get($unity-colors, secondary-400);
+      }
+    }
+  }
+}
+
+nav.post-controls .actions button.create .d-icon {
+  color: map-get($unity-colors, secondary-300);
+}

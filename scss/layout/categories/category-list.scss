@@ -1,0 +1,98 @@
+.category-list {
+  .category-name {
+    color: map-get($unity-colors, secondary-500);
+    border-bottom: 1px solid transparent;
+    transition: color 0.4s ease;
+    position: relative;
+    @include hoverable-underline(map-get($unity-colors, secondary-300));
+    &:hover {
+      color: map-get($unity-colors, secondary-300);
+    }
+  }
+}
+
+.categories-list .category .category-description {
+  color: map-get($unity-colors, secondary-300);
+}
+
+.category-list {
+  border: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+  .d-icon-lock {
+    // display: none;
+    margin-right: 1rem;
+    color: map-get($unity-colors, secondary-300);
+    font-size: 0.8rem;
+  }
+
+  .category-name {
+    position: relative;
+    &::before {
+      content: "";
+      // display: inline-block;
+      // width: 10px;
+      // height: 10px;
+      // vertical-align: baseline;
+      // margin: 0 0.5rem;
+      // -moz-border-radius: 7.5px;
+      // -webkit-border-radius: 7.5px;
+      // border-radius: 7.5px;
+      // background-color: map-get($unity-colors, secondary-200);
+    }
+  }
+
+  tbody {
+    border-top-width: 1px;
+
+    .category {
+      border-left: none;
+    }
+
+    tr {
+      &:hover {
+        background-color: map-get($unity-colors, secondary-100);
+      }
+    }
+  }
+
+  thead {
+    .category {
+      border-top-left-radius: 8px;
+    }
+    .topics {
+      border-top-right-radius: 8px;
+    }
+    tr {
+      background-color: map-get($unity-colors, secondary-100);
+      border-bottom: none;
+    }
+
+    th {
+      color: map-get($unity-colors, secondary-400);
+      border-bottom: 0;
+      border-bottom: none;
+      // color: map-get($unity-colors, primary-400);
+      text-transform: uppercase;
+      padding: 1rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.category-list .featured-topic .topic-post-badges .badge.new-posts,
+.category-list .featured-topic .title {
+  color: map-get($unity-colors, primary-400);
+  margin-bottom: 0.25rem;
+  position: relative;
+  @include hoverable-underline(#96b67b);
+}
+
+// Hide topics column in category list with topics
+.with-topics {
+  .topics {
+    display: none;
+    // color: red;
+  }
+}

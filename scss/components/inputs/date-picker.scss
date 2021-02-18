@@ -1,0 +1,4 @@
+.d-date-input .date-picker:focus {
+  outline: none;
+  background-color: map-get($unity-colors, primary-100);
+}

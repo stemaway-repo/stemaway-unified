@@ -1,0 +1,5 @@
+.spinner {
+  border: 3px solid map-get($unity-colors, primary-400);
+  border-right-color: transparent;
+  background-color: map-get($unity-colors, primary-100);
+}

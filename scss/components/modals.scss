@@ -1,0 +1,25 @@
+.modal {
+  .modal-inner-container {
+    box-shadow: 0px 4px 37px rgba(0, 0, 0, 0.13);
+    border: none;
+    border-radius: 8px;
+    .modal-header {
+      background-color: map-get($unity-colors, secondary-100);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      color: map-get($unity-colors, secondary-400);
+      svg {
+        color: map-get($unity-colors, secondary-300);
+        &:hover {
+          color: map-get($unity-colors, secondary-400) !important;
+        }
+      }
+    }
+    .modal-footer {
+      background-color: map-get($unity-colors, secondary-100);
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      color: map-get($unity-colors, secondary-300);
+    }
+  }
+}

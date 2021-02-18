@@ -1,0 +1,16 @@
+.category-header div[class^="category-title-header"] {
+  border-radius: 0.325rem !important;
+  border: none;
+  box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
+  border-left-width: 0.5rem !important;
+
+  .category-title-contents {
+    .category-title-name {
+      color: map-get($unity-colors, secondary-500);
+    }
+    .category-title-description {
+      margin-left: 0.5rem;
+      color: map-get($unity-colors, secondary-300);
+    }
+  }
+}

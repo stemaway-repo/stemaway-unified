@@ -1,0 +1,17 @@
+#search-term {
+  padding: 1.5rem;
+  border-color: map-get($unity-colors, secondary-200);
+  background-color: map-get($unity-colors, secondary-100);
+  border-radius: 8px;
+  border-width: 2px;
+  transition: border 0.25s ease;
+  color: map-get($unity-colors, secondary-400);
+  &:focus {
+    color: map-get($unity-colors, secondary-500);
+    background-color: map-get($unity-colors, primary-100);
+    outline: none !important;
+    border: 2px solid map-get($unity-colors, primary-400);
+    box-shadow: none;
+    font-weight: 600;
+  }
+}

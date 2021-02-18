@@ -5,6 +5,8 @@
   "authors": "Keegan George",
   "theme_version": "0.1",
   "license_url": null,
+  "minimum_discourse_version": null, 
+  "maximum_discourse_version": null,
   "assets": {
     "stem-bulb": "assets/stem-bulb.png"
   },

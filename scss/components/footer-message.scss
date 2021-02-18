@@ -1,0 +1,10 @@
+.footer-message {
+  h3 {
+    color: map-get($unity-colors, secondary-400);
+  }
+  a {
+    color: map-get($unity-colors, primary-400);
+    position: relative;
+    @include hoverable-underline(#96b67b);
+  }
+}

@@ -1,0 +1,237 @@
+.homepage-jumbotron {
+  background-color: map-get($unity-colors, primary-200);
+}
+// Banner Styling
+.jumbotron {
+  padding: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+
+  @media screen and (min-width: 999px) {
+    flex-flow: row nowrap;
+    text-align: left;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 4rem;
+  }
+
+  @media screen and (min-width: 1730px) {
+    justify-content: space-around;
+    .jumbotron-image {
+      flex: 0;
+    }
+
+    .jumbotron-titles {
+      flex-basis: 40%;
+      margin: 0;
+    }
+
+    .jumbotron-quick-links {
+      flex: 0 0 max-content;
+      &-container::before {
+        display: none;
+      }
+    }
+  }
+
+  &-image {
+    // flex: 1 0 5%;
+    margin: 1rem 0;
+    // background-color: map-get($unity-colors, primary-400);
+    width: 332px;
+    // height: 432px;
+    flex: 2 0 30%;
+  }
+
+  &-titles {
+    margin: 1rem 1rem 1rem 0;
+    // flex: 1 0 28%;
+
+    h1 {
+      //   font-size: 3.125rem;
+      font-size: 2.5rem;
+      color: map-get($unity-colors, primary-400);
+      font-weight: 900;
+      @media screen and (min-width: 1338px) {
+        max-width: 80%;
+        font-size: 3.125rem;
+      }
+    }
+
+    h2 {
+      color: map-get($unity-colors, secondary-500);
+      font-weight: 300;
+      @media screen and (min-width: 1338px) {
+        max-width: 75%;
+      }
+    }
+  }
+
+  &-quick-links {
+    // flex: 3 0 27%;
+    flex: 3 0 30%;
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+
+    @media screen and (min-width: 1400px) {
+      flex: 3 0 27%;
+    }
+
+    @media screen and (min-width: 640px) {
+      max-width: 50%;
+    }
+
+    &-container {
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0px 4px 37px rgba(0, 0, 0, 0.13);
+      //   border-radius: 11px 0px 0px 11px;
+      border-radius: 11px;
+      position: relative;
+
+      @media screen and (min-width: 1230px) {
+        &::before {
+          content: "";
+          position: absolute;
+          background: rgba(255, 255, 255, 0.95);
+          box-shadow: 0px 4px 37px rgba(0, 0, 0, 0.13);
+          border-radius: 11px;
+
+          width: 100%;
+          height: 80%;
+          top: 10%;
+          left: -8%;
+          z-index: -1;
+        }
+      }
+
+      h3 {
+        margin-bottom: 0;
+        text-align: center;
+        padding: 0.8rem 2rem;
+        display: block;
+        border-radius: 8px;
+        color: map-get($unity-colors, primary-400);
+        background-color: map-get($unity-colors, primary-100);
+      }
+      ul {
+        margin-left: 0;
+        list-style: none;
+        font-size: 1.2rem;
+        text-align: left;
+
+        li {
+          cursor: pointer;
+          border-radius: 8px;
+          margin-top: 0.25rem;
+          display: block;
+          padding: 1rem;
+
+          transition: transform 0.25s ease;
+
+          a {
+            margin: 0.5rem;
+            color: map-get($unity-colors, secondary-300);
+            svg {
+              margin-right: 1rem;
+            }
+          }
+          &:hover {
+            transform: scale(1.05);
+            background-color: rgba(210, 216, 230, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+.partners {
+  border-top: 2px solid #eff1f6;
+  background: rgba(235, 236, 243, 0.2);
+  padding: 2rem 1rem 1rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    text-align: center;
+    @media screen and (min-width: 600px) {
+      max-width: 45%;
+    }
+    color: map-get($unity-colors, secondary-500);
+  }
+
+  &-images {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      //   flex-basis: 20%;
+      //   padding: 2rem;
+      padding: 2.25rem;
+      @include image-logo;
+    }
+  }
+}
+
+.universities {
+  background-color: rgba(235, 236, 243, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  flex-flow: row wrap;
+
+  @media screen and (min-width: 935px) {
+    padding: 3rem;
+    flex-flow: row nowrap;
+  }
+
+  .university-title {
+    text-align: left;
+    // flex-basis: 30%;
+    @media screen and (min-width: 530px) {
+      flex-basis: 50%;
+    }
+
+    @media screen and (min-width: 840px) {
+      flex-basis: 30%;
+      margin-right: 1rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      flex-basis: 20%;
+    }
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: rgba(210, 216, 230, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: map-get($unity-colors, secondary-500);
+  }
+
+  .university-images {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    a {
+      flex-basis: 25%;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      @include image-logo;
+    }
+  }
+}

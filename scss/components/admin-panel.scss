@@ -1,0 +1,17 @@
+.admin-controls nav .fields {
+  li a.edited {
+    color: map-get($unity-colors, primary-400);
+    background-color: map-get($unity-colors, primary-100);
+    border-bottom: 1.5px dashed map-get($unity-colors, primary-400);
+    &:hover {
+      background-color: map-get($unity-colors, primary-400);
+      color: map-get($unity-colors, primary-100);
+    }
+  }
+}
+
+.admin-customize .current-style .nav-pills li a.active {
+  background-color: map-get($unity-colors, primary-400);
+  color: map-get($unity-colors, primary-100);
+  border-color: transparent;
+}

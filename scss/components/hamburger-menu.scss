@@ -1,0 +1,209 @@
+.hamburger-panel {
+  .menu-panel {
+    padding: 0;
+  }
+  .menu-panel .category-links {
+    .subcategory {
+      display: none;
+    }
+
+    .category-staff,
+    .category-2021-outreach,
+    .category-ucsc-sip-alumni {
+      display: none;
+    }
+  }
+
+  hr {
+    visibility: hidden;
+  }
+
+  .panel-body-contents {
+    &::before {
+      content: "Settings";
+      padding: 2rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: map-get($unity-colors, secondary-100);
+      background-color: map-get($unity-colors, primary-400);
+    }
+  }
+
+  .menu-container-admin-links {
+    // padding: 1rem;
+    padding-left: 2rem;
+    padding-bottom: 1.5rem;
+    // background: map-get($unity-colors, secondary-500);
+    background: map-get($unity-colors, primary-400);
+    display: flex;
+    flex-flow: row wrap;
+
+    .menu-links.columned {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 1rem;
+
+      li a {
+        margin-right: 0.5rem;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.2);
+        display: inline;
+        transition: color 0.25s ease, background-color 0.25s ease;
+
+        .d-icon,
+        .d-label {
+          color: map-get($unity-colors, primary-100);
+        }
+
+        &:hover {
+          background-color: map-get($unity-colors, primary-100);
+          .d-label,
+          .d-icon {
+            color: map-get($unity-colors, primary-400);
+          }
+        }
+      }
+    }
+  }
+
+  .menu-container-general-links {
+    margin: 0.9rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: map-get($unity-colors, primary-100);
+    .menu-links {
+      a {
+        border-radius: 3px;
+        &:hover {
+          background-color: map-get($unity-colors, primary-300);
+        }
+      }
+      .d-label {
+        font-weight: 500;
+        color: map-get($unity-colors, primary-400);
+      }
+    }
+  }
+
+  .category-links {
+    margin: 0.9rem;
+    margin-top: 0.25rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: map-get($unity-colors, primary-100);
+
+    li.heading {
+      margin-bottom: 1rem;
+      .d-link {
+        font-weight: bold;
+        color: map-get($unity-colors, primary-400);
+        &:hover {
+          &::after {
+            content: "[ Click to see all ]";
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            color: map-get($unity-colors, secondary-400);
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+
+    li.category-link {
+      padding: 0.25rem;
+      border-radius: 3px;
+      transition: background-color 0.25s ease;
+
+      a.badge-wrapper {
+        margin: 0;
+        padding: 0.4rem;
+      }
+      &:hover {
+        // background-color: rgba(255, 255, 255, 0.8);
+        background-color: map-get($unity-colors, primary-300);
+        .category-name {
+          color: map-get($unity-colors, primary-400);
+          font-weight: 600;
+        }
+        .badge-category-bg {
+          //   visibility: hidden;
+        }
+      }
+    }
+  }
+
+  .menu-container-footer-links {
+    margin: 1rem;
+    margin-top: 0;
+    padding: 0.25rem;
+    border-radius: 5px;
+    background-color: map-get($unity-colors, primary-100);
+    li,
+    .d-label {
+      color: map-get($unity-colors, primary-400);
+    }
+  }
+}
+
+.menu-panel li a.widget-link:hover,
+.menu-panel li a.widget-link:focus,
+.menu-panel li a.categories-link:hover,
+.menu-panel li a.categories-link:focus,
+.menu-panel li.heading a.widget-link:hover,
+.menu-panel li.heading a.widget-link:focus,
+.menu-panel li.heading a.categories-link:hover,
+.menu-panel li.heading a.categories-link:focus {
+  outline: none;
+}
+
+// .menu-panel .category-links .category-link .restricted {
+//   display: none;
+// }
+
+// .menu-panel .category-links .category-link {
+//   :not(.subcategory) {
+//     display: none;
+//   }
+// }
+
+// .hamburger-panel .category-links {
+//   display: flex;
+//   flex-flow: row wrap;
+//   //   flex-flow: column wrap;
+//   .heading {
+//     flex-basis: 100%;
+//     // display: block;
+//   }
+//   .subcategory {
+//     // order: 2;
+//     // background-color: red;
+//     display: none;
+//   }
+
+//   //   .category-staff,
+//   //   .category-2021-outreach,
+//   //   .category-ucsc-sip-alumni {
+//   //     display: none;
+//   //   }
+// }
+// .menu-panel a.bullet[href*=""] {
+//   display: none;
+// }
+
+/**
+.childCategory {
+  background-color: red !important;
+}
+ex. category-link category-1click-resume
+
+category-link subcategory category-1click-resume-resume-builder
+
+find subcategory
+
+if (subcategory) {
+    find parent category class + "-" +subcategory-slug
+}
+
+*/

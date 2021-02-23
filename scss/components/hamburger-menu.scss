@@ -89,6 +89,7 @@
   .category-links {
     margin: 0.9rem;
     margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
     padding: 1rem;
     border-radius: 5px;
     background-color: map-get($unity-colors, primary-100);
@@ -127,9 +128,6 @@
           color: map-get($unity-colors, primary-400);
           font-weight: 600;
         }
-        .badge-category-bg {
-          //   visibility: hidden;
-        }
       }
     }
   }
@@ -137,12 +135,38 @@
   .menu-container-footer-links {
     margin: 1rem;
     margin-top: 0;
-    padding: 0.25rem;
+    padding: 0.5rem;
     border-radius: 5px;
     background-color: map-get($unity-colors, primary-100);
+
+    .menu-links {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      li:first-child {
+        display: none;
+      }
+      li:nth-child(2) {
+      }
+      .widget-link {
+        padding: 0.2rem;
+      }
+    }
+    li a {
+      border-radius: 3px;
+
+      &:hover {
+        background-color: map-get($unity-colors, primary-300);
+      }
+    }
+
     li,
     .d-label {
       color: map-get($unity-colors, primary-400);
+    }
+    .d-label {
+      white-space: normal;
     }
   }
 }

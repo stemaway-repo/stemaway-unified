@@ -1,0 +1,18 @@
+.login-right-side {
+}
+
+.login-modal .modal-body.has-alt-auth,
+.create-account .modal-body.has-alt-auth {
+  background: map-get($unity-colors, primary-400);
+}
+
+@media (prefers-color-scheme: dark) {
+  .login-modal .modal-body.has-alt-auth,
+  .create-account .modal-body.has-alt-auth {
+    background: map-get($unity-colors, primary-400);
+  }
+}
+
+.modal .modal-inner-container .modal-header {
+  background-color: transparent;
+}

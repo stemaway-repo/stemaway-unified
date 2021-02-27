@@ -191,6 +191,7 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  margin-bottom: 4rem;
   flex-flow: row wrap;
 
   @media screen and (min-width: 935px) {
@@ -234,4 +235,8 @@
       @include image-logo;
     }
   }
+}
+
+.list-controls .navigation-container {
+  margin-bottom: 2rem;
 }

@@ -80,8 +80,11 @@
     }
   }
 
-  html.anon .category-links {
-    display: none;
+  html.anon {
+    .category-links,
+    .topics-count {
+      display: none;
+    }
   }
 
   .category-links {

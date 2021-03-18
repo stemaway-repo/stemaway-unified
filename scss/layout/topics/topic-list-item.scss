@@ -21,14 +21,14 @@ table.topic-list,
     tr {
       transition: transform 0.25s ease;
       &:hover {
-        transform: scale(1.01);
-        border-radius: 8px !important;
-        z-index: 999;
-        background-color: map-get($unity-colors, secondary-100) !important;
-        outline: 1px solid map-get($unity-colors, secondary-200);
-        .discourse-tag.box {
-          border: 1px solid map-get($unity-colors, primary-400);
-        }
+        // transform: scale(1.01);
+        // border-radius: 8px !important;
+        // z-index: 999;
+        // background-color: map-get($unity-colors, secondary-100) !important;
+        // outline: 1px solid map-get($unity-colors, secondary-200);
+        // .discourse-tag.box {
+        //   border: 1px solid map-get($unity-colors, primary-400);
+        // }
       }
       .discourse-tag.box {
         background-color: map-get($unity-colors, primary-100) !important;
@@ -57,7 +57,12 @@ table.topic-list,
 }
 .topic-list .main-link a.title {
   color: map-get($unity-colors, secondary-500);
+  &:hover {
+    color: map-get($unity-colors, primary-400);
+  }
 }
+
+
 
 .topic-statuses .topic-status .d-icon {
   color: map-get($unity-colors, secondary-300);
@@ -68,4 +73,7 @@ table.topic-list,
 .latest-topic-list-item.visited a.title:not(.badge-notification),
 .category-topic-link.visited a.title:not(.badge-notification) {
   color: map-get($unity-colors, secondary-300);
+  &:hover {
+    color: map-get($unity-colors, primary-300);
+  }
 }

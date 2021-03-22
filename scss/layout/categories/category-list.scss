@@ -86,7 +86,7 @@
   color: map-get($unity-colors, primary-400);
   margin-bottom: 0.25rem;
   position: relative;
-  @include hoverable-underline(#96b67b);
+  @include hoverable-underline(map-get($unity-colors, primary-400));
 }
 
 // Hide topics column in category list with topics

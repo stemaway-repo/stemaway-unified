@@ -5,6 +5,6 @@ h3.suggested-topics-message {
     color: map-get($unity-colors, primary-400);
     position: relative;
     font-weight: 800;
-    @include hoverable-underline(#96b67b);
+    @include hoverable-underline(map-get($unity-colors, primary-400));
   }
 }

@@ -10,7 +10,7 @@
   }
 }
 
-@mixin hoverable-underline($color: #96b67b) {
+@mixin hoverable-underline($color: #88b98f) {
   &::after {
     position: absolute;
     content: "";

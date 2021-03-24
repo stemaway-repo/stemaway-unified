@@ -1,11 +1,11 @@
 // Button Styling
-a {
-  color: map-get($unity-colors, primary-500);
-  transition: color 0.25s ease;
-  &:hover {
-    color: darken(map-get($unity-colors, primary-500), 10%);
-  }
-}
+// a {
+//   color: map-get($unity-colors, primary-500);
+//   transition: color 0.25s ease;
+//   &:hover {
+//     color: darken(map-get($unity-colors, primary-500), 10%);
+//   }
+// }
 .btn-default {
   background: map-get($unity-colors, gray-200);
   color: map-get($unity-colors, gray-400);

@@ -9,3 +9,24 @@
     margin-top: 8px;
   }
 }
+
+#banner {
+  background-color: map-get($unity-colors, primary-200);
+  border-radius: 5px;
+
+  .close .d-icon {
+    color: map-get($unity-colors, primary-400);
+    margin-top: 8px;
+  }
+  #banner-content {
+    a {
+      color: map-get($unity-colors, primary-400);
+      border-bottom: 2px solid map-get($unity-colors, primary-400);
+      transition: color 0.25s ease;
+      &:hover {
+        color: map-get($unity-colors, primary-500);
+      }
+    }
+  }
+
+}

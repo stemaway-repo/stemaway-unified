@@ -3,7 +3,7 @@ a {
   color: map-get($unity-colors, primary-500);
   transition: color 0.25s ease;
   &:hover {
-    filter: brightness(85%);
+    color: darken(map-get($unity-colors, primary-500), 10%);
   }
 }
 .btn-default {

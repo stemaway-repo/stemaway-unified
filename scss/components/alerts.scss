@@ -4,6 +4,14 @@
   border-radius: 5px;
   padding: 1rem;
 
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: hsl(205, 71%, 30%);
+      text-decoration: none;
+    }
+  }
+
   .d-icon-times {
     color: hsl(205, 71%, 76%);
     margin-top: 8px;

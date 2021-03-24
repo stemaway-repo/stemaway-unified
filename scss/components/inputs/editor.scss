@@ -19,6 +19,7 @@
   border-radius: 0.375rem;
   padding-top: 0 !important;
   position: relative;
+  
   &::before {
     content: "PREVIEW";
     display: inline-block;
@@ -29,9 +30,9 @@
     border-bottom: 1px solid map-get($unity-colors, secondary-200);
     margin-bottom: 1rem;
   }
+  .d-editor-preview {
+    padding: 0 1rem;
 
-  * {
-    padding-left: 1rem;
   }
 }
 

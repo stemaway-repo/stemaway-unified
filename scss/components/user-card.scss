@@ -109,6 +109,10 @@
         }
     }
 
+    .topic-avatar .avatar-flair, .avatar-flair-preview .avatar-flair, .user-card-avatar .avatar-flair, .topic-map .poster .avatar-flair, .user-profile-avatar .avatar-flair, .user-image .avatar-flair, .latest-topic-list-item .avatar-flair {
+        bottom: -10px;
+        right: 30px;
+    }
 
 
 

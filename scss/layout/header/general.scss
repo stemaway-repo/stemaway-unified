@@ -46,3 +46,13 @@
 .d-header-icons .header-dropdown-toggle:not(:last-child) {
   font-size: 0.75rem;
 }
+
+
+.d-header-icons .current-user .badge-notification {
+  top: 2px;
+  border: 2.5px solid white;
+
+}
+a.unread-high-priority-notifications {
+  background-color: #e62626;
+}

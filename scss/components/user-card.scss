@@ -1,1 +1,116 @@
-//
+.user-card {
+    box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+
+    .card-content {
+        border-radius: 8px;
+    }
+
+    .first-row {
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1rem;
+        background-color: #f0f4f8;
+        border-radius: 5px;
+
+
+
+        .user-card-avatar {
+        margin-top: 0;
+        flex-grow: 60%;
+
+            img.avatar {
+                border-radius: 15px;
+                max-width: 60%;
+                height: auto;
+            }
+        }
+
+        .names {
+            padding-left: 0;
+
+            .username a {
+                color: map-get($unity-colors, primary-400);
+                color: map-get($unity-colors, secondary-500);
+                svg.d-icon {
+                    color: map-get($unity-colors, primary-400);
+                    color: map-get($unity-colors, secondary-500);
+                }
+            }
+
+            .full-name {
+                font-weight: 500;
+                color: #9f9f9f;
+            }
+        }
+    }
+
+    .metadata-row {
+        h3 {
+            color: map-get($unity-colors, secondary-500);
+
+            .desc {
+                font-weight: bold;
+                color: map-get($unity-colors, primary-400);
+            }
+        }
+    }
+
+    .stemaway-profile-link button {
+        background-color: map-get($unity-colors, primary-200);
+        .d-icon, .d-button-label {
+            color: map-get($unity-colors, primary-400);
+        }
+    }
+
+    .badge-section {
+        .user-card-badge-link .user-badge {
+            border-radius: 3px;
+            // background-color: map-get($unity-colors, secondary-100);
+            // border-color: map-get($unity-colors, secondary-200);
+        }
+
+        .more-user-badges {
+            border-radius: 3px;
+            background-color: map-get($unity-colors, secondary-100);
+            border-color: map-get($unity-colors, secondary-200);
+        }
+
+        .badge-type-bronze {
+            background-color: #fff5e4;
+            border-color: #f5dcb4;
+            // border-color: #d6901e;
+
+            svg.d-icon, .badge-display-name {
+                font-weight: 600;
+                color: #d6901e !important;
+            }
+        }
+
+        .badge-type-silver {
+            background-color: #f8f8f8;
+            border-color: #e7e7e7;
+            // border-color: #d6901e;
+
+            svg.d-icon, .badge-display-name {
+                font-weight: 600;
+                color: map-get($unity-colors, secondary-300) !important;
+            }
+        }
+
+        .badge-type-gold {
+            background-color: #fffbd7;
+            border-color: #fff6a7;
+
+            svg.d-icon, .badge-display-name {
+                font-weight: 600;
+                color: #dabb0b !important;
+            }
+        }
+    }
+
+
+
+
+
+}

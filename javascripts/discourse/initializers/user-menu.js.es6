@@ -7,13 +7,13 @@ export default {
         PROFILE: "profile",
       };
 
-      api.reopenWidget("user-menu", {
-        defaultState() {
-          const current = this._super();
-          current.currentQuickAccess = QuickAccess.PROFILE;
-          return current;
-        },
-      });
+      // api.reopenWidget("user-menu", {
+      //   defaultState() {
+      //     const current = this._super();
+      //     current.currentQuickAccess = QuickAccess.PROFILE;
+      //     return current;
+      //   },
+      // });
     });
   },
 };

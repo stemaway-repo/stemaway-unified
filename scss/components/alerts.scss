@@ -4,6 +4,10 @@
   border-radius: 5px;
   padding: 1rem;
 
+  a {
+    color: hsl(205, 89%, 40%);
+  }
+
   .d-icon-times {
     color: hsl(205, 71%, 76%);
     margin-top: 8px;
@@ -28,5 +32,4 @@
       }
     }
   }
-
 }

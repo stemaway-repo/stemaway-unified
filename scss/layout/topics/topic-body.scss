@@ -1,5 +1,6 @@
 //added the box-shade
 .topic-body {
+  background-color: white;
   border-top: none;
   margin: 2rem;
   box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
@@ -42,4 +43,23 @@
 
 .small-action {
   border-top: none;
+}
+
+.container.posts {
+  // border: 2px solid #d7ddea;
+  background-color: #d7ddea2c;
+  background-color: map-get($unity-colors, secondary-100);
+  padding: 1rem;
+  border-radius: 8px;
+  // box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
+}
+
+.topic-navigation {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
+  .timeline-handle {
+    background-color: map-get($unity-colors, primary-400) !important;
+  }
 }

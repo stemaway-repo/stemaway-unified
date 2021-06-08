@@ -1,3 +1,5 @@
+.experts-homepage {
+}
 .homepage-jumbotron {
   background-color: map-get($unity-colors, primary-200);
 }
@@ -11,6 +13,11 @@
   align-content: center;
   text-align: center;
 
+  max-width: 1024px; /* 20px smaller, to fit the paddings on the sides */
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
   @media screen and (min-width: 999px) {
     flex-flow: row nowrap;
     text-align: left;
@@ -22,9 +29,9 @@
 
   @media screen and (min-width: 1730px) {
     justify-content: space-around;
-    .jumbotron-image {
-      flex: 0;
-    }
+    // .jumbotron-image {
+    //   flex: 0;
+    // }
 
     .jumbotron-titles {
       flex-basis: 40%;
@@ -45,7 +52,7 @@
     // background-color: map-get($unity-colors, primary-400);
     width: 332px;
     // height: 432px;
-    flex: 2 0 30%;
+    flex: 2 0 28%;
   }
 
   &-titles {
@@ -57,17 +64,27 @@
       font-size: 2.5rem;
       color: map-get($unity-colors, primary-400);
       font-weight: 900;
+      text-transform: uppercase;
+      font-family: "Montserrat", "Nunito Sans", sans-serif;
+
+      background: linear-gradient(to right, #88b98f, #6ac49f);
+      background: -webkit-linear-gradient(to right, #88b98f, #6ac49f);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
       @media screen and (min-width: 1338px) {
         max-width: 80%;
-        font-size: 3.125rem;
+        font-size: 2.5rem;
       }
     }
 
     h2 {
-      color: map-get($unity-colors, secondary-500);
+      color: map-get($unity-colors, secondary-300);
       font-weight: 300;
-      @media screen and (min-width: 1338px) {
-        max-width: 75%;
+      font-size: 1.5rem;
+      @media screen and (min-width: 1233px) {
+        max-width: 80%;
       }
     }
   }
@@ -110,6 +127,10 @@
           left: -8%;
           z-index: -1;
         }
+      }
+
+      @media screen and (min-width: 1168px) {
+        width: 100%;
       }
 
       h3 {
@@ -187,16 +208,23 @@
 
 .universities {
   background-color: rgba(235, 236, 243, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  margin-bottom: 4rem;
-  flex-flow: row wrap;
 
-  @media screen and (min-width: 935px) {
-    padding: 3rem;
-    flex-flow: row nowrap;
+  .universities-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 4rem;
+    flex-flow: row wrap;
+
+    max-width: 1024px; /* 20px smaller, to fit the paddings on the sides */
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    @media screen and (min-width: 935px) {
+      padding: 3rem;
+      flex-flow: row nowrap;
+    }
   }
 
   .university-title {
@@ -209,10 +237,6 @@
     @media screen and (min-width: 840px) {
       flex-basis: 30%;
       margin-right: 1rem;
-    }
-
-    @media screen and (min-width: 1280px) {
-      flex-basis: 20%;
     }
     margin-bottom: 1rem;
     text-align: center;

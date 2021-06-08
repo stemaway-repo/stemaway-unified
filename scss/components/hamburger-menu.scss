@@ -205,52 +205,9 @@
   }
 }
 
-// .menu-panel .category-links .category-link .restricted {
-//   display: none;
-// }
-
-// .menu-panel .category-links .category-link {
-//   :not(.subcategory) {
-//     display: none;
-//   }
-// }
-
-// .hamburger-panel .category-links {
-//   display: flex;
-//   flex-flow: row wrap;
-//   //   flex-flow: column wrap;
-//   .heading {
-//     flex-basis: 100%;
-//     // display: block;
-//   }
-//   .subcategory {
-//     // order: 2;
-//     // background-color: red;
-//     display: none;
-//   }
-
-//   //   .category-staff,
-//   //   .category-2021-outreach,
-//   //   .category-ucsc-sip-alumni {
-//   //     display: none;
-//   //   }
-// }
-// .menu-panel a.bullet[href*=""] {
-//   display: none;
-// }
-
-/**
-.childCategory {
-  background-color: red !important;
+.hamburger-panel,
+.search-menu,
+.user-menu {
+  animation: flyIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.15),
+    transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.15);
 }
-ex. category-link category-1click-resume
-
-category-link subcategory category-1click-resume-resume-builder
-
-find subcategory
-
-if (subcategory) {
-    find parent category class + "-" +subcategory-slug
-}
-
-*/

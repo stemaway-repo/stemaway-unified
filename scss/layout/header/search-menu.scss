@@ -6,6 +6,7 @@
   border-width: 2px;
   transition: border 0.25s ease;
   color: map-get($unity-colors, secondary-400);
+  height: 2.5rem;
   &:focus {
     color: map-get($unity-colors, secondary-500);
     background-color: map-get($unity-colors, primary-100);

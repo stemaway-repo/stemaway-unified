@@ -1,55 +1,58 @@
 /** --- FONT IMPORT --- **/
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
 /** --- UTILITIES --- **/
-@import "utilities/variables";
-@import "utilities/mixins";
-@import "utilities/animations";
+@import 'utilities/variables';
+@import 'utilities/mixins';
+@import 'utilities/animations';
 
 /** --- COMPONENTS --- **/
-@import "components/footer";
-@import "components/post-menu";
-@import "components/cta";
-@import "components/navigation";
-@import "components/badge";
-@import "components/footer-message";
-@import "components/buttons";
-@import "components/alerts";
-@import "components/modals";
-@import "components/spinner";
-@import "components/admin-panel";
-@import "components/hamburger-menu";
-@import "components/login-modal";
-@import "components/user-card";
+@import 'components/footer';
+@import 'components/post-menu';
+@import 'components/cta';
+@import 'components/navigation';
+@import 'components/badge';
+@import 'components/footer-message';
+@import 'components/buttons';
+@import 'components/alerts';
+@import 'components/modals';
+@import 'components/spinner';
+@import 'components/admin-panel';
+@import 'components/hamburger-menu';
+@import 'components/login-modal';
+@import 'components/user-card';
 
 // Inputs
-@import "components/inputs/date-picker";
-@import "components/inputs/editor";
-@import "components/inputs/input-fields";
-@import "components/inputs/select-kit";
-@import "components/inputs/textarea";
+@import 'components/inputs/date-picker';
+@import 'components/inputs/editor';
+@import 'components/inputs/input-fields';
+@import 'components/inputs/select-kit';
+@import 'components/inputs/textarea';
 
 /** --- LAYOUT --- **/
 // Header
-@import "layout/header/general";
-@import "layout/header/menu-panel";
-@import "layout/header/messages-menu";
-@import "layout/header/notifications-menu";
-@import "layout/header/search-menu";
-@import "layout/header/user-menu";
+@import 'layout/header/general';
+@import 'layout/header/menu-panel';
+@import 'layout/header/messages-menu';
+@import 'layout/header/notifications-menu';
+@import 'layout/header/search-menu';
+@import 'layout/header/user-menu';
 
 /** --- CATEGORIES --- **/
-@import "layout/categories/category-boxes";
-@import "layout/categories/category-header";
-@import "layout/categories/category-list";
+@import 'layout/categories/category-boxes';
+@import 'layout/categories/category-header';
+@import 'layout/categories/category-list';
 
 /** --- TOPICS --- **/
-@import "layout/topics/topic-title";
-@import "layout/topics/topic-body";
-@import "layout/topics/topic-list-item";
-@import "layout/topics/topic-map";
-@import "layout/topics/topic-suggested";
-@import "layout/topics/topic-timer";
+@import 'layout/topics/topic-title';
+@import 'layout/topics/topic-body';
+@import 'layout/topics/topic-list-item';
+@import 'layout/topics/topic-map';
+@import 'layout/topics/topic-suggested';
+@import 'layout/topics/topic-timer';
 
 /** --- PAGES --- **/
-@import "pages/homepage";
+@import 'pages/homepage';
+
+/** --- PLUGINS --- **/
+@import 'plugins/discourse-events';

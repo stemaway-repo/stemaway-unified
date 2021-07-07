@@ -1,0 +1,15 @@
+.add-event,
+.add-event + button {
+  border: 1px solid var(--stemaway-secondary-200);
+  color: var(--stemaway-secondary-400);
+  height: 2.35rem;
+}
+
+.event-label .fa {
+  color: var(--stemaway-secondary-400);
+}
+
+.composer-fields .select-kit-header {
+  margin-left: 5px;
+  height: 2.4rem;
+}

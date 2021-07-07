@@ -9,7 +9,11 @@
   color: var(--stemaway-secondary-400);
 }
 
-.composer-fields .select-kit-header {
+.composer-fields .select-kit-header.mini-tag-chooser-header {
   margin-left: 5px;
   height: 2.4rem;
+}
+
+.category-input .combo-box-header {
+  height: auto;
 }

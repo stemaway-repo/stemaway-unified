@@ -15,21 +15,11 @@ table.topic-list,
   tbody {
     border-top: none;
     th:first-of-type {
-      // TODO: Ensure STEM-Away theme component removes the !important flag too
       border-left: none;
     }
     tr {
       transition: transform 0.25s ease;
-      &:hover {
-        // transform: scale(1.01);
-        // border-radius: 8px !important;
-        // z-index: 999;
-        // background-color: map-get($unity-colors, secondary-100) !important;
-        // outline: 1px solid map-get($unity-colors, secondary-200);
-        // .discourse-tag.box {
-        //   border: 1px solid map-get($unity-colors, primary-400);
-        // }
-      }
+
       .discourse-tag.box {
         background-color: map-get($unity-colors, primary-100) !important;
         color: map-get($unity-colors, primary-400) !important;

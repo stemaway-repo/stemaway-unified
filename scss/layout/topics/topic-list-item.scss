@@ -62,8 +62,6 @@ table.topic-list,
   }
 }
 
-
-
 .topic-statuses .topic-status .d-icon {
   color: map-get($unity-colors, secondary-300);
   margin-right: 0.5rem;
@@ -76,4 +74,8 @@ table.topic-list,
   &:hover {
     color: map-get($unity-colors, primary-300);
   }
+}
+
+.topic-list .topic-excerpt {
+  font-size: var(--font-0);
 }

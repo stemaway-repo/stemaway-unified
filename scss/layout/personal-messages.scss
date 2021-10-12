@@ -1,0 +1,19 @@
+.archetype-private_message .topic-body .cooked {
+  box-sizing: border-box;
+  background: var(--stemaway-secondary-100);
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  margin-left: 0.25rem;
+}
+
+.archetype-private_message
+  .current-user-post:not(.moderator)
+  .topic-body
+  .cooked {
+  background: var(--stemaway-primary-100);
+  border: 1px solid var(--stemaway-primary-300);
+}
+
+.archetype-private_message .topic-map {
+  margin-left: 0;
+}

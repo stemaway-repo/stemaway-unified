@@ -1,6 +1,6 @@
 .nav {
   li a {
-    color: map-get($unity-colors, secondary-400);
+    color: var(--stemaway-secondary-400);
   }
 }
 
@@ -10,7 +10,7 @@
 }
 
 .user-secondary-navigation .nav-stacked a {
-  color: map-get($unity-colors, secondary-300);
+  color: var(--stemaway-secondary-300);
   border-radius: 5px;
   transition: background-color 0.25s ease-out;
   &:hover {
@@ -18,16 +18,16 @@
   }
 
   &.active {
-    color: map-get($unity-colors, secondary-500);
+    color: var(--stemaway-secondary-500);
   }
 }
 
 .user-additional-controls {
   .btn-default {
-    color: map-get($unity-colors, secondary-500);
-    background-color: map-get($unity-colors, secondary-200);
+    color: var(--stemaway-secondary-500);
+    background-color: var(--stemaway-secondary-200);
     .svg-icon {
-      color: map-get($unity-colors, secondary-500);
+      color: var(--stemaway-secondary-500);
     }
   }
 }

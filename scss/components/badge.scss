@@ -1,7 +1,7 @@
 .badge-card {
-  background-color: map-get($unity-colors, secondary-100);
+  background-color: var(--stemaway-secondary-100);
   border-radius: 5px;
-  border-color: map-get($unity-colors, secondary-200);
+  border-color: var(--stemaway-secondary-200);
 
   &:hover {
     box-shadow: 0px 4px 37px rgba(0, 0, 0, 0.07) !important;
@@ -13,16 +13,16 @@
 
   .badge-contents {
     .badge-link {
-      color: map-get($unity-colors, primary-400);
+      color: var(--stemaway-primary-400);
     }
     .badge-summary {
-      color: map-get($unity-colors, secondary-400);
+      color: var(--stemaway-secondary-400);
     }
   }
 }
 
 .badge-card .badge-contents .badge-icon.badge-type-bronze .fa {
-  color: map-get($unity-colors, primary-400) !important;
+  color: var(--stemaway-primary-400) !important;
 }
 
 .badge-wrapper.bullet .badge-category-parent-bg,

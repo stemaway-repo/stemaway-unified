@@ -18,11 +18,11 @@
     .d-icon,
     &:hover .d-icon {
       //   color: $primary-medium;
-      color: map-get($unity-colors, primary-400);
+      color: var(--stemaway-primary-400);
     }
     .icon {
       //   color: $primary-high;
-      color: map-get($unity-colors, primary-400);
+      color: var(--stemaway-primary-400);
     }
 
     li {
@@ -35,7 +35,7 @@
 
       span:first-child {
         font-weight: bold;
-        color: map-get($unity-colors, primary-400);
+        color: var(--stemaway-primary-400);
       }
 
       &:hover,

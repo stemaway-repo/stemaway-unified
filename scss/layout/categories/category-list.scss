@@ -1,18 +1,18 @@
 .category-list {
   .category-name {
-    color: map-get($unity-colors, secondary-500);
+    color: var(--stemaway-secondary-500);
     border-bottom: 1px solid transparent;
     transition: color 0.4s ease;
     position: relative;
-    @include hoverable-underline(map-get($unity-colors, secondary-300));
+    @include hoverable-underline(var(--stemaway-secondary-300));
     &:hover {
-      color: map-get($unity-colors, secondary-300);
+      color: var(--stemaway-secondary-300);
     }
   }
 }
 
 .categories-list .category .category-description {
-  color: map-get($unity-colors, secondary-300);
+  color: var(--stemaway-secondary-300);
 }
 
 .category-list {
@@ -23,14 +23,14 @@
   .d-icon-lock {
     // display: none;
     margin-right: 1rem;
-    color: map-get($unity-colors, secondary-300);
+    color: var(--stemaway-secondary-300);
     font-size: 0.8rem;
   }
 
   .category-name {
     position: relative;
     &::before {
-      content: "";
+      content: '';
       // display: inline-block;
       // width: 10px;
       // height: 10px;
@@ -39,7 +39,7 @@
       // -moz-border-radius: 7.5px;
       // -webkit-border-radius: 7.5px;
       // border-radius: 7.5px;
-      // background-color: map-get($unity-colors, secondary-200);
+      // background-color: var(--stemaway-secondary-200);
     }
   }
 
@@ -52,7 +52,7 @@
 
     tr {
       &:hover {
-        background-color: map-get($unity-colors, secondary-100);
+        background-color: var(--stemaway-secondary-100);
       }
     }
   }
@@ -65,15 +65,15 @@
       border-top-right-radius: 8px;
     }
     tr {
-      background-color: map-get($unity-colors, secondary-100);
+      background-color: var(--stemaway-secondary-100);
       border-bottom: none;
     }
 
     th {
-      color: map-get($unity-colors, secondary-400);
+      color: var(--stemaway-secondary-400);
       border-bottom: 0;
       border-bottom: none;
-      // color: map-get($unity-colors, primary-400);
+      // color: var(--stemaway-primary-400);
       text-transform: uppercase;
       padding: 1rem;
       font-weight: bold;
@@ -83,10 +83,10 @@
 
 .category-list .featured-topic .topic-post-badges .badge.new-posts,
 .category-list .featured-topic .title {
-  color: map-get($unity-colors, primary-400);
+  color: var(--stemaway-primary-400);
   margin-bottom: 0.25rem;
   position: relative;
-  @include hoverable-underline(map-get($unity-colors, primary-400));
+  @include hoverable-underline(var(--stemaway-primary-400));
 }
 
 // Hide topics column in category list with topics

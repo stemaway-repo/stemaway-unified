@@ -1,20 +1,20 @@
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
+input[type='text'],
+input[type='password'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='date'],
+input[type='month'],
+input[type='time'],
+input[type='week'],
+input[type='number'],
+input[type='email'],
+input[type='url'],
+input[type='search'],
+input[type='tel'],
+input[type='color'],
 select,
 textarea {
-  color: map-get($unity-colors, secondary-400) !important;
+  color: var(--stemaway-secondary-400) !important;
   padding: 0.75rem 1.25rem;
   font-size: 1rem;
   font-weight: 400;
@@ -30,15 +30,15 @@ textarea {
   &:active {
     color: #4a5568;
     background-color: #fff;
-    border-color: map-get($unity-colors, primary-400);
+    border-color: var(--stemaway-primary-400);
     outline: 0;
     box-shadow: inset 0 1px 1px rgba(31, 45, 61, 0.075),
       0 0 20px rgba(150, 182, 123, 0.1);
   }
 }
 
-input[type="password"],
-input[type="password"]:active,
-input[type="password"]:focus {
-  color: map-get($unity-colors, secondary-400);
+input[type='password'],
+input[type='password']:active,
+input[type='password']:focus {
+  color: var(--stemaway-secondary-400);
 }

@@ -1,20 +1,20 @@
 .signup-cta.alert.alert-info {
-  background-color: map-get($unity-colors, primary-100);
+  background-color: var(--stemaway-primary-100);
   border-radius: 8px;
   border-top: none;
   border-bottom: none;
-  color: map-get($unity-colors, primary-500);
+  color: var(--stemaway-primary-500);
   a {
-    color: map-get($unity-colors, secondary-400);
+    color: var(--stemaway-secondary-400);
     text-decoration: none;
     text-transform: uppercase;
     margin-left: auto;
-    border: 1px dashed map-get($unity-colors, secondary-200);
+    border: 1px dashed var(--stemaway-secondary-200);
     padding: 0.5rem 0.8rem;
     border-radius: 5px;
     transition: border-style 0.3s ease-in, background-color 0.3s ease;
     &:hover {
-      background-color: map-get($unity-colors, secondary-100);
+      background-color: var(--stemaway-secondary-100);
       border-style: solid;
     }
   }

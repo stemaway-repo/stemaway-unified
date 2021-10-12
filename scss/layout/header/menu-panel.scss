@@ -7,18 +7,18 @@
 
   .menu-links-row .glyphs {
     border-radius: 5px;
-    background-color: map-get($unity-colors, primary-100);
+    background-color: var(--stemaway-primary-100);
     .d-icon {
-      color: map-get($unity-colors, primary-400);
+      color: var(--stemaway-primary-400);
     }
     .widget-button {
       border-radius: 5px;
       &:hover {
-        background-color: map-get($unity-colors, primary-300);
+        background-color: var(--stemaway-primary-300);
       }
       + .active {
         &:hover {
-          background-color: map-get($unity-colors, primary-500);
+          background-color: var(--stemaway-primary-500);
         }
       }
     }
@@ -32,9 +32,9 @@
     }
     button.active {
       .d-icon {
-        color: map-get($unity-colors, primary-100);
+        color: var(--stemaway-primary-100);
       }
-      background-color: map-get($unity-colors, primary-400);
+      background-color: var(--stemaway-primary-400);
     }
   }
 }
@@ -45,12 +45,12 @@ div.menu-links-header .menu-links-row li.glyphs a {
 
 .menu-panel .d-label {
   font-weight: 300;
-  color: map-get($unity-colors, secondary-400);
+  color: var(--stemaway-secondary-400);
 }
 
 .panel-body {
   .results {
     border-radius: 8px;
-    color: map-get($unity-colors, secondary-400);
+    color: var(--stemaway-secondary-400);
   }
 }

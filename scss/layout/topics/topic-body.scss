@@ -4,30 +4,29 @@
   border-top: none;
   margin: 2rem;
   box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
-  //   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 0 0 0 rgba(0, 0, 0, 0.12);
   padding: 15px 20px 0 20px;
   float: left;
   border-radius: 8px;
   border-bottom: none;
   .topic-meta-data {
-    background-color: map-get($unity-colors, primary-100);
+    background-color: var(--stemaway-primary-100);
     padding: 1rem;
     border-radius: 8px;
     a {
-      color: map-get($unity-colors, primary-400);
+      color: var(--stemaway-primary-400);
     }
   }
 
   .topic-map {
-    background-color: map-get($unity-colors, secondary-100);
-    border-color: map-get($unity-colors, secondary-200);
+    background-color: var(--stemaway-secondary-100);
+    border-color: var(--stemaway-secondary-200);
     section {
-      border-color: map-get($unity-colors, secondary-200);
+      border-color: var(--stemaway-secondary-200);
     }
     .buttons button {
-      background-color: map-get($unity-colors, secondary-100);
+      background-color: var(--stemaway-secondary-100);
       &:hover {
-        background-color: map-get($unity-colors, secondary-200);
+        background-color: var(--stemaway-secondary-200);
       }
     }
   }
@@ -48,7 +47,7 @@
 .container.posts {
   // border: 2px solid #d7ddea;
   background-color: #d7ddea2c;
-  background-color: map-get($unity-colors, secondary-100);
+  background-color: var(--stemaway-secondary-100);
   padding: 1rem;
   border-radius: 8px;
   // box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
@@ -59,7 +58,8 @@
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
-  .timeline-handle {
-    background-color: map-get($unity-colors, primary-400) !important;
-  }
+}
+
+.timeline-container .topic-timeline .timeline-handle {
+  background-color: var(--stemaway-primary-400);
 }

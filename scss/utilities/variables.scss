@@ -1,24 +1,6 @@
-$unity-colors: (
-  primary-100: #f5f8f2,
-  primary-200: #edf2e9,
-  primary-300: #e1ead9,
-  primary-400: #88b98f,
-  primary-500: #628f69,
-  secondary-100: #f9fbfd,
-  secondary-200: #d2d8e6,
-  secondary-300: #b9bdc8,
-  secondary-400: #767982,
-  secondary-500: #56656e,
-  gray-100: #fbfbfd,
-  gray-200: #ededed,
-  gray-300: #9f9f9f,
-  gray-400: #595959,
-  gray-500: #464141,
-);
-
 :root {
-  --font-family: "Nunito Sans", sans-serif;
-  --heading-font-family: "Nunito Sans", sans-serif;
+  --font-family: 'Nunito Sans', sans-serif;
+  --heading-font-family: 'Nunito Sans', sans-serif;
   --stemaway-primary-100: #f5f8f2;
   --stemaway-primary-200: #edf2e9;
   --stemaway-primary-300: #e1ead9;
@@ -37,10 +19,10 @@ $unity-colors: (
   --stemaway-gray-500: #464141;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 pre code,
 code,
 pre {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
 }

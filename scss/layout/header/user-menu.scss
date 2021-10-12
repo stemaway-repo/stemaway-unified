@@ -3,14 +3,14 @@
     border-top: none;
     .d-icon,
     .d-icon.active {
-      color: map-get($unity-colors, secondary-300);
+      color: var(--stemaway-secondary-300);
     }
 
     div,
     button {
-      color: map-get($unity-colors, secondary-400);
+      color: var(--stemaway-secondary-400);
       &:hover {
-        color: map-get($unity-colors, secondary-400);
+        color: var(--stemaway-secondary-400);
       }
     }
   }

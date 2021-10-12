@@ -11,19 +11,19 @@
   }
 
   .category-box-heading h3 {
-    color: map-get($unity-colors, secondary-500);
+    color: var(--stemaway-secondary-500);
 
     .svg-icon {
-      color: map-get($unity-colors, secondary-300);
+      color: var(--stemaway-secondary-300);
     }
   }
 
   .description {
-    color: map-get($unity-colors, secondary-300);
+    color: var(--stemaway-secondary-300);
   }
 
   .category-name {
-    color: map-get($unity-colors, secondary-400);
+    color: var(--stemaway-secondary-400);
   }
 }
 

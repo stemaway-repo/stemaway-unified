@@ -2,13 +2,13 @@ table.topic-list,
 .latest-topic-list-item {
   margin-top: 1rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  background-color: map-get($unity-colors, secondary-100);
+  background-color: var(--stemaway-secondary-100);
   border-radius: 10px;
   thead {
     border-top: none;
     th {
       padding: 1rem;
-      color: map-get($unity-colors, secondary-400);
+      color: var(--stemaway-secondary-400);
       font-weight: bold;
     }
   }
@@ -21,8 +21,8 @@ table.topic-list,
       transition: transform 0.25s ease;
 
       .discourse-tag.box {
-        background-color: map-get($unity-colors, primary-100) !important;
-        color: map-get($unity-colors, primary-400) !important;
+        background-color: var(--stemaway-primary-100) !important;
+        color: var(--stemaway-primary-400) !important;
         box-shadow: none;
         border-radius: 5px;
         border: 1px solid transparent;
@@ -46,23 +46,23 @@ table.topic-list,
   }
 }
 .topic-list .main-link a.title {
-  color: map-get($unity-colors, secondary-500);
+  color: var(--stemaway-secondary-500);
   &:hover {
-    color: map-get($unity-colors, primary-400);
+    color: var(--stemaway-primary-400);
   }
 }
 
 .topic-statuses .topic-status .d-icon {
-  color: map-get($unity-colors, secondary-300);
+  color: var(--stemaway-secondary-300);
   margin-right: 0.5rem;
 }
 
 .topic-list-item.visited a.title:not(.badge-notification),
 .latest-topic-list-item.visited a.title:not(.badge-notification),
 .category-topic-link.visited a.title:not(.badge-notification) {
-  color: map-get($unity-colors, secondary-300);
+  color: var(--stemaway-secondary-300);
   &:hover {
-    color: map-get($unity-colors, primary-300);
+    color: var(--stemaway-primary-300);
   }
 }
 

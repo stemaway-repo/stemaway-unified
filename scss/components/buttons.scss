@@ -1,44 +1,37 @@
 // Button Styling
-// a {
-//   color: map-get($unity-colors, primary-500);
-//   transition: color 0.25s ease;
-//   &:hover {
-//     color: darken(map-get($unity-colors, primary-500), 10%);
-//   }
-// }
 .btn-default {
-  background: map-get($unity-colors, gray-200);
-  color: map-get($unity-colors, gray-400);
+  background: var(--stemaway-gray-200);
+  color: var(--stemaway-gray-400);
   border-radius: 5px;
 
   &[href],
   .d-icon-thumb-tack {
-    color: map-get($unity-colors, gray-400);
+    color: var(--stemaway-gray-400);
   }
   .d-icon {
-    color: map-get($unity-colors, gray-400);
+    color: var(--stemaway-gray-400);
   }
   .discourse-no-touch & {
     &:hover {
-      background: map-get($unity-colors, primary-300);
-      color: map-get($unity-colors, primary-500);
+      background: var(--stemaway-primary-300);
+      color: var(--stemaway-primary-500);
       .d-icon,
       &[href] {
-        color: map-get($unity-colors, primary-500);
+        color: var(--stemaway-primary-500);
       }
     }
   }
 }
 
 .btn-rollback {
-  background-color: map-get($unity-colors, secondary-400);
+  background-color: var(--stemaway-secondary-400);
   color: white;
   .d-icon {
     color: white;
   }
   .discourse-no-touch & {
     &:hover {
-      background: map-get($unity-colors, secondary-500);
+      background: var(--stemaway-secondary-500);
       color: white;
       .d-icon,
       &[href] {
@@ -49,9 +42,9 @@
 }
 
 .btn-rollback[disabled] {
-  background-color: map-get($unity-colors, secondary-400);
+  background-color: var(--stemaway-secondary-400);
   &:hover {
-    background: map-get($unity-colors, secondary-400);
+    background: var(--stemaway-secondary-400);
   }
 }
 
@@ -71,7 +64,7 @@
 }
 
 .btn-primary {
-  background-color: map-get($unity-colors, primary-400);
+  background-color: var(--stemaway-primary-400);
   color: white;
   border-radius: 5px;
   .d-icon {
@@ -79,10 +72,10 @@
   }
   .discourse-no-touch & {
     &:hover {
-      background-color: map-get($unity-colors, primary-500);
-      color: map-get($unity-colors, primary-100);
+      background-color: var(--stemaway-primary-500);
+      color: var(--stemaway-primary-100);
       .d-icon {
-        color: map-get($unity-colors, primary-100);
+        color: var(--stemaway-primary-100);
       }
     }
   }

@@ -14,13 +14,13 @@
 
   .panel-body-contents {
     &::before {
-      content: "Navigation";
+      content: 'Navigation';
       padding: 2rem 1.5rem;
       padding-bottom: 1.25rem;
       font-size: 1.5rem;
       font-weight: 600;
-      color: map-get($unity-colors, secondary-100);
-      background-color: map-get($unity-colors, primary-400);
+      color: var(--stemaway-secondary-100);
+      background-color: var(--stemaway-primary-400);
     }
   }
 
@@ -28,8 +28,8 @@
     // padding: 1rem;
     padding-left: 1.5rem;
     padding-bottom: 1rem;
-    // background: map-get($unity-colors, secondary-500);
-    background: map-get($unity-colors, primary-400);
+    // background: var(--stemaway-secondary-500);
+    background: var(--stemaway-primary-400);
     display: flex;
     flex-flow: row wrap;
 
@@ -48,14 +48,14 @@
 
         .d-icon,
         .d-label {
-          color: map-get($unity-colors, primary-100);
+          color: var(--stemaway-primary-100);
         }
 
         &:hover {
-          background-color: map-get($unity-colors, primary-100);
+          background-color: var(--stemaway-primary-100);
           .d-label,
           .d-icon {
-            color: map-get($unity-colors, primary-400);
+            color: var(--stemaway-primary-400);
           }
         }
       }
@@ -66,17 +66,17 @@
     margin: 0.9rem;
     padding: 0.5rem;
     border-radius: 5px;
-    background-color: map-get($unity-colors, primary-100);
+    background-color: var(--stemaway-primary-100);
     .menu-links {
       a {
         border-radius: 3px;
         &:hover {
-          background-color: map-get($unity-colors, primary-300);
+          background-color: var(--stemaway-primary-300);
         }
       }
       .d-label {
         font-weight: 500;
-        color: map-get($unity-colors, primary-400);
+        color: var(--stemaway-primary-400);
       }
     }
   }
@@ -100,20 +100,19 @@
     margin-bottom: 0.5rem;
     padding: 0.5rem;
     border-radius: 5px;
-    background-color: map-get($unity-colors, primary-100);
-
+    background-color: var(--stemaway-primary-100);
     li.heading {
       margin-bottom: 0.25rem;
       .d-link {
         font-weight: bold;
-        color: map-get($unity-colors, primary-400);
+        color: var(--stemaway-primary-400);
         &:hover {
           &::after {
-            content: "[ Click to see all ]";
+            content: '[ Click to see all ]';
             font-weight: normal;
             text-transform: uppercase;
             font-size: 0.75rem;
-            color: map-get($unity-colors, secondary-400);
+            color: var(--stemaway-secondary-400);
             margin-left: 1rem;
           }
         }
@@ -131,9 +130,9 @@
       }
       &:hover {
         // background-color: rgba(255, 255, 255, 0.8);
-        background-color: map-get($unity-colors, primary-300);
+        background-color: var(--stemaway-primary-300);
         .category-name {
-          color: map-get($unity-colors, primary-400);
+          color: var(--stemaway-primary-400);
           font-weight: 600;
         }
       }
@@ -146,7 +145,7 @@
     margin-top: 0;
     padding: 0.5rem;
     border-radius: 5px;
-    background-color: map-get($unity-colors, primary-100);
+    background-color: var(--stemaway-primary-100);
 
     .menu-links {
       display: flex;
@@ -165,13 +164,13 @@
       border-radius: 3px;
 
       &:hover {
-        background-color: map-get($unity-colors, primary-300);
+        background-color: var(--stemaway-primary-300);
       }
     }
 
     li,
     .d-label {
-      color: map-get($unity-colors, primary-400);
+      color: var(--stemaway-primary-400);
     }
     .d-label {
       white-space: normal;
@@ -192,16 +191,16 @@
 
 .menu-panel li.category-link .badge-notification {
   height: auto;
-  color: map-get($unity-colors, primary-400);
+  color: var(--stemaway-primary-400);
   line-height: 1;
   font-size: 0.8rem;
   font-weight: 900;
   font-family: monospace;
   &::before {
-    content: "(";
+    content: '(';
   }
   &::after {
-    content: ")";
+    content: ')';
   }
 }
 

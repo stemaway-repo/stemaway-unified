@@ -1,7 +1,7 @@
 .experts-homepage {
 }
 .homepage-jumbotron {
-  background-color: map-get($unity-colors, primary-200);
+  background-color: var(--stemaway-primary-200);
 }
 // Banner Styling
 .jumbotron {
@@ -49,7 +49,7 @@
   &-image {
     // flex: 1 0 5%;
     margin: 1rem 0;
-    // background-color: map-get($unity-colors, primary-400);
+    // background-color: var(--stemaway-primary-400);
     width: 332px;
     // height: 432px;
     flex: 2 0 28%;
@@ -62,10 +62,10 @@
     h1 {
       //   font-size: 3.125rem;
       font-size: 2.5rem;
-      color: map-get($unity-colors, primary-400);
+      color: var(--stemaway-primary-400);
       font-weight: 900;
       text-transform: uppercase;
-      font-family: "Montserrat", "Nunito Sans", sans-serif;
+      font-family: 'Montserrat', 'Nunito Sans', sans-serif;
 
       background: linear-gradient(to right, #88b98f, #6ac49f);
       background: -webkit-linear-gradient(to right, #88b98f, #6ac49f);
@@ -80,7 +80,7 @@
     }
 
     h2 {
-      color: map-get($unity-colors, secondary-300);
+      color: var(--stemaway-secondary-300);
       font-weight: 300;
       font-size: 1.5rem;
       @media screen and (min-width: 1233px) {
@@ -115,7 +115,7 @@
 
       @media screen and (min-width: 1230px) {
         &::before {
-          content: "";
+          content: '';
           position: absolute;
           background: rgba(255, 255, 255, 0.95);
           box-shadow: 0px 4px 37px rgba(0, 0, 0, 0.13);
@@ -139,9 +139,10 @@
         padding: 0.8rem 2rem;
         display: block;
         border-radius: 8px;
-        color: map-get($unity-colors, primary-400);
-        background-color: map-get($unity-colors, primary-100);
+        color: var(--stemaway-primary-400);
+        background-color: var(--stemaway-primary-100);
       }
+
       ul {
         margin-left: 0;
         list-style: none;
@@ -159,7 +160,7 @@
 
           a {
             margin: 0.5rem;
-            color: map-get($unity-colors, secondary-300);
+            color: var(--stemaway-secondary-300);
             svg {
               margin-right: 1rem;
             }
@@ -188,7 +189,7 @@
     @media screen and (min-width: 600px) {
       max-width: 45%;
     }
-    color: map-get($unity-colors, secondary-500);
+    color: var(--stemaway-secondary-500);
   }
 
   &-images {
@@ -243,7 +244,7 @@
     background-color: rgba(210, 216, 230, 0.3);
     border-radius: 8px;
     padding: 1.5rem;
-    color: map-get($unity-colors, secondary-500);
+    color: var(--stemaway-secondary-500);
   }
 
   .university-images {

@@ -1,10 +1,10 @@
 h3.suggested-topics-message {
-  color: map-get($unity-colors, secondary-500);
+  color: var(--stemaway-secondary-500);
   font-weight: 400;
   a {
-    color: map-get($unity-colors, primary-400);
+    color: var(--stemaway-primary-400);
     position: relative;
     font-weight: 800;
-    @include hoverable-underline(map-get($unity-colors, primary-400));
+    @include hoverable-underline(var(--stemaway-primary-400));
   }
 }

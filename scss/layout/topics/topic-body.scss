@@ -1,11 +1,9 @@
-//added the box-shade
 .topic-body {
   background-color: white;
   border-top: none;
   margin: 2rem;
   box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
   padding: 15px 20px 0 20px;
-  float: left;
   border-radius: 8px;
   border-bottom: none;
   .topic-meta-data {
@@ -49,6 +47,8 @@
 }
 
 .topic-navigation {
+  width: 150px;
+  right: 8%;
   background-color: white;
   padding: 1rem;
   border-radius: 8px;

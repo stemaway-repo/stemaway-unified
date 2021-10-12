@@ -1,12 +1,9 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+
 export default {
   name: "stemaway-landing-page",
   initialize() {
     withPluginApi("0.6", (api) => {
-      // Do something with the API here
-      const ajax = require("discourse/lib/ajax").ajax;
-      const Topic = require("discourse/models/topic").default;
-
       api.registerConnectorClass("below-site-header", "experts-homepage", {
         setupComponent(args, component) {
           api.onPageChange((url, title) => {

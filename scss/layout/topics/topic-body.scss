@@ -32,12 +32,9 @@
   }
 }
 
-//removed the weird lines above the avatar
-//updated: added spacing between avatar and post
 .topic-avatar {
   border-top: none;
   border-bottom: none;
-  //   padding-right: 10px;
 }
 
 .small-action {
@@ -45,12 +42,10 @@
 }
 
 .container.posts {
-  // border: 2px solid #d7ddea;
   background-color: #d7ddea2c;
   background-color: var(--stemaway-secondary-100);
   padding: 1rem;
   border-radius: 8px;
-  // box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
 }
 
 .topic-navigation {

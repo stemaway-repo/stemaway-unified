@@ -21,7 +21,6 @@
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 
   .d-icon-lock {
-    // display: none;
     margin-right: 1rem;
     color: var(--stemaway-secondary-300);
     font-size: 0.8rem;
@@ -31,15 +30,6 @@
     position: relative;
     &::before {
       content: '';
-      // display: inline-block;
-      // width: 10px;
-      // height: 10px;
-      // vertical-align: baseline;
-      // margin: 0 0.5rem;
-      // -moz-border-radius: 7.5px;
-      // -webkit-border-radius: 7.5px;
-      // border-radius: 7.5px;
-      // background-color: var(--stemaway-secondary-200);
     }
   }
 
@@ -73,7 +63,6 @@
       color: var(--stemaway-secondary-400);
       border-bottom: 0;
       border-bottom: none;
-      // color: var(--stemaway-primary-400);
       text-transform: uppercase;
       padding: 1rem;
       font-weight: bold;
@@ -93,6 +82,5 @@
 .with-topics {
   .topics {
     display: none;
-    // color: red;
   }
 }

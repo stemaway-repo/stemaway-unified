@@ -1,8 +1,7 @@
-.experts-homepage {
-}
 .homepage-jumbotron {
   background-color: var(--stemaway-primary-200);
 }
+
 // Banner Styling
 .jumbotron {
   padding: 2rem;
@@ -29,9 +28,6 @@
 
   @media screen and (min-width: 1730px) {
     justify-content: space-around;
-    // .jumbotron-image {
-    //   flex: 0;
-    // }
 
     .jumbotron-titles {
       flex-basis: 40%;
@@ -47,20 +43,15 @@
   }
 
   &-image {
-    // flex: 1 0 5%;
     margin: 1rem 0;
-    // background-color: var(--stemaway-primary-400);
     width: 332px;
-    // height: 432px;
     flex: 2 0 28%;
   }
 
   &-titles {
     margin: 1rem 1rem 1rem 0;
-    // flex: 1 0 28%;
 
     h1 {
-      //   font-size: 3.125rem;
       font-size: 2.5rem;
       color: var(--stemaway-primary-400);
       font-weight: 900;
@@ -90,7 +81,6 @@
   }
 
   &-quick-links {
-    // flex: 3 0 27%;
     flex: 3 0 30%;
     position: relative;
     z-index: 1;
@@ -109,7 +99,6 @@
       padding: 1.5rem;
       background: rgba(255, 255, 255, 0.95);
       box-shadow: 0px 4px 37px rgba(0, 0, 0, 0.13);
-      //   border-radius: 11px 0px 0px 11px;
       border-radius: 11px;
       position: relative;
 
@@ -199,8 +188,6 @@
     justify-content: center;
 
     a {
-      //   flex-basis: 20%;
-      //   padding: 2rem;
       padding: 2.25rem;
       @include image-logo;
     }
@@ -230,7 +217,6 @@
 
   .university-title {
     text-align: left;
-    // flex-basis: 30%;
     @media screen and (min-width: 530px) {
       flex-basis: 50%;
     }

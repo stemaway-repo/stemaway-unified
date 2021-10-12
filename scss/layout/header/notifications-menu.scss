@@ -17,18 +17,13 @@
 
     .d-icon,
     &:hover .d-icon {
-      //   color: $primary-medium;
       color: var(--stemaway-primary-400);
     }
     .icon {
-      //   color: $primary-high;
       color: var(--stemaway-primary-400);
     }
 
     li {
-      //   background-color: $tertiary-low;
-      // This is until other languages remove the HTML from within
-      // notifications. It can then be removed
       div .fa {
         display: none;
       }
@@ -112,8 +107,6 @@
         background: dark-light-diff($primary, $secondary, 90%, -80%);
       }
     }
-    /* as a big ol' click target, don't let text inside be selected */
-    // @include unselectable;
 
     &.quick-access-profile {
       li:not(.show-all) a {

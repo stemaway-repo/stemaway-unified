@@ -5,6 +5,7 @@ export default apiInitializer('0.11.1', (api) => {
     profileGlyph() {
       const glyph = this._super(...arguments);
       glyph['title'] = 'user.profile';
+      glyph['data'] = { url: `${this.attrs.path}/resume` };
       return glyph;
     },
   });

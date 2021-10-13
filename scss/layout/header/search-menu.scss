@@ -1,12 +1,11 @@
 #search-term {
-  padding: 1.5rem;
   border-color: var(--stemaway-secondary-200);
   background-color: var(--stemaway-secondary-100);
   border-radius: 8px;
   border-width: 2px;
   transition: border 0.25s ease;
   color: var(--stemaway-secondary-400);
-  height: 2.5rem;
+
   &:focus {
     color: var(--stemaway-secondary-500);
     background-color: var(--stemaway-primary-100);

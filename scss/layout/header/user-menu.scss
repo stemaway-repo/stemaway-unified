@@ -13,6 +13,11 @@
         color: var(--stemaway-secondary-400);
       }
     }
+
+    .summary,
+    .activity {
+      display: none;
+    }
   }
 }
 

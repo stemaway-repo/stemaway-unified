@@ -1,7 +1,26 @@
 .user .user-primary-navigation {
   .nav-pills {
+    display: flex;
+
+    .resume-tab {
+      order: 1;
+    }
+
+    .user-notifications {
+      order: 2;
+    }
+
+    .private-messages {
+      order: 3;
+    }
+
+    .preferences {
+      order: 4;
+    }
+
     .summary,
-    .activity {
+    .activity,
+    .badges {
       display: none;
     }
   }

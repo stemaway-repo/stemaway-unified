@@ -43,6 +43,28 @@ div.menu-links-header .menu-links-row li.glyphs a {
   display: none;
 }
 
+.menu-links-header .glyphs {
+  .user-notifications-link {
+    order: 3;
+  }
+
+  .custom.menu-link {
+    order: 1;
+  }
+
+  .user-bookmarks-link {
+    order: 2;
+  }
+
+  .user-pms-link {
+    order: 4;
+  }
+
+  .user-preferences-link {
+    order: 5;
+  }
+}
+
 .menu-panel .d-label {
   font-weight: 300;
   color: var(--stemaway-secondary-400);

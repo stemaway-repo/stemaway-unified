@@ -76,6 +76,10 @@
         font-weight: 500;
         color: var(--stemaway-primary-400);
       }
+
+      .widget-link[title='Tags'] {
+        display: none;
+      }
     }
   }
 

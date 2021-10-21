@@ -15,3 +15,23 @@
   color: var(--stemaway-primary-100);
   border-color: transparent;
 }
+
+.admin-content {
+  @include stemaway-card;
+  padding: 1rem;
+}
+
+.admin-detail {
+  border-left: none;
+}
+
+.admin-controls,
+.admin-controls .controls,
+.admin-controls nav {
+  background: var(--stemaway-secondary-150);
+  border-radius: 5px;
+}
+
+.admin-controls .nav-pills > li a.active {
+  background: var(--stemaway-secondary-300);
+}

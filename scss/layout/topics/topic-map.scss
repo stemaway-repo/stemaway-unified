@@ -1,27 +1,59 @@
 .topic-map {
+  border: none;
   border-radius: 8px;
-  border: 1px solid var(--stemaway-secondary-200);
+
+  .avatars {
+    display: none;
+  }
+
+  span.domain {
+    color: var(--stemaway-primary-400);
+  }
+
+  h3 {
+    font-size: var(--font-up-1);
+  }
+
   .map {
+    border-radius: 8px;
     border-top: none;
-    background-color: var(--stemaway-secondary-100);
-    .buttons button {
-      background-color: transparent;
-      border: transparent;
-      border-radius: 0;
-      &:hover {
-        background-color: var(--stemaway-secondary-200);
-      }
-    }
-    span.number {
-      font-weight: 900;
-      color: var(--stemaway-secondary-400);
-    }
-    li h4 {
+    background: var(--stemaway-secondary-150);
+  }
+
+  section {
+    border-top: none;
+  }
+
+  .buttons .btn {
+    border: 0;
+    background: var(--stemaway-secondary-150);
+
+    .d-icon {
       color: var(--stemaway-secondary-300);
     }
+
+    &:hover {
+      background: var(--stemaway-secondary-200);
+    }
   }
-  .topic-links .badge-notification {
-    background-color: var(--stemaway-primary-200);
-    color: var(--stemaway-primary-400);
+
+  &-expanded {
+    background: var(--stemaway-secondary-100);
+    border-radius: 8px;
+  }
+
+  .topic-links {
+    .topic-link {
+      color: var(--stemaway-secondary-400);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .badge-notification {
+      background-color: var(--stemaway-secondary-150);
+      color: var(--stemaway-secondary-300);
+      font-weight: bold;
+    }
   }
 }

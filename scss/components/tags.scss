@@ -1,0 +1,9 @@
+.discourse-tag.box,
+.extra-info-wrapper .topic-header-extra .discourse-tag.box {
+  @include stemaway-tag;
+  color: var(--stemaway-primary-400) !important;
+  &:hover,
+  &:focus {
+    color: var(--stemaway-primary-100) !important;
+  }
+}

@@ -1,0 +1,18 @@
+.lightbox-wrapper .lightbox:hover .meta {
+  opacity: 1;
+}
+
+.meta {
+  color: var(--stemaway-primary-400);
+  background: var(--stemaway-primary-300);
+  transition: opacity 0.25s;
+
+  .d-icon {
+    color: var(--stemaway-primary-400);
+  }
+
+  .informations {
+    font-weight: 500;
+    color: var(--stemaway-primary-400);
+  }
+}

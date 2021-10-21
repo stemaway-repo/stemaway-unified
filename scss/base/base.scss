@@ -1,0 +1,12 @@
+#main {
+  // background: var(--stemaway-secondary-100);
+  background: #f9fbfd99;
+}
+
+.anon {
+  .my-badges,
+  .my-activity,
+  .my-account {
+    display: none !important;
+  }
+}

@@ -1,17 +1,24 @@
 .category-boxes .category-box,
 .category-boxes-with-topics .category-box {
   border-left: none;
-  border-top: 5px solid;
-  transition: transform 0.25s ease;
-  box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
+  border-top: 7px solid;
+  transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  background: var(--stemaway-secondary-150);
+  box-shadow: none;
+  border-radius: 2px 2px 8px 8px;
 
-  &:hover {
+  margin: 2px 10px 20px;
+  width: calc(33.333333% - 20px);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
     z-index: 999;
-    transform: scale(1.03);
   }
 
   .category-box-heading h3 {
     color: var(--stemaway-secondary-500);
+    margin-bottom: 1rem;
 
     .svg-icon {
       color: var(--stemaway-secondary-300);
@@ -31,4 +38,79 @@
 .category-boxes-with-topics .category-box-inner:hover {
   background: dark-light-diff($primary, $secondary, 90%, -80%);
   transition: background 0.15s;
+}
+
+.category-boxes .category-box-inner,
+.category-boxes-with-topics .category-box-inner {
+  @include stemaway-card;
+  border-radius: 0 0 8px 8px;
+  border: 0;
+}
+
+.category-boxes .category-box .category-box-inner {
+  padding: 1.75rem;
+}
+
+.has-logo .category-title-link {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.category-logo.aspect-image img {
+  display: none;
+}
+
+.has-logo .category-text-title {
+  flex: 0 0 100%;
+  order: 3;
+}
+
+.category-boxes
+  .subcategory.with-subcategories
+  .category-title-link
+  .category-logo {
+  display: none;
+}
+
+.subcategory.with-subcategories .subcategories {
+  display: none;
+}
+
+.subcategory-list-item .subcategories {
+  display: none;
+}
+
+.list-container .category-list .subcategories {
+  display: none;
+}
+
+.category-boxes .description {
+  padding-bottom: 1.2rem;
+}
+
+.category-boxes .subcategory.with-subcategories {
+  border-top: 2px solid;
+  border-left: none;
+
+  .subcategory-box-inner {
+    border-color: var(--stemaway-secondary-150);
+    border-left: 1px solid var(--stemaway-secondary-150);
+    background: var(--stemaway-secondary-100);
+
+    .category-name {
+      font-weight: 400;
+      color: var(--stemaway-secondary-400);
+    }
+
+    &:hover,
+    &:focus {
+      background: var(--stemaway-secondary-150);
+      border-color: var(--stemaway-secondary-150);
+      .category-name {
+        font-weight: 600;
+      }
+    }
+  }
 }

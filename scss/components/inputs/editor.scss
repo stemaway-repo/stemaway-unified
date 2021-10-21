@@ -57,3 +57,9 @@
 .composer-fields .title-and-category .ember-text-field {
   height: 2.5rem;
 }
+
+.user-preferences .bio-composer .d-editor-preview-wrapper,
+.group-form-bio .d-editor-preview-wrapper,
+.edit-category-tab-topic-template .d-editor-preview-wrapper {
+  margin-top: 1rem;
+}

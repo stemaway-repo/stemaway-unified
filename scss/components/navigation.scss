@@ -5,7 +5,9 @@
 }
 
 .nav-stacked {
-  li a {
+  background: var(--stemaway-primary-100);
+  li {
+    border-bottom-color: var(--stemaway-primary-200);
   }
 }
 
@@ -29,5 +31,25 @@
     .svg-icon {
       color: var(--stemaway-secondary-500);
     }
+  }
+}
+
+.nav-pills > li > a {
+  border-radius: 4px;
+  font-size: var(--font-0);
+  min-height: 36px;
+  padding: 11px 16px;
+  transition-duration: 0.3s;
+  transition-property: background-color, color, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.list-controls {
+  .navigation-container {
+    @include stemaway-card;
+    margin: 0 auto;
+    width: 96%;
+    --nav-space: 0.5rem;
+    padding: 1rem;
   }
 }

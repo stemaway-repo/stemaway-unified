@@ -1,5 +1,14 @@
 #topic-title {
+  border-top: 5px solid var(--stemaway-primary-400);
   padding: 1rem !important;
   margin-top: 1rem;
-  border-radius: 8px;
+  @include stemaway-card;
+
+  .title-wrapper .fancy-title {
+    color: var(--stemaway-secondary-500);
+  }
+
+  a.edit-topic {
+    color: var(--stemaway-secondary-300);
+  }
 }

@@ -1,23 +1,29 @@
 // Button Styling
 .btn-default {
-  background: var(--stemaway-gray-200);
-  color: var(--stemaway-gray-400);
+  background: var(--stemaway-secondary-150);
+  color: var(--stemaway-secondary-300);
   border-radius: 5px;
 
   &[href],
   .d-icon-thumb-tack {
-    color: var(--stemaway-gray-400);
+    color: var(--stemaway-secondary-400);
   }
+
   .d-icon {
-    color: var(--stemaway-gray-400);
+    color: var(--stemaway-secondary-400);
   }
+
+  .d-button-label {
+    color: var(--stemaway-secondary-400);
+  }
+
   .discourse-no-touch & {
     &:hover {
-      background: var(--stemaway-primary-300);
-      color: var(--stemaway-primary-500);
+      background: var(--stemaway-secondary-200);
+      color: var(--stemaway-secondary-500);
       .d-icon,
       &[href] {
-        color: var(--stemaway-primary-500);
+        color: var(--stemaway-secondary-500);
       }
     }
   }

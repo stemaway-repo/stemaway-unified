@@ -1,0 +1,87 @@
+.container.posts {
+  border-radius: 8px;
+}
+
+.topic-body,
+.topic-avatar {
+  border-top: none;
+}
+
+.topic-avatar {
+  margin-right: 0.75rem;
+  img.avatar {
+    border-radius: 8px;
+  }
+}
+
+.topic-body {
+  width: calc(900px + (11px * 2));
+  float: unset;
+
+  .topic-meta-data {
+    background-color: var(--stemaway-primary-100);
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+
+.topic-body.highlighted {
+  animation: background-fade-highlight 0s;
+}
+
+.small-action {
+  max-width: unset;
+}
+
+.small-action.topic-post-visited
+  .topic-post-visited-line
+  .topic-post-visited-message {
+  background-color: var(--danger-low);
+  border-radius: 3px;
+}
+
+.post-notice,
+.post-notice.old {
+  border-top: none;
+  background-color: var(--stemaway-secondary-150);
+  color: var(--stemaway-secondary-400);
+  max-width: unset;
+  border-radius: 8px;
+
+  .d-icon {
+    color: var(--stemaway-secondary-300);
+  }
+}
+
+.names span a {
+  color: var(--stemaway-primary-400);
+}
+
+.topic-meta-data {
+  .post-info a {
+    color: var(--stemaway-primary-400);
+  }
+}
+
+.topic-post {
+  @include stemaway-card;
+  padding: 0.5rem 1rem;
+
+  &:not(:first-child) {
+    margin: 1rem 0;
+  }
+}
+
+.post-links-container {
+  .post-links {
+    background: var(--stemaway-secondary-100);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 0;
+    border-top: none !important;
+
+    li:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

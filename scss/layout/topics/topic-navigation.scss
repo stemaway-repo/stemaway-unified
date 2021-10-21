@@ -1,0 +1,19 @@
+.topic-navigation {
+  @include stemaway-card;
+  padding: 1rem;
+}
+
+.timeline-container .topic-timeline {
+  .timeline-scroller {
+    .timeline-handle {
+      background-color: var(--stemaway-primary-400);
+      transition: background-color 0.25s ease;
+    }
+    &:hover,
+    &:focus {
+      .timeline-handle {
+        background-color: var(--stemaway-primary-500);
+      }
+    }
+  }
+}

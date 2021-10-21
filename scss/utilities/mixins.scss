@@ -1,3 +1,23 @@
+@mixin stemaway-card {
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0px 1px 9px -3px rgba(0, 0, 0, 0.25);
+}
+
+@mixin stemaway-tag {
+  background-color: var(--stemaway-primary-300);
+  color: var(--stemaway-primary-400);
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+
+  &:hover,
+  &:focus {
+    background-color: var(--stemaway-primary-400);
+    color: var(--stemaway-primary-100);
+  }
+}
+
 @mixin image-logo {
   transition: opacity 0.25s ease, transform 0.25s ease;
   &:hover,
@@ -13,7 +33,7 @@
 @mixin hoverable-underline($color: #88b98f) {
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     margin: 0 auto;
     height: 2px;
     left: 0;
@@ -31,7 +51,7 @@
   &:hover {
     &::after {
       position: absolute;
-      content: "";
+      content: '';
       height: 2px;
       left: 0;
       right: 0;

@@ -76,3 +76,13 @@ div.menu-links-header .menu-links-row li.glyphs a {
     color: var(--stemaway-secondary-400);
   }
 }
+
+.menu-panel .panel-body-bottom .btn {
+  background-color: var(--stemaway-secondary-150);
+  color: var(--stemaway-secondary-300);
+
+  &:hover {
+    background-color: var(--stemaway-secondary-200);
+    color: var(--stemaway-secondary-100);
+  }
+}

@@ -1,7 +1,11 @@
 .alert.alert-info {
-  background-color: #ebf8ff;
   color: hsl(205, 71%, 53%);
+  background-color: #d9f0fc;
+  box-shadow: none;
   border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 5px solid #3295dc;
   padding: 1rem;
 
   a {

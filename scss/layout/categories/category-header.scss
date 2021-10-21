@@ -1,8 +1,10 @@
 .category-header div[class^='category-title-header'] {
-  border-radius: 0.325rem !important;
+  @include stemaway-card;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   border: none;
-  box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.07);
-  border-left-width: 0.5rem !important;
+  border-left-width: 5px;
+  padding: 1.5rem;
 
   .category-title-contents {
     .category-title-name {

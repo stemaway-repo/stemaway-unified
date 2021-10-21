@@ -1,0 +1,28 @@
+// Styles for hiding elements in bulk:
+
+.category {
+  &-job-portal,
+  &-virtual-internships,
+  &-hangouts,
+  &-support,
+  &-support-faq,
+  &-hangouts-career-resources {
+    #list-area {
+      display: none;
+    }
+  }
+}
+
+.hamburger-panel .menu-links {
+  .user-directory-link,
+  .about-link,
+  .new-topics-link,
+  .latest-topics-link,
+  .top-topics-link,
+  .unread-topics-link,
+  .badge-link,
+  .groups-link,
+  .tags-link {
+    display: none;
+  }
+}

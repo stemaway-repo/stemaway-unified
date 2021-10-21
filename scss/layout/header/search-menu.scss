@@ -8,10 +8,20 @@
 
   &:focus {
     color: var(--stemaway-secondary-500);
-    background-color: var(--stemaway-primary-100);
+    background-color: var(--stemaway-secondary-100);
     outline: none !important;
-    border: 2px solid var(--stemaway-primary-400);
+    border: 2px solid var(--stemaway-secondary-200);
     box-shadow: none;
     font-weight: 600;
   }
+}
+
+.search-menu .search-input {
+  border-radius: 8px;
+  border: 1px solid var(--stemaway-secondary-200);
+}
+
+.search-menu .search-input:focus-within {
+  border-color: var(--stemaway-secondary-300);
+  outline: 1px solid var(--stemaway-secondary-300);
 }

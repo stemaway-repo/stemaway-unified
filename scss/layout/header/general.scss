@@ -25,11 +25,15 @@
     &:hover,
     &:active,
     &:focus {
-      background-color: #edf2f7;
-      border-radius: 100%;
+      background-color: var(--stemaway-secondary-150);
+      border-radius: 25%;
       .d-icon {
         color: var(--stemaway-secondary-300);
       }
+    }
+
+    img.avatar {
+      border-radius: 25%;
     }
   }
   .d-icon {
@@ -51,4 +55,17 @@
 }
 a.unread-high-priority-notifications {
   background-color: #e62626;
+}
+
+.drop-down-mode .d-header-icons .active .icon {
+  border-radius: 25%;
+  background-color: var(--stemaway-secondary-150);
+  border-color: transparent;
+}
+
+.discourse-no-touch .d-header-icons .icon:hover,
+.discourse-no-touch .d-header-icons .icon:focus {
+  border-radius: 25%;
+  background-color: var(--stemaway-secondary-150);
+  border-color: transparent;
 }

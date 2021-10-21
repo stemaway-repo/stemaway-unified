@@ -17,12 +17,12 @@
     .preferences {
       order: 4;
     }
+  }
 
-    .summary,
-    .activity,
-    .badges,
-    .invited {
-      display: none;
-    }
+  .summary,
+  .activity,
+  .badges,
+  .invited {
+    display: none;
   }
 }

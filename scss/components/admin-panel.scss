@@ -35,3 +35,38 @@
 .admin-controls .nav-pills > li a.active {
   background: var(--stemaway-secondary-300);
 }
+
+.admin-customize {
+  .themes-list-header {
+    border: none;
+
+    .tab {
+      padding: 0.75rem;
+      margin: 0.25rem;
+    }
+
+    .tab.btn-danger.active {
+      background: var(--stemaway-primary-400);
+    }
+  }
+
+  .themes-list-container {
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    border: 1px solid var(--stemaway-secondary-200);
+  }
+
+  .filter-input {
+    background: var(--stemaway-secondary-150);
+    margin-bottom: 0.25rem;
+  }
+
+  .themes-list-item {
+    background: var(--stemaway-secondary-150);
+    border-radius: 3px;
+    border-left: none;
+    margin: 0.25rem;
+    border-bottom: none;
+  }
+}

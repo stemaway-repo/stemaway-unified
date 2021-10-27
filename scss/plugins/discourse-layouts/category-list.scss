@@ -1,0 +1,83 @@
+.sidebar-container {
+  .widget-container {
+    border: none;
+    @include stemaway-card;
+    .svg-icon {
+      color: var(--stemaway-secondary-300);
+    }
+
+    .showing-children .category-name {
+      font-weight: 600;
+      color: var(--stemaway-secondary-400);
+    }
+  }
+}
+
+.layouts-category-list ul li.layouts-category-link .d-icon-lock {
+  color: var(--stemaway-secondary-300);
+}
+
+.layouts-category-list ul li.layouts-category-link .category-name {
+  color: var(--stemaway-secondary-400);
+  font-weight: 300;
+}
+
+.layouts-category-list ul li.layouts-category-link .toggle-children:hover,
+.layouts-category-list ul li.layouts-category-link .toggle-children .d-icon,
+.layouts-category-list
+  ul
+  li.layouts-category-link
+  .toggle-children
+  .d-icon:hover {
+  color: var(--stemaway-secondary-300);
+}
+
+aside.sidebar.sticky .sidebar-container {
+  overflow: unset;
+}
+
+.layouts-sidebar-minimized {
+  .layouts-category-list {
+    .category-name,
+    .d-icon-lock {
+      display: none;
+    }
+    li.layouts-category-link .category-logo {
+      margin: 0;
+    }
+  }
+  .main-content {
+    width: unset !important;
+  }
+}
+
+.layouts-category-list ul.parent-categories .layouts-minimize-button.top {
+  border-bottom: 2px solid var(--stemaway-secondary-150);
+}
+
+.layouts-category-list
+  ul.parent-categories
+  li.layouts-category-link.showing-children {
+  background-color: var(--stemaway-secondary-150);
+}
+
+.layouts-category-list ul.parent-categories li.layouts-category-link:hover {
+  background-color: var(--stemaway-secondary-150);
+}
+
+.layouts-category-list ul.parent-categories ul.child-categories {
+  background-color: transparent;
+}
+
+.layouts-category-list
+  ul.parent-categories
+  ul.child-categories
+  li.layouts-category-link:hover {
+  background-color: var(--stemaway-secondary-150);
+}
+
+.layouts-category-list
+  ul.parent-categories
+  li.layouts-category-link.showing-children:hover {
+  background-color: var(--stemaway-secondary-200);
+}

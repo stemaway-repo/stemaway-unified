@@ -1,4 +1,10 @@
 .user .user-primary-navigation {
+  @include stemaway-card;
+
+  .user-nav {
+    padding: 0 1rem;
+  }
+
   .nav-pills {
     display: flex;
 
@@ -25,4 +31,30 @@
   .invited {
     display: none;
   }
+}
+
+.user-messages-page .topic-list th {
+  padding-top: 1rem;
+}
+
+.user-content .paginated-topics-list {
+  background: var(--stemaway-site-background);
+}
+
+.user-secondary-navigation.user-messages,
+.user-additional-controls {
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.user-notifications-page .user-content,
+.user-preferences {
+  @include stemaway-card;
+  padding: 2rem;
+}
+
+.user-secondary-navigation {
+  @include stemaway-card;
+  padding: 1rem;
+  margin-right: 1rem;
 }

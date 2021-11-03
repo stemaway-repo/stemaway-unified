@@ -58,8 +58,9 @@
   align-items: center;
 }
 
-.category-logo.aspect-image img {
-  display: none;
+.category-boxes .category-box .logo.aspect-image img,
+.category-boxes-with-topics .category-box .logo.aspect-image img {
+  --height: 110px;
 }
 
 .has-logo .category-text-title {

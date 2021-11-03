@@ -26,3 +26,20 @@
     display: none;
   }
 }
+
+.user-main {
+  .about,
+  .stats-section {
+    display: none;
+  }
+}
+.card-content .metadata {
+  display: none;
+}
+
+.card-content {
+  .meta-data,
+  .names .full-name {
+    display: none;
+  }
+}

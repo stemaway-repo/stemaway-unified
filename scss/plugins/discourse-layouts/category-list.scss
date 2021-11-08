@@ -81,3 +81,7 @@ aside.sidebar.sticky .sidebar-container {
   li.layouts-category-link.showing-children:hover {
   background-color: var(--stemaway-secondary-200);
 }
+
+.layouts-category-list ul.parent-categories ul.child-categories.grandchildren {
+  background-color: transparent;
+}

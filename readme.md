@@ -13,7 +13,7 @@ A theme component to have a unified design language/style for the [STEM-Away&reg
 - STEM-Away Engagement Theme by [Jay Pffafman](https://github.com/pfaffman)
 - RunTimeTerror NavBar by [James Kiesel](https://github.com/gdpelican) & Others
 
-**Version**: 1.0
+**Version**: 2.0
 
 ## Installation
 

@@ -1,6 +1,6 @@
 hero_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/3/32487731acffa48c311f9c70541da9babeb63149.png"
+  default: 'https://raw.githubusercontent.com/stemaway-repo/stemaway-unified/master/assets/bulb-icon_Large-Icon-branded.svg'
   description:
     en:
       'The source url for the hero image. Tip: You can upload an image to your main theme and use the url from that,
@@ -8,15 +8,15 @@ hero_image:
       deleted whenever it is updated.'
 hero_title:
   type: string
-  default: "The Launchpad for your STEM Career"
+  default: 'The Launchpad for your STEM Career'
   description: Main Title of Homepage Banner
 hero_subtitle:
   type: string
-  default: "FREE Career tools for students and junior professionals"
+  default: 'FREE Career tools for students and junior professionals'
   description: Subtitle of Homepage Banner
 hero_links_title:
   type: string
-  default: "Quick Links"
+  default: 'Quick Links'
   description: Title of the heading for the set of links on the homepage banner (default is Quick Links).
 hero_link_1_title:
   type: string
@@ -24,7 +24,7 @@ hero_link_1_title:
   description: Title of first link on homepage banner
 hero_link_1_icon:
   type: string
-  default: "certificate"
+  default: 'certificate'
   description: Find icons at https://fontawesome.com/icons?d=gallery&m=free and use name underneath icon (do not include fa-prefix)
 hero_link_1_url:
   type: string
@@ -36,7 +36,7 @@ hero_link_2_title:
   description: Title of second link on homepage banner
 hero_link_2_icon:
   type: string
-  default: "briefcase"
+  default: 'briefcase'
   description: Find icons at https://fontawesome.com/icons?d=gallery&m=free and use name underneath icon (do not include fa-prefix)
 hero_link_2_url:
   type: string
@@ -48,7 +48,7 @@ hero_link_3_title:
   description: Title of third link on homepage banner
 hero_link_3_icon:
   type: string
-  default: "users"
+  default: 'users'
   description: Find icons at https://fontawesome.com/icons?d=gallery&m=free and use name underneath icon (do not include fa-prefix)
 hero_link_3_url:
   type: string
@@ -60,7 +60,7 @@ hero_link_4_title:
   description: Title of fourth link on homepage banner
 hero_link_4_icon:
   type: string
-  default: "store"
+  default: 'store'
   description: Name of FontAwesome Icon for link 3. (do not include fa- prefix)
 hero_link_4_url:
   type: string
@@ -72,75 +72,75 @@ partners_title:
   description: Title above images of partners
 partner_1_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/2/2a035a15e89b4c387de18b5c76af9a6bba9649e9.svg"
+  default: 'https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/2/2a035a15e89b4c387de18b5c76af9a6bba9649e9.svg'
   description: The recommended file type is .svg and color code is "#D2D8E6"
 partner_1_url:
   type: string
-  default: "https://about.google/?fg=1&utm_source=google-CA&utm_medium=referral&utm_campaign=hp-header"
+  default: 'https://about.google/?fg=1&utm_source=google-CA&utm_medium=referral&utm_campaign=hp-header'
 partner_2_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/7/75c6f5c10c61fe477ccd98d2c7dc297b871a1a31.svg"
+  default: 'https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/7/75c6f5c10c61fe477ccd98d2c7dc297b871a1a31.svg'
   description: The recommended file type is .svg and color code is "#D2D8E6"
 partner_2_url:
   type: string
-  default: "https://aws.amazon.com"
+  default: 'https://aws.amazon.com'
 partner_3_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/4/4a6c72d9805dd5cc312df58328e8bd8d20cb7b4a.svg"
+  default: 'https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/4/4a6c72d9805dd5cc312df58328e8bd8d20cb7b4a.svg'
   description: The recommended file type is .svg and color code is "#D2D8E6"
 partner_3_url:
   type: string
-  default: "https://www.xilinx.com"
+  default: 'https://www.xilinx.com'
 partner_4_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/0/0a9e0a1488eab4404d40b553c788985dffaeac5d.svg"
+  default: 'https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/0/0a9e0a1488eab4404d40b553c788985dffaeac5d.svg'
   description: The recommended file type is .svg and color code is "#D2D8E6"
 partner_4_url:
   type: string
-  default: "https://www.agilent.com"
+  default: 'https://www.agilent.com'
 universities_title:
   type: string
   default: Join students from major universities across the US
   description: Title left of university images
 university_1_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/6/63f64feb0cb23f165845717dc8db77c361c93c2c.svg"
+  default: 'https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/6/63f64feb0cb23f165845717dc8db77c361c93c2c.svg'
   description: The recommended file type is .svg and color code is "#D2D8E6"
 university_1_url:
   type: string
-  default: "http://berkeley.edu"
+  default: 'http://berkeley.edu'
 university_2_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/e/e23c7d4e764270566763dd18d9499f0a7d696b94.svg"
+  default: 'https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/e/e23c7d4e764270566763dd18d9499f0a7d696b94.svg'
   description: The recommended file type is .svg and color code is "#D2D8E6"
 university_2_url:
   type: string
-  default: "https://www.utexas.edu"
+  default: 'https://www.utexas.edu'
 university_3_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/7/7913f173a4a0d5d0dd8d9cf4aa6104bf9f47a29a.svg"
+  default: 'https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/7/7913f173a4a0d5d0dd8d9cf4aa6104bf9f47a29a.svg'
   description: The recommended file type is .svg and color code is "#D2D8E6"
 university_3_url:
   type: string
-  default: "http://virginia.edu"
+  default: 'http://virginia.edu'
 university_4_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/7/7c6ef70aa99c7214d1457facc3dc0ec15ca09ab1.svg"
+  default: 'https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/7/7c6ef70aa99c7214d1457facc3dc0ec15ca09ab1.svg'
   description: The recommended file type is .svg and color code is "#D2D8E6"
 university_4_url:
   type: string
-  default: "https://www.cornell.edu"
+  default: 'https://www.cornell.edu'
 university_5_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/d/d7dc6851c1c6ee1b7f77ed597dd419fcfeb91c48.svg"
+  default: 'https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/d/d7dc6851c1c6ee1b7f77ed597dd419fcfeb91c48.svg'
   description: The recommended file type is .svg and color code is "#D2D8E6"
 university_5_url:
   type: string
-  default: "https://www.sjsu.edu"
+  default: 'https://www.sjsu.edu'
 university_6_image:
   type: string
-  default: "https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/2/221ece42d26ee45b0792928a67a457880485a8f7.svg"
+  default: 'https://stemaway-updivision-urlsigner.storage.googleapis.com/original/2X/2/221ece42d26ee45b0792928a67a457880485a8f7.svg'
   description: The recommended file type is .svg and color code is "#D2D8E6"
 university_6_url:
   type: string
-  default: "https://www.cmu.edu"
+  default: 'https://www.cmu.edu'

@@ -9,3 +9,8 @@
     display: none !important;
   }
 }
+
+// Fixes overflow in /home page
+body {
+  overflow-x: clip;
+}

@@ -1,0 +1,6 @@
+.stem-card {
+  flex: 1 0 calc(100% / 3);
+  @media screen and (min-width: 850px) {
+    flex: 1;
+  }
+}

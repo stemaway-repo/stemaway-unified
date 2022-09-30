@@ -112,3 +112,37 @@
     }
   }
 }
+
+.subcategories {
+  .subcategory {
+    border-color: var(--stemaway-secondary-150);
+    background: var(--stemaway-secondary-100);
+    border: 1px solid var(--primary-low);
+    border-top: 2px solid;
+    padding: 0.5em 0.5em 0.4em 0.5em;
+    display: block;
+    width: 100%;
+    // border-top:
+    .subcategory-image-placeholder {
+      display: none !important;
+    }
+    .category-name {
+      font-weight: 400;
+      color: var(--stemaway-secondary-400);
+      font-size: 15px;
+      line-height: var(--line-height-medium);
+      margin-bottom: 0.25em;
+    }
+    &:hover,
+    &:focus {
+      background: var(--stemaway-secondary-150);
+      // border-color: var(--stemaway-secondary-150);
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      .category-name {
+        font-weight: 600;
+      }
+    }
+  }
+}

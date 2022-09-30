@@ -68,10 +68,7 @@
   order: 3;
 }
 
-.category-boxes
-  .subcategory.with-subcategories
-  .category-title-link
-  .category-logo {
+.category-boxes .subcategory.with-subcategories .category-title-link .category-logo {
   display: none;
 }
 
@@ -91,7 +88,7 @@
   padding-bottom: 1.2rem;
 }
 
-.category-boxes .subcategory.with-subcategories {
+.category-boxes .subcategory {
   border-top: 2px solid;
   border-left: none;
 

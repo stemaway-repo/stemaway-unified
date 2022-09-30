@@ -68,11 +68,11 @@
   order: 3;
 }
 
-.category-boxes .subcategory .category-title-link .category-logo {
+.category-boxes .subcategory.with-subcategories .category-title-link .category-logo {
   display: none;
 }
 
-.subcategory .subcategories {
+.subcategory.with-subcategories .subcategories {
   display: none;
 }
 
@@ -88,7 +88,7 @@
   padding-bottom: 1.2rem;
 }
 
-.category-boxes .subcategory {
+.category-boxes .subcategory.with-subcategories {
   border-top: 2px solid;
   border-left: none;
 

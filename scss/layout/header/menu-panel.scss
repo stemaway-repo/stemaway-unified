@@ -86,3 +86,9 @@ div.menu-links-header .menu-links-row li.glyphs a {
     color: var(--stemaway-secondary-100);
   }
 }
+
+.hamburger-panel .category-links li.category-link {
+  a.badge-wrapper .badge-category .category-name {
+    max-width: 90px !important;
+  }
+}

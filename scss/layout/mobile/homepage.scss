@@ -1,3 +1,10 @@
 .jumbotron {
   margin-top: 0;
 }
+.discovery-below-outlet {
+  .work-ready-synonyms-container {
+    @media (max-width: 768px) {
+      width: calc(100vw - 81px);
+    }
+  }
+}

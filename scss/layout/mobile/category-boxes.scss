@@ -78,3 +78,41 @@
 .categories-list .category-list th {
   padding: 0;
 }
+.category-list {
+  tr.subcategories-list {
+    background: var(--header_background);
+    border-radius: 4px;
+    border-top: unset !important;
+    border-bottom: unset !important;
+    padding: 0.5em;
+    flex: 1 0 25%;
+    margin: 1rem;
+    .subcategories .badge-wrapper {
+      width: 90%;
+      background: var(--stemaway-secondary-100);
+      border-right: 1px solid var(--stemaway-secondary-150) !important;
+      border-top: 1px solid var(--stemaway-secondary-150) !important;
+      border-bottom: 1px solid var(--stemaway-secondary-150) !important;
+      border-left: 3px solid #a8e6cf !important;
+      margin-top: 0.5em !important;
+      padding: 1em 0;
+      .badge-category-bg {
+        display: none;
+      }
+      .category-name {
+        padding-left: 10px;
+        font-weight: 400;
+        color: var(--stemaway-secondary-400);
+        font-size: var(--font-up-1);
+      }
+      &:hover {
+        background: var(--stemaway-secondary-150);
+        cursor: pointer;
+      }
+    }
+    &:hover {
+      background: var(--header_background);
+      cursor: default;
+    }
+  }
+}

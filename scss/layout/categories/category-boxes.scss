@@ -1,7 +1,7 @@
 .category-boxes .category-box,
 .category-boxes-with-topics .category-box {
   border-left: none;
-  border-top: 7px solid;
+  border-top: 4px solid;
   transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.15);
   background: var(--stemaway-secondary-150);
   box-shadow: none;
@@ -85,7 +85,7 @@
 }
 
 .category-boxes .subcategory.with-subcategories {
-  border-top: 2px solid;
+  border-top: 1px solid;
   border-left: none;
 
   .subcategory-box-inner {
@@ -113,7 +113,7 @@
   .subcategory {
     background: var(--stemaway-secondary-100);
     border: 1px solid var(--primary-low);
-    border-top: 2px solid;
+    border-top: 1px solid;
     padding: 0.5em 0.5em 0.4em 0.5em;
     display: block;
     width: 100%;
@@ -142,7 +142,7 @@
       border-bottom-color: var(--stemaway-secondary-150);
       border-left-color: var(--stemaway-secondary-150);
       border-right-color: var(--stemaway-secondary-150);
-      border-top: 2px solid;
+      border-top: 1px solid;
       background: var(--stemaway-secondary-150);
       .category-name {
         font-weight: 600;

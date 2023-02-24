@@ -57,7 +57,7 @@
       color: var(--stemaway-primary-400);
       font-weight: 900;
       text-transform: uppercase;
-      font-family: 'Montserrat', 'Nunito Sans', sans-serif;
+      font-family: "Montserrat", "Nunito Sans", sans-serif;
 
       background: linear-gradient(to right, #88b98f, #6ac49f);
       background: -webkit-linear-gradient(to right, #88b98f, #6ac49f);
@@ -235,4 +235,7 @@
 
 .list-controls .navigation-container {
   margin-bottom: 2rem;
+}
+#global-notice-alert-emails-disabled {
+  display: none;
 }

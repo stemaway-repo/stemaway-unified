@@ -6,6 +6,98 @@ hero_image:
       'The source url for the hero image. Tip: You can upload an image to your main theme and use the url from that,
       but make sure that you do not use "Uploads" section of this component. Any uploads added to this component will be
       deleted whenever it is updated.'
+
+
+
+hero_links_rotate_ms:
+  type: integer
+  default: 5000
+  description: "Milliseconds between window rotations"
+
+
+
+hero_links_title_2:
+  type: string
+  default: "Resources"
+hero2_link_1_title:
+  type: string
+  default: "Docs"
+hero2_link_1_icon:
+  type: string
+  default: "book"
+hero2_link_1_url:
+  type: string
+  default: "https://example.com/docs"
+hero2_link_2_title:
+  type: string
+  default: "Community"
+hero2_link_2_icon:
+  type: string
+  default: "comments"
+hero2_link_2_url:
+  type: string
+  default: "https://example.com/community"
+hero2_link_3_title:
+  type: string
+  default: "FAQ"
+hero2_link_3_icon:
+  type: string
+  default: "question"
+hero2_link_3_url:
+  type: string
+  default: "https://example.com/faq"
+hero2_link_4_title:
+  type: string
+  default: "Contact"
+hero2_link_4_icon:
+  type: string
+  default: "envelope"
+hero2_link_4_url:
+  type: string
+  default: "https://example.com/contact"
+
+hero_links_title_3:
+  type: string
+  default: "Get Involved"
+hero3_link_1_title:
+  type: string
+  default: "Apply"
+hero3_link_1_icon:
+  type: string
+  default: "certificate"
+hero3_link_1_url:
+  type: string
+  default: "https://stemaway.com/apply"
+hero3_link_2_title:
+  type: string
+  default: "Mentors"
+hero3_link_2_icon:
+  type: string
+  default: "user-tie"
+hero3_link_2_url:
+  type: string
+  default: "https://stemaway.com/mentors"
+hero3_link_3_title:
+  type: string
+  default: "Showcase"
+hero3_link_3_icon:
+  type: string
+  default: "store"
+hero3_link_3_url:
+  type: string
+  default: "https://stemaway.com/c/showcase/65"
+hero3_link_4_title:
+  type: string
+  default: "About"
+hero3_link_4_icon:
+  type: string
+  default: "users"
+hero3_link_4_url:
+  type: string
+  default: "https://stemaway.com/home"
+
+
+
 hero_group_1:
   type: list
   list_type: group

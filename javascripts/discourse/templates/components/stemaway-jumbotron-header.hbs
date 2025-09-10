@@ -1,67 +1,172 @@
-<section class='homepage-jumbotron experts-homepage'>
-  <div class='jumbotron'>
-    <div class='jumbotron-image'>
-      <img loading='lazy' src='{{theme-setting 'hero_image'}}' alt='' />
+<section class="homepage-jumbotron experts-homepage">
+  <div class="jumbotron">
+    <div class="jumbotron-image">
+      <img loading="lazy" src="{{theme-setting "hero_image"}}" alt="" />
     </div>
-    <div class='jumbotron-titles'>
-      <h1 id="cover_title">
-        {{this.hero.title}}
-      </h1>
-      <h2 id="cover_subtitle">
-        {{this.hero.subtitle}}
-      </h2>
+
+    <div class="jumbotron-titles">
+      <h1 id="cover_title">{{this.hero.title}}</h1>
+      <h2 id="cover_subtitle">{{this.hero.subtitle}}</h2>
     </div>
-    <div class='jumbotron-quick-links'>
-      <div class='jumbotron-quick-links-container'>
-        <h3>
-          {{{theme-setting 'hero_links_title'}}}
-        </h3>
-        <ul>
-          <li>
-            <a href='{{theme-setting 'hero_link_1_url'}}'>
-              <svg
-                class='fa d-icon d-icon-{{theme-setting 'hero_link_1_icon'}}
-                  svg-icon svg-node'
-                aria-hidden='true'
-              >
-                <use xlink:href='#{{theme-setting 'hero_link_1_icon'}}'></use>
-              </svg>{{theme-setting 'hero_link_1_title'}}
-            </a>
-          </li>
-          <li>
-            <a href='{{theme-setting 'hero_link_2_url'}}'>
-              <svg
-                class='fa d-icon d-icon-{{theme-setting 'hero_link_2_icon'}}
-                  svg-icon svg-node'
-                aria-hidden='true'
-              >
-                <use xlink:href='#{{theme-setting 'hero_link_2_icon'}}'></use>
-              </svg>{{theme-setting 'hero_link_2_title'}}
-            </a>
-          </li>
-          <li>
-            <a href='{{theme-setting 'hero_link_3_url'}}'>
-              <svg
-                class='fa d-icon d-icon-{{theme-setting 'hero_link_3_icon'}}
-                  svg-icon svg-node'
-                aria-hidden='true'
-              >
-                <use xlink:href='#{{theme-setting 'hero_link_3_icon'}}'></use>
-              </svg>{{theme-setting 'hero_link_3_title'}}
-            </a>
-          </li>
-          <li>
-            <a href='{{theme-setting 'hero_link_4_url'}}'>
-              <svg
-                class='fa d-icon d-icon-{{theme-setting 'hero_link_4_icon'}}
-                  svg-icon svg-node'
-                aria-hidden='true'
-              >
-                <use xlink:href='#{{theme-setting 'hero_link_4_icon'}}'></use>
-              </svg>{{theme-setting 'hero_link_4_title'}}
-            </a>
-          </li>
-        </ul>
+
+    <div
+      class="jumbotron-quick-links"
+      style="--jl-rotate: {{theme-setting "hero_links_rotate_ms"}}ms;"
+    >
+      <input class="jl-toggle" type="radio" name="jl-quick-links" id="jl-1" />
+      <input class="jl-toggle" type="radio" name="jl-quick-links" id="jl-2" />
+      <input class="jl-toggle" type="radio" name="jl-quick-links" id="jl-3" />
+
+      <div class="jl-slides">
+        <div class="jumbotron-quick-links-window" id="jl-slide-1">
+          <div class="jumbotron-quick-links-container">
+            <h3>{{{theme-setting "hero_links_title"}}}</h3>
+            <ul>
+              <li>
+                <a href="{{theme-setting "hero_link_1_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero_link_1_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero_link_1_icon"}}"></use>
+                  </svg>{{theme-setting "hero_link_1_title"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme-setting "hero_link_2_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero_link_2_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero_link_2_icon"}}"></use>
+                  </svg>{{theme-setting "hero_link_2_title"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme-setting "hero_link_3_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero_link_3_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero_link_3_icon"}}"></use>
+                  </svg>{{theme-setting "hero_link_3_title"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme-setting "hero_link_4_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero_link_4_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero_link_4_icon"}}"></use>
+                  </svg>{{theme-setting "hero_link_4_title"}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="jumbotron-quick-links-window" id="jl-slide-2">
+          <div class="jumbotron-quick-links-container">
+            <h3>{{{theme-setting "hero_links_title_2"}}}</h3>
+            <ul>
+              <li>
+                <a href="{{theme-setting "hero2_link_1_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero2_link_1_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero2_link_1_icon"}}"></use>
+                  </svg>{{theme-setting "hero2_link_1_title"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme-setting "hero2_link_2_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero2_link_2_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero2_link_2_icon"}}"></use>
+                  </svg>{{theme-setting "hero2_link_2_title"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme-setting "hero2_link_3_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero2_link_3_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero2_link_3_icon"}}"></use>
+                  </svg>{{theme-setting "hero2_link_3_title"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme-setting "hero2_link_4_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero2_link_4_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero2_link_4_icon"}}"></use>
+                  </svg>{{theme-setting "hero2_link_4_title"}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="jumbotron-quick-links-window" id="jl-slide-3">
+          <div class="jumbotron-quick-links-container">
+            <h3>{{{theme-setting "hero_links_title_3"}}}</h3>
+            <ul>
+              <li>
+                <a href="{{theme-setting "hero3_link_1_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero3_link_1_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero3_link_1_icon"}}"></use>
+                  </svg>{{theme-setting "hero3_link_1_title"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme-setting "hero3_link_2_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero3_link_2_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero3_link_2_icon"}}"></use>
+                  </svg>{{theme-setting "hero3_link_2_title"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme-setting "hero3_link_3_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero3_link_3_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero3_link_3_icon"}}"></use>
+                  </svg>{{theme-setting "hero3_link_3_title"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme-setting "hero3_link_4_url"}}">
+                  <svg
+                    class="fa d-icon d-icon-{{theme-setting "hero3_link_4_icon"}} svg-icon svg-node"
+                    aria-hidden="true"
+                  >
+                    <use xlink:href="#{{theme-setting "hero3_link_4_icon"}}"></use>
+                  </svg>{{theme-setting "hero3_link_4_title"}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="jl-dots" role="tablist" aria-label="Quick links slides">
+        <label class="jl-dot" for="jl-1" role="tab" aria-controls="jl-slide-1" tabindex="0"></label>
+        <label class="jl-dot" for="jl-2" role="tab" aria-controls="jl-slide-2" tabindex="0"></label>
+        <label class="jl-dot" for="jl-3" role="tab" aria-controls="jl-slide-3" tabindex="0"></label>
       </div>
     </div>
   </div>

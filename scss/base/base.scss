@@ -2,24 +2,17 @@
   background: var(--stemaway-site-background);
 }
 
-.anon {
-  .my-badges,
-  .my-activity,
-  .my-account {
-    display: none !important;
-  }
+.anon .my-badges,
+.anon .my-activity,
+.anon .my-account {
+  display: none !important;
 }
 
-// Fixes overflow in /home page
 body {
   overflow-x: clip;
 }
 
-
-
-
 .homepage-jumbotron .jumbotron-quick-links {
-  --jl-rotate: 5000ms;
   --jl-ease: cubic-bezier(.22,.61,.36,1);
   display: grid;
   grid-template-rows: auto auto;
@@ -49,10 +42,7 @@ body {
   width: 100%;
   opacity: 0;
   pointer-events: none;
-  transition:
-    opacity .14s var(--jl-ease),
-    transform .14s var(--jl-ease),
-    box-shadow .14s var(--jl-ease);
+  transition: opacity .14s var(--jl-ease), transform .14s var(--jl-ease), box-shadow .14s var(--jl-ease);
   transform: translateY(6px) scale(.998);
   border-radius: 12px;
   background: var(--secondary, #fff);
@@ -65,22 +55,49 @@ body {
   width: 100%;
 }
 
-@keyframes jl-stack-3 {
-  0%   { opacity: 0; transform: translateX(0) translateY(0) scale(.996); z-index: 2; pointer-events: none; }
-  1.5% { opacity: 1; transform: translateX(0) translateY(0)  scale(1);     z-index: 3; pointer-events: auto; box-shadow: 0 10px 30px rgba(0,0,0,.16); }
-  28%  { opacity: 1; transform: translateX(0) translateY(0)  scale(1);     z-index: 3; pointer-events: auto; }
-  30%  { opacity: 1; transform: translateX(0) translateY(0)  scale(1);     z-index: 4; pointer-events: auto; }
-  34%  { opacity: 0; transform: translateX(2px) translateY(0) scale(.995); z-index: 4; pointer-events: none; box-shadow: 0 6px 20px rgba(0,0,0,.12); }
-  100% { opacity: 0; transform: translateX(2px) translateY(0) scale(.995); z-index: 2; pointer-events: none; }
-}
-
-.jumbotron-quick-links:not(:has(.jl-toggle:checked)) .jumbotron-quick-links-window {
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):has(.jl-slides .jumbotron-quick-links-window:nth-child(3)) .jumbotron-quick-links-window {
   animation: jl-stack-3 calc(var(--jl-rotate) * 3) linear infinite;
 }
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):has(.jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-slides .jumbotron-quick-links-window:nth-child(1) {
+  animation-delay: 0s;
+}
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):has(.jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-slides .jumbotron-quick-links-window:nth-child(2) {
+  animation-delay: var(--jl-rotate);
+}
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):has(.jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-slides .jumbotron-quick-links-window:nth-child(3) {
+  animation-delay: calc(var(--jl-rotate) * 2);
+}
 
-.jumbotron-quick-links:not(:has(.jl-toggle:checked)) .jl-slides .jumbotron-quick-links-window:nth-child(1) { animation-delay: 0s; }
-.jumbotron-quick-links:not(:has(.jl-toggle:checked)) .jl-slides .jumbotron-quick-links-window:nth-child(2) { animation-delay: var(--jl-rotate); }
-.jumbotron-quick-links:not(:has(.jl-toggle:checked)) .jl-slides .jumbotron-quick-links-window:nth-child(3) { animation-delay: calc(var(--jl-rotate) * 2); }
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):not(:has(.jl-slides .jumbotron-quick-links-window:nth-child(3))):has(.jl-slides .jumbotron-quick-links-window:nth-child(2)) .jumbotron-quick-links-window {
+  animation: jl-stack-2 calc(var(--jl-rotate) * 2) linear infinite;
+}
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):not(:has(.jl-slides .jumbotron-quick-links-window:nth-child(3))):has(.jl-slides .jumbotron-quick-links-window:nth-child(2)) .jl-slides .jumbotron-quick-links-window:nth-child(1) {
+  animation-delay: 0s;
+}
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):not(:has(.jl-slides .jumbotron-quick-links-window:nth-child(3))):has(.jl-slides .jumbotron-quick-links-window:nth-child(2)) .jl-slides .jumbotron-quick-links-window:nth-child(2) {
+  animation-delay: var(--jl-rotate);
+}
+
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):not(:has(.jl-slides .jumbotron-quick-links-window:nth-child(2))) .jl-slides .jumbotron-quick-links-window:first-child {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,.16);
+}
+
+@keyframes jl-stack-3 {
+  0% { opacity: 1; transform: translateX(0) translateY(0) scale(1); z-index: 3; pointer-events: auto; box-shadow: 0 10px 30px rgba(0,0,0,.16); }
+  28% { opacity: 1; transform: translateX(0) translateY(0) scale(1); z-index: 3; pointer-events: auto; }
+  32% { opacity: 0; transform: translateX(10px) translateY(0) scale(.995); z-index: 2; pointer-events: none; box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+  100% { opacity: 0; transform: translateX(10px) translateY(0) scale(.995); z-index: 2; pointer-events: none; }
+}
+
+@keyframes jl-stack-2 {
+  0% { opacity: 1; transform: translateX(0) translateY(0) scale(1); z-index: 3; pointer-events: auto; box-shadow: 0 10px 30px rgba(0,0,0,.16); }
+  48% { opacity: 1; transform: translateX(0) translateY(0) scale(1); z-index: 3; pointer-events: auto; }
+  52% { opacity: 0; transform: translateX(10px) translateY(0) scale(.995); z-index: 2; pointer-events: none; box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+  100% { opacity: 0; transform: translateX(10px) translateY(0) scale(.995); z-index: 2; pointer-events: none; }
+}
 
 .jumbotron-quick-links:not(:has(.jl-toggle:checked)):hover .jumbotron-quick-links-window {
   animation-play-state: paused;
@@ -101,14 +118,14 @@ body {
 }
 
 .jl-dots {
-  margin-left: 20px;
-  margin-top: 5px;
   grid-row: 2;
   grid-column: 1;
   display: flex;
   justify-content: center;
   gap: 22px;
-  width: 100%;
+  width: max-content;
+  margin: 5px auto 0;
+  padding-left: 40px;
 }
 
 .jl-dot {
@@ -123,21 +140,51 @@ body {
   transition: transform .14s var(--jl-ease), opacity .14s var(--jl-ease);
 }
 
-@keyframes jl-dot-stack-3 {
-  0%   { opacity: .35; transform: scale(1); }
-  1.5% { opacity: 1;   transform: scale(1.14); }
-  28%  { opacity: 1;   transform: scale(1.14); }
-  34%  { opacity: .35; transform: scale(1); }
+.jumbotron-quick-links:not(:has(.jl-slides .jumbotron-quick-links-window:nth-child(2))) .jl-dots .jl-dot:nth-child(2),
+.jumbotron-quick-links:not(:has(.jl-slides .jumbotron-quick-links-window:nth-child(2))) .jl-dots .jl-dot:nth-child(3) {
+  display: none;
+}
+.jumbotron-quick-links:not(:has(.jl-slides .jumbotron-quick-links-window:nth-child(3))) .jl-dots .jl-dot:nth-child(3) {
+  display: none;
+}
+
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):has(.jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-dot {
+  animation: jl-dot-3 calc(var(--jl-rotate) * 3) linear infinite;
+}
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):has(.jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-dots .jl-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):has(.jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-dots .jl-dot:nth-child(2) {
+  animation-delay: var(--jl-rotate);
+}
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):has(.jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-dots .jl-dot:nth-child(3) {
+  animation-delay: calc(var(--jl-rotate) * 2);
+}
+
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):not(:has(.jl-slides .jumbotron-quick-links-window:nth-child(3))):has(.jl-slides .jumbotron-quick-links-window:nth-child(2)) .jl-dot {
+  animation: jl-dot-2 calc(var(--jl-rotate) * 2) linear infinite;
+}
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):not(:has(.jl-slides .jumbotron-quick-links-window:nth-child(3))):has(.jl-slides .jumbotron-quick-links-window:nth-child(2)) .jl-dots .jl-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.jumbotron-quick-links:not(:has(.jl-toggle:checked)):not(:has(.jl-slides .jumbotron-quick-links-window:nth-child(3))):has(.jl-slides .jumbotron-quick-links-window:nth-child(2)) .jl-dots .jl-dot:nth-child(2) {
+  animation-delay: var(--jl-rotate);
+}
+
+@keyframes jl-dot-3 {
+  0% { opacity: .35; transform: scale(1); }
+  0.5% { opacity: 1; transform: scale(1.14); }
+  28% { opacity: 1; transform: scale(1.14); }
+  32% { opacity: .35; transform: scale(1); }
   100% { opacity: .35; transform: scale(1); }
 }
-
-.jumbotron-quick-links:not(:has(.jl-toggle:checked)) .jl-dot {
-  animation: jl-dot-stack-3 calc(var(--jl-rotate) * 3) linear infinite;
+@keyframes jl-dot-2 {
+  0% { opacity: .35; transform: scale(1); }
+  1% { opacity: 1; transform: scale(1.14); }
+  48% { opacity: 1; transform: scale(1.14); }
+  52% { opacity: .35; transform: scale(1); }
+  100% { opacity: .35; transform: scale(1); }
 }
-
-.jumbotron-quick-links:not(:has(.jl-toggle:checked)) .jl-dots .jl-dot:nth-child(1) { animation-delay: 0s; }
-.jumbotron-quick-links:not(:has(.jl-toggle:checked)) .jl-dots .jl-dot:nth-child(2) { animation-delay: var(--jl-rotate); }
-.jumbotron-quick-links:not(:has(.jl-toggle:checked)) .jl-dots .jl-dot:nth-child(3) { animation-delay: calc(var(--jl-rotate) * 2); }
 
 #jl-1:checked ~ .jl-dots .jl-dot:nth-child(1),
 #jl-2:checked ~ .jl-dots .jl-dot:nth-child(2),
@@ -151,8 +198,92 @@ body {
   outline-offset: 2px;
 }
 
+.jumbotron-titles.jl-titles {
+  position: relative;
+  display: grid;
+  grid-auto-rows: minmax(auto, max-content);
+  width: 100%;
+  text-align: left;
+  overflow: visible;
+}
+
+.jumbotron-titles.jl-titles h1,
+.jumbotron-titles.jl-titles h2 {
+  overflow: visible;
+  white-space: normal;
+}
+
+.jl-title-window {
+  grid-area: 1 / 1;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .16s var(--jl-ease);
+}
+
+.homepage-jumbotron:not(:has(.jl-toggle:checked)):has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-title-window {
+  animation: jl-title-3 calc(var(--jl-rotate) * 3) linear infinite;
+}
+.homepage-jumbotron:not(:has(.jl-toggle:checked)):has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-title-window:nth-child(1) {
+  animation-delay: 0s;
+}
+.homepage-jumbotron:not(:has(.jl-toggle:checked)):has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-title-window:nth-child(2) {
+  animation-delay: var(--jl-rotate);
+}
+.homepage-jumbotron:not(:has(.jl-toggle:checked)):has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(3)) .jl-title-window:nth-child(3) {
+  animation-delay: calc(var(--jl-rotate) * 2);
+}
+
+.homepage-jumbotron:not(:has(.jl-toggle:checked)):not(:has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(3))):has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(2)) .jl-title-window {
+  animation: jl-title-2 calc(var(--jl-rotate) * 2) linear infinite;
+}
+.homepage-jumbotron:not(:has(.jl-toggle:checked)):not(:has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(3))):has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(2)) .jl-title-window:nth-child(1) {
+  animation-delay: 0s;
+}
+.homepage-jumbotron:not(:has(.jl-toggle:checked)):not(:has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(3))):has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(2)) .jl-title-window:nth-child(2) {
+  animation-delay: var(--jl-rotate);
+}
+
+.homepage-jumbotron:not(:has(.jl-toggle:checked)):not(:has(.jumbotron-quick-links .jl-slides .jumbotron-quick-links-window:nth-child(2))) .jl-title-window:first-child {
+  opacity: 1;
+}
+
+@keyframes jl-title-3 {
+  0% { opacity: 1; }
+  28% { opacity: 1; }
+  32% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes jl-title-2 {
+  0% { opacity: 1; }
+  48% { opacity: 1; }
+  52% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.homepage-jumbotron:has(.jl-toggle:checked) .jl-title-window {
+  opacity: 0;
+  animation: none !important;
+}
+.homepage-jumbotron:has(#jl-1:checked) .jl-title-window:nth-child(1),
+.homepage-jumbotron:has(#jl-2:checked) .jl-title-window:nth-child(2),
+.homepage-jumbotron:has(#jl-3:checked) .jl-title-window:nth-child(3) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .jumbotron-quick-links .jumbotron-quick-links-window,
-  .jl-dot { animation: none !important; }
-  .jl-slides .jumbotron-quick-links-window:first-child { opacity: 1; pointer-events: auto; transform: none; }
+  .jl-dot,
+  .jl-title-window {
+    animation: none !important;
+  }
+  .jl-slides .jumbotron-quick-links-window:first-child {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+  .jl-title-window:first-child {
+    opacity: 1;
+  }
 }

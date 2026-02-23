@@ -116,3 +116,42 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .category-list {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .category-list-item {
+      flex: 0 0 100% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 0 0.85rem 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    tr.subcategories-list {
+      flex: 0 0 100% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 0 0.85rem 0 !important;
+      box-sizing: border-box !important;
+    }
+  }
+
+  .category-boxes,
+  .category-boxes-with-topics {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
+  }
+
+  .category-boxes .category-box,
+  .category-boxes-with-topics .category-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    float: none !important;
+    box-sizing: border-box !important;
+  }
+}

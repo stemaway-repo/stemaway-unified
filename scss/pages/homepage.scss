@@ -247,6 +247,7 @@
   animation: gradientBG 20s ease infinite;
   padding: 40px 20px;
   margin-top: -30px;
+  --jl-rotate-effective: calc(var(--jl-rotate, 7000ms) + 12000ms);
 }
 
 .homepage-jumbotron > * {
@@ -265,6 +266,46 @@
 .jumbotron-titles {
   flex: 1 1 auto !important;
   padding: 0 10px;
+}
+
+.jl-titles {
+  display: grid;
+}
+
+.jl-titles .jl-title-window {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(3px);
+  pointer-events: none;
+}
+
+.jl-titles .jl-title-window:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  animation: jlTitle1 var(--jl-rotate-effective) infinite linear;
+}
+
+.jl-titles .jl-title-window:nth-child(2) {
+  animation: jlTitle2 var(--jl-rotate-effective) infinite linear;
+}
+
+.jl-titles .jl-title-window:nth-child(3) {
+  animation: jlTitle3 var(--jl-rotate-effective) infinite linear;
+}
+
+.jumbotron:has(#jl-1:checked) .jl-titles .jl-title-window,
+.jumbotron:has(#jl-2:checked) .jl-titles .jl-title-window,
+.jumbotron:has(#jl-3:checked) .jl-titles .jl-title-window {
+  animation: none;
+  opacity: 0;
+  transform: translateY(3px);
+}
+
+.jumbotron:has(#jl-1:checked) .jl-titles .jl-title-window:nth-child(1),
+.jumbotron:has(#jl-2:checked) .jl-titles .jl-title-window:nth-child(2),
+.jumbotron:has(#jl-3:checked) .jl-titles .jl-title-window:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .jumbotron-quick-links {
@@ -388,6 +429,304 @@
 
 .jl-dots {
   margin: 10px auto 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.jumbotron-quick-links .jl-toggle {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.jumbotron-quick-links .jl-slides {
+  display: flex;
+  width: 100%;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  animation:
+    jlAutoRotate var(--jl-rotate-effective) infinite linear,
+    jlSlidesFade var(--jl-rotate-effective) infinite linear;
+}
+
+.jumbotron-quick-links .jumbotron-quick-links-window {
+  flex: 0 0 100%;
+  min-width: 100%;
+}
+
+.jumbotron-quick-links .jl-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(71, 85, 105, 0.3);
+  border: 1px solid rgba(71, 85, 105, 0.2);
+  opacity: 0.55;
+  cursor: pointer;
+  transition: all 0.45s ease;
+}
+
+.jumbotron-quick-links .jl-dot:hover {
+  background: rgba(71, 85, 105, 0.5);
+}
+
+#jl-1:not(:checked) ~ .jl-dots label[for="jl-1"] {
+  animation: jlDot1 var(--jl-rotate-effective) infinite linear;
+}
+
+#jl-2:not(:checked) ~ .jl-dots label[for="jl-2"] {
+  animation: jlDot2 var(--jl-rotate-effective) infinite linear;
+}
+
+#jl-3:not(:checked) ~ .jl-dots label[for="jl-3"] {
+  animation: jlDot3 var(--jl-rotate-effective) infinite linear;
+}
+
+#jl-1:checked ~ .jl-dots label[for="jl-1"],
+#jl-1:checked ~ .jl-dots label[for="jl-2"],
+#jl-1:checked ~ .jl-dots label[for="jl-3"],
+#jl-2:checked ~ .jl-dots label[for="jl-1"],
+#jl-2:checked ~ .jl-dots label[for="jl-2"],
+#jl-2:checked ~ .jl-dots label[for="jl-3"],
+#jl-3:checked ~ .jl-dots label[for="jl-1"],
+#jl-3:checked ~ .jl-dots label[for="jl-2"],
+#jl-3:checked ~ .jl-dots label[for="jl-3"] {
+  animation: none;
+  opacity: 0.55;
+  transform: scale(1);
+}
+
+#jl-1:checked ~ .jl-slides {
+  transform: translateX(0);
+  animation: jlManualFade1 1s ease both;
+}
+
+#jl-2:checked ~ .jl-slides {
+  transform: translateX(-100%);
+  animation: jlManualFade2 1s ease both;
+}
+
+#jl-3:checked ~ .jl-slides {
+  transform: translateX(-200%);
+  animation: jlManualFade3 1s ease both;
+}
+
+#jl-1:checked ~ .jl-dots label[for="jl-1"],
+#jl-2:checked ~ .jl-dots label[for="jl-2"],
+#jl-3:checked ~ .jl-dots label[for="jl-3"] {
+  background: rgba(6, 95, 70, 0.9);
+  border-color: rgba(6, 95, 70, 0.9);
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+@keyframes jlAutoRotate {
+  0%,
+  28% {
+    transform: translateX(0);
+  }
+
+  33%,
+  62% {
+    transform: translateX(-100%);
+  }
+
+  67%,
+  96% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes jlSlidesFade {
+  0%,
+  28%,
+  33%,
+  62%,
+  67%,
+  96%,
+  100% {
+    opacity: 1;
+  }
+
+  31%,
+  65%,
+  98% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes jlManualFade1 {
+  0% {
+    opacity: 0.96;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes jlManualFade2 {
+  0% {
+    opacity: 0.96;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes jlManualFade3 {
+  0% {
+    opacity: 0.96;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes jlTitle1 {
+  0%,
+  28% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  33%,
+  100% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+}
+
+@keyframes jlTitle2 {
+  0%,
+  28% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+
+  33%,
+  62% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  67%,
+  100% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+}
+
+@keyframes jlTitle3 {
+  0%,
+  62% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+
+  67%,
+  96% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+}
+
+@keyframes jlDot1 {
+  0%,
+  28% {
+    background: rgba(6, 95, 70, 0.9);
+    border-color: rgba(6, 95, 70, 0.9);
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  33%,
+  100% {
+    background: rgba(71, 85, 105, 0.3);
+    border-color: rgba(71, 85, 105, 0.2);
+    opacity: 0.55;
+    transform: scale(1);
+  }
+}
+
+@keyframes jlDot2 {
+  0%,
+  28% {
+    background: rgba(71, 85, 105, 0.3);
+    border-color: rgba(71, 85, 105, 0.2);
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  33%,
+  62% {
+    background: rgba(6, 95, 70, 0.9);
+    border-color: rgba(6, 95, 70, 0.9);
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  67%,
+  100% {
+    background: rgba(71, 85, 105, 0.3);
+    border-color: rgba(71, 85, 105, 0.2);
+    opacity: 0.55;
+    transform: scale(1);
+  }
+}
+
+@keyframes jlDot3 {
+  0%,
+  62% {
+    background: rgba(71, 85, 105, 0.3);
+    border-color: rgba(71, 85, 105, 0.2);
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  67%,
+  96% {
+    background: rgba(6, 95, 70, 0.9);
+    border-color: rgba(6, 95, 70, 0.9);
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  100% {
+    background: rgba(71, 85, 105, 0.3);
+    border-color: rgba(71, 85, 105, 0.2);
+    opacity: 0.55;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jumbotron-quick-links .jl-slides {
+    animation: none;
+  }
+
+  .jl-titles .jl-title-window {
+    animation: none !important;
+  }
+
+  .jumbotron-quick-links .jl-dot {
+    animation: none !important;
+  }
 }
 
 .jumbotron-titles h1 {

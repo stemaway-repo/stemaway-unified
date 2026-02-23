@@ -69,3 +69,74 @@ a.unread-high-priority-notifications {
   background-color: var(--stemaway-secondary-150);
   border-color: transparent;
 }
+
+/* Migrated from stemaway-ui-addons/main-test.scss */
+.d-header {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-bottom: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.d-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(76, 175, 80, 0.2) 0%,
+    rgba(76, 175, 80, 0.8) 50%,
+    rgba(76, 175, 80, 0.2) 100%
+  );
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.d-header:hover::after {
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(76, 175, 80, 0.3) 0%,
+    rgba(76, 175, 80, 1) 50%,
+    rgba(76, 175, 80, 0.3) 100%
+  );
+}
+
+.d-header .chat-header-icon svg,
+.d-header .ai-bot-button svg,
+.d-header .hamburger-dropdown svg {
+  color: #aeaeae !important;
+  opacity: 1;
+}
+
+.d-header .d-header-icons .icon:hover svg {
+  color: #8dba92 !important;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.d-header .current-user img.avatar:hover {
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.d-header .title {
+  margin: 0 !important;
+}

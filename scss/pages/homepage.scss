@@ -239,3 +239,334 @@
 #global-notice-alert-emails-disabled {
   display: none;
 }
+
+/* Migrated from stemaway-ui-addons/main-test.scss */
+.homepage-jumbotron {
+  background: linear-gradient(135deg, #e8f5e9, #fff8e1, #e3f2fd);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+  padding: 40px 20px;
+  margin-top: -30px;
+}
+
+.homepage-jumbotron > * {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.jumbotron-image {
+  margin: 1rem -0.5rem 1rem -1rem !important;
+}
+
+.jumbotron-titles {
+  flex: 1 1 auto !important;
+  padding: 0 10px;
+}
+
+.jumbotron-quick-links {
+  max-width: 360px !important;
+  min-width: 280px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 2px solid rgba(148, 193, 152, 0.2) !important;
+  border-radius: 16px !important;
+  padding: 10px !important;
+}
+
+.jumbotron-quick-links-container {
+  background: transparent !important;
+  padding: 20px !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+}
+
+.jumbotron-quick-links ul li {
+  margin-bottom: 8px !important;
+  padding: 0 !important;
+}
+
+.jumbotron-quick-links * {
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1000px) {
+  .homepage-jumbotron > * {
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center;
+    align-items: center !important;
+  }
+
+  .jumbotron-image {
+    width: 350px !important;
+    height: 350px !important;
+    flex: 0 0 350px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  .jumbotron-titles {
+    max-width: 100% !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .jumbotron-quick-links {
+    flex: 0 0 auto !important;
+    width: 95% !important;
+    max-width: 400px !important;
+    min-width: auto !important;
+    margin: 5px auto !important;
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 720px) {
+  .homepage-jumbotron {
+    padding: 40px 30px !important;
+  }
+
+  .homepage-jumbotron > * {
+    display: grid !important;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .jumbotron-image {
+    display: none !important;
+  }
+
+  .jumbotron-titles {
+    grid-column: 1;
+    text-align: left !important;
+    padding: 0;
+    flex: none !important;
+  }
+
+  .jumbotron-titles h1 {
+    font-size: 2rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .jumbotron-titles h2 {
+    font-size: 1rem !important;
+    color: #5a5a5a !important;
+  }
+
+  .jumbotron-quick-links {
+    grid-column: 2;
+    flex: none !important;
+    width: 340px !important;
+    min-width: 340px !important;
+    max-width: 340px !important;
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.jl-dots {
+  margin: 10px auto 0 !important;
+}
+
+.jumbotron-titles h1 {
+  font-size: 2.25rem !important;
+  font-weight: 700 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 15px !important;
+  position: relative !important;
+  border-bottom: none !important;
+  text-transform: none !important;
+  background: linear-gradient(135deg, #475569, #64748b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.25;
+}
+
+.jumbotron-titles h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(140, 192, 133, 0.2) 0%,
+    rgba(140, 192, 133, 0.8) 25%,
+    rgba(247, 211, 88, 0.8) 75%,
+    rgba(247, 211, 88, 0.2) 100%
+  );
+  opacity: 0.8;
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.jumbotron-titles h1:hover::after {
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(140, 192, 133, 0.3) 0%,
+    rgba(140, 192, 133, 1) 25%,
+    rgba(247, 211, 88, 1) 75%,
+    rgba(247, 211, 88, 0.3) 100%
+  );
+}
+
+.jumbotron-titles h2 {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 2rem auto;
+  color: var(--stemaway-secondary-400) !important;
+  font-weight: bold;
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.5));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(76, 175, 80, 0.8));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.5));
+  }
+}
+
+.lightbulb-icon {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  margin-right: 60px;
+  margin-left: -20px;
+  flex-shrink: 0;
+  animation: float 3s ease-in-out infinite, glow 5s ease-in-out infinite;
+}
+
+.jumbotron-quick-links h3 {
+  font-size: 0.9rem !important;
+  background: linear-gradient(135deg, #1e293b, #475569);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: 16px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px !important;
+  padding: 0.8rem !important;
+}
+
+.jumbotron-quick-links ul {
+  font-weight: 600;
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.jumbotron-quick-links ul li {
+  margin-bottom: 4px;
+  padding: 2px 0 !important;
+}
+
+.jumbotron-quick-links ul li a {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  padding: 14px 18px !important;
+  border-radius: 10px !important;
+  color: #384136;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+  text-decoration: none;
+  width: 100%;
+}
+
+.jumbotron-quick-links ul li a:hover {
+  background: rgba(148, 193, 152, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(148, 193, 152, 0.5) !important;
+  color: #065f46 !important;
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+.jumbotron-quick-links ul li svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.jumbotron-quick-links ul li svg {
+  fill: #5a9a8a;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.jumbotron-quick-links ul li {
+  animation: fadeInRight 0.5s ease forwards;
+  opacity: 0;
+}
+
+.jumbotron-quick-links ul li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.jumbotron-quick-links ul li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.jumbotron-quick-links ul li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.jumbotron-quick-links ul li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stemaway-partners-section {
+  display: none !important;
+}

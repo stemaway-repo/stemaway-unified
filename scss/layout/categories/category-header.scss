@@ -16,3 +16,37 @@
     }
   }
 }
+
+/* Migrated from stemaway-ui-addons/main-test.scss */
+.category-title-header .category-title-contents {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.category-title-header .category-title-name {
+  color: #5ca16e !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.15) !important;
+  margin-bottom: 0.3rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.category-title-header .category-title-description {
+  color: #455a43 !important;
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+  opacity: 0.95 !important;
+}
+
+.category-title-header .category-about-url a {
+  color: #2f5130 !important;
+  font-weight: 500 !important;
+  text-decoration: underline dotted !important;
+}
+
+.category-title-header .category-about-url a:hover {
+  color: #1e4620 !important;
+}

@@ -215,3 +215,117 @@
   animation: flyIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.15),
     transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.15);
 }
+
+/* Migrated from stemaway-ui-addons/main-test.scss */
+div[data-section-name="tags"],
+div[data-section-name="categories"],
+div[data-section-name="chat-dms"],
+div[data-section-name="chat-search"],
+div[data-section-name="chat-channels"],
+div[data-section-name="user-threads"],
+div[data-section-name="messages"],
+#user-menu-button-bookmarks,
+#user-menu-button-other-notifications {
+  display: none;
+}
+
+.sidebar-wrapper,
+.sidebar-hamburger-dropdown {
+  .sidebar-custom-sections {
+    display: contents;
+  }
+
+  [data-section-name="quick-starts"] {
+    order: 1;
+  }
+
+  [data-section-name="for-engineer-led-hiring"] {
+    order: 2;
+  }
+
+  [data-section-name="job-seekers-upskilling"] {
+    order: 3;
+  }
+
+  [data-section-name="my-account"] {
+    order: 4;
+  }
+
+  [data-section-name="my-preferences"] {
+    order: 5;
+  }
+}
+
+.sidebar-sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.hamburger-panel .panel-body-contents::before {
+  color: #fefefe !important;
+  background-color: #3a7c71 !important;
+  font-size: 1.5rem !important;
+  padding-top: 25px;
+  margin-bottom: 20px;
+}
+
+.menu-panel {
+  background: linear-gradient(135deg, #fff8e1, #e8f5e9);
+  color: #2c2c2c !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+.sidebar-footer-container {
+  background: linear-gradient(135deg, #fff8e1, #e8f5e9) !important;
+}
+
+.sidebar-section-link-prefix.icon svg,
+.sidebar-section-link-prefix.icon .d-icon {
+  color: #76a79c !important;
+}
+
+@media (min-width: 768px) {
+  .sidebar-section-wrapper .sidebar-section-header {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: #2c2c2c !important;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+    padding: 8px 12px !important;
+  }
+}
+
+.sidebar-section-wrapper {
+  margin-bottom: 16px !important;
+}
+
+.sidebar-section-link-wrapper {
+  padding: 0.3rem 0.5rem !important;
+}
+
+.sidebar-section-link {
+  color: #2c2c2c !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+}
+
+.sidebar-section-link,
+.sidebar-section-wrapper .sidebar-section-link {
+  background-color: transparent !important;
+}
+
+.sidebar-section-link:hover,
+.sidebar-section-wrapper .sidebar-section-link:hover {
+  background-color: #c8e6c9 !important;
+}
+
+.hamburger-panel,
+.search-menu,
+.user-menu {
+  animation: none;
+}
+
+.sidebar-footer-container::before {
+  height: 0 !important;
+}

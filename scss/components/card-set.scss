@@ -4,3 +4,71 @@
     flex: 1;
   }
 }
+
+/* Migrated from stemaway-ui-addons/main-test.scss */
+.stem-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px 20px 30px 20px;
+  text-align: center;
+}
+
+.stem-card:hover {
+  border-color: #d4edda;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.06);
+}
+
+.stem-card-image,
+.stem-image {
+  display: block;
+  text-align: center;
+  margin: 0 auto 16px;
+  height: 80px;
+}
+
+.stem-card-image img,
+.stem-image img {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80px;
+  opacity: 1;
+}
+
+.stem-card-content h3 {
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.stem-card-content p {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.stem-card-tagline {
+  background: #f0fdf4;
+  border: 1px solid #d4edda;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.stem-card-tagline h5 {
+  font-size: 0.75rem;
+  color: #065f46;
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stem-card-set {
+  margin-bottom: 3rem !important;
+}

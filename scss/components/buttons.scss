@@ -90,3 +90,22 @@
 .btn {
   border-radius: 5px;
 }
+
+/* Migrated from stemaway-ui-addons/main-test.scss */
+#create-topic {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  color: #2c2c2c !important;
+  border: 1px solid #c5e1a5 !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  transition: all 0.3s ease !important;
+  font-weight: 500 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+#create-topic:hover {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: #c5e1a5 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}

@@ -132,3 +132,26 @@
 .select-kit .select-kit-row.is-highlighted {
   background: var(--stemaway-secondary-150);
 }
+
+/* Migrated from stemaway-ui-addons/main-test.scss */
+.select-kit.combo-box .select-kit-header {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  color: #2c2c2c !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  transition: all 0.3s ease !important;
+  font-weight: 500 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.select-kit.combo-box .select-kit-header:hover {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: none !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.fk-d-tooltip__trigger .svg-icon {
+  fill: #f9dcab;
+}

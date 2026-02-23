@@ -50,7 +50,11 @@ table.topic-list,
 }
 
 .topic-list .topic-excerpt {
-  font-size: var(--font-0);
+  font-size: 0.8em;
+}
+
+.topic-list .topic-list-thumbnail ~ .topic-excerpt {
+  display: inline;
 }
 
 .topic-list-item {
@@ -62,4 +66,19 @@ table.topic-list,
 
 img.avatar {
   border-radius: 25%;
+}
+
+a.title img.emoji {
+  width: 14px !important;
+  height: 14px !important;
+  vertical-align: middle;
+  margin-right: 4px;
+  opacity: 0.75;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.5))
+    drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.15));
+}
+
+a.title {
+  letter-spacing: 0.3px;
 }

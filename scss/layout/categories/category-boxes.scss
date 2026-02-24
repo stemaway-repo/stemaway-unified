@@ -3,6 +3,7 @@
   grid-template-columns: repeat(auto-fit, minmax(19em, 1fr));
   gap: 1em;
 }
+
 .category-boxes .category-box,
 .category-boxes-with-topics .category-box {
   border-left: none;
@@ -105,6 +106,7 @@
     &:focus {
       background: var(--stemaway-secondary-150);
       border-color: var(--stemaway-secondary-150);
+
       .category-name {
         font-weight: 600;
       }
@@ -120,9 +122,11 @@
     padding: 0.5em 0.5em 0.4em 0.5em;
     display: block;
     width: 100%;
+
     .subcategory-image-placeholder {
       display: none !important;
     }
+
     .category-name {
       font-weight: 400;
       color: var(--stemaway-secondary-400);
@@ -130,9 +134,11 @@
       line-height: var(--line-height-medium);
       margin-bottom: 0.25em;
     }
+
     .badge-category-bg {
       display: none;
     }
+
     .d-icon {
       color: #dedede;
       height: 0.76em;
@@ -140,6 +146,7 @@
       vertical-align: baseline;
       margin-right: 0.4m;
     }
+
     &:hover,
     &:focus {
       border-bottom-color: var(--stemaway-secondary-150);
@@ -147,6 +154,7 @@
       border-right-color: var(--stemaway-secondary-150);
       border-top: 1px solid;
       background: var(--stemaway-secondary-150);
+
       .category-name {
         font-weight: 600;
       }
@@ -282,12 +290,10 @@ svg.svg-icon.d-icon-category\.restricted {
   left: 0 !important;
   right: 0 !important;
   height: 2px !important;
-  background: linear-gradient(
-    to right,
-    rgba(76, 175, 80, 0.5),
-    rgba(139, 195, 74, 0.5),
-    rgba(205, 220, 57, 0.5)
-  ) !important;
+  background: linear-gradient(to right,
+      rgba(76, 175, 80, 0.5),
+      rgba(139, 195, 74, 0.5),
+      rgba(205, 220, 57, 0.5)) !important;
   z-index: 1 !important;
 }
 
@@ -316,7 +322,7 @@ svg.svg-icon.d-icon-category\.restricted {
   width: 100% !important;
 }
 
-.subcategories a.subcategory > a.badge-category__wrapper {
+.subcategories a.subcategory>a.badge-category__wrapper {
   display: block !important;
   width: 100% !important;
   box-sizing: border-box !important;
@@ -329,13 +335,13 @@ svg.svg-icon.d-icon-category\.restricted {
   font-weight: 400 !important;
 }
 
-.subcategories a.subcategory > a.badge-category__wrapper *,
-.subcategories a.subcategory > a.badge-category__wrapper {
+.subcategories a.subcategory>a.badge-category__wrapper *,
+.subcategories a.subcategory>a.badge-category__wrapper {
   pointer-events: auto !important;
 }
 
-.subcategories a.subcategory > a.badge-category__wrapper:hover,
-.subcategories a.subcategory > a.badge-category__wrapper:focus-visible {
+.subcategories a.subcategory>a.badge-category__wrapper:hover,
+.subcategories a.subcategory>a.badge-category__wrapper:focus-visible {
   background: rgba(118, 176, 74, 0.08) !important;
   transform: translateY(-2px) scale(1.01) !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -348,6 +354,53 @@ svg.svg-icon.d-icon-category\.restricted {
 .with-logos .badge-category__wrapper .badge-category.--style-square::before {
   content: none !important;
   display: none !important;
+}
+
+@media (max-width: 768px) {
+
+  .category-boxes,
+  .category-boxes-with-topics {
+    // grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0.8rem !important;
+    width: 100% !important;
+  }
+
+  .category-boxes .category-box,
+  .category-boxes-with-topics .category-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  .category-boxes .category-box:hover,
+  .category-boxes .category-box:focus,
+  .category-boxes-with-topics .category-box:hover,
+  .category-boxes-with-topics .category-box:focus {
+    transform: none !important;
+  }
+
+  .category-boxes .category-box .category-box-inner,
+  .category-boxes-with-topics .category-box .category-box-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 14px !important;
+    box-sizing: border-box !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+
+  .category-boxes .category-box .category-box-heading h3,
+  .category-boxes-with-topics .category-box .category-box-heading h3,
+  .category-boxes .category-box .description,
+  .category-boxes-with-topics .category-box .description {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
 }
 
 body:not(.categories-list) .category-box-inner .svg-icon {

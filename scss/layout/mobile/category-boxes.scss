@@ -153,5 +153,22 @@
     margin: 0 !important;
     float: none !important;
     box-sizing: border-box !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  .category-boxes .category-box:hover,
+  .category-boxes .category-box:focus,
+  .category-boxes-with-topics .category-box:hover,
+  .category-boxes-with-topics .category-box:focus {
+    transform: none !important;
+  }
+
+  .category-boxes .category-box .category-box-inner,
+  .category-boxes-with-topics .category-box .category-box-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: anywhere !important;
   }
 }

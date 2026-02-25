@@ -50,3 +50,17 @@
 .category-title-header .category-about-url a:hover {
   color: #1e4620 !important;
 }
+
+/* Migrated from stemaway-ui-addons/main-test-mobile.scss */
+@media (max-width: 768px) {
+  .category-header div[class^='category-title-header'] {
+    text-align: left !important;
+  }
+
+  .category-header
+    div[class^='category-title-header']
+    .category-title-contents
+    .category-title-name {
+    margin-top: 2rem !important;
+  }
+}

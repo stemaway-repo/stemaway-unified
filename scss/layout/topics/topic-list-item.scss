@@ -82,3 +82,15 @@ a.title img.emoji {
 a.title {
   letter-spacing: 0.3px;
 }
+
+/* Migrated from stemaway-ui-addons/main-test.scss */
+@media (max-width: 2000px) {
+  td.topic-list-data div.right div.pull-right {
+    display: none;
+  }
+}
+
+.topic-list .topic-list-header th:nth-child(3),
+.topic-list tbody tr.topic-list-item td:nth-child(3) {
+  display: none !important;
+}

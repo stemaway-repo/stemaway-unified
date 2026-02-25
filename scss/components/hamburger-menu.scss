@@ -329,3 +329,18 @@ div[data-section-name="messages"],
 .sidebar-footer-container::before {
   height: 0 !important;
 }
+
+/* Migrated from stemaway-ui-addons/main-test-mobile.scss */
+.sidebar-section-header-wrapper {
+  background-color: teal;
+}
+
+@media (max-width: 767px) {
+  .sidebar-section-wrapper .sidebar-section-header,
+  .sidebar-section-wrapper .sidebar-section-header svg,
+  .sidebar-section-wrapper .sidebar-section-header-button svg {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+  }
+}

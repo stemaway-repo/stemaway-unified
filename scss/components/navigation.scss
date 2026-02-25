@@ -57,3 +57,29 @@
 .navigation-controls {
   align-items: center;
 }
+
+/* Migrated from stemaway-ui-addons/main-test.scss */
+.navigation-container .navigation-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navigation-container .navigation-controls .select-kit.single-select.dropdown-select-box.categories-admin-dropdown {
+  order: 98 !important;
+  margin-left: auto !important;
+}
+
+.navigation-container .navigation-controls .d-combo-button {
+  order: 99 !important;
+}
+
+.navigation-container .navigation-controls #create-topic {
+  order: 99 !important;
+  margin-left: 0 !important;
+}
+
+.navigation-container .navigation-controls .topic-drafts-menu-trigger {
+  order: 100 !important;
+  margin-left: 0 !important;
+}

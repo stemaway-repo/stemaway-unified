@@ -42,3 +42,8 @@
 .badge-card .check-display {
   display: none;
 }
+
+/* Migrated from stemaway-ui-addons/main-test.scss */
+.badge-contents:hover .badge-link {
+  color: teal;
+}

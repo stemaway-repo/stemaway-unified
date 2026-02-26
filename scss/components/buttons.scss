@@ -21,6 +21,7 @@
     &:hover {
       background: var(--stemaway-secondary-200);
       color: var(--stemaway-secondary-500);
+
       .d-icon,
       &[href] {
         color: var(--stemaway-secondary-500);
@@ -32,13 +33,16 @@
 .btn-rollback {
   background-color: var(--stemaway-secondary-400);
   color: white;
+
   .d-icon {
     color: white;
   }
+
   .discourse-no-touch & {
     &:hover {
       background: var(--stemaway-secondary-500);
       color: white;
+
       .d-icon,
       &[href] {
         color: white;
@@ -49,6 +53,7 @@
 
 .btn-rollback[disabled] {
   background-color: var(--stemaway-secondary-400);
+
   &:hover {
     background: var(--stemaway-secondary-400);
   }
@@ -63,6 +68,7 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
+
   button:nth-child(2) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -73,13 +79,16 @@
   background-color: var(--stemaway-primary-400);
   color: white;
   border-radius: 5px;
+
   .d-icon {
     color: white;
   }
+
   .discourse-no-touch & {
     &:hover {
       background-color: var(--stemaway-primary-500);
       color: var(--stemaway-primary-100);
+
       .d-icon {
         color: var(--stemaway-primary-100);
       }
@@ -92,20 +101,23 @@
 }
 
 /* Migrated from stemaway-ui-addons/main-test.scss */
+.select-kit.combo-box .select-kit-header,
 #create-topic {
-  background-color: rgba(255, 255, 255, 0.7);
-  color: #2c2c2c;
-  border: 1px solid #c5e1a5;
-  border-radius: 8px;
-  padding: 8px 16px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  color: #2C2C2C !important;
+  border: 1px solid #C5E1A5 !important;
+  /* More subtle border */
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  transition: all 0.3s ease !important;
+  font-weight: 500 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
 }
 
+.select-kit.combo-box .select-kit-header:hover,
 #create-topic:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-color: #c5e1a5;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: #C5E1A5 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }

@@ -4,6 +4,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .login-modal .modal-body.has-alt-auth,
   .create-account .modal-body.has-alt-auth {
     background: var(--stemaway-primary-400);
@@ -24,4 +25,51 @@
   font-weight: bold;
   margin-bottom: 15px;
   font-size: 1.8em;
+}
+
+.signup-page-cta__signup,
+.login-page-cta__login,
+.invitation-cta__accept {
+  background: linear-gradient(135deg, #E6EE9C, #C5E1A5) !important;
+  color: #000 !important;
+  border: none !important;
+  padding: 10px !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 4px rgba(145, 95, 42, 0.2) !important;
+}
+
+.signup-page-cta__signup:hover {
+  background: linear-gradient(135deg, rgba(118, 176, 74, 1), rgba(140, 192, 133, 1));
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(145, 95, 42, 0.4) !important;
+}
+
+#login-form input,
+.select-kit {
+  border: 1px solid #C5E1A5 !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(145, 95, 42, 0.1);
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+#new-account-email,
+#new-account-name,
+#new-account-username,
+#new-account-password {
+  border: 1px solid #C5E1A5 !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(145, 95, 42, 0.1);
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.login-left-side,
+.invites-show {
+  background: linear-gradient(135deg, #FFFDF2, #F2FAF4) !important;
 }

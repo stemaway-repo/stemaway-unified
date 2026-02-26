@@ -15,6 +15,7 @@
     .badge-link {
       color: var(--stemaway-primary-400);
     }
+
     .badge-summary {
       color: var(--stemaway-secondary-400);
     }
@@ -31,15 +32,15 @@
 }
 
 .badge-wrapper.bullet {
-  span.badge-category-parent-bg + .badge-category-bg {
+  span.badge-category-parent-bg+.badge-category-bg {
     width: 9px;
   }
 }
 
 /* Migrated from stemaway-ui-addons/main-test.scss */
-.badge-contents:hover .badge-link {
-  color: teal;
-}
+// .badge-contents:hover .badge-link {
+//   color: teal;
+// }
 
 .badge-wrapper.bullet span.badge-category-parent-bg,
 .badge-card .check-display {

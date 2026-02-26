@@ -14,22 +14,12 @@
       }
     }
 
-    .summary,
-    .activity {
-      display: none;
-    }
-  }
-}
-
-.user-menu .menu-links-row {
-  button.user-notifications-link {
-    display: none;
   }
 }
 
 /* Migrated from stemaway-ui-addons/main-test.scss */
 .user-menu.revamped .quick-access-panel {
-  background-color: #fff !important;
+  background-color: #fff;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   padding: 15px;
@@ -41,7 +31,7 @@
 }
 
 .user-menu.revamped .quick-access-panel li:nth-child(odd) {
-  background-color: #fefefe !important;
+  background-color: #fefefe;
 }
 
 .user-menu.revamped .quick-access-panel li {
@@ -50,12 +40,12 @@
 }
 
 .user-menu.revamped .quick-access-panel li:hover {
-  background-color: rgba(165, 214, 167, 0.5) !important;
+  background-color: rgba(165, 214, 167, 0.5);
   transition: background-color 0.3s ease;
 }
 
 .user-menu.revamped .menu-tabs-container {
-  border: 1px solid #dedede !important;
+  border: 1px solid #dedede;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   transition: box-shadow 0.3s ease;
@@ -63,15 +53,15 @@
 
 .user-menu.revamped .quick-access-panel .item-label,
 .user-menu.revamped .quick-access-panel .item-description {
-  color: #2c3e50 !important;
-  font-size: 14px !important;
+  color: #2c3e50;
+  font-size: 14px;
 }
 
 .user-menu.revamped .panel-body-bottom .btn {
-  background: linear-gradient(135deg, #fff8e1, #e8f5e9) !important;
-  color: #7c7c7c !important;
+  background: linear-gradient(135deg, #fff8e1, #e8f5e9);
+  color: #7c7c7c;
   border-radius: 12px;
-  border: none !important;
+  border: none;
   box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
   transition: all 0.3s ease;
   padding: 8px 16px;
@@ -80,7 +70,7 @@
 }
 
 .user-menu.revamped .panel-body-bottom .btn:hover {
-  background: linear-gradient(135deg, #c8e6c9, #a5d6a7) !important;
+  background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
   box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
   transform: translateY(-1px);
 }
@@ -91,21 +81,32 @@
 }
 
 .user-menu.revamped .top-tabs .btn-icon svg {
-  color: #76a79c !important;
-  opacity: 0.8 !important;
+  color: #76a79c;
+  opacity: 0.8;
 }
 
 .user-menu.revamped .top-tabs .btn-icon:hover {
-  background-color: transparent !important;
-  filter: brightness(1.2) !important;
+  background-color: transparent;
+  filter: brightness(1.2);
 }
 
 .user-menu.revamped .top-tabs .badge-notification {
-  background-color: #dedede !important;
-  opacity: 0.8 !important;
-  color: #000 !important;
+  background-color: #dedede;
+  opacity: 0.8;
+  color: #000;
 }
 
 .user-menu.revamped .top-tabs .btn-icon.active {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#user-menu-button-bookmarks,
+#user-menu-button-other-notifications {
+  display: none;
+}
+
+.user-menu .quick-access-panel .summary,
+.user-menu .quick-access-panel .activity,
+.user-menu .menu-links-row button.user-notifications-link {
+  display: none;
 }

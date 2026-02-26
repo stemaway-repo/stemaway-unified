@@ -31,19 +31,22 @@
 }
 
 .badge-wrapper.bullet {
-  span.badge-category-parent-bg {
-    display: none;
-  }
   span.badge-category-parent-bg + .badge-category-bg {
     width: 9px;
   }
 }
 
+/* Migrated from stemaway-ui-addons/main-test.scss */
+.badge-contents:hover .badge-link {
+  color: teal;
+}
+
+.badge-wrapper.bullet span.badge-category-parent-bg,
 .badge-card .check-display {
   display: none;
 }
 
-/* Migrated from stemaway-ui-addons/main-test.scss */
-.badge-contents:hover .badge-link {
-  color: teal;
+.with-logos .badge-category__wrapper .badge-category.--style-square::before {
+  content: none;
+  display: none;
 }

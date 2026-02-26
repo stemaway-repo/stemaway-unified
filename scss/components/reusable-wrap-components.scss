@@ -1,0 +1,320 @@
+/* AIVIA Discourse Theme CSS - Reusable Components */
+
+/* =========================
+   HERO SECTIONS
+========================= */
+
+/* Hero - Light gradient background (All pages) */
+.d-wrap[data-wrap="hero-fulltime"],
+.d-wrap[data-wrap="hero-freelance"],
+.d-wrap[data-wrap="hero-internships"],
+.d-wrap[data-wrap="hero-isef"],
+.d-wrap[data-wrap="hero-pipeline"],
+.d-wrap[data-wrap="hero-playbook"],
+.d-wrap[data-wrap="hero-welcome"],
+.d-wrap[data-wrap="hero-verified"],
+.d-wrap[data-wrap="hero-mentorship"],
+.d-wrap[data-wrap="hero-opportunities"],
+.d-wrap[data-wrap="hero-light"] {
+  text-align: center;
+  padding: 50px 30px;
+  background: linear-gradient(180deg, rgba(45, 90, 74, 0.07) 0%, rgba(45, 90, 74, 0.02) 60%, transparent 100%);
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
+.d-wrap[data-wrap="hero-fulltime"] h1,
+.d-wrap[data-wrap="hero-freelance"] h1,
+.d-wrap[data-wrap="hero-internships"] h1,
+.d-wrap[data-wrap="hero-isef"] h1,
+.d-wrap[data-wrap="hero-pipeline"] h1,
+.d-wrap[data-wrap="hero-playbook"] h1,
+.d-wrap[data-wrap="hero-welcome"] h1,
+.d-wrap[data-wrap="hero-verified"] h1,
+.d-wrap[data-wrap="hero-mentorship"] h1,
+.d-wrap[data-wrap="hero-opportunities"] h1,
+.d-wrap[data-wrap="hero-light"] h1 {
+  font-size: 2em;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #1A1D1A;
+}
+
+/* Hero - Dark background */
+.d-wrap[data-wrap="hero-section"],
+.d-wrap[data-wrap="hero-dark"] {
+  text-align: center;
+  padding: 50px 30px;
+  background: linear-gradient(135deg, #1A1D1A 0%, #242824 100%);
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
+.d-wrap[data-wrap="hero-section"] h1,
+.d-wrap[data-wrap="hero-dark"] h1 {
+  color: #F5F4F0;
+  font-size: 2em;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   BADGES
+========================= */
+
+/* Badge - Light Version */
+.d-wrap[data-wrap="badge-light"] {
+  padding: 10px 20px;
+  border: 1px solid rgba(45, 90, 74, 0.2);
+  border-radius: 50px;
+  margin-bottom: 24px;
+  background: rgba(45, 90, 74, 0.06);
+  color: #2D5A4A;
+  font-size: 0.9em;
+}
+
+/* Badge - Dark Version */
+.d-wrap[data-wrap="badge"],
+.d-wrap[data-wrap="badge-dark"] {
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.9em;
+}
+
+/* =========================
+   SECTION HEADERS
+========================= */
+
+.d-wrap[data-wrap="section-header"] {
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+.d-wrap[data-wrap="section-header"] h2 {
+  font-size: 1.6em;
+  color: #1A1D1A;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+/* Step Card - Compact, for process steps */
+.d-wrap[data-wrap="step-card"] {
+  background: #F5F4F0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  border-left: 3px solid #2D5A4A;
+}
+
+/* Benefit Card - Prominent, for features */
+.d-wrap[data-wrap="benefit-card"] {
+  background: #fff;
+  border: 1px solid #E5E3DB;
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Benefit Card with highlight accent */
+.d-wrap[data-wrap="benefit-card-highlight"] {
+  background: #fff;
+  border: 1px solid #E5E3DB;
+  border-left: 4px solid #2D5A4A;
+  border-radius: 14px;
+  padding: 22px 26px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Benefit Points - Nested section inside benefit card */
+.d-wrap[data-wrap="benefit-points"] {
+  background: #F9F9F7;
+  border-left: 3px solid #2D5A4A;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+/* Pricing Card - Standard */
+.d-wrap[data-wrap="pricing-card"] {
+  background: #FAFAF8;
+  border: 1px solid #E5E3DB;
+  border-radius: 20px;
+  padding: 30px;
+  border-top: 4px solid #E5E3DB;
+  text-align: center;
+}
+
+.d-wrap[data-wrap="pricing-card"] h3 {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  color: #1A1D1A;
+}
+
+/* Pricing Card - Featured */
+.d-wrap[data-wrap="pricing-card-featured"] {
+  background: linear-gradient(180deg, rgba(45, 90, 74, 0.04) 0%, #FAFAF8 100%);
+  border: 2px solid #2D5A4A;
+  border-radius: 20px;
+  padding: 30px;
+  border-top: 4px solid #2D5A4A;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(45, 90, 74, 0.15);
+}
+
+.d-wrap[data-wrap="pricing-card-featured"] h3 {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  color: #1A1D1A;
+}
+
+/* Pricing Features - Left Aligned */
+.d-wrap[data-wrap="pricing-features"] {
+  text-align: left;
+  padding-left: 20px;
+  margin: 20px 0;
+  line-height: 1.9;
+}
+
+/* =========================
+   DARK SECTIONS
+========================= */
+
+.d-wrap[data-wrap="dark-section"] {
+  background: linear-gradient(135deg, #1A1D1A 0%, #242824 100%);
+  padding: 50px 30px;
+  border-radius: 16px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.d-wrap[data-wrap="dark-section"] h2 {
+  margin-bottom: 30px;
+  font-size: 1.6em;
+}
+
+/* Lifecycle/Talent Card - Dark background */
+.d-wrap[data-wrap="lifecycle-card"],
+.d-wrap[data-wrap="talent-card"] {
+  background: #242824;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+}
+
+/* =========================
+   CTA BUTTONS
+========================= */
+
+/* CTA Primary - Filled green gradient */
+.d-wrap[data-wrap="cta-primary"] {
+  background: linear-gradient(135deg, #2D5A4A, #4A8B6E);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 12px;
+  margin: 15px 0 5px;
+  box-shadow: 0 4px 20px rgba(45, 90, 74, 0.3);
+}
+
+.d-wrap[data-wrap="cta-primary"] a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* CTA Secondary - Outline */
+.d-wrap[data-wrap="cta-secondary"],
+.d-wrap[data-wrap="cta-button"] {
+  padding: 14px 28px;
+  border: 2px solid #2D5A4A;
+  border-radius: 12px;
+  margin: 15px 0 5px;
+  background: transparent;
+}
+
+.d-wrap[data-wrap="cta-secondary"] a,
+.d-wrap[data-wrap="cta-button"] a {
+  color: #2D5A4A;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* CTA Green Outline - For dark backgrounds */
+.d-wrap[data-wrap="cta-button-green"] {
+  padding: 14px 28px;
+  border: 2px solid #4A8B6E;
+  border-radius: 12px;
+  margin: 15px 0 5px;
+  background: transparent;
+}
+
+.d-wrap[data-wrap="cta-button-green"] a {
+  color: #4A8B6E;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.d-wrap[data-wrap="footer"] {
+  background: #1A1D1A;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+  text-align: center;
+  color: #B8B5AD;
+}
+
+.d-wrap[data-wrap="footer"] a {
+  color: #4A8B6E;
+  text-decoration: none;
+}
+
+.d-wrap[data-wrap="footer"] strong {
+  color: #F5F4F0;
+}
+
+/* =========================
+   INFO SECTIONS
+========================= */
+
+.d-wrap[data-wrap="info-section"] {
+  background: #FAFAF8;
+  padding: 50px 30px;
+  border-radius: 16px;
+  margin: 30px 0;
+}
+
+.d-wrap[data-wrap="info-card"] {
+  background: #F5F4F0;
+  border: 1px solid #dbd7d7;
+  border-radius: 16px;
+  padding: 28px;
+  margin: 15px 0;
+  text-align: left;
+}
+
+/* =========================
+   PROMO BADGE
+========================= */
+
+.d-wrap[data-wrap="promo-badge"] {
+  background: linear-gradient(135deg, #2D5A4A, #4A8B6E);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-size: 0.85em;
+}

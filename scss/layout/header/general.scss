@@ -108,12 +108,12 @@ a.unread-high-priority-notifications {
 .d-header .chat-header-icon svg,
 .d-header .ai-bot-button svg,
 .d-header .hamburger-dropdown svg {
-  color: #aeaeae !important;
+  color: #aeaeae;
   opacity: 1;
 }
 
 .d-header .d-header-icons .icon:hover svg {
-  color: #8dba92 !important;
+  color: #8dba92;
   opacity: 1;
   transform: scale(1.1);
 }
@@ -138,5 +138,5 @@ a.unread-high-priority-notifications {
 }
 
 .d-header .title {
-  margin: 0 !important;
+  margin: 0;
 }

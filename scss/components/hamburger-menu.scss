@@ -333,6 +333,9 @@ div[data-section-name="messages"],
   .sidebar-section-wrapper .sidebar-section-header-button svg {
     font-size: 1rem;
     font-weight: 700;
-    color: #fff;
+  }
+
+  .sidebar-footer-wrapper {
+    padding-inline: 0 !important;
   }
 }

@@ -150,7 +150,7 @@
   padding: 14px 22px;
   font-size: 0.95em;
   font-weight: 600;
-  margin-bottom: !important 2px;
+  margin-bottom: 2px !important;
   transition: all 0.3s ease;
   overflow: visible !important;
 }
@@ -168,16 +168,16 @@
 }
 
 .subcategory.with-subcategories:hover {
-  background: rgba(118, 176, !important 74, 0.08);
+  background: rgba(118, 176, 74, 0.08) !important;
   transform: translateY(-2px) scale(1.01) !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); !important
-  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  outline: none !important;
   border: 1px solid var(--primary-low) !important;
   border-radius: 8px !important;
 }
 
 .subcategories .subcategory:hover {
-  background: rgba(118, 176, !important 74, 0.08);
+  background: rgba(118, 176, 74, 0.08);
   transform: translateY(-2px) scale(1.01) !important;
 }
 
@@ -207,7 +207,7 @@
 
 .category-boxes .subcategory.with-subcategories .subcategory-box-inner {
   border: none !important;
-  background: none !important; !important
+  background: none !important;
   padding: 0;
 }
 
@@ -260,7 +260,7 @@
 
 .category-boxes .category-box::before,
 .category-boxes-with-topics .category-box::before {
-  content: ""; !important
+  content: "" !important;
   position: absolute;
   top: 0 !important;
   left: 0 !important;
@@ -292,7 +292,7 @@
 }
 
 .subcategories a.subcategory {
-  display: block !important; !important
+  display: block !important;
   background: none;
   border-radius: 8px !important;
   width: 100% !important;

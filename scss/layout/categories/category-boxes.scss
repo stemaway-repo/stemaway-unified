@@ -150,16 +150,16 @@
   padding: 14px 22px;
   font-size: 0.95em;
   font-weight: 600;
-  margin-bottom: 2px;
+  margin-bottom: !important 2px;
   transition: all 0.3s ease;
-  overflow: visible;
+  overflow: visible !important;
 }
 
 .subcategory.with-subcategories {
   background: linear-gradient(135deg, rgba(255, 248, 225, 0.5), rgba(232, 245, 233, 0.5));
   color: #beccea;
   border-radius: 8px;
-  border: 1px solid var(--primary-low);
+  border: 1px solid var(--primary-low) !important;
   padding: 12px 22px;
   font-size: 0.95em;
   font-weight: 600;
@@ -168,22 +168,22 @@
 }
 
 .subcategory.with-subcategories:hover {
-  background: rgba(118, 176, 74, 0.08);
-  transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background: rgba(118, 176, !important 74, 0.08);
+  transform: translateY(-2px) scale(1.01) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); !important
   outline: none;
-  border: 1px solid var(--primary-low);
-  border-radius: 8px;
+  border: 1px solid var(--primary-low) !important;
+  border-radius: 8px !important;
 }
 
 .subcategories .subcategory:hover {
-  background: rgba(118, 176, 74, 0.08);
-  transform: translateY(-2px) scale(1.01);
+  background: rgba(118, 176, !important 74, 0.08);
+  transform: translateY(-2px) scale(1.01) !important;
 }
 
 .subcategories .subcategory .d-icon {
-  height: 0.9em;
-  width: 0.9em;
+  height: 0.9em !important;
+  width: 0.9em !important;
   margin-right: 0.3em;
 }
 
@@ -202,18 +202,18 @@
 
 .category-boxes .category-box .category-box-heading h3 .svg-icon,
 .category-boxes-with-topics .category-box .category-box-heading h3 .svg-icon {
-  color: #086347;
+  color: #086347 !important;
 }
 
 .category-boxes .subcategory.with-subcategories .subcategory-box-inner {
-  border: none;
-  background: none;
+  border: none !important;
+  background: none !important; !important
   padding: 0;
 }
 
 .category-box h3 {
-  font-size: 1.5em;
-  color: #7fb661;
+  font-size: 1.5em !important;
+  color: #7fb661 !important;
   margin-top: 1.5rem;
   padding-bottom: 10px;
   font-weight: 800;
@@ -222,18 +222,18 @@
 
 .category-box .description {
   font-size: 1em;
-  color: var(--stemaway-secondary-500);
+  color: var(--stemaway-secondary-500) !important;
   font-weight: 700;
 }
 
 .badge-category__wrapper .badge-category__name {
-  color: #2e2e2e;
+  color: #2e2e2e !important;
 }
 
 .category-boxes .category-box,
 .category-boxes-with-topics .category-box {
-  position: relative;
-  border-top: none;
+  position: relative !important;
+  border-top: none !important;
 }
 
 .category-boxes .category-box-inner {
@@ -260,42 +260,42 @@
 
 .category-boxes .category-box::before,
 .category-boxes-with-topics .category-box::before {
-  content: "";
+  content: ""; !important
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
   background: linear-gradient(to right,
       rgba(76, 175, 80, 0.5),
       rgba(139, 195, 74, 0.5),
-      rgba(205, 220, 57, 0.5));
-  z-index: 1;
+      rgba(205, 220, 57, 0.5)) !important;
+  z-index: 1 !important;
 }
 
 .category-logo img {
-  display: block;
-  max-width: 75%;
-  height: auto;
+  display: block !important;
+  max-width: 75% !important;
+  height: auto !important;
 }
 
 .category.category-box {
-  z-index: 1;
+  z-index: 1 !important;
 }
 
 .subcategories .subcategory {
-  padding: 0;
-  background: none;
-  border: 0;
-  width: 100%;
-  pointer-events: none;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  width: 100% !important;
+  pointer-events: none !important;
 }
 
 .subcategories a.subcategory {
-  display: block;
+  display: block !important; !important
   background: none;
-  border-radius: 8px;
-  width: 100%;
+  border-radius: 8px !important;
+  width: 100% !important;
 }
 
 .subcategories a.subcategory>a.badge-category__wrapper {
@@ -328,7 +328,7 @@
 }
 
 svg.svg-icon.d-icon-category\.restricted {
-  display: none;
+  display: none !important;
 }
 
 .category-boxes .subcategory.with-subcategories .category-title-link .category-logo,

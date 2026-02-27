@@ -48,6 +48,6 @@
 }
 
 .with-logos .badge-category__wrapper .badge-category.--style-square::before {
-  content: none;
-  display: none;
+  content: none !important;
+  display: none !important;
 }

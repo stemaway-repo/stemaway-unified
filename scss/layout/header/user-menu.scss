@@ -19,7 +19,7 @@
 
 /* Migrated from stemaway-ui-addons/main-test.scss */
 .user-menu.revamped .quick-access-panel {
-  background-color: #fff;
+  background-color: #fff !important;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   padding: 15px;
@@ -31,7 +31,7 @@
 }
 
 .user-menu.revamped .quick-access-panel li:nth-child(odd) {
-  background-color: #fefefe;
+  background-color: #fefefe !important;
 }
 
 .user-menu.revamped .quick-access-panel li {
@@ -40,12 +40,12 @@
 }
 
 .user-menu.revamped .quick-access-panel li:hover {
-  background-color: rgba(165, 214, 167, 0.5);
+  background-color: rgba(165, 214, 167, 0.5) !important;
   transition: background-color 0.3s ease;
 }
 
 .user-menu.revamped .menu-tabs-container {
-  border: 1px solid #dedede;
+  border: 1px solid #dedede !important;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   transition: box-shadow 0.3s ease;
@@ -53,15 +53,15 @@
 
 .user-menu.revamped .quick-access-panel .item-label,
 .user-menu.revamped .quick-access-panel .item-description {
-  color: #2c3e50;
-  font-size: 14px;
+  color: #2c3e50 !important;
+  font-size: 14px !important;
 }
 
 .user-menu.revamped .panel-body-bottom .btn {
   background: linear-gradient(135deg, #fff8e1, #e8f5e9);
-  color: #7c7c7c;
+  color: #7c7c7c !important;
   border-radius: 12px;
-  border: none;
+  border: none !important;
   box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
   transition: all 0.3s ease;
   padding: 8px 16px;
@@ -82,22 +82,22 @@
 
 .user-menu.revamped .top-tabs .btn-icon svg {
   color: #76a79c;
-  opacity: 0.8;
+  opacity: 0.8 !important;
 }
 
 .user-menu.revamped .top-tabs .btn-icon:hover {
-  background-color: transparent;
-  filter: brightness(1.2);
+  background-color: transparent !important;
+  filter: brightness(1.2) !important;
 }
 
 .user-menu.revamped .top-tabs .badge-notification {
-  background-color: #dedede;
-  opacity: 0.8;
-  color: #000;
+  background-color: #dedede !important;
+  opacity: 0.8 !important;
+  color: #000 !important;
 }
 
 .user-menu.revamped .top-tabs .btn-icon.active {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
 #user-menu-button-bookmarks,

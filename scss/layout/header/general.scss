@@ -108,12 +108,12 @@ a.unread-high-priority-notifications {
 .d-header .chat-header-icon svg,
 .d-header .ai-bot-button svg,
 .d-header .hamburger-dropdown svg {
-  color: #aeaeae;
+  color: #aeaeae !important;
   opacity: 1;
 }
 
 .d-header .d-header-icons .icon:hover svg {
-  color: #8dba92;
+  color: #8dba92 !important;
   opacity: 1;
   transform: scale(1.1);
 }

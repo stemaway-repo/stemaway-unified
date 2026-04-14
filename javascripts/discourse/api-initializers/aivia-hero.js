@@ -67,7 +67,15 @@ function initHero() {
     setCollapsed(true);
   }
 
-  function switchTab(dataP, dataH, dataCta, dataCta2, label) {
+  function switchTab(
+    dataP,
+    dataH,
+    dataCta,
+    dataCta2,
+    dataCtaUrl,
+    dataCta2Url,
+    label
+  ) {
     hero
       .querySelectorAll("#aivia-tabs .dk-t")
       .forEach((button) => button.classList.remove("on"));
@@ -90,9 +98,11 @@ function initHero() {
     headline.innerHTML = dataH;
     if (persistPrimary) {
       persistPrimary.textContent = dataCta;
+      persistPrimary.href = dataCtaUrl;
     }
     if (persistSecondary) {
       persistSecondary.textContent = dataCta2;
+      persistSecondary.href = dataCta2Url;
     }
 
     if (mobileSelText) {
@@ -115,6 +125,8 @@ function initHero() {
         tab.dataset.h,
         tab.dataset.cta,
         tab.dataset.cta2,
+        tab.dataset.ctaUrl,
+        tab.dataset.cta2Url,
         tab.textContent
       );
     });
@@ -135,6 +147,8 @@ function initHero() {
         option.dataset.h,
         option.dataset.cta,
         option.dataset.cta2,
+        option.dataset.ctaUrl,
+        option.dataset.cta2Url,
         option.textContent
       );
       if (mobileSel && mobileDd) {

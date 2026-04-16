@@ -145,37 +145,6 @@
   }
 }
 
-.footer-banner {
-  .partners {
-    background: var(--stemaway-secondary-150);
-    padding: 2rem 1rem 1rem 1rem;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-
-    h2 {
-      text-align: center;
-      @media screen and (min-width: 600px) {
-        max-width: 45%;
-      }
-      color: var(--stemaway-secondary-500);
-    }
-
-    &-images {
-      display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-      justify-content: center;
-
-      a {
-        padding: 2.25rem;
-        @include image-logo;
-      }
-    }
-  }
-}
-
 .universities {
   background-color: rgba(235, 236, 243, 0.2);
 
@@ -241,10 +210,6 @@
 }
 
 #global-notice-alert-emails-disabled {
-  display: none;
-}
-
-.stemaway-partners-section {
   display: none;
 }
 
@@ -768,7 +733,9 @@
     rgba(247, 211, 88, 0.2) 100%
   );
   opacity: 0.8;
-  transition: opacity 0.3s ease, background 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    background 0.3s ease;
 }
 
 .jumbotron-titles h1:hover::after {
@@ -812,7 +779,9 @@
   margin-right: 60px;
   margin-left: -20px;
   flex-shrink: 0;
-  animation: float 3s ease-in-out infinite, glow 5s ease-in-out infinite !important;
+  animation:
+    float 3s ease-in-out infinite,
+    glow 5s ease-in-out infinite !important;
 }
 
 .jumbotron-quick-links h3 {

@@ -1,4 +1,45 @@
 en:
+  aivia_header_nav:
+    use_cases:
+      label: "Solutions"
+    the_tech:
+      label: "The tech"
+    sections:
+      employers: "Solutions"
+      candidates: "For candidates"
+      labs: "STEM-Away Programs"
+      core: "The tech"
+    items:
+      full_time:
+        title: "Hire full-time engineers"
+        subtitle: "Evaluate candidates before the first interview"
+      freelance:
+        title: "Hire freelancers"
+        subtitle: "Find developers already evaluated on your stack"
+      internships:
+        title: "Screen and upskill interns"
+        subtitle: "Identify high-potential students and guide targeted learning"
+      talent_pipeline:
+        title: "Build a talent pipeline"
+        subtitle: "Continuously evaluate candidates before roles open"
+      verified:
+        title: "Get discovered"
+        subtitle: "One evaluation, visibility across all roles"
+      project_mentorship:
+        title: "ISEF and research projects"
+        subtitle: "Turn research interests into buildable technical projects"
+      inside_aivia:
+        title: "How it works"
+        subtitle: "See how the AIVIA evaluation engine works"
+      context_pack:
+        title: "Custom prescreen"
+        subtitle: "Customize how the AI probes and scores candidates"
+      scenarios:
+        title: "Scenario library"
+        subtitle: "Explore the engineering scenarios behind the interviews"
+      report_breakdown:
+        title: "Interview alignment"
+        subtitle: "See exactly how candidates reason, score, and rank"
   hero:
     group_1:
       title: "The Skill-Centric Career Hub"

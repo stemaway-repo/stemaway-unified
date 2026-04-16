@@ -1,12 +1,15 @@
 /* global settings */
 
 import { apiInitializer } from "discourse/lib/api";
+import { defaultHomepage } from "discourse/lib/utilities";
+import User from "discourse/models/user";
 
 const STORAGE_KEY_COLLAPSED = "aivia-hero-collapsed";
 const STORAGE_KEY_VISITS = "aivia-hero-visits";
+const PRECOLLAPSED_CLASS = "aivia-hero-precollapsed";
 const HERO_LINKS = {
   s: {
-    primary: "/aivia/full-time",
+    primary: "/aivia/inside-aivia",
     secondary: "/aivia/inside-aivia",
   },
   p: {
@@ -15,10 +18,10 @@ const HERO_LINKS = {
   },
   i: {
     primary: "/aivia/report-breakdown",
-    secondary: "/aivia/projects",
+    secondary: "/aivia/scenarios",
   },
   g: {
-    primary: "/aivia/talent-pipeline",
+    primary: "/aivia/internships",
     secondary: "/aivia/project-mentorship",
   },
   c: {
@@ -27,6 +30,112 @@ const HERO_LINKS = {
   },
 };
 
+let preparedHeroState = null;
+let preparedHeroPath = null;
+let preparedHeroIsLoggedIn = null;
+let currentHeroIsLoggedIn = false;
+let heroObserver = null;
+
+function normalizePath(path) {
+  const cleanPath = (path || "/").split("?")[0].split("#")[0];
+
+  if (cleanPath.length > 1 && cleanPath.endsWith("/")) {
+    return cleanPath.slice(0, -1);
+  }
+
+  return cleanPath || "/";
+}
+
+function isHeroRoute(path) {
+  const currentPath = normalizePath(path);
+  const homepagePath = `/${defaultHomepage()}`;
+
+  return currentPath === "/" || currentPath === homepagePath;
+}
+
+function syncPrecollapsedClass(shouldCollapse) {
+  document.documentElement.classList.toggle(
+    PRECOLLAPSED_CLASS,
+    Boolean(shouldCollapse)
+  );
+}
+
+function resolveLoggedInState(isLoggedIn = false) {
+  return Boolean(isLoggedIn || User.current());
+}
+
+function prepareHeroState(path = window.location.pathname, isLoggedIn = false) {
+  const resolvedIsLoggedIn = resolveLoggedInState(isLoggedIn);
+  const currentPath = normalizePath(path);
+
+  if (
+    preparedHeroState &&
+    preparedHeroPath === currentPath &&
+    preparedHeroIsLoggedIn === resolvedIsLoggedIn
+  ) {
+    return preparedHeroState;
+  }
+
+  if (!isHeroRoute(currentPath)) {
+    preparedHeroState = null;
+    preparedHeroPath = currentPath;
+    preparedHeroIsLoggedIn = resolvedIsLoggedIn;
+    syncPrecollapsedClass(false);
+    return null;
+  }
+
+  if (!resolvedIsLoggedIn) {
+    preparedHeroState = {
+      consumed: false,
+      isLoggedIn: false,
+      shouldCollapse: false,
+      visits: 0,
+    };
+    preparedHeroPath = currentPath;
+    preparedHeroIsLoggedIn = false;
+    syncPrecollapsedClass(false);
+
+    return preparedHeroState;
+  }
+
+  const userCollapsed = localStorage.getItem(STORAGE_KEY_COLLAPSED) === "true";
+  const autoCollapseAfter = parseInt(
+    settings.auto_collapse_after_visits || "3",
+    10
+  );
+  const visits =
+    parseInt(localStorage.getItem(STORAGE_KEY_VISITS) || "0", 10) + 1;
+  const shouldCollapse =
+    userCollapsed || (autoCollapseAfter > 0 && visits > autoCollapseAfter);
+
+  localStorage.setItem(STORAGE_KEY_VISITS, visits.toString());
+  syncPrecollapsedClass(shouldCollapse);
+
+  preparedHeroState = {
+    consumed: false,
+    isLoggedIn: true,
+    shouldCollapse,
+    visits,
+  };
+  preparedHeroPath = currentPath;
+  preparedHeroIsLoggedIn = true;
+
+  return preparedHeroState;
+}
+
+function consumePreparedHeroState(
+  path = window.location.pathname,
+  isLoggedIn = false
+) {
+  const state = prepareHeroState(path, resolveLoggedInState(isLoggedIn));
+
+  if (state) {
+    state.consumed = true;
+  }
+
+  return state;
+}
+
 function initHero() {
   const hero = document.getElementById("aivia-hero");
 
@@ -34,6 +143,10 @@ function initHero() {
     return;
   }
 
+  const initialState = consumePreparedHeroState(
+    window.location.pathname,
+    resolveLoggedInState(currentHeroIsLoggedIn)
+  );
   hero.dataset.initialized = "true";
 
   const headline = hero.querySelector("#aivia-headline");
@@ -59,17 +172,7 @@ function initHero() {
     return;
   }
 
-  const autoCollapseAfter = parseInt(
-    settings.auto_collapse_after_visits || "3",
-    10
-  );
-  let visits =
-    parseInt(localStorage.getItem(STORAGE_KEY_VISITS) || "0", 10) + 1;
-  localStorage.setItem(STORAGE_KEY_VISITS, visits.toString());
-
-  const userCollapsed = localStorage.getItem(STORAGE_KEY_COLLAPSED) === "true";
-  const shouldCollapse =
-    userCollapsed || (autoCollapseAfter > 0 && visits > autoCollapseAfter);
+  const shouldCollapse = initialState?.shouldCollapse || false;
 
   function setCollapsed(collapsed) {
     if (collapsed) {
@@ -110,9 +213,8 @@ function initHero() {
 
   Object.keys(HERO_LINKS).forEach(setPanelCtas);
 
-  if (shouldCollapse) {
-    setCollapsed(true);
-  }
+  setCollapsed(shouldCollapse);
+  syncPrecollapsedClass(false);
 
   function switchTab(dataP, dataH, dataCta, dataCta2, label) {
     hero
@@ -203,8 +305,20 @@ function initHero() {
 
   toggleBtn.addEventListener("click", () => {
     const isCollapsed = demoWrap.classList.contains("collapsed");
-    setCollapsed(!isCollapsed);
-    localStorage.setItem(STORAGE_KEY_COLLAPSED, (!isCollapsed).toString());
+    const nextCollapsed = !isCollapsed;
+    const shouldPersistCollapseState = resolveLoggedInState(
+      currentHeroIsLoggedIn
+    );
+
+    setCollapsed(nextCollapsed);
+    if (shouldPersistCollapseState) {
+      localStorage.setItem(STORAGE_KEY_COLLAPSED, nextCollapsed.toString());
+    }
+
+    if (shouldPersistCollapseState && preparedHeroState && isHeroRoute()) {
+      preparedHeroState.shouldCollapse = nextCollapsed;
+      preparedHeroState.consumed = true;
+    }
   });
 
   const activeTab = hero.querySelector("#aivia-tabs .dk-t.on");
@@ -219,12 +333,54 @@ function initHero() {
   }
 }
 
-export default apiInitializer((api) => {
-  api.onPageChange(() => {
+function watchForHero() {
+  if (heroObserver || !document.body) {
+    return;
+  }
+
+  heroObserver = new MutationObserver(() => {
+    if (!document.getElementById("aivia-hero")) {
+      return;
+    }
+
+    heroObserver.disconnect();
+    heroObserver = null;
     initHero();
   });
 
-  if (document.getElementById("aivia-hero")) {
-    initHero();
-  }
+  heroObserver.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+}
+
+export default apiInitializer((api) => {
+  const syncHero = () => {
+    const hero = document.getElementById("aivia-hero");
+    const isLoggedIn = resolveLoggedInState(api.getCurrentUser());
+
+    currentHeroIsLoggedIn = isLoggedIn;
+
+    if (hero?.dataset.initialized === "true") {
+      syncPrecollapsedClass(false);
+      return;
+    }
+
+    prepareHeroState(window.location.pathname, isLoggedIn);
+
+    if (hero) {
+      if (heroObserver) {
+        heroObserver.disconnect();
+        heroObserver = null;
+      }
+
+      initHero();
+      return;
+    }
+
+    watchForHero();
+  };
+
+  api.onPageChange(syncHero);
+  syncHero();
 });

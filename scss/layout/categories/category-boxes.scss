@@ -144,7 +144,11 @@
 
 /* Migrated from stemaway-ui-addons/main-test.scss */
 .subcategories .subcategory {
-  background: linear-gradient(135deg, rgba(255, 248, 225, 0.5), rgba(232, 245, 233, 0.5));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 248, 225, 0.5),
+    rgba(232, 245, 233, 0.5)
+  );
   color: #beccea;
   border-radius: 8px;
   padding: 14px 22px;
@@ -156,7 +160,11 @@
 }
 
 .subcategory.with-subcategories {
-  background: linear-gradient(135deg, rgba(255, 248, 225, 0.5), rgba(232, 245, 233, 0.5));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 248, 225, 0.5),
+    rgba(232, 245, 233, 0.5)
+  );
   color: #beccea;
   border-radius: 8px;
   border: 1px solid var(--primary-low) !important;
@@ -241,7 +249,9 @@
   color: #2c3e50;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   padding: 20px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .category-boxes .category-box-inner h3,
@@ -266,10 +276,12 @@
   left: 0 !important;
   right: 0 !important;
   height: 2px !important;
-  background: linear-gradient(to right,
-      rgba(76, 175, 80, 0.5),
-      rgba(139, 195, 74, 0.5),
-      rgba(205, 220, 57, 0.5)) !important;
+  background: linear-gradient(
+    to right,
+    rgba(76, 175, 80, 0.5),
+    rgba(139, 195, 74, 0.5),
+    rgba(205, 220, 57, 0.5)
+  ) !important;
   z-index: 1 !important;
 }
 
@@ -298,12 +310,16 @@
   width: 100% !important;
 }
 
-.subcategories a.subcategory>a.badge-category__wrapper {
+.subcategories a.subcategory > a.badge-category__wrapper {
   display: block;
   width: 100%;
   box-sizing: border-box;
   padding: 14px 22px;
-  background: linear-gradient(135deg, rgba(255, 248, 225, 0.5), rgba(232, 245, 233, 0.5));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 248, 225, 0.5),
+    rgba(232, 245, 233, 0.5)
+  );
   border: 1px solid var(--primary-low);
   border-radius: 8px;
   text-decoration: none;
@@ -311,13 +327,13 @@
   font-weight: 400;
 }
 
-.subcategories a.subcategory>a.badge-category__wrapper *,
-.subcategories a.subcategory>a.badge-category__wrapper {
+.subcategories a.subcategory > a.badge-category__wrapper *,
+.subcategories a.subcategory > a.badge-category__wrapper {
   pointer-events: auto;
 }
 
-.subcategories a.subcategory>a.badge-category__wrapper:hover,
-.subcategories a.subcategory>a.badge-category__wrapper:focus-visible {
+.subcategories a.subcategory > a.badge-category__wrapper:hover,
+.subcategories a.subcategory > a.badge-category__wrapper:focus-visible {
   background: rgba(118, 176, 74, 0.08);
   transform: translateY(-2px) scale(1.01);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -331,7 +347,10 @@ svg.svg-icon.d-icon-category\.restricted {
   display: none !important;
 }
 
-.category-boxes .subcategory.with-subcategories .category-title-link .category-logo,
+.category-boxes
+  .subcategory.with-subcategories
+  .category-title-link
+  .category-logo,
 .subcategory.with-subcategories .subcategories,
 .subcategory-list-item .subcategories,
 .subcategories .subcategory .badge-category-bg,
@@ -341,7 +360,6 @@ body:not(.categories-list) .category-box-inner .svg-icon,
 }
 
 @media (max-width: 768px) {
-
   .category-boxes,
   .category-boxes-with-topics {
     // grid-template-columns: minmax(0, 1fr);

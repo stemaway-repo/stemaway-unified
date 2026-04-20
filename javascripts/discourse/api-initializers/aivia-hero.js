@@ -7,26 +7,31 @@ import User from "discourse/models/user";
 const STORAGE_KEY_COLLAPSED = "aivia-hero-collapsed";
 const STORAGE_KEY_VISITS = "aivia-hero-visits";
 const PRECOLLAPSED_CLASS = "aivia-hero-precollapsed";
-const HERO_LINKS = {
+const LOGIN_PATH = "/login";
+const HERO_TAB_LINKS = {
   s: {
-    primary: "/aivia/inside-aivia",
+    primary: "/my/aivia-talent/search",
     secondary: "/aivia/inside-aivia",
+    feature: "search",
   },
   p: {
-    primary: "/aivia/context-pack",
-    secondary: "/aivia/report-breakdown",
+    primary: "/my/aivia-talent/prescreen",
+    secondary: "/aivia/context-pack",
+    feature: "prescreen",
   },
   i: {
-    primary: "/aivia/report-breakdown",
-    secondary: "/aivia/scenarios",
+    primary: "/my/aivia-talent/generate",
+    secondary: "/aivia/report-breakdown",
+    feature: "generate",
   },
   g: {
-    primary: "/aivia/internships",
-    secondary: "/aivia/project-mentorship",
+    primary: null,
+    secondary: "/aivia/internships",
+    comingSoon: true,
   },
   c: {
-    primary: "/aivia/verified",
-    secondary: "/aivia/inside-aivia",
+    primary: "/my/aivia-dashboard",
+    secondary: "/aivia/verified",
   },
 };
 
@@ -34,6 +39,7 @@ let preparedHeroState = null;
 let preparedHeroPath = null;
 let preparedHeroIsLoggedIn = null;
 let currentHeroIsLoggedIn = false;
+let currentHeroUser = null;
 let heroObserver = null;
 
 function normalizePath(path) {
@@ -62,6 +68,82 @@ function syncPrecollapsedClass(shouldCollapse) {
 
 function resolveLoggedInState(isLoggedIn = false) {
   return Boolean(isLoggedIn || User.current());
+}
+
+function resolveCurrentUser(user = null) {
+  return user || User.current() || null;
+}
+
+function getHeroFeatureAccess(user) {
+  const serializedAccess = user?.aivia_analytics_feature_access;
+
+  return {
+    search: Boolean(
+      user?.admin || serializedAccess?.search || serializedAccess?.performance
+    ),
+    prescreen: Boolean(user?.admin || serializedAccess?.prescreen),
+    generate: Boolean(user?.admin || serializedAccess?.generate),
+  };
+}
+
+function getPrimaryAction(dataP, defaultLabel, user) {
+  const links = HERO_TAB_LINKS[dataP];
+
+  if (!user) {
+    return {
+      label: defaultLabel,
+      href: LOGIN_PATH,
+      disabled: false,
+    };
+  }
+
+  if (links?.comingSoon) {
+    return {
+      label: "Coming soon",
+      href: null,
+      disabled: true,
+    };
+  }
+
+  if (!links?.feature) {
+    return {
+      label: defaultLabel,
+      href: links?.primary || "#",
+      disabled: false,
+    };
+  }
+
+  const featureAccess = getHeroFeatureAccess(user);
+  const hasAccess = Boolean(featureAccess[links.feature]);
+
+  return {
+    label: defaultLabel,
+    href: hasAccess ? links.primary : null,
+    disabled: !hasAccess,
+  };
+}
+
+function setLinkState(link, { label, href, disabled }) {
+  if (!link) {
+    return;
+  }
+
+  if (label) {
+    link.textContent = label;
+  }
+
+  link.classList.toggle("is-disabled", Boolean(disabled));
+
+  if (disabled) {
+    link.removeAttribute("href");
+    link.setAttribute("aria-disabled", "true");
+    link.setAttribute("tabindex", "-1");
+    return;
+  }
+
+  link.setAttribute("href", href || "#");
+  link.removeAttribute("aria-disabled");
+  link.removeAttribute("tabindex");
 }
 
 function prepareHeroState(path = window.location.pathname, isLoggedIn = false) {
@@ -189,7 +271,7 @@ function initHero() {
   }
 
   function setPanelCtas(dataP) {
-    const links = HERO_LINKS[dataP];
+    const links = HERO_TAB_LINKS[dataP];
     if (!links) {
       return;
     }
@@ -202,16 +284,18 @@ function initHero() {
     const primaryLink = panel.querySelector(".vw-cta .ct-p");
     const secondaryLink = panel.querySelector(".vw-cta .ct-s");
 
-    if (primaryLink) {
-      primaryLink.href = links.primary;
-    }
-
-    if (secondaryLink) {
-      secondaryLink.href = links.secondary;
-    }
+    setLinkState(
+      primaryLink,
+      getPrimaryAction(dataP, primaryLink?.textContent?.trim(), currentHeroUser)
+    );
+    setLinkState(secondaryLink, {
+      label: secondaryLink?.textContent?.trim(),
+      href: links.secondary,
+      disabled: false,
+    });
   }
 
-  Object.keys(HERO_LINKS).forEach(setPanelCtas);
+  Object.keys(HERO_TAB_LINKS).forEach(setPanelCtas);
 
   setCollapsed(shouldCollapse);
   syncPrecollapsedClass(false);
@@ -237,15 +321,16 @@ function initHero() {
     }
 
     headline.innerHTML = dataH;
-    const links = HERO_LINKS[dataP];
-    if (persistPrimary) {
-      persistPrimary.textContent = dataCta;
-      persistPrimary.href = links?.primary || "#";
-    }
-    if (persistSecondary) {
-      persistSecondary.textContent = dataCta2;
-      persistSecondary.href = links?.secondary || "#";
-    }
+    const links = HERO_TAB_LINKS[dataP];
+    setLinkState(
+      persistPrimary,
+      getPrimaryAction(dataP, dataCta, currentHeroUser)
+    );
+    setLinkState(persistSecondary, {
+      label: dataCta2,
+      href: links?.secondary || "#",
+      disabled: false,
+    });
 
     if (mobileSelText) {
       mobileSelText.textContent = label;
@@ -331,6 +416,24 @@ function initHero() {
       activeTab.textContent
     );
   }
+
+  hero.syncHeroCtas = () => {
+    Object.keys(HERO_TAB_LINKS).forEach(setPanelCtas);
+
+    const currentTab =
+      hero.querySelector("#aivia-tabs .dk-t.on") ||
+      hero.querySelector("#aivia-tabs .dk-t");
+
+    if (currentTab) {
+      switchTab(
+        currentTab.dataset.p,
+        currentTab.dataset.h,
+        currentTab.dataset.cta,
+        currentTab.dataset.cta2,
+        currentTab.textContent
+      );
+    }
+  };
 }
 
 function watchForHero() {
@@ -357,11 +460,14 @@ function watchForHero() {
 export default apiInitializer((api) => {
   const syncHero = () => {
     const hero = document.getElementById("aivia-hero");
-    const isLoggedIn = resolveLoggedInState(api.getCurrentUser());
+    const user = resolveCurrentUser(api.getCurrentUser());
+    const isLoggedIn = Boolean(user);
 
+    currentHeroUser = user;
     currentHeroIsLoggedIn = isLoggedIn;
 
     if (hero?.dataset.initialized === "true") {
+      hero.syncHeroCtas?.();
       syncPrecollapsedClass(false);
       return;
     }

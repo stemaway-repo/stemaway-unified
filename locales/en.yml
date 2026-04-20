@@ -1,5 +1,9 @@
 en:
   aivia_header_nav:
+    labels:
+      coming_soon: "Coming Soon"
+    my_aivia:
+      label: "My AIVIA"
     use_cases:
       label: "Solutions"
     the_tech:
@@ -9,19 +13,18 @@ en:
       candidates: "For candidates"
       labs: "STEM-Away Programs"
       core: "The tech"
+      my_aivia_candidates: "Candidate tools"
+      my_aivia_hiring: "Hiring tools"
     items:
-      full_time:
-        title: "Hire full-time engineers"
-        subtitle: "Evaluate candidates before the first interview"
+      hiring:
+        title: "Hiring"
+        subtitle: "Discover pre-evaluated talent · Create custom evaluations · Walk into interviews knowing exactly what to ask"
       freelance:
-        title: "Hire freelancers"
-        subtitle: "Find developers already evaluated on your stack"
+        title: "Special hiring: Freelance"
+        subtitle: "Hiring, tuned for freelance — with AI-tracked engagements."
       internships:
-        title: "Screen and upskill interns"
-        subtitle: "Identify high-potential students and guide targeted learning"
-      talent_pipeline:
-        title: "Build a talent pipeline"
-        subtitle: "Continuously evaluate candidates before roles open"
+        title: "Special hiring: Intern"
+        subtitle: "Hiring, tuned for interns — with full cohort management."
       verified:
         title: "Get discovered"
         subtitle: "One evaluation, visibility across all roles"
@@ -40,6 +43,27 @@ en:
       report_breakdown:
         title: "Interview alignment"
         subtitle: "See exactly how candidates reason, score, and rank"
+      my_aivia_evaluations:
+        title: "Evaluations"
+        subtitle: "View your dashboard, results, and evaluation history"
+      my_aivia_mentorship:
+        title: "Mentorship"
+        subtitle: "Manage mentor and mentee activity in AIVIA"
+      my_aivia_resume:
+        title: "Resume"
+        subtitle: "Open and manage your resume page"
+      my_aivia_discover_talent:
+        title: "Discover talent"
+        subtitle: "Search pre-evaluated candidates"
+      my_aivia_customize_evaluation:
+        title: "Customize evaluation"
+        subtitle: "Configure and share evaluation flows"
+      my_aivia_generate_questions:
+        title: "Generate questions"
+        subtitle: "Create interview questions from evaluation data"
+      my_aivia_start_cohort:
+        title: "Start a cohort"
+        subtitle: "Cohort workflows will be available here soon"
   hero:
     group_1:
       title: "The Skill-Centric Career Hub"

@@ -5,7 +5,7 @@
 @media (max-width: 768px) {
   .homepage-jumbotron {
     margin-top: -10px;
-    padding: 1.35rem 0.75rem 1.35rem;
+    padding: 1.2rem 0.75rem 1.2rem;
   }
 
   .jumbotron {
@@ -15,7 +15,7 @@
 
   .jumbotron-titles {
     margin: 0;
-    padding: 0.85rem 0.9rem;
+    padding: 0.78rem 0.9rem;
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.62);
     border: 1px solid rgba(255, 255, 255, 0.6);
@@ -23,7 +23,7 @@
   }
 
   .jl-titles {
-    min-height: 124px;
+    min-height: 112px;
     display: grid;
     align-items: start;
   }
@@ -33,8 +33,8 @@
   }
 
   .jumbotron-titles h1 {
-    margin-bottom: 0.55rem;
-    padding-bottom: 0.45rem;
+    margin-bottom: 0.35rem;
+    padding-bottom: 0;
     font-size: clamp(1.28rem, 6.5vw, 1.75rem);
     line-height: 1.2;
   }
@@ -42,8 +42,8 @@
   .jumbotron-titles h2 {
     margin: 0;
     max-width: none;
-    font-size: 0.93rem;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    line-height: 1.32;
   }
 
   .jumbotron-quick-links {
@@ -102,7 +102,17 @@
     box-sizing: border-box;
     justify-content: flex-start;
     text-align: left;
-    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple Symbols", "Apple Color Emoji", "Arial Unicode MS", "Noto Sans Symbols", "Noto Sans Symbols 2", sans-serif;
+    font-family:
+      "Nunito Sans",
+      -apple-system,
+      BlinkMacSystemFont,
+      "SF Pro Text",
+      "Apple Symbols",
+      "Apple Color Emoji",
+      "Arial Unicode MS",
+      "Noto Sans Symbols",
+      "Noto Sans Symbols 2",
+      sans-serif;
     word-break: normal;
     overflow-wrap: normal;
     text-rendering: optimizeLegibility;
@@ -139,7 +149,7 @@
 
 @media (max-width: 430px) {
   .jl-titles {
-    min-height: 112px;
+    min-height: 102px;
   }
 
   .jumbotron-quick-links .jumbotron-quick-links-window {

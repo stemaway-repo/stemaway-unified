@@ -29,6 +29,13 @@ const HERO_LINKS = {
     secondary: "/aivia/verified",
   },
 };
+const HERO_CTA_LABELS = {
+  s: "Discover talent",
+  p: "Customize evaluation",
+  i: "Generate questions",
+  g: "Start a cohort",
+  c: "My dashboard",
+};
 
 let preparedHeroState = null;
 let preparedHeroPath = null;
@@ -188,8 +195,52 @@ function initHero() {
     }
   }
 
+  function buildLockIcon() {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", "ct-lock");
+    svg.setAttribute("width", "14");
+    svg.setAttribute("height", "14");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke-width", "2");
+    svg.setAttribute("aria-hidden", "true");
+
+    const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    rect.setAttribute("x", "5");
+    rect.setAttribute("y", "11");
+    rect.setAttribute("width", "14");
+    rect.setAttribute("height", "10");
+    rect.setAttribute("rx", "2");
+    rect.setAttribute("ry", "2");
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M8 11V7a4 4 0 0 1 8 0v4");
+
+    svg.append(rect, path);
+
+    return svg;
+  }
+
+  function setPrimaryCtaContent(link, label) {
+    if (!link) {
+      return;
+    }
+
+    const isLoggedIn = resolveLoggedInState(currentHeroIsLoggedIn);
+
+    link.replaceChildren();
+
+    if (!isLoggedIn) {
+      link.append(buildLockIcon());
+    }
+
+    link.append(document.createTextNode(label));
+  }
+
   function setPanelCtas(dataP) {
     const links = HERO_LINKS[dataP];
+    const label = HERO_CTA_LABELS[dataP];
     if (!links) {
       return;
     }
@@ -204,6 +255,7 @@ function initHero() {
 
     if (primaryLink) {
       primaryLink.href = links.primary;
+      setPrimaryCtaContent(primaryLink, label);
     }
 
     if (secondaryLink) {
@@ -239,8 +291,8 @@ function initHero() {
     headline.innerHTML = dataH;
     const links = HERO_LINKS[dataP];
     if (persistPrimary) {
-      persistPrimary.textContent = dataCta;
       persistPrimary.href = links?.primary || "#";
+      setPrimaryCtaContent(persistPrimary, dataCta);
     }
     if (persistSecondary) {
       persistSecondary.textContent = dataCta2;

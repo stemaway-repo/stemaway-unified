@@ -246,6 +246,12 @@ body.aivia-homepage-nav .hamburger-dropdown {
   color: #2d5a4a;
 }
 
+body:not(.aivia-homepage-nav)
+  .aivia-header-nav__dropdown--my-aivia
+  .aivia-header-nav__toggle-label {
+  font-weight: 600;
+}
+
 /* ---------- TOGGLE ICON SLOT (hidden on desktop, shown on narrow mobile) ---------- */
 .aivia-header-nav__toggle-icon {
   display: none;

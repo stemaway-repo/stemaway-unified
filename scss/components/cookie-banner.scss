@@ -38,6 +38,14 @@
   gap: 1rem !important;
 }
 
+.cc-window.cc-invisible,
+.cc-window[style*="display: none"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 /* ---------- TEXT ---------- */
 .cc-window .cc-message {
   flex: 1 1 auto !important;
@@ -152,4 +160,12 @@
 .cc-window.cc-banner .cc-btn {
   background: linear-gradient(135deg, #2d5a4a, #4a8b6e) !important;
   color: #ffffff !important;
+}
+
+body:has(.edit-category) .cc-window,
+body:has(.edit-category__wrapper) .cc-window {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }

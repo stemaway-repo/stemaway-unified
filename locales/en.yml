@@ -11,7 +11,7 @@ en:
     sections:
       employers: "Solutions"
       candidates: "For candidates"
-      labs: "STEM-Away Programs"
+      labs: ""
       core: "The tech"
       my_aivia_candidates: "Candidate tools"
       my_aivia_hiring: "Hiring tools"
@@ -23,13 +23,13 @@ en:
         title: "Special hiring: Freelance"
         subtitle: "Hiring, tuned for freelance — with AI-tracked engagements."
       internships:
-        title: "Special hiring: Intern"
+        title: "Special hiring: Interns"
         subtitle: "Hiring, tuned for interns — with full cohort management."
       verified:
         title: "Get discovered"
         subtitle: "One evaluation, visibility across all roles"
       project_mentorship:
-        title: "ISEF and research projects"
+        title: "Special hiring: Mentors"
         subtitle: "Turn research interests into buildable technical projects"
       inside_aivia:
         title: "How it works"
@@ -63,7 +63,7 @@ en:
         subtitle: "Create interview questions from evaluation data"
       my_aivia_start_cohort:
         title: "Start a cohort"
-        subtitle: "Cohort workflows will be available here soon"
+        subtitle: "Screen, interview, and track your cohort."
   hero:
     group_1:
       title: "The Skill-Centric Career Hub"
@@ -74,3 +74,6 @@ en:
     group_3:
       title: "Welcome to STEM-Away!"
       description: "Use the quick links on the right to explore the site."
+  login_preferences_banner:
+    title: "Prove what you know. Get discovered."
+    body: "Create a free AIVIA account to take evaluations, build your portfolio, and let employers see your real depth."

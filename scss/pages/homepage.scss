@@ -2,6 +2,10 @@
   background-color: var(--stemaway-primary-200);
 }
 
+html.anon body.aivia-homepage-route #main-outlet-wrapper {
+  display: none !important;
+}
+
 // Banner Styling
 .jumbotron {
   padding: 2rem;

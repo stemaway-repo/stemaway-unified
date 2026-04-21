@@ -1,439 +1,838 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;0,700&display=swap">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;0,700&display=swap">
 <div id="aivia-hero">
-<div class="dk">
-<div class="dk-stage">
+  <div class="dk">
+    <div class="dk-stage">
 
-<div class="dk-head">
-  <p class="dk-kicker">AIVIA</p>
-  <p class="dk-tagline">The generative layer for technical hiring.</p>
-</div>
-
-<div class="dk-rotating">
-  <p class="dk-rotating-title" id="aivia-headline">Evaluate reasoning. <em>Not resumes.</em></p>
-</div>
-
-<div class="dk-nav">
-  <div class="dk-tabs" id="aivia-tabs">
-    <button class="dk-t on" data-p="s" data-h="Evaluate reasoning. <em>Not resumes.</em>" data-cta="Discover talent" data-cta2="Learn more">Search</button>
-    <button class="dk-t" data-p="p" data-h="The future of hiring is <em>a link.</em>" data-cta="Customize evaluation" data-cta2="Learn more">Prescreen</button>
-    <button class="dk-t" data-p="i" data-h="Walk in knowing <em>exactly what to ask.</em>" data-cta="Generate questions" data-cta2="Learn more">Interview</button>
-    <button class="dk-t" data-p="g" data-h="See every strength. <em>And every gap.</em>" data-cta="Start a cohort" data-cta2="Learn more">Cohorts</button>
-    <button class="dk-t" data-p="c" data-h="You own every result. <em>Your proof, your career.</em>" data-cta="My dashboard" data-cta2="Learn more">For candidates</button>
-  </div>
-</div>
-
-<div class="dk-mobile-nav" id="aivia-mobile-nav">
-  <button class="dk-mobile-sel" id="aivia-mobile-sel">
-    <span id="aivia-mobile-sel-text">Search</span>
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-  </button>
-  <div class="dk-mobile-dd" id="aivia-mobile-dd">
-    <div class="dk-mobile-opt active" data-p="s" data-h="Evaluate reasoning. <em>Not resumes.</em>" data-cta="Discover talent" data-cta2="Learn more">Search</div>
-    <div class="dk-mobile-opt" data-p="p" data-h="The future of hiring is <em>a link.</em>" data-cta="Customize evaluation" data-cta2="Learn more">Prescreen</div>
-    <div class="dk-mobile-opt" data-p="i" data-h="Walk in knowing <em>exactly what to ask.</em>" data-cta="Generate questions" data-cta2="Learn more">Interview</div>
-    <div class="dk-mobile-opt" data-p="g" data-h="See every strength. <em>And every gap.</em>" data-cta="Start a cohort" data-cta2="Learn more">Cohorts</div>
-    <div class="dk-mobile-opt" data-p="c" data-h="You own every result. <em>Your proof, your career.</em>" data-cta="My dashboard" data-cta2="Learn more">For candidates</div>
-  </div>
-</div>
-
-<div class="dk-demo-wrap" id="aivia-demo-wrap">
-<div class="dk-glass">
-
-<!-- ==================== SEARCH ==================== -->
-<div id="aivia-s" class="vw on">
-  <div class="dk-panel">
-    <div class="dk-panel-body">
-      <div class="dk-panel-header">
-        <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="6"/><path d="M16 16l3.5 3.5"/></svg> Discover pre-evaluated talent</div>
+      <div class="dk-head">
+        <p class="dk-kicker">AIVIA</p>
+        <p class="dk-tagline">The generative layer for technical hiring.</p>
       </div>
-      <p class="dk-panel-sub">Browse by domain, subdomain, or component</p>
 
-      <div class="dk-domain-grid">
-        <!-- Domain 1: LLM -->
-        <div class="dk-domain-card dk-domain-card--active">
-          <div class="dk-domain-accent"></div>
-          <div class="dk-domain-glow"></div>
-          <div class="dk-domain-header">
-            <div class="dk-domain-icon dk-domain-icon--green">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2D5A4A" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4" opacity=".4"/></svg>
-            </div>
-            <div>
-              <div class="dk-domain-name">LLM &amp; agentic systems</div>
-              <div class="dk-domain-meta">6 subcategories · 61 components</div>
-            </div>
-          </div>
-          <div class="dk-domain-tags">
-            <span class="dk-tag dk-tag--green">RAG pipeline</span>
-            <span class="dk-tag dk-tag--green">Guardrails</span>
-            <span class="dk-domain-more">+59</span>
-          </div>
-        </div>
-        <!-- Domain 2: Search -->
-        <div class="dk-domain-card">
-          <div class="dk-domain-glow dk-domain-glow--purple"></div>
-          <div class="dk-domain-header">
-            <div class="dk-domain-icon dk-domain-icon--purple">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5b21b6" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M8 11h6" opacity=".5"/><path d="M11 8v6" opacity=".5"/></svg>
-            </div>
-            <div>
-              <div class="dk-domain-name">Search &amp; recommendation</div>
-              <div class="dk-domain-meta">4 subcategories · 27 components</div>
-            </div>
-          </div>
-          <div class="dk-domain-tags">
-            <span class="dk-tag dk-tag--purple">Query rewriter</span>
-            <span class="dk-tag dk-tag--purple">Ranking</span>
-            <span class="dk-domain-more">+25</span>
-          </div>
+      <div class="dk-rotating">
+        <p class="dk-rotating-title" id="aivia-headline">Evaluate reasoning. <em>Not resumes.</em></p>
+      </div>
+
+      <div class="dk-nav">
+        <div class="dk-tabs" id="aivia-tabs">
+          <button class="dk-t on" data-p="s" data-h="Evaluate reasoning. <em>Not resumes.</em>"
+            data-cta="Discover talent" data-cta2="Learn more">Search</button>
+          <button class="dk-t" data-p="p" data-h="The future of hiring is <em>a link.</em>"
+            data-cta="Customize evaluation" data-cta2="Learn more">Prescreen</button>
+          <button class="dk-t" data-p="i" data-h="Walk in knowing <em>exactly what to ask.</em>"
+            data-cta="Generate questions" data-cta2="Learn more">Interview</button>
+          <button class="dk-t" data-p="g" data-h="See every strength. <em>And every gap.</em>" data-cta="Start a cohort"
+            data-cta2="Learn more">Cohorts</button>
+          <button class="dk-t" data-p="c" data-h="You own every result. <em>Your proof, your career.</em>"
+            data-cta="My dashboard" data-cta2="Learn more">For candidates</button>
         </div>
       </div>
 
-      <!-- Divider -->
-      <div class="dk-divider"><span>Or ask AIVIA</span></div>
+      <div class="dk-mobile-nav" id="aivia-mobile-nav">
+        <button class="dk-mobile-sel" id="aivia-mobile-sel">
+          <span id="aivia-mobile-sel-text">Search</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+        <div class="dk-mobile-dd" id="aivia-mobile-dd">
+          <div class="dk-mobile-opt active" data-p="s" data-h="Evaluate reasoning. <em>Not resumes.</em>"
+            data-cta="Discover talent" data-cta2="Learn more">Search</div>
+          <div class="dk-mobile-opt" data-p="p" data-h="The future of hiring is <em>a link.</em>"
+            data-cta="Customize evaluation" data-cta2="Learn more">Prescreen</div>
+          <div class="dk-mobile-opt" data-p="i" data-h="Walk in knowing <em>exactly what to ask.</em>"
+            data-cta="Generate questions" data-cta2="Learn more">Interview</div>
+          <div class="dk-mobile-opt" data-p="g" data-h="See every strength. <em>And every gap.</em>"
+            data-cta="Start a cohort" data-cta2="Learn more">Cohorts</div>
+          <div class="dk-mobile-opt" data-p="c" data-h="You own every result. <em>Your proof, your career.</em>"
+            data-cta="My dashboard" data-cta2="Learn more">For candidates</div>
+        </div>
+      </div>
 
-      <!-- Chat -->
-      <div class="dk-chat">
-        <div class="dk-chat-shimmer"></div>
-        <div class="dk-chat-inner">
-          <!-- User message -->
-          <div class="dk-msg">
-            <div class="dk-msg-avatar dk-msg-avatar--user"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-            <div class="dk-msg-bubble dk-msg-bubble--user">Looking for expertise with latency issues in recommendation engines</div>
-          </div>
-          <!-- AI response -->
-          <div class="dk-msg">
-            <div class="dk-msg-avatar dk-msg-avatar--ai"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2D5A4A" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-            <div class="dk-msg-content">
-              <span class="dk-msg-text">Mapped to components:</span>
-              <div class="dk-msg-tags">
-                <span class="dk-tag dk-tag--purple dk-tag--lg">Feature store</span>
-                <span class="dk-tag dk-tag--purple dk-tag--lg">Inference cache</span>
-              </div>
-            </div>
-          </div>
-          <!-- Divider line -->
-          <div class="dk-chat-divider"></div>
-          <!-- AI matching -->
-          <div class="dk-msg">
-            <div class="dk-msg-avatar dk-msg-avatar--ai"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2D5A4A" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-            <div class="dk-msg-content">
-              <span class="dk-msg-text">Finding candidates with passing scores…</span>
-              <div class="dk-matching-row">
-                <div class="dk-matching-pill">
-                  <span class="dk-matching-label">Matching</span>
-                  <span class="dk-matching-dots">
-                    <span class="dk-dot dk-dot--1"></span>
-                    <span class="dk-dot dk-dot--2"></span>
-                    <span class="dk-dot dk-dot--3"></span>
-                  </span>
+      <div class="dk-demo-wrap" id="aivia-demo-wrap">
+        <div class="dk-glass">
+
+          <!-- ==================== SEARCH ==================== -->
+          <div id="aivia-s" class="vw on">
+            <div class="dk-panel">
+              <div class="dk-panel-body">
+                <div class="dk-panel-header">
+                  <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <circle cx="11" cy="11" r="6" />
+                      <path d="M16 16l3.5 3.5" />
+                    </svg> Discover pre-evaluated talent</div>
                 </div>
-                <div class="dk-candidate-avatars">
-                  <div class="dk-cavatar dk-cavatar--purple"></div>
-                  <div class="dk-cavatar dk-cavatar--green"></div>
-                  <div class="dk-cavatar dk-cavatar--amber"></div>
+                <p class="dk-panel-sub">Browse by domain, subdomain, or component</p>
+
+                <div class="dk-domain-grid">
+                  <!-- Domain 1: LLM -->
+                  <div class="dk-domain-card dk-domain-card--active">
+                    <div class="dk-domain-accent"></div>
+                    <div class="dk-domain-glow"></div>
+                    <div class="dk-domain-header">
+                      <div class="dk-domain-icon dk-domain-icon--green">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="6" r="2.5" fill="#2D5A4A" opacity="0.25" />
+                          <circle cx="6" cy="14" r="2.5" fill="#2D5A4A" opacity="0.25" />
+                          <circle cx="18" cy="14" r="2.5" fill="#2D5A4A" opacity="0.25" />
+                          <circle cx="12" cy="6" r="2.5" stroke="#2D5A4A" stroke-width="1.6" />
+                          <circle cx="6" cy="14" r="2.5" stroke="#2D5A4A" stroke-width="1.6" />
+                          <circle cx="18" cy="14" r="2.5" stroke="#2D5A4A" stroke-width="1.6" />
+                          <path d="M10.2 7.8L7.8 12.2M13.8 7.8l2.4 4.4M8.5 14h7" stroke="#2D5A4A" stroke-width="1.3"
+                            stroke-linecap="round" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div class="dk-domain-name">LLM &amp; agentic systems</div>
+                        <div class="dk-domain-meta">6 subcategories · 61 components</div>
+                      </div>
+                    </div>
+                    <div class="dk-domain-tags">
+                      <span class="dk-tag dk-tag--green">RAG pipeline</span>
+                      <span class="dk-tag dk-tag--green">Guardrails</span>
+                      <span class="dk-domain-more">+59</span>
+                    </div>
+                  </div>
+                  <!-- Domain 2: Search -->
+                  <div class="dk-domain-card">
+                    <div class="dk-domain-glow dk-domain-glow--purple"></div>
+                    <div class="dk-domain-header">
+                      <div class="dk-domain-icon dk-domain-icon--purple">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                          <circle cx="10.5" cy="10.5" r="6.5" fill="#2D5A4A" opacity="0.12" />
+                          <circle cx="10.5" cy="10.5" r="6.5" stroke="#2D5A4A" stroke-width="1.6" />
+                          <path d="M15.5 15.5L20 20" stroke="#2D5A4A" stroke-width="2" stroke-linecap="round" />
+                          <path d="M10.5 7v2M10.5 12v2M7.5 10.5h2M12 10.5h2" stroke="#2D5A4A" stroke-width="1.3"
+                            stroke-linecap="round" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div class="dk-domain-name">Search &amp; recommendation</div>
+                        <div class="dk-domain-meta">4 subcategories · 27 components</div>
+                      </div>
+                    </div>
+                    <div class="dk-domain-tags">
+                      <span class="dk-tag dk-tag--purple">Query rewriter</span>
+                      <span class="dk-tag dk-tag--purple">Ranking</span>
+                      <span class="dk-domain-more">+25</span>
+                    </div>
+                  </div>
+                  <!-- Domain 3: MLOps -->
+                  <div class="dk-domain-card">
+                    <div class="dk-domain-glow dk-domain-glow--amber"></div>
+                    <div class="dk-domain-header">
+                      <div class="dk-domain-icon dk-domain-icon--amber">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                          <path d="M12 3l8 4.5v2L12 14 4 9.5v-2L12 3z" fill="#2D5A4A" opacity="0.2" />
+                          <path d="M12 3l8 4.5v2L12 14 4 9.5v-2L12 3z" stroke="#2D5A4A" stroke-width="1.5"
+                            stroke-linejoin="round" />
+                          <path d="M4 14l8 4.5 8-4.5" stroke="#2D5A4A" stroke-width="1.5" stroke-linejoin="round" />
+                          <path d="M4 18l8 4.5 8-4.5" stroke="#2D5A4A" stroke-width="1.5" stroke-linejoin="round"
+                            opacity="0.5" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div class="dk-domain-name">MLOps &amp; infrastructure</div>
+                        <div class="dk-domain-meta">5 subcategories · 38 components</div>
+                      </div>
+                    </div>
+                    <div class="dk-domain-tags">
+                      <span class="dk-tag dk-tag--amber">Model serving</span>
+                      <span class="dk-tag dk-tag--amber">Monitoring</span>
+                      <span class="dk-domain-more">+36</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="dk-divider"><span>Or ask AIVIA</span></div>
+
+                <!-- Chat -->
+                <div class="dk-chat">
+                  <div class="dk-chat-shimmer"></div>
+                  <div class="dk-chat-inner">
+                    <!-- User message -->
+                    <div class="dk-msg">
+                      <div class="dk-msg-avatar dk-msg-avatar--user"><svg width="12" height="12" viewBox="0 0 24 24"
+                          fill="none" stroke="#7a7a7a" stroke-width="2">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                          <circle cx="12" cy="7" r="4" />
+                        </svg></div>
+                      <div class="dk-msg-bubble dk-msg-bubble--user">Looking for expertise with latency issues in
+                        recommendation engines</div>
+                    </div>
+                    <!-- AI response -->
+                    <div class="dk-msg">
+                      <div class="dk-msg-avatar dk-msg-avatar--ai"><svg width="13" height="13" viewBox="0 0 24 24"
+                          fill="none" stroke="#2D5A4A" stroke-width="1.8">
+                          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                          <path d="M2 17l10 5 10-5" />
+                          <path d="M2 12l10 5 10-5" />
+                        </svg></div>
+                      <div class="dk-msg-content">
+                        <span class="dk-msg-text">Mapped to components:</span>
+                        <div class="dk-msg-tags">
+                          <span class="dk-tag dk-tag--purple dk-tag--lg">Feature store</span>
+                          <span class="dk-tag dk-tag--purple dk-tag--lg">Inference cache</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Divider line -->
+                    <div class="dk-chat-divider"></div>
+                    <!-- AI matching -->
+                    <div class="dk-msg">
+                      <div class="dk-msg-avatar dk-msg-avatar--ai"><svg width="13" height="13" viewBox="0 0 24 24"
+                          fill="none" stroke="#2D5A4A" stroke-width="1.8">
+                          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                          <path d="M2 17l10 5 10-5" />
+                          <path d="M2 12l10 5 10-5" />
+                        </svg></div>
+                      <div class="dk-msg-content">
+                        <span class="dk-msg-text">Finding candidates with passing scores…</span>
+                        <div class="dk-matching-row">
+                          <div class="dk-matching-pill">
+                            <span class="dk-matching-label">Matching</span>
+                            <span class="dk-matching-dots">
+                              <span class="dk-dot dk-dot--1"></span>
+                              <span class="dk-dot dk-dot--2"></span>
+                              <span class="dk-dot dk-dot--3"></span>
+                            </span>
+                          </div>
+                          <div class="dk-candidate-avatars">
+                            <div class="dk-cavatar dk-cavatar--purple"></div>
+                            <div class="dk-cavatar dk-cavatar--green"></div>
+                            <div class="dk-cavatar dk-cavatar--amber"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/my/aivia-talent/search">Discover
+                talent</a><a class="ct ct-s" href="https://stemaway.com/aivia/inside-aivia">Learn more</a></div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="vw-cta"><a class="ct ct-p" href="#">Discover talent</a><a class="ct ct-s" href="/aivia/inside-aivia">Learn more</a></div>
-</div>
 
-<!-- ==================== PRESCREEN ==================== -->
-<div id="aivia-p" class="vw">
-  <div class="dk-panel">
-    <div class="dk-panel-body">
-      <div class="dk-panel-header">
-        <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="3" r="2"/><circle cx="6" cy="21" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 5v6a4 4 0 0 0 4 4h4"/><path d="M6 13v6"/></svg> Fork evaluations from an open library</div>
-      </div>
-      <div class="dk-prescreen-split">
-        <!-- Left: Config -->
-        <div class="dk-prescreen-config">
-          <div class="dk-config-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2D5A4A" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M16.36 16.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M16.36 7.64l1.42-1.42"/></svg> Sample evaluation settings</div>
+          <!-- ==================== PRESCREEN ==================== -->
+          <div id="aivia-p" class="vw">
+            <div class="dk-panel">
+              <div class="dk-panel-body">
+                <div class="dk-panel-header">
+                  <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <circle cx="6" cy="3" r="2" />
+                      <circle cx="6" cy="21" r="2" />
+                      <circle cx="18" cy="12" r="2" />
+                      <path d="M6 5v6a4 4 0 0 0 4 4h4" />
+                      <path d="M6 13v6" />
+                    </svg> Fork evaluations from an open library</div>
+                </div>
+                <div class="dk-prescreen-split">
+                  <!-- Left: Config + link block -->
+                  <div class="dk-prescreen-left">
+                    <div class="dk-prescreen-config">
+                      <div class="dk-config-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                          stroke="#2D5A4A" stroke-width="2">
+                          <circle cx="12" cy="12" r="3" />
+                          <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M16.36 16.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M16.36 7.64l1.42-1.42" />
+                        </svg> Sample evaluation settings</div>
 
-          <!-- 01 -->
-          <div class="dk-ci"><div class="dk-ci-left"><span class="dk-ci-num">01</span><span class="dk-ci-label">Expected background</span></div><svg class="dk-ci-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
-          <!-- 02 -->
-          <div class="dk-ci"><div class="dk-ci-left"><span class="dk-ci-num">02</span><span class="dk-ci-label">Scenario cards</span></div><svg class="dk-ci-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
-          <!-- 03 expanded -->
-          <div class="dk-ci dk-ci--ex">
-            <div class="dk-ci-accent"></div>
-            <div class="dk-ci-header"><div class="dk-ci-left"><span class="dk-ci-num">03</span><span class="dk-ci-label dk-ci-label--active">Rubric dimensions</span></div><svg class="dk-ci-chev dk-ci-chev--up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
-            <div class="dk-ci-expand">
-              <div class="dk-ci-dim-row">
-                <span class="dk-ci-dim-type">Fixed</span>
-                <span class="dk-tag dk-tag--green dk-tag--sm">Tradeoff analysis</span>
-                <span class="dk-tag dk-tag--green dk-tag--sm">Clarity</span>
-                <span class="dk-dim-more">+ 4 more</span>
+                      <!-- 01 -->
+                      <div class="dk-ci">
+                        <div class="dk-ci-left"><span class="dk-ci-num">01</span><span class="dk-ci-label">Expected
+                            background</span></div><svg class="dk-ci-chev" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2">
+                          <path d="M6 9l6 6 6-6" />
+                        </svg>
+                      </div>
+                      <!-- 02 -->
+                      <div class="dk-ci">
+                        <div class="dk-ci-left"><span class="dk-ci-num">02</span><span class="dk-ci-label">Scenario
+                            cards</span></div><svg class="dk-ci-chev" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2">
+                          <path d="M6 9l6 6 6-6" />
+                        </svg>
+                      </div>
+                      <!-- 03 expanded -->
+                      <div class="dk-ci dk-ci--ex">
+                        <div class="dk-ci-accent"></div>
+                        <div class="dk-ci-header">
+                          <div class="dk-ci-left"><span class="dk-ci-num">03</span><span
+                              class="dk-ci-label dk-ci-label--active">Rubric dimensions</span></div><svg
+                            class="dk-ci-chev dk-ci-chev--up" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                          </svg>
+                        </div>
+                        <div class="dk-ci-expand">
+                          <div class="dk-ci-dim-row">
+                            <span class="dk-ci-dim-type">Fixed</span>
+                            <span class="dk-tag dk-tag--green dk-tag--sm">Tradeoff analysis</span>
+                            <span class="dk-tag dk-tag--green dk-tag--sm">Clarity</span>
+                            <span class="dk-dim-more">+ 4 more</span>
+                          </div>
+                          <div class="dk-ci-dim-row">
+                            <span class="dk-ci-dim-type">Wildcard</span>
+                            <span class="dk-ci-mono">Cache invalidation</span>
+                            <span class="dk-ci-mono">Memory pressure</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dk-ellipsis">...</div>
+                    </div>
+
+                    <!-- Link block (standalone, below config) -->
+                    <div class="dk-link-block">
+                      <div class="dk-link-label">Evaluation link ready</div>
+                      <div class="dk-link-url-wrap">
+                        <span class="dk-link-icon">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                          </svg>
+                        </span>
+                        <span class="dk-link-url">aivia.app/e/kv-cache-debug-a7f2</span>
+                        <button class="dk-link-copy-btn">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Right: Live eval -->
+                  <div class="dk-eval-panel">
+                    <div class="dk-eval-topbar">
+                      <div class="dk-eval-brand"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                          stroke="#34d399" stroke-width="2">
+                          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                          <path d="M2 17l10 5 10-5" />
+                          <path d="M2 12l10 5 10-5" />
+                        </svg><span class="dk-eval-name">AIVIA</span><span class="dk-eval-dot"></span><span
+                          class="dk-eval-status">Evaluating</span></div>
+                      <div class="dk-eval-timer"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                          stroke="#64748b" stroke-width="2">
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M12 6v6l4 2" />
+                        </svg><span>4:42</span></div>
+                    </div>
+                    <!-- Progress -->
+                    <div class="dk-eval-progress">
+                      <div class="dk-eval-step dk-eval-step--active">
+                        <div class="dk-eval-circle dk-eval-circle--active">1</div><span>Q1</span>
+                      </div>
+                      <div class="dk-eval-line dk-eval-line--done"></div>
+                      <div class="dk-eval-step">
+                        <div class="dk-eval-circle">2</div><span>Q2</span>
+                      </div>
+                      <div class="dk-eval-line"></div>
+                      <div class="dk-eval-step">
+                        <div class="dk-eval-circle">3</div><span>Q3</span>
+                      </div>
+                      <div class="dk-eval-line"></div>
+                      <div class="dk-eval-step">
+                        <div class="dk-eval-circle dk-eval-circle--icon"><svg width="9" height="9" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                          </svg></div><span>Voice</span>
+                      </div>
+                    </div>
+                    <!-- Q -->
+                    <div class="dk-eval-q">Walk me through debugging hot-entry eviction under memory pressure.</div>
+                    <!-- A -->
+                    <div class="dk-eval-a-wrap">
+                      <div class="dk-eval-a">I'd check eviction policy metrics against the memory threshold first.</div>
+                    </div>
+                    <!-- Feedback -->
+                    <div class="dk-eval-feedback">
+                      <div class="dk-eval-fb-header"><svg width="8" height="8" viewBox="0 0 24 24" fill="none"
+                          stroke="#34d399" stroke-width="2">
+                          <path d="M14 9V5a3 3 0 0 0-6 0v4" />
+                          <path d="M18 8h-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2z" />
+                          <path d="M7 8H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h1" />
+                        </svg><span>Feedback</span></div>
+                      <p>Strong diagnostic instinct. Also verify replication state before eviction decisions.</p>
+                    </div>
+                    <!-- Scores -->
+                    <div class="dk-eval-scores">
+                      <span class="dk-eval-score"><span class="dk-eval-score-dot"></span>Tradeoffs <b>5/5</b></span>
+                      <span class="dk-eval-score"><span
+                          class="dk-eval-score-dot dk-eval-score-dot--amber"></span>Priority <b>3/5</b></span>
+                    </div>
+                    <!-- Input -->
+                    <div class="dk-eval-input">
+                      <span>Type your response...</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="dk-ci-dim-row">
-                <span class="dk-ci-dim-type">Wildcard</span>
-                <span class="dk-ci-mono">Cache invalidation</span>
-                <span class="dk-ci-mono">Memory pressure</span>
+            </div>
+            <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/my/aivia-talent/prescreen">Customize
+                evaluation</a><a class="ct ct-s" href="https://stemaway.com/aivia/context-pack">Learn more</a></div>
+          </div>
+
+          <!-- ==================== INTERVIEW ==================== -->
+          <div id="aivia-i" class="vw">
+            <div class="dk-panel">
+              <div class="dk-panel-body">
+                <div class="dk-panel-header">
+                  <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg> Interview alignment</div>
+                </div>
+                <p class="dk-panel-sub">Auto-generated from prescreening evaluation data</p>
+
+                <!-- Evaluation context pill -->
+                <div class="dk-eval-pill-wrap">
+                  <div class="dk-eval-pill">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path
+                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    </svg>
+                    <span class="dk-eval-pill-label">Evaluation</span>
+                    <span class="dk-eval-pill-name">KV cache manager</span>
+                  </div>
+                </div>
+
+                <!-- Signal cards (2) -->
+                <div class="dk-signal-grid dk-signal-grid--three">
+                  <div class="dk-signal-card dk-signal-card--amber" data-signal="q1">
+                    <div class="dk-signal-accent dk-signal-accent--amber"></div>
+                    <div class="dk-signal-header">
+                      <div class="dk-signal-icon dk-signal-icon--amber">!</div>
+                      <span class="dk-signal-title dk-signal-title--amber">Gap identified</span>
+                    </div>
+                    <div class="dk-signal-metric">
+                      <span class="dk-signal-dim">Prioritization</span>
+                      <span class="dk-signal-score">3/5</span>
+                    </div>
+                    <div class="dk-signal-bar">
+                      <div class="dk-signal-bar-fill dk-signal-bar-fill--amber" style="width: 60%"></div>
+                    </div>
+                  </div>
+                  <div class="dk-signal-card dk-signal-card--green" data-signal="q2">
+                    <div class="dk-signal-accent dk-signal-accent--green"></div>
+                    <div class="dk-signal-header">
+                      <div class="dk-signal-icon dk-signal-icon--green">✓</div>
+                      <span class="dk-signal-title dk-signal-title--green">Strength to probe</span>
+                    </div>
+                    <div class="dk-signal-metric">
+                      <span class="dk-signal-dim">Tradeoff analysis</span>
+                      <span class="dk-signal-score">5/5</span>
+                    </div>
+                    <div class="dk-signal-bar">
+                      <div class="dk-signal-bar-fill dk-signal-bar-fill--green" style="width: 100%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Connection lines from signals to questions -->
+                <svg class="dk-blueprint-connectors" viewBox="0 0 100 40" preserveAspectRatio="none">
+                  <path d="M 25,0 Q 25,20 10,40" stroke="#d4a017" stroke-width="0.3" stroke-dasharray="1 1" fill="none"
+                    opacity="0.5" />
+                  <path d="M 75,0 Q 75,25 10,40" stroke="#2d5a4a" stroke-width="0.3" stroke-dasharray="1 1" fill="none"
+                    opacity="0.45" />
+                </svg>
+
+                <!-- Questions — legal pad style -->
+                <div class="dk-questions dk-questions--pad">
+                  <div class="dk-questions-accent"></div>
+                  <div class="dk-questions-header">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2D5A4A" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    <span>Suggested questions</span>
+                  </div>
+                  <div class="dk-questions-list">
+                    <div class="dk-question dk-question--priority" data-question="q1">
+                      <div class="dk-question-avatar dk-question-avatar--amber">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2">
+                          <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                      </div>
+                      <div class="dk-question-body">
+                        <div class="dk-question-meta">
+                          <span class="dk-question-num">01</span>
+                          <span class="dk-question-chip dk-question-chip--priority">Ask first</span>
+                          <span class="dk-question-duration">8 min</span>
+                        </div>
+                        <div class="dk-question-text">They addressed cache eviction before verifying replication state —
+                          how would they re-approach that triage?</div>
+                        <div class="dk-question-source-row">
+                          <span class="dk-question-source dk-question-source--amber">Prioritization 3/5</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dk-question dk-question--last" data-question="q2">
+                      <div class="dk-question-avatar dk-question-avatar--green">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2">
+                          <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                      </div>
+                      <div class="dk-question-body">
+                        <div class="dk-question-meta">
+                          <span class="dk-question-num">02</span>
+                          <span class="dk-question-chip dk-question-chip--followup">Follow up</span>
+                          <span class="dk-question-duration">7 min</span>
+                        </div>
+                        <div class="dk-question-text">Scored 5/5 on tradeoffs — probe a call made with incomplete data
+                          under time pressure.</div>
+                        <div class="dk-question-source-row">
+                          <span class="dk-question-source dk-question-source--green">Tradeoffs 5/5</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/my/aivia-talent/align">Generate
+                questions</a><a class="ct ct-s" href="https://stemaway.com/aivia/report-breakdown">Learn more</a></div>
           </div>
-          <div class="dk-ellipsis">...</div>
-        </div>
 
-        <!-- Right: Live eval -->
-        <div class="dk-eval-panel">
-          <div class="dk-eval-topbar">
-            <div class="dk-eval-brand"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span class="dk-eval-name">AIVIA</span><span class="dk-eval-dot"></span><span class="dk-eval-status">Evaluating</span></div>
-            <div class="dk-eval-timer"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>4:42</span></div>
+          <!-- ==================== GROUPS ==================== -->
+          <div id="aivia-g" class="vw">
+            <div class="dk-panel">
+              <div class="dk-panel-body">
+                <div class="dk-panel-header">
+                  <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                      <path d="M16 3.13a4 4 0 010 7.75" />
+                    </svg> Group tracking</div>
+                </div>
+                <p class="dk-panel-sub">Track cohort progress across domains</p>
+
+                <!-- Cohort layout: main card (2/3) + steps sidebar (1/3) -->
+                <div class="dk-cohort-layout">
+                  <!-- Radar + stats combined card -->
+                  <div class="dk-radar-card">
+                    <div class="dk-radar-bg"></div>
+                    <div class="dk-radar-layout">
+                      <!-- Chart -->
+                      <div class="dk-radar-chart">
+                        <div class="dk-radar-ring"></div>
+                        <div class="dk-radar-sweep"></div>
+                        <svg width="280" height="255" viewBox="0 0 220 200">
+                          <defs>
+                            <filter id="glow">
+                              <feGaussianBlur stdDeviation="2" result="blur" />
+                              <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                              </feMerge>
+                            </filter>
+                          </defs>
+                          <g transform="translate(110,102)">
+                            <polygon points="0,-80 69,-40 69,40 0,80 -69,40 -69,-40" fill="none" stroke="#e8e5de"
+                              stroke-width="0.5" />
+                            <polygon points="0,-53 46,-27 46,27 0,53 -46,27 -46,-27" fill="none" stroke="#e8e5de"
+                              stroke-width="0.5" />
+                            <polygon points="0,-27 23,-13 23,13 0,27 -23,13 -23,-13" fill="none" stroke="#e8e5de"
+                              stroke-width="0.5" />
+                            <line x1="0" y1="-80" x2="0" y2="80" stroke="#e8e5de" stroke-width="0.5" />
+                            <line x1="-69" y1="-40" x2="69" y2="40" stroke="#e8e5de" stroke-width="0.5" />
+                            <line x1="69" y1="-40" x2="-69" y2="40" stroke="#e8e5de" stroke-width="0.5" />
+                            <polygon points="0,-80 69,-40 69,40 0,80 -69,40 -69,-40" fill="none" stroke="#2D5A4A"
+                              stroke-width="1" stroke-dasharray="5 4" opacity="0.25" />
+                            <polygon points="0,-76 46,-24 23,37 0,32 -37,19 -24,-35" fill="rgba(45,90,74,0.1)"
+                              stroke="#2D5A4A" stroke-width="2" filter="url(#glow)" />
+                            <circle cx="0" cy="-76" r="5" fill="#2D5A4A" class="dk-radar-dot dk-radar-dot--g" />
+                            <circle cx="46" cy="-24" r="5" fill="#2D5A4A"
+                              class="dk-radar-dot dk-radar-dot--g dk-radar-dot--d1" />
+                            <circle cx="23" cy="37" r="4.5" fill="#b8860b"
+                              class="dk-radar-dot dk-radar-dot--a dk-radar-dot--d2" />
+                            <circle cx="0" cy="32" r="5" fill="#2D5A4A"
+                              class="dk-radar-dot dk-radar-dot--g dk-radar-dot--d3" />
+                            <circle cx="-37" cy="19" r="4.5" fill="#b8860b"
+                              class="dk-radar-dot dk-radar-dot--a dk-radar-dot--d4" />
+                            <circle cx="-24" cy="-35" r="5" fill="#2D5A4A"
+                              class="dk-radar-dot dk-radar-dot--g dk-radar-dot--d5" />
+                          </g>
+                          <text x="110" y="14" text-anchor="middle" font-size="10" font-weight="600" fill="#2D5A4A">LLM
+                            &amp; agentic</text>
+                          <text x="200" y="68" text-anchor="end" font-size="10" font-weight="600"
+                            fill="#2D5A4A">Search</text>
+                          <text x="200" y="150" text-anchor="end" font-size="10" font-weight="600"
+                            fill="#b8860b">MLOps</text>
+                          <text x="110" y="196" text-anchor="middle" font-size="10" font-weight="600" fill="#2D5A4A">AI
+                            dev</text>
+                          <text x="20" y="150" text-anchor="start" font-size="10" font-weight="600" fill="#b8860b">Data
+                            infra</text>
+                          <text x="20" y="68" text-anchor="start" font-size="10" font-weight="600"
+                            fill="#2D5A4A">Applied AI</text>
+                        </svg>
+                      </div>
+                      <!-- Stats -->
+                      <div class="dk-radar-stats">
+                        <div class="dk-stat-card dk-stat-card--green">
+                          <div class="dk-stat-label">Strong</div>
+                          <div class="dk-stat-value">4 <span>/ 6 domains</span></div>
+                        </div>
+                        <div class="dk-stat-card dk-stat-card--amber">
+                          <div class="dk-stat-label">Needs attention</div>
+                          <div class="dk-stat-value dk-stat-value--amber">2 <span>domains</span></div>
+                        </div>
+                        <div class="dk-radar-legend">
+                          <div class="dk-legend-item">
+                            <div class="dk-legend-line"></div><span>Current coverage</span>
+                          </div>
+                          <div class="dk-legend-item">
+                            <div class="dk-legend-line dk-legend-line--dashed"></div><span>Target</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Activity feed -->
+                  <div class="dk-activity-card">
+                    <div class="dk-activity-header">
+                      <div class="dk-activity-title">
+                        <span class="dk-activity-pulse"></span>
+                        <span>Live activity</span>
+                      </div>
+                    </div>
+                    <div class="dk-activity-list">
+                      <div class="dk-activity-item">
+                        <div class="dk-activity-dot dk-activity-dot--green"></div>
+                        <div class="dk-activity-body">
+                          <div class="dk-activity-text"><span class="dk-activity-id">CAND-247</span> completed
+                            <b>MLOps</b>
+                          </div>
+                          <div class="dk-activity-meta">Level 4 · 2h ago</div>
+                        </div>
+                      </div>
+                      <div class="dk-activity-item">
+                        <div class="dk-activity-dot dk-activity-dot--amber"></div>
+                        <div class="dk-activity-body">
+                          <div class="dk-activity-text"><span class="dk-activity-id">CAND-189</span> scored <b>3/5</b>
+                            on Prioritization</div>
+                          <div class="dk-activity-meta">Interview · 4h ago</div>
+                        </div>
+                      </div>
+                      <div class="dk-activity-item">
+                        <div class="dk-activity-dot dk-activity-dot--green"></div>
+                        <div class="dk-activity-body">
+                          <div class="dk-activity-text"><span class="dk-activity-id">CAND-312</span> submitted
+                            <b>Search</b>
+                          </div>
+                          <div class="dk-activity-meta">Level 3 · 6h ago</div>
+                        </div>
+                      </div>
+                      <div class="dk-activity-item">
+                        <div class="dk-activity-dot"></div>
+                        <div class="dk-activity-body">
+                          <div class="dk-activity-text"><span class="dk-activity-id">CAND-158</span> invited to
+                            <b>LLM</b> eval
+                          </div>
+                          <div class="dk-activity-meta">Pending · 1d ago</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Steps row (horizontal, below cohort layout) -->
+                <div class="dk-cohort-steps-row">
+                  <div class="dk-config-item"><span class="dk-ci-num">01</span><span class="dk-ci-label">Cohort
+                      setup</span></div>
+                  <div class="dk-config-item dk-config-item--active">
+                    <div class="dk-config-accent"></div><span class="dk-ci-num">02</span><span
+                      class="dk-ci-label dk-ci-label--active">Domain coverage</span>
+                  </div>
+                  <div class="dk-config-item"><span class="dk-ci-num">03</span><span class="dk-ci-label">Growth
+                      recs</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/my/aivia-talent/generate">Start a
+                cohort</a><a class="ct ct-s" href="https://stemaway.com/aivia/internships">Learn more</a></div>
           </div>
-          <!-- Progress -->
-          <div class="dk-eval-progress">
-            <div class="dk-eval-step dk-eval-step--active"><div class="dk-eval-circle dk-eval-circle--active">1</div><span>Q1</span></div>
-            <div class="dk-eval-line dk-eval-line--done"></div>
-            <div class="dk-eval-step"><div class="dk-eval-circle">2</div><span>Q2</span></div>
-            <div class="dk-eval-line"></div>
-            <div class="dk-eval-step"><div class="dk-eval-circle">3</div><span>Q3</span></div>
-            <div class="dk-eval-line"></div>
-            <div class="dk-eval-step"><div class="dk-eval-circle dk-eval-circle--icon"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div><span>Voice</span></div>
+
+          <!-- ==================== CANDIDATES ==================== -->
+          <div id="aivia-c" class="vw">
+            <div class="dk-panel">
+              <div class="dk-panel-body">
+                <div class="dk-panel-header">
+                  <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg> Your portfolio</div>
+                </div>
+                <p class="dk-panel-sub">Verified results you own and control</p>
+
+                <!-- Portfolio stack: [main + peek eval] | [AI Career Assistant] -->
+                <div class="dk-portfolio-stack">
+                  <!-- Left column: main eval + peek of next -->
+                  <div class="dk-portfolio-left">
+                    <!-- Main eval card -->
+                    <div class="dk-eval-card">
+                      <div class="dk-eval-card-accent"></div>
+                      <div class="dk-eval-card-inner">
+                        <!-- Header -->
+                        <div class="dk-eval-card-header">
+                          <div>
+                            <div class="dk-eval-card-title">KV cache manager: emphasis on debug</div>
+                            <div class="dk-eval-card-date">Completed Apr 2, 2026</div>
+                          </div>
+                          <div class="dk-level-ring">
+                            <div class="dk-level-inner">
+                              <div class="dk-level-label">Level</div>
+                              <div class="dk-level-num">3</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dk-level-text">Expert</div>
+
+                        <!-- Scores inline -->
+                        <div class="dk-scores-row">
+                          <span class="dk-scores-label">Fixed rubric:</span>
+                          <span class="dk-score"><span class="dk-score-dot"></span>Tradeoff Analysis <b>5/5</b></span>
+                          <span class="dk-score-sep">·</span>
+                          <span class="dk-score"><span class="dk-score-dot dk-score-dot--amber"></span>Prioritization
+                            <b>3/5</b></span>
+                          <span class="dk-score-more">...</span>
+                        </div>
+                        <div class="dk-scores-row">
+                          <span class="dk-scores-label">Component-specific:</span>
+                          <span class="dk-score"><span class="dk-score-dot"></span>Cache invalidation <b>5/5</b></span>
+                          <span class="dk-score-more">...</span>
+                        </div>
+
+                        <!-- Resume tags -->
+                        <div class="dk-resume-section">
+                          <div class="dk-resume-label">Resume tags</div>
+                          <div class="dk-resume-tags">
+                            <span class="dk-resume-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                stroke="#5b21b6" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                              </svg> Technical depth</span>
+                            <span class="dk-resume-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                stroke="#5b21b6" stroke-width="2">
+                                <path
+                                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                              </svg> Systematic reasoning</span>
+                            <span class="dk-resume-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                stroke="#5b21b6" stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="M21 21l-4.35-4.35" />
+                              </svg> Diagnostic instinct</span>
+                          </div>
+                        </div>
+
+                        <!-- Action bar -->
+                        <div class="dk-action-bar">
+                          <div class="dk-actions-left">
+                            <div class="dk-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="#2D5A4A" stroke-width="1.5">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                              </svg><span>Detailed report</span></div>
+                            <div class="dk-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="#2D5A4A" stroke-width="1.5">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                              </svg><span>Voice</span><svg width="8" height="8" viewBox="0 0 24 24" fill="none"
+                                stroke="#2D5A4A" stroke-width="2.5">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                              </svg></div>
+                            <div class="dk-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="#2D5A4A" stroke-width="1.5">
+                                <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8" />
+                                <polyline points="16 6 12 2 8 6" />
+                                <line x1="12" y1="2" x2="12" y2="15" />
+                              </svg><span>Share</span></div>
+                          </div>
+                          <div class="dk-actions-right">
+                            <span class="dk-toggle-label">On resume</span>
+                            <div class="dk-toggle">
+                              <div class="dk-toggle-knob"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Peek of next eval card (thin sliver with fade) -->
+                    <div class="dk-eval-card dk-eval-card--peek">
+                      <div class="dk-eval-card-accent"></div>
+                      <div class="dk-eval-card-inner">
+                        <div class="dk-eval-card-header">
+                          <div>
+                            <div class="dk-eval-card-title">Vector search optimizer: query rewriter focus</div>
+                            <div class="dk-eval-card-date">Completed Mar 18, 2026</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- AI Career Assistant entry card -->
+                  <div class="dk-assistant-card">
+                    <div class="dk-assistant-card-accent"></div>
+                    <div class="dk-assistant-card-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                        <path d="M2 17l10 5 10-5" />
+                        <path d="M2 12l10 5 10-5" />
+                      </svg>
+                    </div>
+                    <div class="dk-assistant-card-name">AI Career Assistant</div>
+                    <div class="dk-assistant-card-desc">Verified career guidance from your AIVIA results</div>
+                    <div class="dk-assistant-card-prompts">
+                      <div class="dk-assistant-card-prompt"><span class="dk-assistant-card-arrow">›</span>Match my evals
+                        to a job</div>
+                      <div class="dk-assistant-card-prompt"><span class="dk-assistant-card-arrow">›</span>Prepare me for
+                        an interview</div>
+                      <div class="dk-assistant-card-prompt"><span class="dk-assistant-card-arrow">›</span>How can I
+                        improve?</div>
+                    </div>
+                    <a href="#" class="dk-assistant-card-cta">Start a conversation</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/my/aivia-dashboard">My dashboard</a><a
+                class="ct ct-s" href="https://stemaway.com/aivia/verified">Learn more</a></div>
           </div>
-          <!-- Q -->
-          <div class="dk-eval-q">Walk me through debugging hot-entry eviction under memory pressure.</div>
-          <!-- A -->
-          <div class="dk-eval-a-wrap"><div class="dk-eval-a">I'd check eviction policy metrics against the memory threshold first.</div></div>
-          <!-- Feedback -->
-          <div class="dk-eval-feedback">
-            <div class="dk-eval-fb-header"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><path d="M18 8h-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2z"/><path d="M7 8H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h1"/></svg><span>Feedback</span></div>
-            <p>Strong diagnostic instinct. Also verify replication state before eviction decisions.</p>
-          </div>
-          <!-- Scores -->
-          <div class="dk-eval-scores">
-            <span class="dk-eval-score"><span class="dk-eval-score-dot"></span>Tradeoffs <b>5/5</b></span>
-            <span class="dk-eval-score"><span class="dk-eval-score-dot dk-eval-score-dot--amber"></span>Priority <b>3/5</b></span>
-          </div>
-          <!-- Input -->
-          <div class="dk-eval-input">
-            <span>Type your response...</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </div>
+
         </div>
       </div>
+
+      <div class="dk-toggle-wrap" id="aivia-toggle-wrap">
+        <button class="dk-toggle-btn" id="aivia-toggle-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            class="dk-toggle-icon" id="aivia-toggle-icon">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+          <span id="aivia-toggle-text">Hide demo</span>
+        </button>
+      </div>
+      <div class="vw-cta" id="aivia-persist-cta" style="display:none">
+        <a class="ct ct-p" href="https://stemaway.com/my/aivia-talent/search" id="aivia-persist-primary">Discover
+          talent</a>
+        <a class="ct ct-s" href="https://stemaway.com/aivia/inside-aivia" id="aivia-persist-secondary">Learn more</a>
+      </div>
+
     </div>
   </div>
-  <div class="vw-cta"><a class="ct ct-p" href="#">Customize evaluation</a><a class="ct ct-s" href="/aivia/context-pack">Learn more</a></div>
-</div>
-
-<!-- ==================== INTERVIEW ==================== -->
-<div id="aivia-i" class="vw">
-  <div class="dk-panel">
-    <div class="dk-panel-body">
-      <div class="dk-panel-header">
-        <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Interview alignment</div>
-      </div>
-      <p class="dk-panel-sub">Auto-generated from prescreening evaluation data</p>
-
-      <!-- Signal cards -->
-      <div class="dk-signal-grid">
-        <div class="dk-signal-card dk-signal-card--amber">
-          <div class="dk-signal-accent dk-signal-accent--amber"></div>
-          <div class="dk-signal-header">
-            <div class="dk-signal-icon dk-signal-icon--amber">!</div>
-            <span class="dk-signal-title dk-signal-title--amber">Gap identified</span>
-          </div>
-          <p class="dk-signal-text">Prioritization scored 3/5</p>
-        </div>
-        <div class="dk-signal-card dk-signal-card--green">
-          <div class="dk-signal-accent dk-signal-accent--green"></div>
-          <div class="dk-signal-header">
-            <div class="dk-signal-icon dk-signal-icon--green">✓</div>
-            <span class="dk-signal-title dk-signal-title--green">Strength to probe</span>
-          </div>
-          <p class="dk-signal-text">Tradeoff analysis scored 5/5</p>
-        </div>
-      </div>
-
-      <!-- Questions -->
-      <div class="dk-questions">
-        <div class="dk-questions-accent"></div>
-        <div class="dk-questions-header"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2D5A4A" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Suggested questions</span></div>
-        <div class="dk-questions-list">
-          <div class="dk-question"><span class="dk-question-num">01</span><span class="dk-question-text">They addressed cache eviction before verifying replication state — how would they re-approach that triage?</span></div>
-          <div class="dk-question"><span class="dk-question-num">02</span><span class="dk-question-text">Scored 5/5 on tradeoffs — probe a call made with incomplete data under time pressure.</span></div>
-          <div class="dk-question dk-question--last"><span class="dk-question-num">03</span><span class="dk-question-text">Ask how they'd design a feasibility gate to prevent teams from over-investing in infeasible options.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="vw-cta"><a class="ct ct-p" href="#">Generate questions</a><a class="ct ct-s" href="/aivia/report-breakdown">Learn more</a></div>
-</div>
-
-<!-- ==================== GROUPS ==================== -->
-<div id="aivia-g" class="vw">
-  <div class="dk-panel">
-    <div class="dk-panel-body">
-      <div class="dk-panel-header">
-        <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg> Group tracking</div>
-      </div>
-      <p class="dk-panel-sub">Track cohort progress across domains</p>
-
-      <!-- Radar hero -->
-      <div class="dk-radar-card">
-        <div class="dk-radar-bg"></div>
-        <div class="dk-radar-layout">
-          <!-- Chart -->
-          <div class="dk-radar-chart">
-            <div class="dk-radar-ring"></div>
-            <div class="dk-radar-sweep"></div>
-            <svg width="220" height="200" viewBox="0 0 220 200">
-              <defs><filter id="glow"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-              <g transform="translate(110,102)">
-                <polygon points="0,-80 69,-40 69,40 0,80 -69,40 -69,-40" fill="none" stroke="#e8e5de" stroke-width="0.5"/>
-                <polygon points="0,-53 46,-27 46,27 0,53 -46,27 -46,-27" fill="none" stroke="#e8e5de" stroke-width="0.5"/>
-                <polygon points="0,-27 23,-13 23,13 0,27 -23,13 -23,-13" fill="none" stroke="#e8e5de" stroke-width="0.5"/>
-                <line x1="0" y1="-80" x2="0" y2="80" stroke="#e8e5de" stroke-width="0.5"/>
-                <line x1="-69" y1="-40" x2="69" y2="40" stroke="#e8e5de" stroke-width="0.5"/>
-                <line x1="69" y1="-40" x2="-69" y2="40" stroke="#e8e5de" stroke-width="0.5"/>
-                <polygon points="0,-80 69,-40 69,40 0,80 -69,40 -69,-40" fill="none" stroke="#2D5A4A" stroke-width="1" stroke-dasharray="5 4" opacity="0.25"/>
-                <polygon points="0,-76 46,-24 23,37 0,32 -37,19 -24,-35" fill="rgba(45,90,74,0.1)" stroke="#2D5A4A" stroke-width="2" filter="url(#glow)"/>
-                <circle cx="0" cy="-76" r="5" fill="#2D5A4A" class="dk-radar-dot dk-radar-dot--g"/>
-                <circle cx="46" cy="-24" r="5" fill="#2D5A4A" class="dk-radar-dot dk-radar-dot--g dk-radar-dot--d1"/>
-                <circle cx="23" cy="37" r="4.5" fill="#b8860b" class="dk-radar-dot dk-radar-dot--a dk-radar-dot--d2"/>
-                <circle cx="0" cy="32" r="5" fill="#2D5A4A" class="dk-radar-dot dk-radar-dot--g dk-radar-dot--d3"/>
-                <circle cx="-37" cy="19" r="4.5" fill="#b8860b" class="dk-radar-dot dk-radar-dot--a dk-radar-dot--d4"/>
-                <circle cx="-24" cy="-35" r="5" fill="#2D5A4A" class="dk-radar-dot dk-radar-dot--g dk-radar-dot--d5"/>
-              </g>
-              <text x="110" y="14" text-anchor="middle" font-size="10" font-weight="600" fill="#2D5A4A">LLM &amp; agentic</text>
-              <text x="200" y="68" text-anchor="end" font-size="10" font-weight="600" fill="#2D5A4A">Search</text>
-              <text x="200" y="150" text-anchor="end" font-size="10" font-weight="600" fill="#b8860b">MLOps</text>
-              <text x="110" y="196" text-anchor="middle" font-size="10" font-weight="600" fill="#2D5A4A">AI dev</text>
-              <text x="20" y="150" text-anchor="start" font-size="10" font-weight="600" fill="#b8860b">Data infra</text>
-              <text x="20" y="68" text-anchor="start" font-size="10" font-weight="600" fill="#2D5A4A">Applied AI</text>
-            </svg>
-          </div>
-          <!-- Stats -->
-          <div class="dk-radar-stats">
-            <div class="dk-stat-card dk-stat-card--green">
-              <div class="dk-stat-label">Strong</div>
-              <div class="dk-stat-value">4 <span>/ 6 domains</span></div>
-            </div>
-            <div class="dk-stat-card dk-stat-card--amber">
-              <div class="dk-stat-label">Needs attention</div>
-              <div class="dk-stat-value dk-stat-value--amber">2 <span>domains</span></div>
-            </div>
-            <div class="dk-radar-legend">
-              <div class="dk-legend-item"><div class="dk-legend-line"></div><span>Current coverage</span></div>
-              <div class="dk-legend-item"><div class="dk-legend-line dk-legend-line--dashed"></div><span>Target</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom config row -->
-      <div class="dk-config-row">
-        <div class="dk-config-item"><span class="dk-ci-num">01</span><span class="dk-ci-label">Cohort setup</span></div>
-        <div class="dk-config-item dk-config-item--active"><div class="dk-config-accent"></div><span class="dk-ci-num">02</span><span class="dk-ci-label dk-ci-label--active">Domain coverage</span></div>
-        <div class="dk-config-item"><span class="dk-ci-num">03</span><span class="dk-ci-label">Growth recs</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="vw-cta"><a class="ct ct-p" href="#">Start a cohort</a><a class="ct ct-s" href="/aivia/internships">Learn more</a></div>
-</div>
-
-<!-- ==================== CANDIDATES ==================== -->
-<div id="aivia-c" class="vw">
-  <div class="dk-panel">
-    <div class="dk-panel-body">
-      <div class="dk-panel-header">
-        <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Your portfolio</div>
-      </div>
-      <p class="dk-panel-sub">Verified results you own and control</p>
-
-      <!-- Eval card -->
-      <div class="dk-eval-card">
-        <div class="dk-eval-card-accent"></div>
-        <div class="dk-eval-card-inner">
-          <!-- Header -->
-          <div class="dk-eval-card-header">
-            <div>
-              <div class="dk-eval-card-title">KV cache manager: emphasis on debug</div>
-              <div class="dk-eval-card-date">Completed Apr 2, 2026</div>
-            </div>
-            <div class="dk-level-ring">
-              <div class="dk-level-inner"><div class="dk-level-label">Level</div><div class="dk-level-num">3</div></div>
-            </div>
-          </div>
-          <div class="dk-level-text">Expert</div>
-
-          <!-- Scores inline -->
-          <div class="dk-scores-row">
-            <span class="dk-scores-label">Fixed rubric:</span>
-            <span class="dk-score"><span class="dk-score-dot"></span>Tradeoff Analysis <b>5/5</b></span>
-            <span class="dk-score-sep">·</span>
-            <span class="dk-score"><span class="dk-score-dot dk-score-dot--amber"></span>Prioritization <b>3/5</b></span>
-            <span class="dk-score-more">...</span>
-          </div>
-          <div class="dk-scores-row">
-            <span class="dk-scores-label">Component-specific:</span>
-            <span class="dk-score"><span class="dk-score-dot"></span>Cache invalidation <b>5/5</b></span>
-            <span class="dk-score-more">...</span>
-          </div>
-
-          <!-- Resume tags -->
-          <div class="dk-resume-section">
-            <div class="dk-resume-label">Resume tags</div>
-            <div class="dk-resume-tags">
-              <span class="dk-resume-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5b21b6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Technical depth</span>
-              <span class="dk-resume-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5b21b6" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Systematic reasoning</span>
-              <span class="dk-resume-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5b21b6" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> Diagnostic instinct</span>
-            </div>
-          </div>
-
-          <!-- Action bar -->
-          <div class="dk-action-bar">
-            <div class="dk-actions-left">
-              <div class="dk-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2D5A4A" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>Detailed report</span></div>
-              <div class="dk-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2D5A4A" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg><span>Voice</span><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#2D5A4A" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-              <div class="dk-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2D5A4A" stroke-width="1.5"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg><span>Share</span></div>
-            </div>
-            <div class="dk-actions-right">
-              <span class="dk-toggle-label">On resume</span>
-              <div class="dk-toggle"><div class="dk-toggle-knob"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AI Assistant bubble -->
-      <div class="dk-assistant-wrap">
-        <div class="dk-assistant-bubble">
-          <div class="dk-assistant-glow"></div>
-          <div class="dk-assistant-icon-wrap">
-            <div class="dk-assistant-ring"></div>
-            <div class="dk-assistant-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          </div>
-          <span class="dk-assistant-name">AI Career Assistant</span>
-        </div>
-        <span class="dk-assistant-footnote">Personalized guidance from your evaluations</span>
-      </div>
-    </div>
-  </div>
-  <div class="vw-cta"><a class="ct ct-p" href="#">My dashboard</a><a class="ct ct-s" href="/aivia/verified">Learn more</a></div>
-</div>
-
-</div>
-</div>
-
-<div class="dk-toggle-wrap" id="aivia-toggle-wrap">
-  <button class="dk-toggle-btn" id="aivia-toggle-btn">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dk-toggle-icon" id="aivia-toggle-icon"><path d="M6 9l6 6 6-6"/></svg>
-    <span id="aivia-toggle-text">Hide demo</span>
-  </button>
-</div>
-<div class="vw-cta" id="aivia-persist-cta" style="display:none">
-  <a class="ct ct-p" href="#" id="aivia-persist-primary">Discover talent</a>
-  <a class="ct ct-s" href="#" id="aivia-persist-secondary">Learn more</a>
-</div>
-
-</div>
-</div>
 </div>

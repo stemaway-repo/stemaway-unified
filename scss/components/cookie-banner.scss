@@ -1,0 +1,155 @@
+/* ============================================
+   COOKIE CONSENT BANNER OVERRIDES
+   Overrides the cookie-consent theme component
+   ============================================ */
+
+.cc-window {
+  /* Force full-width, fixed bottom strip */
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0.85rem 1.5rem !important;
+  border-radius: 0 !important;
+  z-index: 9999 !important;
+
+  /* Dark brand background with subtle atmosphere */
+  background: linear-gradient(
+    180deg,
+    rgba(23, 33, 31, 0.98) 0%,
+    rgba(17, 24, 39, 0.98) 100%
+  ) !important;
+  border-top: 1px solid rgba(205, 162, 116, 0.22) !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15) !important;
+
+  /* Typography */
+  color: rgba(242, 240, 233, 0.88) !important;
+  font-size: 0.82rem !important;
+  line-height: 1.5 !important;
+
+  /* Layout: text left, buttons right */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+/* ---------- TEXT ---------- */
+.cc-window .cc-message {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  color: rgba(242, 240, 233, 0.88) !important;
+  font-size: 0.82rem !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+/* ---------- LEARN MORE LINK ---------- */
+.cc-window .cc-link,
+.cc-window a.cc-link {
+  color: #cda274 !important;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(205, 162, 116, 0.4) !important;
+  text-underline-offset: 2px !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease !important;
+}
+
+.cc-window .cc-link:hover,
+.cc-window a.cc-link:hover {
+  color: #e0bf94 !important;
+  text-decoration-color: rgba(205, 162, 116, 0.8) !important;
+}
+
+/* ---------- BUTTONS CONTAINER ---------- */
+.cc-window .cc-compliance {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  gap: 0.5rem !important;
+  align-items: center !important;
+}
+
+/* ---------- GOT IT BUTTON ---------- */
+.cc-window .cc-btn,
+.cc-window .cc-dismiss {
+  padding: 0.55rem 1.25rem !important;
+  min-height: auto !important;
+  border: none !important;
+  border-radius: 8px !important;
+  background: linear-gradient(135deg, #2d5a4a, #4a8b6e) !important;
+  color: #ffffff !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  box-shadow:
+    0 2px 6px rgba(45, 90, 74, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.cc-window .cc-btn:hover,
+.cc-window .cc-dismiss:hover {
+  background: linear-gradient(135deg, #345c4d, #538c6f) !important;
+  transform: translateY(-1px) !important;
+  box-shadow:
+    0 4px 10px rgba(45, 90, 74, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 767px) {
+  .cc-window {
+    padding: 0.85rem 1rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.65rem !important;
+  }
+
+  .cc-window .cc-message {
+    font-size: 0.8rem !important;
+    text-align: center !important;
+  }
+
+  .cc-window .cc-compliance {
+    justify-content: center !important;
+  }
+
+  .cc-window .cc-btn,
+  .cc-window .cc-dismiss {
+    width: 100% !important;
+    padding: 0.65rem 1.5rem !important;
+    font-size: 0.84rem !important;
+    text-align: center !important;
+  }
+}
+
+/* ---------- OVERRIDE THE THEME COMPONENT'S INLINE STYLES ---------- */
+.cc-window.cc-banner {
+  background: linear-gradient(
+    180deg,
+    rgba(23, 33, 31, 0.98) 0%,
+    rgba(17, 24, 39, 0.98) 100%
+  ) !important;
+  color: rgba(242, 240, 233, 0.88) !important;
+}
+
+.cc-window.cc-banner .cc-link {
+  color: #cda274 !important;
+}
+
+.cc-window.cc-banner .cc-btn {
+  background: linear-gradient(135deg, #2d5a4a, #4a8b6e) !important;
+  color: #ffffff !important;
+}

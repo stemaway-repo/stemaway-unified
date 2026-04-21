@@ -1,5 +1,8 @@
 import { apiInitializer } from "discourse/lib/api";
-import { shouldUseAiviaHeaderTheme } from "../lib/aivia-header-theme";
+import {
+  shouldUseAiviaHeaderTheme,
+  shouldUseAiviaHomepageTheme,
+} from "../lib/aivia-header-theme";
 
 function syncHomepageHeaderClass(api) {
   const router = api.container.lookup("service:router");
@@ -7,6 +10,10 @@ function syncHomepageHeaderClass(api) {
   document.body.classList.toggle(
     "aivia-homepage-nav",
     shouldUseAiviaHeaderTheme(router)
+  );
+  document.body.classList.toggle(
+    "aivia-homepage-route",
+    shouldUseAiviaHomepageTheme(router)
   );
 }
 

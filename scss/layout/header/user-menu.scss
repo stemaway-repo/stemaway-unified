@@ -1,6 +1,7 @@
 .user-menu {
   .quick-access-panel {
     border-top: none;
+
     .d-icon,
     .d-icon.active {
       color: var(--stemaway-secondary-300);
@@ -9,6 +10,7 @@
     div,
     button {
       color: var(--stemaway-secondary-400);
+
       &:hover {
         color: var(--stemaway-secondary-400);
       }
@@ -16,115 +18,124 @@
   }
 }
 
+/* ---------- CONTAINER ---------- */
 .user-menu.revamped {
-  border: 1px solid rgba(45, 90, 74, 0.1) !important;
-  border-radius: 14px !important;
-  background: linear-gradient(165deg, #ffffff 0%, #f9faf8 100%);
+  border: 1px solid rgba(45, 90, 74, 0.08);
+  border-radius: 14px;
+  background: #ffffff;
   box-shadow:
-    0 4px 6px rgba(45, 90, 74, 0.04),
-    0 12px 24px rgba(0, 0, 0, 0.08),
-    0 24px 48px rgba(0, 0, 0, 0.06) !important;
+    0 2px 4px rgba(45, 90, 74, 0.03),
+    0 8px 16px rgba(45, 90, 74, 0.06),
+    0 24px 48px rgba(17, 24, 39, 0.1),
+    0 48px 80px rgba(17, 24, 39, 0.06);
   overflow: hidden;
 }
 
+/* ---------- TAB RAIL ---------- */
 .user-menu.revamped .menu-tabs-container {
-  border-right: 1px solid rgba(45, 90, 74, 0.08) !important;
-  background: linear-gradient(180deg, #fdfefd, #f6faf7);
+  background: #fafbf9;
+  border-right: 1px solid rgba(45, 90, 74, 0.06);
 }
 
 .user-menu.revamped .bottom-tabs {
-  border-top: 1px solid rgba(45, 90, 74, 0.08) !important;
+  border-top: 1px solid rgba(45, 90, 74, 0.06);
 }
 
 .user-menu.revamped .tabs-list .btn {
   border-radius: 0;
 }
 
+/* ---------- TAB ICONS (NEUMORPHIC) ---------- */
 .user-menu.revamped .tabs-list .btn .d-icon {
-  border: 1px solid transparent;
+  border: none;
   border-radius: 10px;
-  color: #2d5a4a;
-  background: rgba(74, 139, 110, 0.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
-}
-
-.user-menu.revamped .tabs-list .btn.active .d-icon {
-  color: #2d5a4a;
-  background: rgba(74, 139, 110, 0.14);
-  border-color: rgba(45, 90, 74, 0.1);
+  color: #5d6c62;
+  background: transparent;
+  box-shadow: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.25s ease;
 }
 
 .user-menu.revamped .tabs-list .btn:not(.active):hover .d-icon,
 .user-menu.revamped .tabs-list .btn:not(.active):focus-visible .d-icon {
-  background: rgba(45, 90, 74, 0.1);
+  background: #f4f6f2;
+  color: #2d5a4a;
+  box-shadow:
+    inset 2px 2px 4px rgba(45, 90, 74, 0.06),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.user-menu.revamped .tabs-list .btn.active .d-icon {
+  background: linear-gradient(145deg, #eef3ee, #f8faf7);
+  color: #2d5a4a;
+  box-shadow:
+    inset 3px 3px 6px rgba(45, 90, 74, 0.12),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.9);
 }
 
 .user-menu.revamped .tabs-list .badge-notification {
-  background: #c45d35 !important;
-  color: #fff !important;
-  box-shadow: 0 0 0 2px #ffffff;
+  background: #c45d35;
+  color: #fff;
+  box-shadow: 0 0 0 2px #fafbf9;
 }
 
+/* ---------- QUICK ACCESS PANEL ---------- */
 .user-menu.revamped .quick-access-panel {
-  background: transparent !important;
-  border-right: 1px solid rgba(45, 90, 74, 0.08);
-  padding: 0.75rem 0.75rem 0 0.75rem;
+  background: transparent;
+  border-right: none;
+  padding: 0.6rem 0.6rem 0 0.6rem;
 }
 
 .user-menu.revamped .quick-access-panel ul {
   display: grid;
-  gap: 0.4rem;
+  gap: 0.2rem;
 }
 
+/* ---------- LIST ITEMS (DEFAULT) ---------- */
 .user-menu.revamped .quick-access-panel li {
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: none;
   border-radius: 10px;
-  background: #f8f8f6 !important;
+  background: transparent;
   color: #1a1d1a;
   transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .user-menu.revamped .quick-access-panel li.read {
-  background: rgba(248, 248, 246, 0.72) !important;
+  background: transparent;
+  opacity: 0.85;
 }
 
-.user-menu.revamped .quick-access-panel li.unread,
-.user-menu.revamped .quick-access-panel li.pending {
-  border-color: rgba(45, 90, 74, 0.24);
-  background: linear-gradient(
-    135deg,
-    rgba(232, 243, 236, 0.98),
-    rgba(244, 250, 246, 0.98)
-  ) !important;
+/* ---------- LIST ITEMS (HOVER — NEUMORPHIC) ---------- */
+.user-menu.revamped .quick-access-panel li:hover {
+  background: #f4f6f2;
+  border-color: transparent;
   box-shadow:
-    inset 3px 0 0 #2d5a4a,
-    inset 0 0 0 1px rgba(45, 90, 74, 0.08) !important;
+    inset 2px 2px 5px rgba(45, 90, 74, 0.08),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.8);
 }
 
-.user-menu.revamped .quick-access-panel li.unread .item-label,
-.user-menu.revamped .quick-access-panel li.pending .item-label {
-  color: #234739 !important;
-}
-
+/* ---------- UNREAD / PENDING (INNER GLOW, NO LEFT BAR) ---------- */
+.user-menu.revamped .quick-access-panel li.unread,
+.user-menu.revamped .quick-access-panel li.pending,
 .user-menu.revamped .quick-access-panel li.notification.unread,
 .user-menu.revamped .quick-access-panel li.notification.pending {
-  background: linear-gradient(
-    135deg,
-    rgba(232, 243, 236, 0.98),
-    rgba(244, 250, 246, 0.98)
-  ) !important;
+  background: linear-gradient(90deg,
+      rgba(74, 139, 110, 0.1) 0%,
+      rgba(74, 139, 110, 0.04) 60%,
+      rgba(74, 139, 110, 0.02) 100%);
+  border-color: transparent;
+  box-shadow:
+    inset 6px 0 16px -4px rgba(74, 139, 110, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .user-menu.revamped .quick-access-panel li.notification.unread a,
 .user-menu.revamped .quick-access-panel li.notification.pending a {
-  background: linear-gradient(
-    135deg,
-    rgba(232, 243, 236, 0.98),
-    rgba(244, 250, 246, 0.98)
-  ) !important;
+  background: transparent;
   border-radius: 10px;
 }
 
@@ -132,107 +143,117 @@
 .user-menu.revamped .quick-access-panel li.pending:hover,
 .user-menu.revamped .quick-access-panel li.notification.unread:hover,
 .user-menu.revamped .quick-access-panel li.notification.pending:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(220, 236, 226, 0.98),
-    rgba(236, 246, 240, 0.98)
-  ) !important;
-  border-color: rgba(45, 90, 74, 0.3);
+  background: linear-gradient(90deg,
+      rgba(74, 139, 110, 0.15) 0%,
+      rgba(74, 139, 110, 0.06) 60%,
+      rgba(74, 139, 110, 0.03) 100%);
   box-shadow:
-    inset 3px 0 0 #2d5a4a,
-    0 2px 8px rgba(45, 90, 74, 0.08);
+    inset 6px 0 20px -4px rgba(74, 139, 110, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 2px 2px 5px rgba(45, 90, 74, 0.06),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.6);
 }
 
 .user-menu.revamped .quick-access-panel li.notification.unread:hover a,
 .user-menu.revamped .quick-access-panel li.notification.pending:hover a {
-  background: linear-gradient(
-    135deg,
-    rgba(220, 236, 226, 0.98),
-    rgba(236, 246, 240, 0.98)
-  ) !important;
+  background: transparent;
+}
+
+/* ---------- UNREAD TEXT & ICONS ---------- */
+.user-menu.revamped .quick-access-panel li.unread .item-label,
+.user-menu.revamped .quick-access-panel li.pending .item-label {
+  color: #234739;
+  font-weight: 650;
 }
 
 .user-menu.revamped .quick-access-panel li.notification.unread .d-icon,
 .user-menu.revamped .quick-access-panel li.notification.pending .d-icon {
-  color: #2d5a4a !important;
+  color: #2d5a4a;
 }
 
-.user-menu.revamped
-  .quick-access-panel
-  li.notification.unread
-  .item-description,
-.user-menu.revamped
-  .quick-access-panel
-  li.notification.pending
-  .item-description {
-  color: #456457 !important;
+.user-menu.revamped .quick-access-panel li.notification.unread .item-description,
+.user-menu.revamped .quick-access-panel li.notification.pending .item-description {
+  color: #456457;
 }
 
-.user-menu.revamped .quick-access-panel li:hover {
-  background: rgba(45, 90, 74, 0.06) !important;
-  border-color: rgba(45, 90, 74, 0.15);
-  box-shadow: 0 2px 8px rgba(45, 90, 74, 0.06);
-}
-
+/* ---------- LINK PADDING ---------- */
 .user-menu.revamped .quick-access-panel li a {
-  padding: 0.75rem 0.85rem !important;
+  padding: 0.7rem 0.85rem;
   gap: 0.75rem;
+  border-radius: 10px;
 }
 
 .user-menu.revamped .quick-access-panel li .d-icon {
+  color: #5d6c62;
+  margin-right: 0;
+  transition: color 0.2s ease;
+}
+
+.user-menu.revamped .quick-access-panel li:hover .d-icon {
   color: #2d5a4a;
-  margin-right: 0 !important;
 }
 
-.user-menu.revamped .quick-access-panel .item-label,
-.user-menu.revamped .quick-access-panel .item-description {
-  color: #1a1d1a !important;
-  font-size: 0.9rem !important;
-}
-
+/* ---------- TYPOGRAPHY ---------- */
 .user-menu.revamped .quick-access-panel .item-label {
-  font-weight: 600;
+  color: #1a1d1a;
+  font-size: 0.88rem;
+  font-weight: 550;
+  letter-spacing: -0.005em;
 }
 
 .user-menu.revamped .quick-access-panel .item-description {
-  color: #5d6c62 !important;
+  color: #6b7a70;
+  font-size: 0.8rem;
   line-height: 1.4;
+  font-weight: 400;
 }
 
+/* ---------- BOTTOM BUTTONS (NEUMORPHIC) ---------- */
 .user-menu.revamped .panel-body-bottom {
-  padding: 0.75rem;
-  gap: 0.5rem;
+  padding: 0.6rem;
+  gap: 0.4rem;
+  border-top: 1px solid rgba(45, 90, 74, 0.06);
 }
 
 .user-menu.revamped .panel-body-bottom .btn {
-  border: 1px solid rgba(45, 90, 74, 0.1) !important;
+  border: none;
   border-radius: 10px;
-  background: #f8f8f6;
-  color: #1a1d1a !important;
+  background: transparent;
+  color: #1a1d1a;
   box-shadow: none;
+  font-weight: 550;
   transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    box-shadow 0.15s ease,
-    transform 0.15s ease;
-  font-weight: 500;
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s ease;
 }
 
 .user-menu.revamped .panel-body-bottom .btn .d-icon {
-  color: #2d5a4a;
+  color: #5d6c62;
+  transition: color 0.2s ease;
 }
 
 .user-menu.revamped .panel-body-bottom .btn:hover {
-  background: rgba(45, 90, 74, 0.06);
-  border-color: rgba(45, 90, 74, 0.15) !important;
-  box-shadow: 0 2px 8px rgba(45, 90, 74, 0.06);
-  transform: translateY(-1px);
+  background: #f4f6f2;
+  color: #0f1a15;
+  box-shadow:
+    inset 2px 2px 5px rgba(45, 90, 74, 0.08),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+  transform: none;
+}
+
+.user-menu.revamped .panel-body-bottom .btn:hover .d-icon {
+  color: #2d5a4a;
 }
 
 .user-menu.revamped .panel-body-bottom .btn:active {
-  transform: translateY(0);
+  transform: none;
+  box-shadow:
+    inset 3px 3px 6px rgba(45, 90, 74, 0.12),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.9);
 }
 
+/* ---------- HIDDEN DISCOURSE DEFAULTS ---------- */
 #user-menu-button-bookmarks,
 #user-menu-button-other-notifications {
   display: none;
@@ -244,11 +265,12 @@
   display: none;
 }
 
+/* ---------- MOBILE (tablets & phones) ---------- */
 @media (max-width: 767px) {
   .user-menu.revamped {
-    width: min(calc(100vw - 0.75rem), 21.75rem) !important;
+    width: min(calc(100vw - 0.75rem), 21.75rem);
     max-width: calc(100vw - 0.75rem);
-    border-radius: 16px !important;
+    border-radius: 16px;
   }
 
   .user-menu.revamped .panel-body-contents {
@@ -273,7 +295,7 @@
     justify-content: center;
     width: 100%;
     min-width: 0;
-    padding: 0.1rem !important;
+    padding: 0.1rem;
   }
 
   .user-menu.revamped .tabs-list .btn .d-icon {
@@ -297,11 +319,11 @@
     right: 0;
     top: 0;
     font-size: 0.62rem;
-    box-shadow: 0 0 0 2px #fdfefd;
+    box-shadow: 0 0 0 2px #fafbf9;
   }
 
   .user-menu.revamped .quick-access-panel {
-    width: auto !important;
+    width: auto;
     flex: 1 1 auto;
     min-width: 0;
     max-width: calc(100% - 2.85rem);
@@ -310,12 +332,15 @@
   }
 
   .user-menu.revamped .quick-access-panel li a {
-    padding: 0.8rem 0.85rem !important;
+    padding: 0.8rem 0.85rem;
   }
 
-  .user-menu.revamped .quick-access-panel .item-label,
+  .user-menu.revamped .quick-access-panel .item-label {
+    font-size: 0.86rem;
+  }
+
   .user-menu.revamped .quick-access-panel .item-description {
-    font-size: 0.88rem !important;
+    font-size: 0.78rem;
   }
 
   .user-menu.revamped .panel-body-bottom {
@@ -327,6 +352,7 @@
   }
 }
 
+/* ---------- SMALL PHONES ---------- */
 @media (max-width: 480px) {
   .user-menu.revamped {
     max-width: calc(100vw - 0.5rem);

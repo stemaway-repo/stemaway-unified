@@ -15,6 +15,7 @@ const AIVIA_MARKETING_PATHS = new Set([
   "/aivia/internships",
   "/aivia/talent-pipeline",
   "/aivia/project-mentorship",
+  "/aivia/mentorship",
   "/aivia/verified",
 ]);
 

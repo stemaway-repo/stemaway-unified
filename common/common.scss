@@ -24,6 +24,7 @@
 @import "components/admin-panel";
 @import "components/hamburger-menu";
 @import "components/login-modal";
+@import "components/cookie-banner";
 @import "components/user-card";
 @import "components/mentions";
 @import "components/card-set";
@@ -67,6 +68,8 @@
 
 /** --- PAGES --- **/
 @import "pages/homepage";
+@import "pages/login-preferences";
+@import "pages/error-page";
 @import "pages/user-summary-page";
 @import "pages/search";
 

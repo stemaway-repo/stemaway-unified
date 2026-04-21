@@ -1,158 +1,263 @@
-.powered-by-discourse,
-.powered-by-link {
-  display: none !important;
-}
+/* ============================================
+   FOOTER — PREMIUM ENHANCEMENTS
+   Aligns with neumorphic language across the site
+   ============================================ */
 
 .custom-footer {
   position: relative;
-  overflow: hidden;
+
+  /* Slightly richer gradient, more atmosphere */
   background:
     radial-gradient(
-      circle at top left,
-      rgba(205, 162, 116, 0.14),
-      transparent 32%
+      circle at 15% 20%,
+      rgba(205, 162, 116, 0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(74, 139, 110, 0.08),
+      transparent 45%
     ),
     linear-gradient(180deg, #f8fbf7 0%, #eef5f1 100%);
-  border-top: 1px solid rgba(45, 90, 74, 0.12);
+
+  /* Softer, more diffused top shadow */
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.75),
-    0 -10px 28px rgba(28, 48, 40, 0.04);
-  padding-left: 40px;
-  padding-right: 10px;
+    0 -4px 12px rgba(28, 48, 40, 0.03),
+    0 -16px 40px rgba(28, 48, 40, 0.04) !important;
 
+  padding-top: 3rem !important;
+  padding-bottom: 2rem !important;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+
+  /* Top accent line — now with softer edges and better fade */
   &::before {
     content: "";
     position: absolute;
-    inset: 0 0 auto;
-    height: 2px;
+    inset: 0 0 auto !important;
+    height: 1px !important;
     background: linear-gradient(
       90deg,
-      rgba(45, 90, 74, 0),
-      rgba(45, 90, 74, 0.3),
-      rgba(205, 162, 116, 0.45),
-      rgba(45, 90, 74, 0)
-    );
+      transparent 0%,
+      rgba(45, 90, 74, 0.15) 20%,
+      rgba(205, 162, 116, 0.5) 50%,
+      rgba(45, 90, 74, 0.15) 80%,
+      transparent 100%
+    ) !important;
     pointer-events: none;
   }
 
+  /* ---------- HEADINGS (softer weight) ---------- */
+  .heading,
+  .second-box .list > span,
+  .second-box span {
+    color: #213d32 !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+    letter-spacing: 0.02em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 1rem !important;
+    opacity: 0.9;
+  }
+
+  /* ---------- BODY TEXT ---------- */
+  .blurb,
+  .first-box .blurb {
+    color: #4e6257 !important;
+    font-size: 0.88rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* ---------- LINKS (NEUMORPHIC HOVER) ---------- */
   a {
     color: #4e6257 !important;
     transition:
       color 0.15s ease,
-      opacity 0.15s ease;
-
-    &:hover,
-    &:focus {
-      color: #2d5a4a !important;
-      opacity: 1;
-      text-decoration: none;
-    }
+      background-color 0.2s ease,
+      box-shadow 0.25s ease !important;
   }
 
-  .heading {
-    color: #213d32;
-    text-shadow: none;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-  }
-
-  .blurb {
-    color: rgba(45, 64, 55, 0.74) !important;
-    margin-bottom: 1rem;
-    line-height: 1.65;
-  }
-
-  .second-box span {
-    color: #274639;
-    text-shadow: none;
-    font-weight: 700;
-    letter-spacing: 0.015em;
+  /* Link-group list items — neumorphic hover treatment */
+  .second-box .list ul li {
+    margin-bottom: 0.15rem !important;
   }
 
   .second-box .list ul li a {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.4rem 0.65rem !important;
+    margin-left: -0.65rem !important;
+    border-radius: 8px !important;
     color: #51665a !important;
-
-    &:hover,
-    &:focus {
-      color: #2d5a4a !important;
-    }
+    font-size: 0.88rem !important;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      box-shadow 0.25s ease,
+      transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
 
-  .footer-links a,
-  .first-box .blurb {
-    color: #5a6c62 !important;
+  .second-box .list ul li a:hover,
+  .second-box .list ul li a:focus {
+    color: #2d5a4a !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    box-shadow:
+      inset 2px 2px 5px rgba(45, 90, 74, 0.06),
+      inset -2px -2px 5px rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* ---------- BOTTOM FOOTER LINKS (Terms, Privacy, etc) ---------- */
+  .footer-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.1rem !important;
+    margin-top: 1.5rem !important;
+    padding-top: 1.25rem !important;
+    border-top: 1px solid rgba(45, 90, 74, 0.08) !important;
+  }
+
+  .footer-links a {
+    padding: 0.35rem 0.6rem !important;
+    margin: 0 !important;
+    border-radius: 6px !important;
+    color: #6b7a70 !important;
+    font-size: 0.82rem !important;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease !important;
   }
 
   .footer-links a:hover,
   .footer-links a:focus {
     color: #2d5a4a !important;
+    background: rgba(255, 255, 255, 0.5) !important;
   }
 
-  .third-box .social .social-link,
+  /* Kill the separator dots — spacing handles it */
+  .footer-links a + a::before {
+    display: none !important;
+  }
+
+  /* ---------- SOCIAL ICONS (NEUMORPHIC TILES) ---------- */
+  .third-box .social {
+    display: flex !important;
+    gap: 0.4rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  .third-box .social .social-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    border: none !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    color: #5a6c62 !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      0 1px 2px rgba(45, 90, 74, 0.04) !important;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.25s ease,
+      transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
   .third-box .social .social-link svg {
-    color: #4a4a4a !important;
+    width: 18px !important;
+    height: 18px !important;
+    color: inherit !important;
   }
 
   .third-box .social .social-link:hover,
   .third-box .social .social-link:focus {
+    background: rgba(74, 139, 110, 0.08) !important;
     color: #2d5a4a !important;
+    transform: translateY(-2px) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 4px 12px rgba(45, 90, 74, 0.1) !important;
+    opacity: 1 !important;
+  }
+
+  .third-box .social .social-link:active {
+    transform: translateY(0) !important;
+    box-shadow:
+      inset 2px 2px 5px rgba(45, 90, 74, 0.08),
+      inset -2px -2px 5px rgba(255, 255, 255, 0.6) !important;
+  }
+
+  /* ---------- BOX SPACING ---------- */
+  .first-box,
+  .second-box,
+  .third-box {
+    position: relative;
+  }
+
+  .first-box {
+    color: #3d5549 !important;
+  }
+
+  .powered-by-discourse {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.4rem;
+    z-index: 2;
+    margin: 0;
+    justify-self: auto;
   }
 }
 
-.custom-footer .wrap {
-  position: relative;
-}
-
-.custom-footer .first-box,
-.custom-footer .second-box,
-.custom-footer .third-box {
-  position: relative;
-}
-
-.custom-footer .first-box {
-  color: #3d5549;
-}
-
-.custom-footer .second-box .list span {
-  display: inline-block;
-  margin-bottom: 0.85rem;
-}
-
-.custom-footer .second-box .list ul li {
-  margin-bottom: 0.45rem;
-}
-
-.custom-footer .footer-links a {
-  color: #5a6c62 !important;
-}
-
-.custom-footer .footer-links a + a::before {
-  color: rgba(73, 101, 87, 0.26);
-}
-
-.custom-footer .third-box .social {
-  gap: 0.55rem;
-}
-
-.custom-footer .third-box .social .social-link {
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  transition:
-    opacity 0.15s ease,
-    transform 0.15s ease,
-    color 0.15s ease;
-
-  &:hover,
-  &:focus {
-    background: transparent;
-    box-shadow: none;
-    opacity: 0.82;
-    transform: translateY(-1px);
+/* ============================================
+   MOBILE FOOTER
+   ============================================ */
+@media (max-width: 767px) {
+  .custom-footer {
+    padding: 2rem 1.25rem 1.5rem !important;
   }
-}
 
-.custom-footer .footer-links a,
-.custom-footer .second-box .list ul li a {
-  text-decoration: none;
+  .custom-footer .heading,
+  .custom-footer .second-box .list > span,
+  .custom-footer .second-box span {
+    font-size: 0.82rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .custom-footer .blurb {
+    font-size: 0.9rem !important;
+  }
+
+  .custom-footer .second-box .list ul li a {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 0.75rem !important;
+    min-height: 40px !important;
+  }
+
+  .custom-footer .footer-links {
+    justify-content: center !important;
+    margin-top: 1.25rem !important;
+  }
+
+  .custom-footer .footer-links a {
+    font-size: 0.78rem !important;
+  }
+
+  .custom-footer .third-box .social {
+    justify-content: flex-start !important;
+  }
+
+  .custom-footer .third-box .social .social-link {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+  .custom-footer .powered-by-discourse {
+    position: static;
+    display: inline-flex;
+    margin-top: 1rem;
+  }
 }

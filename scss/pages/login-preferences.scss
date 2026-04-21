@@ -1,0 +1,307 @@
+body.login-preferences-page {
+  --login-preferences-surface-width: min(680px, calc(100% - 2rem));
+  --login-preferences-title-size: clamp(1.45rem, 1.95vw, 1.8rem);
+  --login-preferences-card-padding: 2.15rem 2.7rem;
+  --login-preferences-card-background: linear-gradient(
+    165deg,
+    rgba(232, 245, 233, 0.5),
+    rgba(248, 247, 242, 0.4)
+  );
+  --login-preferences-card-border: 1px solid rgba(45, 90, 74, 0.08);
+  --login-preferences-card-shadow:
+    0 2px 4px rgba(45, 90, 74, 0.04), 0 12px 28px rgba(17, 24, 39, 0.06);
+
+  background:
+    radial-gradient(
+      ellipse 90% 65% at 15% 12%,
+      rgba(74, 139, 110, 0.18),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse 80% 55% at 88% 24%,
+      rgba(59, 130, 246, 0.14),
+      transparent 46%
+    ),
+    radial-gradient(
+      ellipse 75% 55% at 50% 100%,
+      rgba(205, 162, 116, 0.12),
+      transparent 52%
+    ),
+    linear-gradient(135deg, #17211f 0%, #131b1d 48%, #111827 100%);
+  color: #f2f0e9;
+
+  .d-header-wrap {
+    background: linear-gradient(135deg, #17211f 0%, #131b1d 48%, #111827 100%);
+  }
+
+  .d-header {
+    background: linear-gradient(135deg, #17211f 0%, #131b1d 48%, #111827 100%);
+    box-shadow: none;
+    border-bottom: 1px solid rgba(205, 162, 116, 0.22);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .d-header .title a {
+    display: flex;
+    justify-content: center;
+  }
+
+  .d-header .header-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 0.55rem;
+  }
+
+  .d-header .header-buttons .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .d-header .header-buttons .btn {
+    min-height: 2.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(205, 162, 116, 0.16);
+    box-shadow: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    line-height: 1;
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .d-header .header-buttons .btn .d-icon {
+    color: currentColor !important;
+  }
+
+  .d-header .header-buttons .sign-up-button,
+  .d-header .header-buttons .login-button {
+    background: rgba(255, 255, 255, 0.03) !important;
+    color: rgba(242, 240, 233, 0.88) !important;
+    border-color: rgba(205, 162, 116, 0.16) !important;
+    box-shadow: none !important;
+  }
+
+  .d-header .header-buttons .btn:hover,
+  .d-header .header-buttons .btn:focus {
+    background: rgba(205, 162, 116, 0.1) !important;
+    color: #f2f0e9 !important;
+    border-color: rgba(205, 162, 116, 0.28) !important;
+  }
+
+  .d-header .panel > .d-header-icons {
+    display: none !important;
+  }
+
+  #site-logo {
+    height: 3.2rem;
+    filter: saturate(0.95) brightness(1.02);
+  }
+
+  #main-outlet,
+  #main-outlet-wrapper {
+    background: transparent;
+  }
+
+  #main-outlet-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100dvh - var(--header-offset, 0px)) !important;
+  }
+
+  #main-outlet {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 2.25rem;
+    min-height: 0 !important;
+  }
+
+  #main-container,
+  .global-notice,
+  .card-cloak {
+    display: none !important;
+  }
+
+  #main-outlet > .container:not(#main-container) {
+    width: var(--login-preferences-surface-width);
+    max-width: var(--login-preferences-surface-width);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin: 1.35rem auto 3rem;
+    padding: var(--login-preferences-card-padding);
+    background: var(--login-preferences-card-background);
+    border: var(--login-preferences-card-border);
+    border-radius: 16px;
+    color: #17211f;
+    box-shadow: var(--login-preferences-card-shadow);
+  }
+
+  #main-outlet > .container:not(#main-container) p {
+    max-width: 34rem;
+    margin: 0 0 1.35rem !important;
+    color: #4f6258;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  #main-outlet > .container:not(#main-container) .btn-primary {
+    align-self: flex-start;
+    min-width: 138px;
+    min-height: 46px;
+    padding: 0.72rem 1.2rem;
+    border: none !important;
+    border-radius: 12px !important;
+    background: linear-gradient(135deg, #2d5a4a, #4a8b6e) !important;
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    box-shadow:
+      0 4px 12px rgba(45, 90, 74, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    transition:
+      background 0.2s ease,
+      box-shadow 0.25s ease,
+      transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  #main-outlet > .container:not(#main-container) .btn-primary:hover,
+  #main-outlet > .container:not(#main-container) .btn-primary:focus {
+    background: linear-gradient(135deg, #345c4d, #538c6f) !important;
+    transform: translateY(-1px) !important;
+    box-shadow:
+      0 8px 20px rgba(45, 90, 74, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  }
+}
+
+.above-main-container-outlet.login-preferences-banner {
+  display: none;
+}
+
+body.login-preferences-page
+  .above-main-container-outlet.login-preferences-banner {
+  display: block;
+  width: var(--login-preferences-surface-width);
+  max-width: var(--login-preferences-surface-width);
+  box-sizing: border-box;
+  margin: 2rem auto 0;
+}
+
+.login-preferences-promo {
+  width: 100%;
+}
+
+.login-preferences-promo__content {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: var(--login-preferences-card-padding);
+  background: var(--login-preferences-card-background);
+  border: var(--login-preferences-card-border);
+  border-radius: 16px;
+  box-shadow: var(--login-preferences-card-shadow);
+  color: #1a1d1a;
+}
+
+.login-preferences-promo__title,
+body.login-preferences-page #main-outlet > .container:not(#main-container) h2 {
+  max-width: none;
+  margin: 0 0 0.8rem;
+  color: #17211f;
+  font-size: var(--login-preferences-title-size) !important;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.login-preferences-promo__title {
+  white-space: nowrap;
+}
+
+.login-preferences-promo__body {
+  max-width: 34rem;
+  margin: 0;
+  color: #4f6258;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  body.login-preferences-page {
+    #main-outlet {
+      padding-bottom: 1.5rem;
+    }
+
+    #main-outlet > .container:not(#main-container) {
+      width: calc(100% - 1.5rem);
+      max-width: none;
+      margin: 0.85rem auto 2rem;
+      padding: 1.5rem 1.2rem;
+    }
+
+    #main-outlet > .container:not(#main-container) p {
+      max-width: none;
+      margin-bottom: 1.15rem !important;
+    }
+
+    #main-outlet > .container:not(#main-container) .btn-primary {
+      min-width: 0;
+      width: 100%;
+      min-height: 44px;
+      padding: 0.72rem 1rem;
+      justify-content: center;
+    }
+  }
+
+  body.login-preferences-page
+    .above-main-container-outlet.login-preferences-banner {
+    width: calc(100% - 1.5rem);
+    max-width: none;
+    margin-top: 1.25rem;
+  }
+
+  .login-preferences-promo__content {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .login-preferences-promo__title,
+  body.login-preferences-page
+    #main-outlet
+    > .container:not(#main-container)
+    h2 {
+    max-width: none;
+    margin-bottom: 0.7rem;
+    font-size: clamp(1.22rem, 5vw, 1.5rem) !important;
+    line-height: 1.02;
+  }
+
+  .login-preferences-promo__body {
+    max-width: none;
+    font-size: 0.98rem;
+  }
+
+  body.login-preferences-page {
+    .d-header .header-buttons .auth-buttons {
+      gap: 0.45rem;
+    }
+
+    .d-header .header-buttons .btn {
+      min-height: 2.2rem;
+      padding: 0.45rem 0.8rem;
+      font-size: 0.82rem;
+    }
+  }
+}

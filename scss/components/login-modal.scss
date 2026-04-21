@@ -1,8 +1,15 @@
+/* ============================================
+   LOGIN & SIGNUP PAGES
+   ============================================ */
+
 .login-modal .modal-body.has-alt-auth,
 .create-account .modal-body.has-alt-auth {
   background: linear-gradient(165deg, #ffffff 0%, #f9faf8 100%);
 }
 
+/* ============================================
+   SIGNUP PAGE — FULL-PAGE LAYOUT
+   ============================================ */
 body.signup-page {
   .signup-fullpage {
     display: flex;
@@ -27,56 +34,56 @@ body.signup-page {
     margin: auto;
   }
 
+  /* Wrapper — glassmorphism removed for cleaner look */
   .signup-body.has-alt-auth {
     padding: 3.25rem;
     border-radius: 20px;
-    background: linear-gradient(
-      180deg,
-      rgba(248, 247, 242, 0.12),
-      rgba(226, 233, 239, 0.08)
-    );
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    box-shadow: none !important;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
   }
 
   .signup-body .login-left-side,
   .signup-body .login-right-side {
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: none;
   }
 
+  /* Form side — unified white with matching shadow */
   .signup-body .login-left-side {
-    background: linear-gradient(
-      180deg,
-      rgba(252, 251, 247, 0.98),
-      rgba(244, 247, 242, 0.96)
-    );
-    border: 1px solid rgba(45, 90, 74, 0.12);
+    background: #ffffff;
+    border: 1px solid rgba(45, 90, 74, 0.1);
+    border-right: none;
     color: #17211f;
     padding: 2.05rem 2.2rem 1.7rem;
+    box-shadow:
+      0 2px 4px rgba(45, 90, 74, 0.03),
+      0 12px 28px rgba(17, 24, 39, 0.08),
+      0 32px 64px rgba(17, 24, 39, 0.06);
   }
 
+  /* Social side — dark, with gold-tinted border */
   .signup-body .login-right-side {
     display: flex;
     align-items: center;
     background:
-      radial-gradient(
-        ellipse 120% 90% at 0% 0%,
+      radial-gradient(ellipse 120% 90% at 0% 0%,
         rgba(74, 139, 110, 0.24),
-        transparent 50%
-      ),
-      radial-gradient(
-        ellipse 100% 80% at 100% 15%,
+        transparent 50%),
+      radial-gradient(ellipse 100% 80% at 100% 15%,
         rgba(205, 162, 116, 0.14),
-        transparent 45%
-      ),
+        transparent 45%),
       linear-gradient(180deg, rgba(19, 27, 29, 0.96), rgba(15, 24, 23, 0.96));
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(205, 162, 116, 0.18);
+    border-left: none;
     padding: 1.35rem;
     color: #f2f0e9;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.05),
+      0 12px 28px rgba(17, 24, 39, 0.12),
+      0 32px 64px rgba(17, 24, 39, 0.08);
   }
 
   .signup-body .login-right-side::before,
@@ -94,12 +101,13 @@ body.signup-page {
     border-bottom: 1px solid rgba(45, 90, 74, 0.12);
   }
 
+  /* Title — softer weight */
   .signup-body .login-title {
     color: #17211f;
     font-size: clamp(1.65rem, 2.3vw, 2.2rem);
     line-height: 1.05;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-weight: 650;
+    letter-spacing: -0.02em;
     margin: 0;
     text-wrap: balance;
   }
@@ -189,31 +197,14 @@ body.signup-page {
     border-color: rgba(45, 90, 74, 0.2) !important;
   }
 
-  .signup-body .signup-page-cta__signup {
-    min-height: 48px;
-    border: 1px solid rgba(45, 90, 74, 0.14) !important;
-    box-shadow: none !important;
-    transform: none !important;
-    transition:
-      background 0.18s ease,
-      border-color 0.18s ease,
-      transform 0.18s ease,
-      box-shadow 0.18s ease !important;
-  }
-
-  .signup-body .signup-page-cta__signup:hover {
-    background: linear-gradient(135deg, #cfe36f, #98c85d) !important;
-    border-color: rgba(45, 90, 74, 0.2) !important;
-    box-shadow: none !important;
-    transform: none !important;
-    filter: none;
-  }
-
   .signup-body #login-buttons {
     width: 100%;
   }
 }
 
+/* ============================================
+   SIGNUP MOBILE (≤767px)
+   ============================================ */
 @media (max-width: 767px) {
   body.signup-page {
     #site-logo {
@@ -243,11 +234,9 @@ body.signup-page {
       border: 1px solid rgba(45, 90, 74, 0.12) !important;
       border-top: none !important;
       border-radius: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(252, 251, 247, 0.98),
-        rgba(244, 247, 242, 0.96)
-      ) !important;
+      background: linear-gradient(180deg,
+          rgba(252, 251, 247, 0.98),
+          rgba(244, 247, 242, 0.96)) !important;
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
       box-shadow: none !important;
@@ -255,7 +244,7 @@ body.signup-page {
       color: #17211f;
     }
 
-    .signup-body > div:not(.login-right-side):not(.login-or-separator) {
+    .signup-body>div:not(.login-right-side):not(.login-or-separator) {
       order: 1;
       width: 100%;
       margin: 0;
@@ -289,6 +278,7 @@ body.signup-page {
       font-size: clamp(1.3rem, 5.8vw, 1.72rem);
       line-height: 1.02;
       letter-spacing: -0.04em;
+      font-weight: 650;
       margin: 0;
     }
 
@@ -365,7 +355,7 @@ body.signup-page {
       text-decoration: underline;
     }
 
-    .signup-body > .login-or-separator {
+    .signup-body>.login-or-separator {
       order: 2;
       display: flex;
       align-items: center;
@@ -380,20 +370,20 @@ body.signup-page {
       letter-spacing: 0.12em;
     }
 
-    .signup-body > .login-or-separator::before,
-    .signup-body > .login-or-separator::after {
+    .signup-body>.login-or-separator::before,
+    .signup-body>.login-or-separator::after {
       content: "";
       flex: 1 1 auto;
       height: 1px;
       background: rgba(45, 90, 74, 0.16);
     }
 
-    .signup-body > .login-or-separator span {
+    .signup-body>.login-or-separator span {
       padding: 0;
       background: transparent;
     }
 
-    .signup-body > .login-right-side {
+    .signup-body>.login-right-side {
       order: 3;
       padding: 0;
       border-radius: 0;
@@ -402,7 +392,8 @@ body.signup-page {
       box-shadow: none;
     }
 
-    .signup-body > .login-right-side #login-buttons {
+    /* Mobile dark social card */
+    .signup-body>.login-right-side #login-buttons {
       display: grid !important;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.55rem;
@@ -410,40 +401,39 @@ body.signup-page {
       margin: 0;
       padding: 0.95rem;
       background:
-        radial-gradient(
-          ellipse 120% 90% at 0% 0%,
+        radial-gradient(ellipse 120% 90% at 0% 0%,
           rgba(74, 139, 110, 0.24),
-          transparent 50%
-        ),
-        radial-gradient(
-          ellipse 100% 80% at 100% 15%,
+          transparent 50%),
+        radial-gradient(ellipse 100% 80% at 100% 15%,
           rgba(205, 162, 116, 0.14),
-          transparent 45%
-        ),
+          transparent 45%),
         linear-gradient(180deg, rgba(19, 27, 29, 0.96), rgba(15, 24, 23, 0.96));
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(205, 162, 116, 0.18);
       border-radius: 10px;
-      box-shadow: 0 20px 60px rgba(5, 12, 16, 0.18);
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 16px 32px rgba(17, 24, 39, 0.12);
       white-space: normal;
       box-sizing: border-box;
       max-width: 100%;
     }
 
-    .signup-body > .login-right-side #login-buttons.multiple::before {
+    .signup-body>.login-right-side #login-buttons.multiple::before {
       display: none;
       content: none;
     }
 
-    .signup-body > .login-right-side #login-buttons .discourse-id__wrapper {
+    .signup-body>.login-right-side #login-buttons .discourse-id__wrapper {
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
       grid-column: 1 / -1;
     }
 
-    .signup-body > .login-right-side #login-buttons .btn,
-    .signup-body > .login-right-side #login-buttons .btn-social,
-    .signup-body > .login-right-side #login-buttons .passkey-login-button {
+    /* Mobile dark social buttons */
+    .signup-body>.login-right-side #login-buttons .btn,
+    .signup-body>.login-right-side #login-buttons .btn-social,
+    .signup-body>.login-right-side #login-buttons .passkey-login-button {
       flex: none !important;
       width: 100%;
       min-width: 0;
@@ -452,10 +442,10 @@ body.signup-page {
       margin: 0 !important;
       padding: 0.8rem 0.7rem;
       border-radius: 10px !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      background: rgba(248, 247, 242, 0.08) !important;
+      border: 1px solid rgba(205, 162, 116, 0.18) !important;
+      background: rgba(248, 247, 242, 0.06) !important;
       color: #f5f4ee !important;
-      box-shadow: none !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
       display: flex !important;
       align-items: center;
       justify-content: center;
@@ -464,42 +454,41 @@ body.signup-page {
       white-space: normal;
       transform: none !important;
       transition:
-        background-color 0.18s ease,
-        border-color 0.18s ease,
-        color 0.18s ease,
-        box-shadow 0.18s ease !important;
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.25s ease !important;
     }
 
-    .signup-body > .login-right-side #login-buttons .btn:hover,
-    .signup-body > .login-right-side #login-buttons .btn-social:hover,
-    .signup-body
-      > .login-right-side
-      #login-buttons
-      .passkey-login-button:hover {
-      background: rgba(248, 247, 242, 0.13) !important;
-      border-color: rgba(255, 255, 255, 0.16) !important;
-      color: #f5f4ee !important;
-      box-shadow: none !important;
+    .signup-body>.login-right-side #login-buttons .btn:hover,
+    .signup-body>.login-right-side #login-buttons .btn-social:hover,
+    .signup-body>.login-right-side #login-buttons .passkey-login-button:hover {
+      background: rgba(248, 247, 242, 0.12) !important;
+      border-color: rgba(205, 162, 116, 0.4) !important;
+      color: #ffffff !important;
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
     }
 
-    .signup-body > .login-right-side #login-buttons .passkey-login-button {
+    .signup-body>.login-right-side #login-buttons .passkey-login-button {
       grid-column: 1 / -1;
     }
 
-    .signup-body > .login-right-side #login-buttons .btn-social-title,
-    .signup-body > .login-right-side #login-buttons .d-button-label,
+    .signup-body>.login-right-side #login-buttons .btn-social-title,
+    .signup-body>.login-right-side #login-buttons .d-button-label,
     .signup-body .signup-page-cta__signup .d-button-label,
     .signup-body .signup-page-cta__login .d-button-label {
       font-size: 0.84rem;
     }
 
-    .signup-body > .login-right-side #login-buttons .d-icon,
-    .signup-body > .login-right-side #login-buttons .btn:hover .d-icon {
+    .signup-body>.login-right-side #login-buttons .d-icon,
+    .signup-body>.login-right-side #login-buttons .btn:hover .d-icon {
       color: #f5f4ee;
       margin-right: 0;
     }
 
-    .signup-body > .login-right-side #login-buttons .svg-icon {
+    .signup-body>.login-right-side #login-buttons .svg-icon {
       width: 1rem;
       height: 1rem;
       flex-shrink: 0;
@@ -507,9 +496,12 @@ body.signup-page {
   }
 }
 
+/* ============================================
+   SIGNUP MID-MOBILE (640-767px)
+   ============================================ */
 @media (min-width: 640px) and (max-width: 767px) {
   body.signup-page {
-    .signup-body > .login-left-side {
+    .signup-body>.login-left-side {
       order: 1;
       width: 100%;
       margin: 0;
@@ -519,19 +511,19 @@ body.signup-page {
       box-shadow: none;
     }
 
-    .signup-body > .login-left-side .signup-page-cta {
+    .signup-body>.login-left-side .signup-page-cta {
       margin-bottom: 0;
       padding-bottom: 0;
     }
 
-    .signup-body > .login-right-side {
+    .signup-body>.login-right-side {
       order: 3;
       position: relative;
       margin-top: 0;
       padding-top: 1.85rem;
     }
 
-    .signup-body > .login-right-side::after {
+    .signup-body>.login-right-side::after {
       content: "";
       position: absolute;
       top: 0.65rem;
@@ -541,7 +533,7 @@ body.signup-page {
       background: rgba(45, 90, 74, 0.16);
     }
 
-    .signup-body > .login-right-side::before {
+    .signup-body>.login-right-side::before {
       content: "OR";
       display: inline-flex;
       align-items: center;
@@ -560,16 +552,17 @@ body.signup-page {
       white-space: nowrap;
       text-align: center;
       line-height: 1;
-      background: linear-gradient(
-        180deg,
-        rgba(252, 251, 247, 0.98),
-        rgba(244, 247, 242, 0.96)
-      );
+      background: linear-gradient(180deg,
+          rgba(252, 251, 247, 0.98),
+          rgba(244, 247, 242, 0.96));
       z-index: 1;
     }
   }
 }
 
+/* ============================================
+   SIGNUP TABLET (768-1024px)
+   ============================================ */
 @media (min-width: 768px) and (max-width: 1024px) {
   body.signup-page {
     .signup-fullpage {
@@ -595,7 +588,6 @@ body.signup-page {
     .signup-body .login-right-side {
       min-width: 0;
       box-sizing: border-box;
-      box-shadow: none;
     }
 
     .signup-body .login-left-side {
@@ -615,20 +607,21 @@ body.signup-page {
       padding: 1.2rem;
     }
 
+    /* Divider line between panels — gold accent */
     .signup-body .login-right-side::before {
       display: block;
       content: "";
       position: absolute;
       left: 0;
-      top: 14px;
-      bottom: 14px;
+      top: 20px;
+      bottom: 20px;
       width: 1px;
-      background: linear-gradient(
-        180deg,
-        rgba(205, 162, 116, 0.18),
-        rgba(45, 90, 74, 0.28),
-        rgba(205, 162, 116, 0.18)
-      );
+      background: linear-gradient(180deg,
+          transparent,
+          rgba(205, 162, 116, 0.3) 20%,
+          rgba(205, 162, 116, 0.5) 50%,
+          rgba(205, 162, 116, 0.3) 80%,
+          transparent);
     }
 
     .signup-body .login-title {
@@ -646,6 +639,9 @@ body.signup-page {
   }
 }
 
+/* ============================================
+   SIGNUP DESKTOP (≥1025px)
+   ============================================ */
 @media (min-width: 1025px) {
   body.signup-page {
     .signup-fullpage {
@@ -671,7 +667,6 @@ body.signup-page {
       min-width: 0;
       box-sizing: border-box;
       padding: 1rem;
-      box-shadow: none;
     }
 
     .signup-body .login-left-side {
@@ -691,20 +686,21 @@ body.signup-page {
       padding: 1.6rem;
     }
 
+    /* Divider line between panels — gold accent */
     .signup-body .login-right-side::before {
       display: block;
       content: "";
       position: absolute;
       left: 0;
-      top: 16px;
-      bottom: 16px;
+      top: 20px;
+      bottom: 20px;
       width: 1px;
-      background: linear-gradient(
-        180deg,
-        rgba(205, 162, 116, 0.18),
-        rgba(45, 90, 74, 0.28),
-        rgba(205, 162, 116, 0.18)
-      );
+      background: linear-gradient(180deg,
+          transparent,
+          rgba(205, 162, 116, 0.3) 20%,
+          rgba(205, 162, 116, 0.5) 50%,
+          rgba(205, 162, 116, 0.3) 80%,
+          transparent);
     }
 
     .signup-body .login-welcome-header {
@@ -722,24 +718,21 @@ body.signup-page {
   }
 }
 
+/* ============================================
+   LOGIN PAGE + SHARED SIGNUP STYLES
+   ============================================ */
 body.login-page,
 body.signup-page {
   background:
-    radial-gradient(
-      ellipse 90% 65% at 15% 12%,
+    radial-gradient(ellipse 90% 65% at 15% 12%,
       rgba(74, 139, 110, 0.18),
-      transparent 48%
-    ),
-    radial-gradient(
-      ellipse 80% 55% at 88% 24%,
+      transparent 48%),
+    radial-gradient(ellipse 80% 55% at 88% 24%,
       rgba(59, 130, 246, 0.14),
-      transparent 46%
-    ),
-    radial-gradient(
-      ellipse 75% 55% at 50% 100%,
+      transparent 46%),
+    radial-gradient(ellipse 75% 55% at 50% 100%,
       rgba(205, 162, 116, 0.12),
-      transparent 52%
-    ),
+      transparent 52%),
     linear-gradient(135deg, #17211f 0%, #131b1d 48%, #111827 100%);
   color: #f2f0e9;
 
@@ -822,7 +815,7 @@ body.signup-page {
     padding-bottom: 0;
   }
 
-  .below-footer-outlet > *:last-child,
+  .below-footer-outlet>*:last-child,
   .custom-footer {
     margin-bottom: 0 !important;
   }
@@ -837,17 +830,14 @@ body.signup-page {
     margin: auto;
   }
 
+  /* Wrapper — glassmorphism removed */
   .login-body.has-alt-auth {
     padding: 2.15rem;
     border-radius: 20px;
-    background: linear-gradient(
-      180deg,
-      rgba(248, 247, 242, 0.12),
-      rgba(226, 233, 239, 0.08)
-    );
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     box-shadow: none;
   }
 
@@ -855,38 +845,41 @@ body.signup-page {
   .login-right-side {
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: none;
   }
 
+  /* Form side — clean white, layered shadow */
   .login-left-side {
-    background: linear-gradient(
-      180deg,
-      rgba(252, 251, 247, 0.98),
-      rgba(244, 247, 242, 0.96)
-    );
-    border: 1px solid rgba(45, 90, 74, 0.12);
+    background: #ffffff;
+    border: 1px solid rgba(45, 90, 74, 0.1);
+    border-right: none;
     color: #17211f;
     padding: 1.8rem 1.9rem 1.45rem;
+    box-shadow:
+      0 2px 4px rgba(45, 90, 74, 0.03),
+      0 12px 28px rgba(17, 24, 39, 0.08),
+      0 32px 64px rgba(17, 24, 39, 0.06);
   }
 
+  /* Social side — dark, gold-tinted border, matching shadow */
   .login-right-side {
     display: flex;
     align-items: center;
     background:
-      radial-gradient(
-        ellipse 120% 90% at 0% 0%,
+      radial-gradient(ellipse 120% 90% at 0% 0%,
         rgba(74, 139, 110, 0.24),
-        transparent 50%
-      ),
-      radial-gradient(
-        ellipse 100% 80% at 100% 15%,
+        transparent 50%),
+      radial-gradient(ellipse 100% 80% at 100% 15%,
         rgba(205, 162, 116, 0.14),
-        transparent 45%
-      ),
+        transparent 45%),
       linear-gradient(180deg, rgba(19, 27, 29, 0.96), rgba(15, 24, 23, 0.96));
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(205, 162, 116, 0.18);
+    border-left: none;
     padding: 1.2rem;
     color: #f2f0e9;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.05),
+      0 12px 28px rgba(17, 24, 39, 0.12),
+      0 32px 64px rgba(17, 24, 39, 0.08);
 
     &::before {
       display: none;
@@ -899,12 +892,13 @@ body.signup-page {
     border-bottom: 1px solid rgba(45, 90, 74, 0.12);
   }
 
+  /* Title — softer weight */
   .login-left-side .login-title {
     color: #17211f;
     font-size: clamp(1.65rem, 2.3vw, 2.2rem);
     line-height: 1.05;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-weight: 650;
+    letter-spacing: -0.02em;
     margin: 0;
     text-wrap: balance;
   }
@@ -919,6 +913,7 @@ body.signup-page {
     margin-bottom: 1rem;
   }
 
+  /* Input default state */
   #login-form .input-group input,
   #login-form .select-kit-header,
   #login-form textarea,
@@ -934,18 +929,30 @@ body.signup-page {
     color: #1a1d1a;
     transition:
       border-color 0.18s ease,
-      box-shadow 0.18s ease,
+      box-shadow 0.25s ease,
       background-color 0.18s ease;
   }
 
+  /* Input hover state */
+  #login-form .input-group input:hover:not(:focus),
+  #new-account-email:hover:not(:focus),
+  #new-account-name:hover:not(:focus),
+  #new-account-username:hover:not(:focus),
+  #new-account-password:hover:not(:focus) {
+    border-color: rgba(45, 90, 74, 0.28) !important;
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  /* Input focus — brand green ring */
   #login-form .input-group input:not(.filter-input):focus,
   #new-account-email:focus,
   #new-account-name:focus,
   #new-account-username:focus,
   #new-account-password:focus {
-    border-color: rgba(45, 90, 74, 0.48) !important;
+    border-color: #4a8b6e !important;
+    background: #ffffff;
     box-shadow:
-      0 0 0 4px rgba(45, 90, 74, 0.12),
+      0 0 0 4px rgba(74, 139, 110, 0.15),
       inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
   }
 
@@ -983,6 +990,7 @@ body.signup-page {
     align-items: stretch;
   }
 
+  /* Primary CTA — brand green gradient */
   .login-page-cta__login,
   .signup-page-cta__signup,
   .invitation-cta__accept {
@@ -990,48 +998,34 @@ body.signup-page {
     min-height: 50px;
     border: none !important;
     border-radius: 10px !important;
-    background: linear-gradient(135deg, #d7e97d, #a9d56b) !important;
-    color: #15201b !important;
-    font-weight: 700 !important;
+    background: linear-gradient(135deg, #2d5a4a, #4a8b6e) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
     box-shadow:
-      0 12px 30px rgba(92, 132, 70, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+      0 4px 12px rgba(45, 90, 74, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
     transition:
-      transform 0.18s ease,
-      box-shadow 0.18s ease,
-      filter 0.18s ease !important;
+      background 0.2s ease,
+      box-shadow 0.25s ease,
+      transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
 
   .login-page-cta__login {
     min-height: 48px;
-    border: 1px solid rgba(45, 90, 74, 0.14) !important;
-    box-shadow: none !important;
-    transform: none !important;
-    transition:
-      background 0.18s ease,
-      border-color 0.18s ease,
-      transform 0.18s ease,
-      box-shadow 0.18s ease !important;
   }
 
   .login-page-cta__login:hover,
   .signup-page-cta__signup:hover,
   .invitation-cta__accept:hover {
+    background: linear-gradient(135deg, #345c4d, #538c6f) !important;
     transform: translateY(-1px) !important;
-    filter: saturate(1.02);
     box-shadow:
-      0 16px 36px rgba(92, 132, 70, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+      0 8px 20px rgba(45, 90, 74, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+    filter: none !important;
   }
 
-  .login-page-cta__login:hover {
-    background: linear-gradient(135deg, #cfe36f, #98c85d) !important;
-    border-color: rgba(45, 90, 74, 0.2) !important;
-    box-shadow: none !important;
-    transform: none !important;
-    filter: none;
-  }
-
+  /* Secondary signup CTA (on login page) */
   .login-page-cta__signup {
     width: 100%;
     min-height: 48px;
@@ -1051,6 +1045,7 @@ body.signup-page {
     border-color: rgba(45, 90, 74, 0.2) !important;
   }
 
+  /* Social auth container */
   #login-buttons {
     width: 100%;
     display: flex;
@@ -1058,17 +1053,19 @@ body.signup-page {
     gap: 0.75rem;
   }
 
+  /* "Continue with" label */
   #login-buttons.multiple::before {
     content: "Continue with";
     display: block;
     margin-bottom: 0.1rem;
-    color: rgba(242, 240, 233, 0.72);
-    font-size: 0.72rem;
+    color: rgba(242, 240, 233, 0.6);
+    font-size: 0.66rem;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
 
+  /* Social auth buttons — dark, gold-tinted */
   #login-buttons .btn-social,
   #login-buttons .passkey-login-button {
     width: 100%;
@@ -1077,21 +1074,26 @@ body.signup-page {
     gap: 0.85rem;
     padding: 0.9rem 1rem;
     border-radius: 10px !important;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(248, 247, 242, 0.08);
+    border: 1px solid rgba(205, 162, 116, 0.18);
+    background: rgba(248, 247, 242, 0.06);
     color: #f5f4ee;
-    box-shadow: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition:
-      background-color 0.18s ease,
-      border-color 0.18s ease,
-      transform 0.18s ease;
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.25s ease,
+      transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   #login-buttons .btn-social:hover,
   #login-buttons .passkey-login-button:hover {
-    background: rgba(248, 247, 242, 0.13);
-    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(248, 247, 242, 0.12);
+    border-color: rgba(205, 162, 116, 0.4);
+    color: #ffffff;
     transform: translateY(-1px);
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   #login-buttons .btn-social .d-icon,
@@ -1122,6 +1124,9 @@ body.signup-page {
   }
 }
 
+/* ============================================
+   LOGIN MOBILE (≤767px)
+   ============================================ */
 @media (max-width: 767px) {
   body.login-page {
     #site-logo {
@@ -1151,11 +1156,9 @@ body.signup-page {
       border: 1px solid rgba(45, 90, 74, 0.12) !important;
       border-top: none !important;
       border-radius: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(252, 251, 247, 0.98),
-        rgba(244, 247, 242, 0.96)
-      ) !important;
+      background: linear-gradient(180deg,
+          rgba(252, 251, 247, 0.98),
+          rgba(244, 247, 242, 0.96)) !important;
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
       box-shadow: none !important;
@@ -1163,7 +1166,7 @@ body.signup-page {
       color: #17211f;
     }
 
-    .login-body > .login-welcome-header {
+    .login-body>.login-welcome-header {
       order: 1;
       width: 100%;
       padding: 0.25rem 0 0.95rem;
@@ -1175,15 +1178,17 @@ body.signup-page {
       box-shadow: none;
     }
 
-    .login-body > .login-welcome-header .login-title {
+    .login-body>.login-welcome-header .login-title {
       color: #17211f;
       font-size: clamp(1.3rem, 5.8vw, 1.72rem);
       line-height: 1.02;
       letter-spacing: -0.04em;
+      font-weight: 650;
       margin: 0;
     }
 
-    .login-body > #login-buttons {
+    /* Mobile dark social card */
+    .login-body>#login-buttons {
       order: 2;
       display: grid !important;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1192,40 +1197,38 @@ body.signup-page {
       margin: 0.15rem 0 0;
       padding: 0.95rem;
       background:
-        radial-gradient(
-          ellipse 120% 90% at 0% 0%,
+        radial-gradient(ellipse 120% 90% at 0% 0%,
           rgba(74, 139, 110, 0.24),
-          transparent 50%
-        ),
-        radial-gradient(
-          ellipse 100% 80% at 100% 15%,
+          transparent 50%),
+        radial-gradient(ellipse 100% 80% at 100% 15%,
           rgba(205, 162, 116, 0.14),
-          transparent 45%
-        ),
+          transparent 45%),
         linear-gradient(180deg, rgba(19, 27, 29, 0.96), rgba(15, 24, 23, 0.96));
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(205, 162, 116, 0.18);
       border-radius: 10px;
-      box-shadow: 0 20px 60px rgba(5, 12, 16, 0.18);
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 16px 32px rgba(17, 24, 39, 0.12);
       white-space: normal;
       box-sizing: border-box;
       max-width: 100%;
     }
 
-    .login-body > #login-buttons.multiple::before {
+    .login-body>#login-buttons.multiple::before {
       display: none;
       content: none;
     }
 
-    .login-body > #login-buttons .discourse-id__wrapper {
+    .login-body>#login-buttons .discourse-id__wrapper {
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
       grid-column: 1 / -1;
     }
 
-    .login-body > #login-buttons .btn,
-    .login-body > #login-buttons .btn-social,
-    .login-body > #login-buttons .passkey-login-button {
+    .login-body>#login-buttons .btn,
+    .login-body>#login-buttons .btn-social,
+    .login-body>#login-buttons .passkey-login-button {
       flex: none !important;
       width: 100%;
       min-width: 0;
@@ -1234,10 +1237,10 @@ body.signup-page {
       margin: 0 !important;
       padding: 0.8rem 0.7rem;
       border-radius: 10px !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      background: rgba(248, 247, 242, 0.08) !important;
+      border: 1px solid rgba(205, 162, 116, 0.18) !important;
+      background: rgba(248, 247, 242, 0.06) !important;
       color: #f5f4ee !important;
-      box-shadow: none !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
       display: flex !important;
       align-items: center;
       justify-content: center;
@@ -1246,27 +1249,29 @@ body.signup-page {
       white-space: normal;
       transform: none !important;
       transition:
-        background-color 0.18s ease,
-        border-color 0.18s ease,
-        color 0.18s ease,
-        box-shadow 0.18s ease !important;
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.25s ease !important;
     }
 
-    .login-body > #login-buttons .btn:hover,
-    .login-body > #login-buttons .btn-social:hover,
-    .login-body > #login-buttons .passkey-login-button:hover {
-      background: rgba(248, 247, 242, 0.13) !important;
-      border-color: rgba(255, 255, 255, 0.16) !important;
-      color: #f5f4ee !important;
-      box-shadow: none !important;
+    .login-body>#login-buttons .btn:hover,
+    .login-body>#login-buttons .btn-social:hover,
+    .login-body>#login-buttons .passkey-login-button:hover {
+      background: rgba(248, 247, 242, 0.12) !important;
+      border-color: rgba(205, 162, 116, 0.4) !important;
+      color: #ffffff !important;
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
     }
 
-    .login-body > #login-buttons .passkey-login-button {
+    .login-body>#login-buttons .passkey-login-button {
       grid-column: 1 / -1;
     }
 
-    .login-body > #login-buttons .btn-social-title,
-    .login-body > #login-buttons .d-button-label {
+    .login-body>#login-buttons .btn-social-title,
+    .login-body>#login-buttons .d-button-label {
       min-width: 0;
       white-space: normal;
       text-align: center;
@@ -1275,20 +1280,20 @@ body.signup-page {
       color: inherit;
     }
 
-    .login-body > #login-buttons .d-icon,
-    .login-body > #login-buttons .btn:hover .d-icon {
+    .login-body>#login-buttons .d-icon,
+    .login-body>#login-buttons .btn:hover .d-icon {
       color: #f5f4ee;
       margin-right: 0;
     }
 
-    .login-body > #login-buttons .svg-icon {
+    .login-body>#login-buttons .svg-icon {
       width: 1rem;
       height: 1rem;
       flex-shrink: 0;
     }
 
-    .login-body > div:has(#login-form),
-    .login-body > .login-form {
+    .login-body>div:has(#login-form),
+    .login-body>.login-form {
       order: 3;
       width: 100%;
       margin-top: 0;
@@ -1302,38 +1307,38 @@ body.signup-page {
       max-width: 100%;
     }
 
-    .login-body > div:has(#login-form) #login-form,
-    .login-body > .login-form #login-form,
-    .login-body > .login-form {
+    .login-body>div:has(#login-form) #login-form,
+    .login-body>.login-form #login-form,
+    .login-body>.login-form {
       margin-top: 0;
       padding: 0 !important;
     }
 
-    .login-body > div:has(#login-form) #login-form .input-group,
-    .login-body > .login-form #login-form .input-group,
-    .login-body > .login-form .input-group {
+    .login-body>div:has(#login-form) #login-form .input-group,
+    .login-body>.login-form #login-form .input-group,
+    .login-body>.login-form .input-group {
       margin-bottom: 0.8rem;
     }
 
-    .login-body > div:has(#login-form) #login-form .input-group input,
-    .login-body > div:has(#login-form) #login-form .select-kit-header,
-    .login-body > div:has(#login-form) #login-form textarea,
-    .login-body > .login-form #login-form .input-group input,
-    .login-body > .login-form #login-form .select-kit-header,
-    .login-body > .login-form #login-form textarea,
-    .login-body > .login-form .input-group input,
-    .login-body > .login-form .select-kit-header,
-    .login-body > .login-form textarea {
+    .login-body>div:has(#login-form) #login-form .input-group input,
+    .login-body>div:has(#login-form) #login-form .select-kit-header,
+    .login-body>div:has(#login-form) #login-form textarea,
+    .login-body>.login-form #login-form .input-group input,
+    .login-body>.login-form #login-form .select-kit-header,
+    .login-body>.login-form #login-form textarea,
+    .login-body>.login-form .input-group input,
+    .login-body>.login-form .select-kit-header,
+    .login-body>.login-form textarea {
       min-height: 52px;
       padding: 0.9rem;
       border-radius: 10px !important;
       background: #fff;
-      border: 1px solid rgba(169, 213, 107, 0.7) !important;
-      box-shadow: 0 12px 28px rgba(169, 213, 107, 0.12);
+      border: 1px solid rgba(45, 90, 74, 0.16) !important;
+      box-shadow: 0 2px 8px rgba(45, 90, 74, 0.04);
     }
 
-    .login-body > div:has(#login-form) label.alt-placeholder,
-    .login-body > .login-form label.alt-placeholder {
+    .login-body>div:has(#login-form) label.alt-placeholder,
+    .login-body>.login-form label.alt-placeholder {
       top: 0.9rem;
       left: 1rem;
       background: #fff;
@@ -1342,13 +1347,10 @@ body.signup-page {
       font-size: 0.9rem;
     }
 
-    .login-body > div:has(#login-form) input:focus + label.alt-placeholder,
-    .login-body
-      > div:has(#login-form)
-      input.value-entered
-      + label.alt-placeholder,
-    .login-body > .login-form input:focus + label.alt-placeholder,
-    .login-body > .login-form input.value-entered + label.alt-placeholder {
+    .login-body>div:has(#login-form) input:focus+label.alt-placeholder,
+    .login-body>div:has(#login-form) input.value-entered+label.alt-placeholder,
+    .login-body>.login-form input:focus+label.alt-placeholder,
+    .login-body>.login-form input.value-entered+label.alt-placeholder {
       top: -0.55rem;
       left: 0.8rem;
       background: #fff;
@@ -1356,12 +1358,12 @@ body.signup-page {
       color: #5d6c62;
     }
 
-    .login-body > div:has(#login-form) .login__password-links,
-    .login-body > .login-form .login__password-links {
+    .login-body>div:has(#login-form) .login__password-links,
+    .login-body>.login-form .login__password-links {
       padding-top: 0;
     }
 
-    .login-body > .login-page-cta {
+    .login-body>.login-page-cta {
       order: 4;
       width: 100%;
       margin-top: 0;
@@ -1374,7 +1376,7 @@ body.signup-page {
       max-width: 100%;
     }
 
-    .login-body > .login-page-cta .login-page-cta__buttons {
+    .login-body>.login-page-cta .login-page-cta__buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -1382,23 +1384,24 @@ body.signup-page {
       gap: 0.3rem 0.5rem;
     }
 
-    .login-body > .login-page-cta .login-page-cta__login {
+    .login-body>.login-page-cta .login-page-cta__login {
       order: 1;
       flex: 0 0 100%;
     }
 
-    .login-body > .login-page-cta .login-page-cta__no-account-yet {
+    .login-body>.login-page-cta .login-page-cta__no-account-yet {
       order: 2;
       margin: 0.2rem 0 0;
       text-align: right;
       color: #5d6c62;
       font-size: 0.78rem;
+      white-space: nowrap;
     }
 
-    .login-body > .login-page-cta .login-page-cta__signup {
+    .login-body>.login-page-cta .login-page-cta__signup {
       order: 3;
-      width: auto;
-      min-height: auto;
+      width: auto !important;
+      min-height: auto !important;
       padding: 0;
       border: none !important;
       background: transparent !important;
@@ -1408,9 +1411,10 @@ body.signup-page {
       display: inline-flex;
       align-items: baseline;
       font-size: 0.78rem;
+      white-space: nowrap;
     }
 
-    .login-body > .login-page-cta .login-page-cta__signup:hover {
+    .login-body>.login-page-cta .login-page-cta__signup:hover {
       background: transparent !important;
       border: none !important;
       text-decoration: underline;
@@ -1440,36 +1444,12 @@ body.signup-page {
     .invitation-cta__accept .d-button-label {
       font-size: 0.88rem;
     }
-
-    .login-page-cta__login:hover,
-    .signup-page-cta__signup:hover,
-    .invitation-cta__accept:hover {
-      background: linear-gradient(135deg, #deef86, #b7df76) !important;
-      box-shadow:
-        0 16px 32px rgba(169, 213, 107, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
-    }
-
-    .login-page-cta__login:hover {
-      background: linear-gradient(135deg, #cfe36f, #98c85d) !important;
-      border-color: rgba(45, 90, 74, 0.2) !important;
-      box-shadow: none !important;
-      transform: none !important;
-      filter: none;
-    }
-
-    .login-body > .login-page-cta .login-page-cta__no-account-yet {
-      white-space: nowrap;
-    }
-
-    .login-body > .login-page-cta .login-page-cta__signup {
-      width: auto !important;
-      min-height: auto !important;
-      white-space: nowrap;
-    }
   }
 }
 
+/* ============================================
+   LOGIN MID-MOBILE (640-767px)
+   ============================================ */
 @media (min-width: 640px) and (max-width: 767px) {
   body.login-page {
     .login-fullpage {
@@ -1495,11 +1475,9 @@ body.signup-page {
       border: 1px solid rgba(45, 90, 74, 0.12) !important;
       border-top: none !important;
       border-radius: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(252, 251, 247, 0.98),
-        rgba(244, 247, 242, 0.96)
-      ) !important;
+      background: linear-gradient(180deg,
+          rgba(252, 251, 247, 0.98),
+          rgba(244, 247, 242, 0.96)) !important;
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
       box-shadow: none !important;
@@ -1529,6 +1507,7 @@ body.signup-page {
       color: #17211f;
       line-height: 1.02;
       letter-spacing: -0.04em;
+      font-weight: 650;
       margin: 0;
     }
 
@@ -1541,20 +1520,18 @@ body.signup-page {
       margin: 0.15rem 0 0;
       padding: 0.95rem;
       background:
-        radial-gradient(
-          ellipse 120% 90% at 0% 0%,
+        radial-gradient(ellipse 120% 90% at 0% 0%,
           rgba(74, 139, 110, 0.24),
-          transparent 50%
-        ),
-        radial-gradient(
-          ellipse 100% 80% at 100% 15%,
+          transparent 50%),
+        radial-gradient(ellipse 100% 80% at 100% 15%,
           rgba(205, 162, 116, 0.14),
-          transparent 45%
-        ),
+          transparent 45%),
         linear-gradient(180deg, rgba(19, 27, 29, 0.96), rgba(15, 24, 23, 0.96));
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(205, 162, 116, 0.18);
       border-radius: 10px;
-      box-shadow: 0 20px 60px rgba(5, 12, 16, 0.18);
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 16px 32px rgba(17, 24, 39, 0.12);
       white-space: normal;
       box-sizing: border-box;
       max-width: 100%;
@@ -1583,10 +1560,10 @@ body.signup-page {
       margin: 0 !important;
       padding: 0.8rem 0.7rem;
       border-radius: 10px !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      background: rgba(248, 247, 242, 0.08) !important;
+      border: 1px solid rgba(205, 162, 116, 0.18) !important;
+      background: rgba(248, 247, 242, 0.06) !important;
       color: #f5f4ee !important;
-      box-shadow: none !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
       display: flex !important;
       align-items: center;
       justify-content: center;
@@ -1599,10 +1576,12 @@ body.signup-page {
     .login-right-side #login-buttons .btn:hover,
     .login-right-side #login-buttons .btn-social:hover,
     .login-right-side #login-buttons .passkey-login-button:hover {
-      background: rgba(248, 247, 242, 0.13) !important;
-      border-color: rgba(255, 255, 255, 0.16) !important;
-      color: #f5f4ee !important;
-      box-shadow: none !important;
+      background: rgba(248, 247, 242, 0.12) !important;
+      border-color: rgba(205, 162, 116, 0.4) !important;
+      color: #ffffff !important;
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
     }
 
     .login-right-side #login-buttons .passkey-login-button {
@@ -1628,10 +1607,10 @@ body.signup-page {
       flex-shrink: 0;
     }
 
-    .login-left-side > *:has(#login-form),
-    .login-left-side > div:has(#login-form),
-    .login-left-side > form,
-    .login-left-side > .login-form {
+    .login-left-side>*:has(#login-form),
+    .login-left-side>div:has(#login-form),
+    .login-left-side>form,
+    .login-left-side>.login-form {
       order: 3;
       width: 100%;
       margin-top: 0.95rem;
@@ -1645,49 +1624,49 @@ body.signup-page {
       max-width: 100%;
     }
 
-    .login-left-side > form#login-form {
+    .login-left-side>form#login-form {
       margin-top: 0.95rem !important;
     }
 
-    .login-left-side > *:has(#login-form) #login-form,
-    .login-left-side > div:has(#login-form) #login-form,
-    .login-left-side > .login-form #login-form,
-    .login-left-side > .login-form {
+    .login-left-side>*:has(#login-form) #login-form,
+    .login-left-side>div:has(#login-form) #login-form,
+    .login-left-side>.login-form #login-form,
+    .login-left-side>.login-form {
       margin-top: 0;
       padding: 0 !important;
     }
 
-    .login-left-side > *:has(#login-form) #login-form .input-group,
-    .login-left-side > div:has(#login-form) #login-form .input-group,
-    .login-left-side > form .input-group,
-    .login-left-side > .login-form .input-group {
+    .login-left-side>*:has(#login-form) #login-form .input-group,
+    .login-left-side>div:has(#login-form) #login-form .input-group,
+    .login-left-side>form .input-group,
+    .login-left-side>.login-form .input-group {
       margin-bottom: 0.8rem;
     }
 
-    .login-left-side > *:has(#login-form) #login-form .input-group input,
-    .login-left-side > *:has(#login-form) #login-form .select-kit-header,
-    .login-left-side > *:has(#login-form) #login-form textarea,
-    .login-left-side > div:has(#login-form) #login-form .input-group input,
-    .login-left-side > div:has(#login-form) #login-form .select-kit-header,
-    .login-left-side > div:has(#login-form) #login-form textarea,
-    .login-left-side > form .input-group input,
-    .login-left-side > form .select-kit-header,
-    .login-left-side > form textarea,
-    .login-left-side > .login-form .input-group input,
-    .login-left-side > .login-form .select-kit-header,
-    .login-left-side > .login-form textarea {
+    .login-left-side>*:has(#login-form) #login-form .input-group input,
+    .login-left-side>*:has(#login-form) #login-form .select-kit-header,
+    .login-left-side>*:has(#login-form) #login-form textarea,
+    .login-left-side>div:has(#login-form) #login-form .input-group input,
+    .login-left-side>div:has(#login-form) #login-form .select-kit-header,
+    .login-left-side>div:has(#login-form) #login-form textarea,
+    .login-left-side>form .input-group input,
+    .login-left-side>form .select-kit-header,
+    .login-left-side>form textarea,
+    .login-left-side>.login-form .input-group input,
+    .login-left-side>.login-form .select-kit-header,
+    .login-left-side>.login-form textarea {
       min-height: 52px;
       padding: 0.9rem;
       border-radius: 10px !important;
       background: #fff;
-      border: 1px solid rgba(169, 213, 107, 0.7) !important;
-      box-shadow: 0 12px 28px rgba(169, 213, 107, 0.12);
+      border: 1px solid rgba(45, 90, 74, 0.16) !important;
+      box-shadow: 0 2px 8px rgba(45, 90, 74, 0.04);
     }
 
-    .login-left-side > *:has(#login-form) label.alt-placeholder,
-    .login-left-side > div:has(#login-form) label.alt-placeholder,
-    .login-left-side > form label.alt-placeholder,
-    .login-left-side > .login-form label.alt-placeholder {
+    .login-left-side>*:has(#login-form) label.alt-placeholder,
+    .login-left-side>div:has(#login-form) label.alt-placeholder,
+    .login-left-side>form label.alt-placeholder,
+    .login-left-side>.login-form label.alt-placeholder {
       top: 0.9rem;
       left: 1rem;
       background: #fff;
@@ -1696,20 +1675,14 @@ body.signup-page {
       font-size: 0.9rem;
     }
 
-    .login-left-side > *:has(#login-form) input:focus + label.alt-placeholder,
-    .login-left-side
-      > *:has(#login-form)
-      input.value-entered
-      + label.alt-placeholder,
-    .login-left-side > div:has(#login-form) input:focus + label.alt-placeholder,
-    .login-left-side
-      > div:has(#login-form)
-      input.value-entered
-      + label.alt-placeholder,
-    .login-left-side > form input:focus + label.alt-placeholder,
-    .login-left-side > form input.value-entered + label.alt-placeholder,
-    .login-left-side > .login-form input:focus + label.alt-placeholder,
-    .login-left-side > .login-form input.value-entered + label.alt-placeholder {
+    .login-left-side>*:has(#login-form) input:focus+label.alt-placeholder,
+    .login-left-side>*:has(#login-form) input.value-entered+label.alt-placeholder,
+    .login-left-side>div:has(#login-form) input:focus+label.alt-placeholder,
+    .login-left-side>div:has(#login-form) input.value-entered+label.alt-placeholder,
+    .login-left-side>form input:focus+label.alt-placeholder,
+    .login-left-side>form input.value-entered+label.alt-placeholder,
+    .login-left-side>.login-form input:focus+label.alt-placeholder,
+    .login-left-side>.login-form input.value-entered+label.alt-placeholder {
       top: -0.55rem;
       left: 0.8rem;
       background: #fff;
@@ -1717,10 +1690,10 @@ body.signup-page {
       color: #5d6c62;
     }
 
-    .login-left-side > *:has(#login-form) .login__password-links,
-    .login-left-side > div:has(#login-form) .login__password-links,
-    .login-left-side > form .login__password-links,
-    .login-left-side > .login-form .login__password-links {
+    .login-left-side>*:has(#login-form) .login__password-links,
+    .login-left-side>div:has(#login-form) .login__password-links,
+    .login-left-side>form .login__password-links,
+    .login-left-side>.login-form .login__password-links {
       padding-top: 0;
     }
 
@@ -1815,36 +1788,12 @@ body.signup-page {
     .invitation-cta__accept .d-button-label {
       font-size: 0.88rem;
     }
-
-    .login-page-cta__login:hover,
-    .signup-page-cta__signup:hover,
-    .invitation-cta__accept:hover {
-      background: linear-gradient(135deg, #deef86, #b7df76) !important;
-      box-shadow:
-        0 16px 32px rgba(169, 213, 107, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
-    }
-
-    .login-page-cta__login:hover {
-      background: linear-gradient(135deg, #cfe36f, #98c85d) !important;
-      border-color: rgba(45, 90, 74, 0.2) !important;
-      box-shadow: none !important;
-      transform: none !important;
-      filter: none;
-    }
-
-    .login-left-side .login-page-cta .login-page-cta__no-account-yet {
-      white-space: nowrap;
-    }
-
-    .login-left-side .login-page-cta .login-page-cta__signup {
-      width: auto !important;
-      min-height: auto !important;
-      white-space: nowrap;
-    }
   }
 }
 
+/* ============================================
+   LOGIN TABLET (768-1024px)
+   ============================================ */
 @media (min-width: 768px) and (max-width: 1024px) {
   body.login-page {
     .login-fullpage {
@@ -1864,11 +1813,6 @@ body.signup-page {
       box-shadow: none;
     }
 
-    .login-left-side,
-    .login-right-side {
-      box-shadow: none;
-    }
-
     .login-left-side {
       border-radius: 14px 0 0 14px;
     }
@@ -1877,19 +1821,20 @@ body.signup-page {
       position: relative;
       border-radius: 0 14px 14px 0;
 
+      /* Divider line between panels — gold accent */
       &::before {
         content: "";
         position: absolute;
         left: 0;
-        top: 14px;
-        bottom: 14px;
+        top: 20px;
+        bottom: 20px;
         width: 1px;
-        background: linear-gradient(
-          180deg,
-          rgba(205, 162, 116, 0.18),
-          rgba(45, 90, 74, 0.28),
-          rgba(205, 162, 116, 0.18)
-        );
+        background: linear-gradient(180deg,
+            transparent,
+            rgba(205, 162, 116, 0.3) 20%,
+            rgba(205, 162, 116, 0.5) 50%,
+            rgba(205, 162, 116, 0.3) 80%,
+            transparent);
       }
     }
 
@@ -1922,6 +1867,9 @@ body.signup-page {
   }
 }
 
+/* ============================================
+   LOGIN DESKTOP (≥1025px)
+   ============================================ */
 @media (min-width: 1025px) {
   body.login-page {
     .login-fullpage {
@@ -1944,7 +1892,6 @@ body.signup-page {
     .login-left-side,
     .login-right-side {
       padding: 1.3rem;
-      box-shadow: none;
     }
 
     .login-left-side {
@@ -1957,19 +1904,20 @@ body.signup-page {
       border-radius: 0 14px 14px 0;
       padding: 1.55rem;
 
+      /* Divider line between panels — gold accent */
       &::before {
         content: "";
         position: absolute;
         left: 0;
-        top: 16px;
-        bottom: 16px;
+        top: 20px;
+        bottom: 20px;
         width: 1px;
-        background: linear-gradient(
-          180deg,
-          rgba(205, 162, 116, 0.18),
-          rgba(45, 90, 74, 0.28),
-          rgba(205, 162, 116, 0.18)
-        );
+        background: linear-gradient(180deg,
+            transparent,
+            rgba(205, 162, 116, 0.3) 20%,
+            rgba(205, 162, 116, 0.5) 50%,
+            rgba(205, 162, 116, 0.3) 80%,
+            transparent);
       }
     }
 
@@ -1984,6 +1932,9 @@ body.signup-page {
   }
 }
 
+/* ============================================
+   SHARED OVERRIDES FOR HAS-ALT-AUTH
+   ============================================ */
 body.login-page .login-body.has-alt-auth,
 body.signup-page .signup-body.has-user-fields.has-alt-auth {
   box-shadow: none !important;
@@ -2002,6 +1953,7 @@ body.signup-page .signup-body.has-user-fields.has-alt-auth .login-right-side {
 }
 
 @media (max-width: 767px) {
+
   body.login-page .login-body.has-alt-auth,
   body.signup-page .signup-body.has-user-fields.has-alt-auth {
     padding: 2.6rem 2.7rem 2.7rem !important;
@@ -2021,11 +1973,11 @@ body.signup-page .signup-body.has-user-fields.has-alt-auth .login-right-side {
 
   body.login-page .login-body.has-alt-auth,
   body.signup-page .signup-body.has-user-fields.has-alt-auth {
-    padding: 0.8rem !important;
+    padding: 0rem !important;
   }
 
   body.signup-page .signup-body.has-user-fields.has-alt-auth {
-    padding: 1.75rem !important;
+    padding: 1rem !important;
   }
 
   body.signup-page .signup-body.has-user-fields.has-alt-auth .login-title,
@@ -2042,11 +1994,11 @@ body.signup-page .signup-body.has-user-fields.has-alt-auth .login-right-side {
 
   body.login-page .login-body.has-alt-auth,
   body.signup-page .signup-body.has-user-fields.has-alt-auth {
-    padding: 0.9rem !important;
+    padding: 0rem !important;
   }
 
   body.signup-page .signup-body.has-user-fields.has-alt-auth {
-    padding: 2rem !important;
+    padding: 0rem !important;
   }
 
   body.signup-page .signup-body.has-user-fields.has-alt-auth .login-title,

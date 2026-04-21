@@ -13,16 +13,16 @@ const MENU_CONFIG = [
     sections: [
       {
         key: "employers",
-        items: ["hiring", "freelance", "internships"],
+        items: ["hiring", "freelance", "internships", "project_mentorship"],
       },
       {
         key: "candidates",
         items: ["verified"],
       },
-      {
-        key: "labs",
-        items: ["project_mentorship"],
-      },
+      // {
+      //   key: "labs",
+      //   items: ["project_mentorship"],
+      // },
     ],
   },
   {
@@ -63,7 +63,7 @@ const MENU_ITEMS = {
     subtitleKey: "aivia_header_nav.items.verified.subtitle",
   },
   project_mentorship: {
-    href: "/aivia/project-mentorship",
+    href: "/aivia/mentorship",
     titleKey: "aivia_header_nav.items.project_mentorship.title",
     subtitleKey: "aivia_header_nav.items.project_mentorship.subtitle",
   },
@@ -119,11 +119,9 @@ const MENU_ITEMS = {
     subtitleKey: "aivia_header_nav.items.my_aivia_generate_questions.subtitle",
   },
   my_aivia_start_cohort: {
-    href: "/my/aivia-talent/cohort",
+    href: "/my/aivia-talent/generate",
     titleKey: "aivia_header_nav.items.my_aivia_start_cohort.title",
     subtitleKey: "aivia_header_nav.items.my_aivia_start_cohort.subtitle",
-    badgeKey: "aivia_header_nav.labels.coming_soon",
-    disabled: true,
   },
 };
 

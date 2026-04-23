@@ -232,7 +232,7 @@
 
 .dk-rotating {
   text-align: center;
-  margin: 0 0 30px;
+  margin: 0 0 40px;
   position: relative;
   z-index: 1;
 }
@@ -273,6 +273,18 @@
   z-index: 1;
 }
 
+.dk-tab-groups {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dk-tab-cluster {
+  display: flex;
+}
+
 .dk-tabs {
   display: inline-flex;
   border-radius: 14px;
@@ -284,6 +296,46 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.04) inset,
     0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.dk-tabs--solo {
+  overflow: visible;
+}
+
+.dk-tabs--hiring {
+  overflow: visible;
+}
+
+.dk-tab-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px 11px 16px;
+  color: rgba(122, 224, 196, 0.92);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  position: relative;
+  flex-shrink: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.dk-tab-section-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(94, 234, 212, 0.78);
+  box-shadow: 0 0 10px rgba(94, 234, 212, 0.28);
 }
 
 .dk-t {
@@ -323,7 +375,7 @@
 .dk-mobile-nav {
   display: none;
   position: relative;
-  z-index: 10;
+  z-index: 40;
   margin-bottom: 20px;
 }
 
@@ -356,17 +408,29 @@
   top: calc(100% + 4px);
   left: 0;
   right: 0;
+  z-index: 50;
+  padding: 12px;
   background: rgba(20, 25, 30, 0.97);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  overflow: hidden;
   display: none;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
 
   &.open {
     display: block;
   }
+}
+
+.dk-mobile-group-panel {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dk-mobile-group--career {
+  margin-top: 12px;
 }
 
 .dk-mobile-opt {
@@ -390,6 +454,16 @@
   &.active {
     color: #34d399;
   }
+}
+
+.dk-mobile-group-label {
+  display: flex;
+  align-items: center;
+  padding: 0 2px 8px;
+  color: #7ae0c4;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 .dk-glass {
@@ -418,7 +492,7 @@
   }
 
   .dk-toggle-icon {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
 
   #aivia-toggle-text {
@@ -534,20 +608,20 @@
 }
 
 .ct-s {
-  background: rgba(255, 255, 255, 0.08);
-  color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: hsla(0, 0%, 100%, 0.08);
+  color: #7ae0c4;
+  border: 1px solid #63ffda;
   font-weight: 600;
 
   &:visited {
-    color: #e2e8f0;
+    color: #7ae0c4;
   }
 
   &:hover,
   &:focus-visible {
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(99, 255, 218, 0.16);
+    color: #7ae0c4;
+    border-color: #63ffda;
   }
 }
 
@@ -3011,6 +3085,16 @@
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  #aivia-hero {
+    overflow: visible;
+    z-index: 20;
+    isolation: isolate;
+  }
+
+  .dk {
+    overflow: visible;
+  }
+
   .dk-tabs {
     display: none !important;
   }
@@ -3019,8 +3103,13 @@
     display: block;
   }
 
+  .dk-mobile-sel {
+    color: #7ae0c4;
+  }
+
   .dk-stage {
     padding: 0 20px;
+    overflow: visible;
   }
 
   .dk-head {

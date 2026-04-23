@@ -487,6 +487,14 @@ function bindGlobalHandlers() {
     document.querySelectorAll(".aivia-header-nav").forEach((nav) => {
       if (!nav.contains(event.target)) {
         closeAllDropdowns(nav);
+        return;
+      }
+
+      const clickedMenu = event.target.closest(".aivia-header-nav__menu");
+      const clickedToggle = event.target.closest(".aivia-header-nav__toggle");
+
+      if (!clickedMenu && !clickedToggle) {
+        closeAllDropdowns(nav);
       }
     });
   });

@@ -185,12 +185,12 @@ function initHero() {
     if (collapsed) {
       demoWrap.classList.add("collapsed");
       toggleText.textContent = "Show demo";
-      toggleIcon.classList.add("flipped");
+      toggleIcon.classList.remove("flipped");
       persistCta.style.display = "flex";
     } else {
       demoWrap.classList.remove("collapsed");
       toggleText.textContent = "Hide demo";
-      toggleIcon.classList.remove("flipped");
+      toggleIcon.classList.add("flipped");
       persistCta.style.display = "none";
     }
   }

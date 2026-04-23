@@ -625,6 +625,17 @@ body.aivia-homepage-nav .d-header .panel {
    MOBILE: SHOW AIVIA NAV + REPOSITION DROPDOWN
    ============================================ */
 @media (max-width: 767px) {
+  body:has(.aivia-header-nav__dropdown.is-open) #main-outlet-wrapper,
+  body:has(.aivia-header-nav__dropdown.is-open) .below-site-header-outlet,
+  body:has(.aivia-header-nav__dropdown.is-open) #main-outlet {
+    pointer-events: none !important;
+  }
+
+  .aivia-header-nav__dropdown.is-open .aivia-header-nav__toggle {
+    position: relative !important;
+    z-index: 1000002 !important;
+  }
+
   body.aivia-homepage-nav {
     .aivia-header-nav {
       display: flex !important;
@@ -647,7 +658,7 @@ body.aivia-homepage-nav .d-header .panel {
       max-height: calc(100vh - 5rem) !important;
       overflow-y: auto !important;
       -webkit-overflow-scrolling: touch !important;
-      z-index: 1001 !important;
+      z-index: 1000001 !important;
     }
 
     .aivia-header-nav__item {
@@ -670,11 +681,11 @@ body.aivia-homepage-nav .d-header .panel {
       left: 0 !important;
       right: 0 !important;
       bottom: 0 !important;
-      z-index: 1000 !important;
+      z-index: 1000000 !important;
       background: rgba(17, 24, 39, 0.1) !important;
       backdrop-filter: blur(4px) !important;
       -webkit-backdrop-filter: blur(4px) !important;
-      pointer-events: none !important;
+      pointer-events: auto !important;
       animation: aivia-backdrop-fade 0.2s ease-out !important;
     }
 
@@ -683,6 +694,53 @@ body.aivia-homepage-nav .d-header .panel {
       min-height: 2.2rem !important;
       padding: 0.4rem 0.7rem !important;
       font-size: 0.82rem !important;
+    }
+  }
+
+  body:not(.aivia-homepage-nav) {
+    .aivia-header-nav__dropdown--my-aivia {
+      position: static !important;
+    }
+
+    .aivia-header-nav__dropdown--my-aivia .aivia-header-nav__menu {
+      position: fixed !important;
+      top: auto !important;
+      left: 0.5rem !important;
+      right: 0.5rem !important;
+      width: auto !important;
+      max-width: none !important;
+      margin-top: 0.5rem !important;
+      max-height: calc(100vh - 5rem) !important;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      z-index: 1000001 !important;
+    }
+
+    .aivia-header-nav__dropdown--my-aivia .aivia-header-nav__item {
+      padding: 0.7rem 0.85rem !important;
+    }
+
+    .aivia-header-nav__dropdown--my-aivia .aivia-header-nav__item-title {
+      font-size: 0.9rem !important;
+    }
+
+    .aivia-header-nav__dropdown--my-aivia .aivia-header-nav__item-subtitle {
+      font-size: 0.76rem !important;
+    }
+
+    .aivia-header-nav__dropdown--my-aivia.is-open::before {
+      content: "" !important;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      z-index: 1000000 !important;
+      background: rgba(17, 24, 39, 0.1) !important;
+      backdrop-filter: blur(4px) !important;
+      -webkit-backdrop-filter: blur(4px) !important;
+      pointer-events: auto !important;
+      animation: aivia-backdrop-fade 0.2s ease-out !important;
     }
   }
 }

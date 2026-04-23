@@ -3,6 +3,7 @@
 import { apiInitializer } from "discourse/lib/api";
 import { defaultHomepage } from "discourse/lib/utilities";
 import User from "discourse/models/user";
+import { getAiviaFeatureAccess } from "discourse/plugins/stemaway-ui-addons/discourse/utils/aivia-analytics-access";
 
 const STORAGE_KEY_COLLAPSED = "aivia-hero-collapsed";
 const STORAGE_KEY_VISITS = "aivia-hero-visits";
@@ -36,12 +37,25 @@ const HERO_CTA_LABELS = {
   g: "Start a cohort",
   c: "My dashboard",
 };
+const HERO_FEATURES = {
+  s: "search",
+  p: "prescreen",
+  i: "align",
+  g: "generate",
+};
+const HERO_CHECKOUT_SETTING_KEYS = {
+  s: "aivia_search_checkout_url",
+  p: "aivia_prescreen_checkout_url",
+  i: "aivia_interview_checkout_url",
+  g: "aivia_cohorts_checkout_url",
+};
 
 let preparedHeroState = null;
 let preparedHeroPath = null;
 let preparedHeroIsLoggedIn = null;
 let currentHeroIsLoggedIn = false;
 let heroObserver = null;
+let currentSiteSettings = null;
 
 function normalizePath(path) {
   const cleanPath = (path || "/").split("?")[0].split("#")[0];
@@ -167,6 +181,8 @@ function initHero() {
   const mobileSel = hero.querySelector("#aivia-mobile-sel");
   const mobileDd = hero.querySelector("#aivia-mobile-dd");
   const mobileSelText = hero.querySelector("#aivia-mobile-sel-text");
+  const currentUser = User.current();
+  const featureAccess = getAiviaFeatureAccess(currentUser, currentSiteSettings);
 
   if (
     !headline ||
@@ -222,16 +238,60 @@ function initHero() {
     return svg;
   }
 
-  function setPrimaryCtaContent(link, label) {
+  function getDisplayLabel(element) {
+    if (!element) {
+      return "";
+    }
+
+    if (!element.dataset.label) {
+      element.dataset.label = element.textContent.trim();
+    }
+
+    return element.dataset.label;
+  }
+
+  function normalizeExternalUrl(url) {
+    const trimmed = (url || "").trim();
+
+    if (!trimmed) {
+      return "";
+    }
+
+    if (
+      trimmed.startsWith("http://") ||
+      trimmed.startsWith("https://") ||
+      trimmed.startsWith("//")
+    ) {
+      return trimmed;
+    }
+
+    return `https://${trimmed}`;
+  }
+
+  function getCheckoutUrl(dataP) {
+    const settingKey = HERO_CHECKOUT_SETTING_KEYS[dataP];
+    return settingKey
+      ? normalizeExternalUrl(currentSiteSettings?.[settingKey] || "")
+      : "";
+  }
+
+  function isLockedFeature(dataP) {
+    const feature = HERO_FEATURES[dataP];
+    if (!feature) {
+      return false;
+    }
+
+    return !featureAccess?.[feature];
+  }
+
+  function setPrimaryCtaContent(link, label, locked = false) {
     if (!link) {
       return;
     }
 
-    const isLoggedIn = resolveLoggedInState(currentHeroIsLoggedIn);
-
     link.replaceChildren();
 
-    if (!isLoggedIn) {
+    if (locked) {
       link.append(buildLockIcon());
     }
 
@@ -252,10 +312,16 @@ function initHero() {
 
     const primaryLink = panel.querySelector(".vw-cta .ct-p");
     const secondaryLink = panel.querySelector(".vw-cta .ct-s");
+    const locked = isLockedFeature(dataP);
+    const checkoutUrl = getCheckoutUrl(dataP);
 
     if (primaryLink) {
-      primaryLink.href = links.primary;
-      setPrimaryCtaContent(primaryLink, label);
+      primaryLink.href = locked ? checkoutUrl || "#" : links.primary;
+      primaryLink.target = locked ? "_blank" : "";
+      primaryLink.rel = locked ? "noopener noreferrer" : "";
+      primaryLink.classList.toggle("ct--locked", locked);
+      primaryLink.dataset.locked = locked ? "true" : "false";
+      setPrimaryCtaContent(primaryLink, label, locked);
     }
 
     if (secondaryLink) {
@@ -291,8 +357,14 @@ function initHero() {
     headline.innerHTML = dataH;
     const links = HERO_LINKS[dataP];
     if (persistPrimary) {
-      persistPrimary.href = links?.primary || "#";
-      setPrimaryCtaContent(persistPrimary, dataCta);
+      const locked = isLockedFeature(dataP);
+      persistPrimary.href = locked
+        ? getCheckoutUrl(dataP) || "#"
+        : links?.primary || "#";
+      persistPrimary.target = locked ? "_blank" : "";
+      persistPrimary.rel = locked ? "noopener noreferrer" : "";
+      persistPrimary.classList.toggle("ct--locked", locked);
+      setPrimaryCtaContent(persistPrimary, dataCta, locked);
     }
     if (persistSecondary) {
       persistSecondary.textContent = dataCta2;
@@ -319,7 +391,7 @@ function initHero() {
         tab.dataset.h,
         tab.dataset.cta,
         tab.dataset.cta2,
-        tab.textContent
+        getDisplayLabel(tab)
       );
     });
   });
@@ -339,7 +411,7 @@ function initHero() {
         option.dataset.h,
         option.dataset.cta,
         option.dataset.cta2,
-        option.textContent
+        getDisplayLabel(option)
       );
       if (mobileSel && mobileDd) {
         mobileSel.classList.remove("open");
@@ -380,7 +452,7 @@ function initHero() {
       activeTab.dataset.h,
       activeTab.dataset.cta,
       activeTab.dataset.cta2,
-      activeTab.textContent
+      getDisplayLabel(activeTab)
     );
   }
 }
@@ -407,6 +479,9 @@ function watchForHero() {
 }
 
 export default apiInitializer((api) => {
+  currentSiteSettings =
+    api.container.lookup("service:site-settings") || currentSiteSettings;
+
   const syncHero = () => {
     const hero = document.getElementById("aivia-hero");
     const isLoggedIn = resolveLoggedInState(api.getCurrentUser());

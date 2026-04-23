@@ -372,6 +372,24 @@
   }
 }
 
+.dk-t--locked,
+.dk-mobile-opt--locked,
+.ct--locked {
+  .ct-lock {
+    opacity: 0.9;
+  }
+}
+
+.dk-t--locked {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  &:not(.on) {
+    color: rgba(255, 255, 255, 0.74);
+  }
+}
+
 .dk-mobile-nav {
   display: none;
   position: relative;
@@ -454,6 +472,12 @@
   &.active {
     color: #34d399;
   }
+}
+
+.dk-mobile-opt--locked {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .dk-mobile-group-label {

@@ -119,6 +119,18 @@
   }
 }
 
+@keyframes aiviaHeroBgPulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
 /* Kill all animation for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   #aivia-hero *,
@@ -147,16 +159,34 @@
   position: relative;
   overflow: hidden;
   font-family: "DM Sans", sans-serif;
-  background: #0a0f1a;
-}
-
-.dk {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  padding: 48px 0 40px;
+  background: #1a1d1a;
 
   &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 50% 0%,
+        rgba(74, 139, 110, 0.35),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 60% 50% at 80% 60%,
+        rgba(196, 93, 53, 0.2),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 50% 40% at 20% 80%,
+        rgba(37, 99, 235, 0.15),
+        transparent 50%
+      );
+    animation: aiviaHeroBgPulse 8s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -171,8 +201,16 @@
       transparent 70%
     );
     pointer-events: none;
-    z-index: 0;
+    z-index: 2;
   }
+}
+
+.dk {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  padding: 48px 0 40px;
 }
 
 .dk-stage {
@@ -188,16 +226,7 @@
   }
 
   &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-      ellipse 80% 60% at 50% 40%,
-      rgba(18, 40, 45, 0.7),
-      transparent 70%
-    );
-    pointer-events: none;
-    z-index: 0;
+    display: none;
   }
 }
 
@@ -238,9 +267,9 @@
 }
 
 .dk-rotating-title {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 300;
-  color: #ffffff;
+  color: rgb(255 255 255 / 91%);
   margin: 0;
   line-height: 1.2;
   letter-spacing: -0.5px;
@@ -268,7 +297,8 @@
 .dk-nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 26px;
+  margin-top: 50px;
+  margin-bottom: 10px;
   position: relative;
   z-index: 1;
 }
@@ -582,8 +612,8 @@
 .vw-cta {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 18px;
+  margin-top: 32px;
 }
 
 .ct {
@@ -3152,7 +3182,7 @@
   }
 
   .dk-rotating-title {
-    font-size: 28px;
+    font-size: 36px;
     min-height: 64px;
   }
 
@@ -3285,7 +3315,7 @@
   }
 
   .dk-rotating-title {
-    font-size: 24px;
+    font-size: 34px;
     min-height: auto;
   }
 

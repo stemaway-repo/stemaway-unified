@@ -31,6 +31,9 @@ en:
       project_mentorship:
         title: "Special hiring: Mentors"
         subtitle: "Turn research interests into buildable technical projects"
+      plans:
+        title: "Plans & pricing"
+        subtitle: "Compare all AIVIA plans side by side"
       inside_aivia:
         title: "How it works"
         subtitle: "See how the AIVIA evaluation engine works"

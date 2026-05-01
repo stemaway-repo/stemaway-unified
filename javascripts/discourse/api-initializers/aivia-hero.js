@@ -8,6 +8,7 @@ import { getAiviaFeatureAccess } from "discourse/plugins/stemaway-ui-addons/disc
 const STORAGE_KEY_COLLAPSED = "aivia-hero-collapsed";
 const STORAGE_KEY_VISITS = "aivia-hero-visits";
 const PRECOLLAPSED_CLASS = "aivia-hero-precollapsed";
+const AIVIA_PLANS_URL = "/aivia/plans";
 const HERO_LINKS = {
   s: {
     primary: "/my/aivia-talent/search",
@@ -42,12 +43,6 @@ const HERO_FEATURES = {
   p: "prescreen",
   i: "align",
   g: "generate",
-};
-const HERO_CHECKOUT_SETTING_KEYS = {
-  s: "aivia_search_checkout_url",
-  p: "aivia_prescreen_checkout_url",
-  i: "aivia_interview_checkout_url",
-  g: "aivia_cohorts_checkout_url",
 };
 
 let preparedHeroState = null;
@@ -250,31 +245,6 @@ function initHero() {
     return element.dataset.label;
   }
 
-  function normalizeExternalUrl(url) {
-    const trimmed = (url || "").trim();
-
-    if (!trimmed) {
-      return "";
-    }
-
-    if (
-      trimmed.startsWith("http://") ||
-      trimmed.startsWith("https://") ||
-      trimmed.startsWith("//")
-    ) {
-      return trimmed;
-    }
-
-    return `https://${trimmed}`;
-  }
-
-  function getCheckoutUrl(dataP) {
-    const settingKey = HERO_CHECKOUT_SETTING_KEYS[dataP];
-    return settingKey
-      ? normalizeExternalUrl(currentSiteSettings?.[settingKey] || "")
-      : "";
-  }
-
   function isLockedFeature(dataP) {
     const feature = HERO_FEATURES[dataP];
     if (!feature) {
@@ -313,12 +283,11 @@ function initHero() {
     const primaryLink = panel.querySelector(".vw-cta .ct-p");
     const secondaryLink = panel.querySelector(".vw-cta .ct-s");
     const locked = isLockedFeature(dataP);
-    const checkoutUrl = getCheckoutUrl(dataP);
 
     if (primaryLink) {
-      primaryLink.href = locked ? checkoutUrl || "#" : links.primary;
-      primaryLink.target = locked ? "_blank" : "";
-      primaryLink.rel = locked ? "noopener noreferrer" : "";
+      primaryLink.href = locked ? AIVIA_PLANS_URL : links.primary;
+      primaryLink.target = "";
+      primaryLink.rel = "";
       primaryLink.classList.toggle("ct--locked", locked);
       primaryLink.dataset.locked = locked ? "true" : "false";
       setPrimaryCtaContent(primaryLink, label, locked);
@@ -358,11 +327,9 @@ function initHero() {
     const links = HERO_LINKS[dataP];
     if (persistPrimary) {
       const locked = isLockedFeature(dataP);
-      persistPrimary.href = locked
-        ? getCheckoutUrl(dataP) || "#"
-        : links?.primary || "#";
-      persistPrimary.target = locked ? "_blank" : "";
-      persistPrimary.rel = locked ? "noopener noreferrer" : "";
+      persistPrimary.href = locked ? AIVIA_PLANS_URL : links?.primary || "#";
+      persistPrimary.target = "";
+      persistPrimary.rel = "";
       persistPrimary.classList.toggle("ct--locked", locked);
       setPrimaryCtaContent(persistPrimary, dataCta, locked);
     }

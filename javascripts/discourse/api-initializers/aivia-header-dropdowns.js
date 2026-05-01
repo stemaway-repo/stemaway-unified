@@ -13,7 +13,13 @@ const MENU_CONFIG = [
     sections: [
       {
         key: "employers",
-        items: ["hiring", "freelance", "internships", "project_mentorship"],
+        items: [
+          "hiring",
+          "freelance",
+          "internships",
+          "project_mentorship",
+          "plans",
+        ],
       },
       {
         key: "candidates",
@@ -66,6 +72,11 @@ const MENU_ITEMS = {
     href: "/aivia/mentorship",
     titleKey: "aivia_header_nav.items.project_mentorship.title",
     subtitleKey: "aivia_header_nav.items.project_mentorship.subtitle",
+  },
+  plans: {
+    href: "/aivia/plans",
+    titleKey: "aivia_header_nav.items.plans.title",
+    subtitleKey: "aivia_header_nav.items.plans.subtitle",
   },
   inside_aivia: {
     href: "/aivia/inside-aivia",

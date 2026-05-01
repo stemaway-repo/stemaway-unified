@@ -750,8 +750,13 @@
   margin-bottom: 20px;
 }
 
-#aivia-s .dk-panel-sub {
+#aivia-s .dk-panel-sub,
+#aivia-p .dk-panel-sub {
   font-size: 13px;
+  margin-bottom: 6px;
+}
+
+#aivia-s .dk-panel-sub {
   margin-bottom: 14px;
 }
 

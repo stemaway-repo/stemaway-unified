@@ -192,18 +192,73 @@ function initHero() {
 
   const shouldCollapse = initialState?.shouldCollapse || false;
 
-  function setCollapsed(collapsed) {
+  let demoWrapTransitionCleanup = null;
+
+  function cleanupDemoWrapTransition() {
+    if (demoWrapTransitionCleanup) {
+      demoWrapTransitionCleanup();
+      demoWrapTransitionCleanup = null;
+    }
+  }
+
+  function setCollapsed(collapsed, { animate = false } = {}) {
+    cleanupDemoWrapTransition();
+
     if (collapsed) {
-      demoWrap.classList.add("collapsed");
-      toggleText.textContent = "Show demo";
+      toggleText.textContent = "Show image";
       toggleIcon.classList.remove("flipped");
       persistCta.style.display = "flex";
     } else {
-      demoWrap.classList.remove("collapsed");
-      toggleText.textContent = "Hide demo";
+      toggleText.textContent = "Hide image";
       toggleIcon.classList.add("flipped");
       persistCta.style.display = "none";
     }
+
+    toggleBtn.setAttribute("aria-expanded", (!collapsed).toString());
+
+    const prefersReducedMotion = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)"
+    )?.matches;
+
+    if (!animate || prefersReducedMotion) {
+      demoWrap.classList.toggle("collapsed", collapsed);
+      demoWrap.classList.remove("is-transitioning");
+      demoWrap.style.height = collapsed ? "0px" : "";
+      return;
+    }
+
+    const startHeight = demoWrap.getBoundingClientRect().height;
+    if (!collapsed) {
+      demoWrap.classList.remove("collapsed");
+    }
+    const endHeight = collapsed ? 0 : demoWrap.scrollHeight;
+
+    demoWrap.classList.add("is-transitioning");
+    demoWrap.style.height = `${startHeight}px`;
+    demoWrap.getBoundingClientRect();
+    demoWrap.classList.toggle("collapsed", collapsed);
+    demoWrap.style.height = `${endHeight}px`;
+
+    const finishTransition = () => {
+      demoWrap.classList.remove("is-transitioning");
+      demoWrap.style.height = collapsed ? "0px" : "";
+      cleanupDemoWrapTransition();
+    };
+
+    const onTransitionEnd = (event) => {
+      if (event.target !== demoWrap || event.propertyName !== "height") {
+        return;
+      }
+
+      finishTransition();
+    };
+
+    demoWrap.addEventListener("transitionend", onTransitionEnd);
+    const transitionFallback = window.setTimeout(finishTransition, 600);
+    demoWrapTransitionCleanup = () => {
+      demoWrap.removeEventListener("transitionend", onTransitionEnd);
+      window.clearTimeout(transitionFallback);
+    };
   }
 
   function buildLockIcon() {
@@ -401,7 +456,7 @@ function initHero() {
       currentHeroIsLoggedIn
     );
 
-    setCollapsed(nextCollapsed);
+    setCollapsed(nextCollapsed, { animate: true });
     if (shouldPersistCollapseState) {
       localStorage.setItem(STORAGE_KEY_COLLAPSED, nextCollapsed.toString());
     }

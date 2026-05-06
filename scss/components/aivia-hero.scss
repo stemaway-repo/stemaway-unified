@@ -527,22 +527,32 @@
 
 .dk-demo-wrap {
   overflow: hidden;
-  max-height: 900px;
+  height: auto;
   transition:
-    max-height 0.4s ease,
-    opacity 0.3s ease;
+    height 0.46s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.28s ease,
+    transform 0.46s cubic-bezier(0.22, 1, 0.36, 1);
   opacity: 1;
+  transform: translateY(0);
+  will-change: height, opacity, transform;
 
   &.collapsed {
-    max-height: 0;
+    height: 0;
     opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+  }
+
+  &.is-transitioning {
+    pointer-events: none;
   }
 }
 
 .aivia-hero-precollapsed #aivia-hero {
   .dk-demo-wrap {
-    max-height: 0;
+    height: 0;
     opacity: 0;
+    transform: translateY(-8px);
   }
 
   .dk-toggle-icon {
@@ -555,7 +565,7 @@
     position: relative;
 
     &::after {
-      content: "Show demo";
+      content: "Show image";
       font-size: 11px;
     }
   }

@@ -48,18 +48,18 @@
   }
 }
 
-@keyframes gold-pulse {
+@keyframes proficient-pulse {
   0%,
   100% {
     box-shadow:
-      0 0 12px rgba(184, 134, 11, 0.2),
-      0 0 24px rgba(184, 134, 11, 0.1);
+      0 0 12px rgba(16, 185, 129, 0.2),
+      0 0 24px rgba(16, 185, 129, 0.1);
   }
 
   50% {
     box-shadow:
-      0 0 18px rgba(184, 134, 11, 0.35),
-      0 0 36px rgba(184, 134, 11, 0.15);
+      0 0 18px rgba(16, 185, 129, 0.35),
+      0 0 36px rgba(16, 185, 129, 0.15);
   }
 }
 
@@ -2727,22 +2727,29 @@
   color: #94a3b8;
 }
 
+.dk-level-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
 .dk-level-ring {
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  border: 3px solid #d4a017;
+  border: 3px solid #10b981;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-right: 4px;
   background: radial-gradient(
     circle at 40% 35%,
-    rgba(253, 230, 138, 0.15),
+    rgba(16, 185, 129, 0.14),
     transparent 60%
   );
-  animation: gold-pulse 3s ease-in-out infinite;
+  animation: proficient-pulse 3s ease-in-out infinite;
 }
 
 .dk-level-inner {
@@ -2753,7 +2760,7 @@
 .dk-level-label {
   font-size: 9px;
   font-weight: 600;
-  color: #b8860b;
+  color: #065f46;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -2761,7 +2768,7 @@
 .dk-level-num {
   font-size: 19px;
   font-weight: 700;
-  color: #92640a;
+  color: #065f46;
 }
 
 .dk-level-text {
@@ -2769,10 +2776,9 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-align: right;
-  margin-bottom: 2px;
-  margin-right: 8px;
-  background: linear-gradient(135deg, #d4a017, #b8860b);
+  text-align: center;
+  margin-top: 6px;
+  background: linear-gradient(135deg, #10b981, #065f46);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

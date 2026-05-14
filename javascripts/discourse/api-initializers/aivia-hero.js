@@ -205,11 +205,11 @@ function initHero() {
     cleanupDemoWrapTransition();
 
     if (collapsed) {
-      toggleText.textContent = "Show image";
+      toggleText.textContent = "Show product preview";
       toggleIcon.classList.remove("flipped");
       persistCta.style.display = "flex";
     } else {
-      toggleText.textContent = "Hide image";
+      toggleText.textContent = "Hide product preview";
       toggleIcon.classList.add("flipped");
       persistCta.style.display = "none";
     }

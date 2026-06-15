@@ -55,6 +55,9 @@ en:
       my_aivia_resume:
         title: "Resume"
         subtitle: "Open and manage your resume page"
+      my_aivia_profile:
+        title: "Profile"
+        subtitle: "Update your public profile and preferences"
       my_aivia_discover_talent:
         title: "Discover talent"
         subtitle: "Search pre-evaluated candidates"

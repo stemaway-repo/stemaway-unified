@@ -113,6 +113,11 @@ const MENU_ITEMS = {
     titleKey: "aivia_header_nav.items.my_aivia_resume.title",
     subtitleKey: "aivia_header_nav.items.my_aivia_resume.subtitle",
   },
+  my_aivia_profile: {
+    href: "/my/preferences/profile",
+    titleKey: "aivia_header_nav.items.my_aivia_profile.title",
+    subtitleKey: "aivia_header_nav.items.my_aivia_profile.subtitle",
+  },
   my_aivia_discover_talent: {
     href: "/my/aivia-talent/search",
     titleKey: "aivia_header_nav.items.my_aivia_discover_talent.title",
@@ -358,7 +363,8 @@ function isMyAiviaPath(currentPath) {
   return (
     currentPath.startsWith("/my/aivia-dashboard") ||
     currentPath.startsWith("/my/resume") ||
-    currentPath.startsWith("/my/aivia-talent")
+    currentPath.startsWith("/my/aivia-talent") ||
+    currentPath.startsWith("/my/preferences/profile")
   );
 }
 
@@ -368,7 +374,12 @@ function getMyAiviaSections(currentUser) {
 
   const candidateSection = {
     key: "my_aivia_candidates",
-    items: ["my_aivia_evaluations", "my_aivia_mentorship", "my_aivia_resume"],
+    items: [
+      "my_aivia_evaluations",
+      "my_aivia_mentorship",
+      "my_aivia_resume",
+      "my_aivia_profile",
+    ],
   };
 
   const hiringItems = [];

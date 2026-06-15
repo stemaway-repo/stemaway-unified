@@ -1,4 +1,4 @@
-.category-header div[class^='category-title-header'] {
+.category-header div[class^="category-title-header"] {
   @include stemaway-card;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -53,14 +53,341 @@
 
 /* Migrated from stemaway-ui-addons/main-test-mobile.scss */
 @media (max-width: 768px) {
-  .category-header div[class^='category-title-header'] {
+  .category-header div[class^="category-title-header"] {
     text-align: left;
   }
 
   .category-header
-    div[class^='category-title-header']
+    div[class^="category-title-header"]
     .category-title-contents
     .category-title-name {
     margin-top: 2rem;
+  }
+}
+
+/* ============================================================ */
+/* CATEGORY HEADER                                              */
+/* ============================================================ */
+
+.category-title-header {
+  position: relative !important;
+  padding: 2.5em 2.5em 2.5em 3em !important;
+  margin-bottom: 1.5em !important;
+  background-color: #fff !important;
+  background-image:
+    linear-gradient(rgb(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(135deg, #fff 0%, #fafaf9 50%, #f8fafc 100%) !important;
+  background-size:
+    32px 32px,
+    32px 32px,
+    100% 100% !important;
+  background-repeat: repeat, repeat, no-repeat !important;
+  border: 1px solid #e7e5e4 !important;
+  border-left: none !important;
+  border-radius: 16px !important;
+  box-shadow:
+    0 1px 2px rgb(0, 0, 0, 0.03),
+    0 8px 24px -8px rgb(0, 0, 0, 0.06),
+    0 24px 48px -16px rgb(0, 0, 0, 0.04) !important;
+  overflow: hidden !important;
+  animation: categoryHeaderReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+}
+
+.category-title-header::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 5px !important;
+  background: linear-gradient(
+    180deg,
+    var(--category-badge-color, #f7941d) 0%,
+    var(--category-badge-color, #f7941d) 60%,
+    transparent 100%
+  ) !important;
+  border-radius: 16px 0 0 16px !important;
+  transform-origin: top !important;
+  animation: leftBarReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both !important;
+}
+
+.category-title-header::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -50% !important;
+  right: -20% !important;
+  z-index: 0 !important;
+  width: 60% !important;
+  height: 200% !important;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--category-badge-color, #f7941d) 8%, transparent) 0%,
+    transparent 60%
+  ) !important;
+  pointer-events: none !important;
+  animation: glowReveal 1.4s ease-out 0.4s both !important;
+}
+
+.category-title-header > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.category-title-header .category-title-contents {
+  display: flex !important;
+  position: relative !important;
+  z-index: 2 !important;
+  flex-direction: column !important;
+  gap: 0.5em !important;
+}
+
+.category-title-header .category-title-name {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.55em !important;
+  margin: 0 !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  text-shadow: none !important;
+}
+
+.category-title-header svg.d-icon-lock {
+  display: none !important;
+}
+
+.category-title-header .parent-box-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4em !important;
+  width: fit-content !important;
+  padding: 0.3em 0.85em !important;
+  margin-bottom: 0 !important;
+  border: 1.5px solid var(--category-badge-color, #f7941d) !important;
+  border-radius: 999px !important;
+  background: rgb(255, 255, 255, 0.6) !important;
+  color: var(--category-badge-color, #f7941d) !important;
+  font-size: 0.7em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.18s ease !important;
+  animation: contentReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both !important;
+}
+
+.category-title-header .parent-box-link:hover {
+  border-color: var(--category-badge-color, #f7941d) !important;
+  background: var(--category-badge-color, #f7941d) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--category-badge-color, #f7941d) 30%, transparent) !important;
+  transform: translateY(-1px) !important;
+}
+
+.category-title-header .parent-box-link h1 {
+  display: inline !important;
+  margin: 0 !important;
+  color: inherit !important;
+  font-size: 1em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+}
+
+.category-title-header .category-title-name > h1 {
+  display: inline-block !important;
+  margin: 0 !important;
+  background: linear-gradient(135deg, #1c1917 0%, #44403c 100%) !important;
+  background-clip: text !important;
+  color: transparent !important;
+  font-size: 2em !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.15 !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: contentReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both !important;
+}
+
+.category-title-header .category-title-description {
+  max-width: 65ch !important;
+  margin-top: 0.85em !important;
+  color: #44403c !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  opacity: 1 !important;
+  animation: contentReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both !important;
+}
+
+.category-title-header .category-title-description .cooked {
+  color: #44403c !important;
+  font-size: 1em !important;
+  line-height: 1.65 !important;
+}
+
+.category-title-header .category-title-description em {
+  color: var(--category-badge-color, #f7941d) !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  filter: brightness(0.85) saturate(1.2) !important;
+}
+
+.category-title-header .category-about-url a {
+  color: #2f5130 !important;
+  font-size: 0.7em !important;
+  font-weight: 500 !important;
+  text-decoration: underline dotted !important;
+}
+
+.category-title-header .category-about-url a:hover {
+  color: #1e4620 !important;
+}
+
+@keyframes categoryHeaderReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes leftBarReveal {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes glowReveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-title-header,
+  .category-title-header::before,
+  .category-title-header::after,
+  .category-title-header .parent-box-link,
+  .category-title-header .category-title-name > h1,
+  .category-title-header .category-title-description {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .category-title-header {
+    padding: 2em 1.75em 2em 2em !important;
+    border-radius: 14px !important;
+  }
+
+  .category-title-header .category-title-name > h1 {
+    font-size: 1.75em !important;
+  }
+
+  .category-title-header .category-title-description {
+    max-width: 100% !important;
+  }
+
+  .category-title-header .category-title-description .cooked {
+    font-size: 0.95em !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .category-title-header {
+    padding: 1.5em 1.25em 1.5em 1.5em !important;
+    margin-bottom: 1em !important;
+    border-radius: 12px !important;
+    box-shadow:
+      0 1px 2px rgb(0, 0, 0, 0.03),
+      0 4px 12px -4px rgb(0, 0, 0, 0.06) !important;
+  }
+
+  .category-title-header::before {
+    width: 4px !important;
+    border-radius: 12px 0 0 12px !important;
+  }
+
+  .category-title-header::after {
+    top: -30% !important;
+    right: -40% !important;
+    width: 80% !important;
+    height: 160% !important;
+  }
+
+  .category-title-header .category-title-contents {
+    gap: 0.4em !important;
+  }
+
+  .category-title-header .category-title-name {
+    gap: 0.45em !important;
+  }
+
+  .category-title-header .parent-box-link {
+    padding: 0.25em 0.7em !important;
+    font-size: 0.65em !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .category-title-header .category-title-name > h1 {
+    font-size: 1.5em !important;
+    letter-spacing: -0.015em !important;
+    line-height: 1.2 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+  }
+
+  .category-title-header .category-title-description {
+    margin-top: 0.6em !important;
+  }
+
+  .category-title-header .category-title-description .cooked {
+    font-size: 0.9em !important;
+    line-height: 1.55 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .category-title-header {
+    padding: 1.25em 1em 1.25em 1.25em !important;
+  }
+
+  .category-title-header .category-title-name > h1 {
+    font-size: 1.3em !important;
+  }
+
+  .category-title-header .parent-box-link {
+    font-size: 0.6em !important;
   }
 }

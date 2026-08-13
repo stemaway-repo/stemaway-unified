@@ -5,7 +5,7 @@ const AIVIA_MARKETING_PATHS = new Set([
   "/aivia/inside-aivia",
   "/aivia/context-pack",
   "/aivia/projects",
-  "/aivia/scenarios",
+  "/aivia/mapping",
   "/aivia/report-breakdown",
   "/full-time",
   "/hiring",

@@ -11,7 +11,7 @@ const PRECOLLAPSED_CLASS = "aivia-hero-precollapsed";
 const AIVIA_PLANS_URL = "/aivia/plans";
 const HERO_LINKS = {
   s: {
-    primary: "/my/aivia-talent/search",
+    primary: "/aivia/mapping",
     secondary: "/aivia/inside-aivia",
   },
   p: {
@@ -22,27 +22,21 @@ const HERO_LINKS = {
     primary: "/my/aivia-talent/align",
     secondary: "/aivia/report-breakdown",
   },
-  g: {
-    primary: "/my/aivia-talent/generate",
-    secondary: "/aivia/internships",
-  },
   c: {
     primary: "/my/aivia-dashboard",
     secondary: "/aivia/verified",
   },
 };
 const HERO_CTA_LABELS = {
-  s: "Discover talent",
+  s: "Explore mapping",
   p: "Customize evaluation",
   i: "Generate questions",
-  g: "Start a cohort",
   c: "My dashboard",
 };
 const HERO_FEATURES = {
   s: "search",
   p: "prescreen",
   i: "align",
-  g: "generate",
 };
 
 let preparedHeroState = null;

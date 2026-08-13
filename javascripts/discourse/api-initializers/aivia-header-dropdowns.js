@@ -89,7 +89,7 @@ const MENU_ITEMS = {
     subtitleKey: "aivia_header_nav.items.context_pack.subtitle",
   },
   scenarios: {
-    href: "/aivia/scenarios",
+    href: "/aivia/mapping",
     titleKey: "aivia_header_nav.items.scenarios.title",
     subtitleKey: "aivia_header_nav.items.scenarios.subtitle",
   },

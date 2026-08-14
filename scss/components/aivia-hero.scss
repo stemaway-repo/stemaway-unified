@@ -564,6 +564,116 @@
   margin-bottom: 20px;
 }
 
+.dk-panel-header--mapping {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dk-panel-header-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  gap: 12px;
+}
+
+.dk-panel-catalog-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  gap: 14px;
+  min-width: 194px;
+  min-height: 54px;
+  padding: 8px 10px 8px 14px;
+  border: 1px solid #2d5a4a;
+  border-radius: 10px;
+  background: #2d5a4a;
+  box-shadow:
+    0 2px 4px rgb(28, 61, 50, 0.16),
+    0 8px 18px rgb(45, 90, 74, 0.2);
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    transform 0.16s ease;
+
+  svg {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    padding: 7px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255, 0.26);
+    color: #fff;
+    opacity: 1;
+    stroke: #fff;
+    transition:
+      background 0.16s ease,
+      transform 0.16s ease;
+  }
+
+  svg path {
+    stroke: #fff;
+  }
+}
+
+.dk-panel-catalog-link-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+
+  strong {
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  small {
+    color: rgb(255, 255, 255, 0.7);
+    font-size: 9.5px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+.dk-panel-catalog-link:hover,
+.dk-panel-catalog-link:focus-visible {
+  border-color: #23483b;
+  background: #23483b;
+  box-shadow:
+    0 3px 6px rgb(28, 61, 50, 0.18),
+    0 11px 24px rgb(45, 90, 74, 0.25);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+
+  svg {
+    background: rgb(255, 255, 255, 0.2);
+    transform: translateX(2px);
+  }
+}
+
+.dk-panel-catalog-link:focus-visible {
+  outline: 2px solid rgb(45, 90, 74, 0.28);
+  outline-offset: 2px;
+}
+
+.dk-panel-catalog-link:active {
+  box-shadow: 0 2px 5px rgb(28, 61, 50, 0.16);
+  transform: translateY(0);
+}
+
 .dk-panel-sub {
   font-size: 16px;
   color: #1a1d1a;
@@ -3088,6 +3198,17 @@
 
   .dk-panel-body {
     padding: 20px 16px 24px;
+  }
+
+  .dk-panel-header--mapping {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .dk-panel-catalog-link {
+    align-self: stretch;
+    width: 100%;
   }
 
   /* Search: 3 → 1 col */

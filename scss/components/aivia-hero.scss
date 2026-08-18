@@ -147,7 +147,7 @@
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
-  padding: 48px 0 40px;
+  padding: 48px 0 54px;
 }
 
 .dk::before {
@@ -188,15 +188,6 @@
   margin-bottom: 52px;
   position: relative;
   z-index: 1;
-}
-
-.dk-kicker {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #5eead4;
-  margin: 0 0 3px;
 }
 
 .dk-tagline {
@@ -379,6 +370,61 @@
   overflow: hidden;
   height: 0;
   opacity: 0;
+}
+
+.dk-suite-preview-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.dk-suite-preview {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 0 20px;
+  border: 1px solid #2faf8e;
+  border-radius: 8px;
+  background: #2faf8e;
+  box-shadow: 0 8px 24px rgb(47, 175, 142, 0.26);
+  color: #111;
+  font-family: var(--font-family);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: #99f6e4;
+    background: #46c3a1;
+    box-shadow: 0 10px 28px rgb(47, 175, 142, 0.34);
+    color: #111;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #99f6e4;
+    outline-offset: 3px;
+  }
+
+  svg {
+    flex: 0 0 auto;
+  }
+
+  > span {
+    font-weight: 600;
+  }
 }
 
 .aivia-hero-precollapsed #aivia-hero .dk-demo-wrap {
@@ -578,6 +624,27 @@
   align-items: flex-start;
   min-width: 0;
   gap: 12px;
+}
+
+.dk-mapping-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2d5a4a, #3d7a62);
+  box-shadow: 0 3px 12px rgb(45, 90, 74, 0.18);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+
+  svg {
+    flex: 0 0 auto;
+    color: #34d399;
+  }
 }
 
 .dk-panel-catalog-link {
@@ -3181,11 +3248,6 @@
     margin-bottom: 36px;
   }
 
-  .dk-kicker {
-    font-size: 14px;
-    letter-spacing: 3px;
-  }
-
   .dk-tagline {
     font-size: 12px;
     letter-spacing: 2px;
@@ -3340,10 +3402,6 @@
   .dk-rotating-title {
     font-size: 24px;
     min-height: auto;
-  }
-
-  .dk-kicker {
-    font-size: 13px;
   }
 
   .dk-tagline {

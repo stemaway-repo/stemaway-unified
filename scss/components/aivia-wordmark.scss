@@ -1,0 +1,38 @@
+.d-header {
+  .aivia-wordmark {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5em;
+    color: #9bc2a1;
+    font-family: Inter, -apple-system, system-ui, sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .aivia-wordmark__dot {
+    display: inline-block;
+    margin: 0 0.04em;
+    color: inherit;
+    transform: translateY(-0.02em);
+  }
+
+  .title a:hover .aivia-wordmark,
+  .title a:focus-visible .aivia-wordmark {
+    color: #9bc2a1;
+  }
+}
+
+@media (width <= 767px) {
+  .d-header .aivia-wordmark {
+    font-size: 23px;
+  }
+}
+
+@media (width <= 570px) {
+  .d-header .aivia-wordmark {
+    font-size: 22px;
+  }
+}

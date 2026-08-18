@@ -23,10 +23,12 @@
                 data-cta="Explore mapping" data-cta2="Learn more">the Mapping</button>
               <button class="dk-t" data-p="p" data-h="The map writes the <em>evaluation.</em>"
                 data-cta="Customize evaluation" data-cta2="Learn more">the Evaluations</button>
+              {{!--
               <button class="dk-t" data-p="i" data-h="Mapping drives it all. <em>Proactive talent watch or immediate opening.</em>"
                 data-cta="Generate questions" data-cta2="Learn more">the Hiring Workspace</button>
               <button class="dk-t" data-p="c" data-h="Map where you fit. <em>Get discovered. Prove more. Prepare better.</em>"
                 data-cta="My dashboard" data-cta2="Learn more">the Career Workspace</button>
+              --}}
             </div>
           </div>
         </div>
@@ -46,15 +48,18 @@
                 data-cta="Explore mapping" data-cta2="Learn more">the Mapping</div>
               <div class="dk-mobile-opt" data-p="p" data-h="The map writes the <em>evaluation.</em>"
                 data-cta="Customize evaluation" data-cta2="Learn more">the Evaluations</div>
+              {{!--
               <div class="dk-mobile-opt" data-p="i" data-h="Mapping drives it all. <em>Proactive talent watch or immediate opening.</em>"
                 data-cta="Generate questions" data-cta2="Learn more">the Hiring Workspace</div>
               <div class="dk-mobile-opt" data-p="c" data-h="Map where you fit. <em>Get discovered. Prove more. Prepare better.</em>"
                 data-cta="My dashboard" data-cta2="Learn more">the Career Workspace</div>
+              --}}
             </div>
           </div>
         </div>
       </div>
 
+      {{!-- Product previews now remain expanded.
       <div class="dk-toggle-wrap" id="aivia-toggle-wrap">
         <button class="dk-toggle-btn" id="aivia-toggle-btn">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -64,6 +69,7 @@
           <span id="aivia-toggle-text">Hide product preview</span>
         </button>
       </div>
+      --}}
 
       <div class="dk-demo-wrap" id="aivia-demo-wrap">
         <div class="dk-glass">
@@ -74,26 +80,9 @@
               <div class="dk-panel-body">
                 <div class="dk-panel-header dk-panel-header--mapping">
                   <div class="dk-panel-header-copy">
-                    <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2.5">
-                        <circle cx="11" cy="11" r="6" />
-                        <path d="M16 16l3.5 3.5" />
-                      </svg> AIVIA CATALOG</div>
                     <p class="dk-panel-sub">Expertise and openings, mapped to engineering components. <strong>Down to
                         how they fail.</strong></p>
                   </div>
-                  <a class="dk-panel-catalog-link" href="/components" target="_blank" rel="noopener noreferrer"
-                    aria-label="Explore the AIVIA component catalog in a new tab">
-                    <span class="dk-panel-catalog-link-copy">
-                      <strong>Explore components</strong>
-                      <small>Open the full catalog</small>
-                    </span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="2">
-                      <path d="M5 12h14" />
-                      <path d="M13 6l6 6-6 6" />
-                    </svg>
-                  </a>
                 </div>
 
                 <!-- Catalog map + Ask AIVIA -->
@@ -219,8 +208,10 @@
                 </div>
               </div>
             </div>
+            {{!--
             <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/aivia/mapping">Explore
                 mapping</a><a class="ct ct-s" href="https://stemaway.com/aivia/inside-aivia">Learn more</a></div>
+            --}}
           </div>
 
           <!-- ==================== EVALUATIONS (CURRENT PRESCREEN DEMO) ==================== -->
@@ -371,8 +362,10 @@
                 </div>
               </div>
             </div>
+            {{!--
             <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/my/aivia-talent/prescreen">Customize
                 evaluation</a><a class="ct ct-s" href="https://stemaway.com/aivia/context-pack">Learn more</a></div>
+            --}}
           </div>
 
           <!-- ==================== HIRING WORKSPACE (CURRENT INTERVIEW DEMO) ==================== -->
@@ -466,8 +459,10 @@
                 </div>
               </div>
             </div>
+            {{!--
             <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/my/aivia-talent/align">Generate
                 questions</a><a class="ct ct-s" href="https://stemaway.com/aivia/report-breakdown">Learn more</a></div>
+            --}}
           </div>
 
           <!-- ==================== CAREER WORKSPACE (CURRENT CAREER TOOLS DEMO) ==================== -->
@@ -622,17 +617,21 @@
                 </div>
               </div>
             </div>
+            {{!--
             <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/my/aivia-dashboard">My dashboard</a><a
                 class="ct ct-s" href="https://stemaway.com/aivia/verified">Learn more</a></div>
+            --}}
           </div>
 
         </div>
       </div>
+      {{!-- Collapsed-state actions are retained here for possible restoration.
       <div class="vw-cta" id="aivia-persist-cta" style="display:none">
         <a class="ct ct-p" href="https://stemaway.com/aivia/mapping" id="aivia-persist-primary">Explore
           mapping</a>
         <a class="ct ct-s" href="https://stemaway.com/aivia/inside-aivia" id="aivia-persist-secondary">Learn more</a>
       </div>
+      --}}
 
     </div>
   </div>

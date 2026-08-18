@@ -1,12 +1,8 @@
-/* global settings */
-
 import { apiInitializer } from "discourse/lib/api";
 import { defaultHomepage } from "discourse/lib/utilities";
 import User from "discourse/models/user";
 import { getAiviaFeatureAccess } from "discourse/plugins/stemaway-ui-addons/discourse/utils/aivia-analytics-access";
 
-const STORAGE_KEY_COLLAPSED = "aivia-hero-collapsed";
-const STORAGE_KEY_VISITS = "aivia-hero-visits";
 const PRECOLLAPSED_CLASS = "aivia-hero-precollapsed";
 const AIVIA_PLANS_URL = "/aivia/plans";
 const HERO_LINKS = {
@@ -94,41 +90,15 @@ function prepareHeroState(path = window.location.pathname, isLoggedIn = false) {
     return null;
   }
 
-  if (!resolvedIsLoggedIn) {
-    preparedHeroState = {
-      consumed: false,
-      isLoggedIn: false,
-      shouldCollapse: false,
-      visits: 0,
-    };
-    preparedHeroPath = currentPath;
-    preparedHeroIsLoggedIn = false;
-    syncPrecollapsedClass(false);
-
-    return preparedHeroState;
-  }
-
-  const userCollapsed = localStorage.getItem(STORAGE_KEY_COLLAPSED) === "true";
-  const autoCollapseAfter = parseInt(
-    settings.auto_collapse_after_visits || "3",
-    10
-  );
-  const visits =
-    parseInt(localStorage.getItem(STORAGE_KEY_VISITS) || "0", 10) + 1;
-  const shouldCollapse =
-    userCollapsed || (autoCollapseAfter > 0 && visits > autoCollapseAfter);
-
-  localStorage.setItem(STORAGE_KEY_VISITS, visits.toString());
-  syncPrecollapsedClass(shouldCollapse);
-
   preparedHeroState = {
     consumed: false,
-    isLoggedIn: true,
-    shouldCollapse,
-    visits,
+    isLoggedIn: resolvedIsLoggedIn,
+    shouldCollapse: false,
+    visits: 0,
   };
   preparedHeroPath = currentPath;
-  preparedHeroIsLoggedIn = true;
+  preparedHeroIsLoggedIn = resolvedIsLoggedIn;
+  syncPrecollapsedClass(false);
 
   return preparedHeroState;
 }
@@ -153,7 +123,7 @@ function initHero() {
     return;
   }
 
-  const initialState = consumePreparedHeroState(
+  consumePreparedHeroState(
     window.location.pathname,
     resolveLoggedInState(currentHeroIsLoggedIn)
   );
@@ -161,98 +131,14 @@ function initHero() {
 
   const headline = hero.querySelector("#aivia-headline");
   const demoWrap = hero.querySelector("#aivia-demo-wrap");
-  const toggleBtn = hero.querySelector("#aivia-toggle-btn");
-  const toggleText = hero.querySelector("#aivia-toggle-text");
-  const toggleIcon = hero.querySelector("#aivia-toggle-icon");
-  const persistCta = hero.querySelector("#aivia-persist-cta");
-  const persistPrimary = hero.querySelector("#aivia-persist-primary");
-  const persistSecondary = hero.querySelector("#aivia-persist-secondary");
   const mobileSel = hero.querySelector("#aivia-mobile-sel");
   const mobileDd = hero.querySelector("#aivia-mobile-dd");
   const mobileSelText = hero.querySelector("#aivia-mobile-sel-text");
   const currentUser = User.current();
   const featureAccess = getAiviaFeatureAccess(currentUser, currentSiteSettings);
 
-  if (
-    !headline ||
-    !demoWrap ||
-    !toggleBtn ||
-    !toggleText ||
-    !toggleIcon ||
-    !persistCta
-  ) {
+  if (!headline || !demoWrap) {
     return;
-  }
-
-  const shouldCollapse = initialState?.shouldCollapse || false;
-
-  let demoWrapTransitionCleanup = null;
-
-  function cleanupDemoWrapTransition() {
-    if (demoWrapTransitionCleanup) {
-      demoWrapTransitionCleanup();
-      demoWrapTransitionCleanup = null;
-    }
-  }
-
-  function setCollapsed(collapsed, { animate = false } = {}) {
-    cleanupDemoWrapTransition();
-
-    if (collapsed) {
-      toggleText.textContent = "Show product preview";
-      toggleIcon.classList.remove("flipped");
-      persistCta.style.display = "flex";
-    } else {
-      toggleText.textContent = "Hide product preview";
-      toggleIcon.classList.add("flipped");
-      persistCta.style.display = "none";
-    }
-
-    toggleBtn.setAttribute("aria-expanded", (!collapsed).toString());
-
-    const prefersReducedMotion = window.matchMedia?.(
-      "(prefers-reduced-motion: reduce)"
-    )?.matches;
-
-    if (!animate || prefersReducedMotion) {
-      demoWrap.classList.toggle("collapsed", collapsed);
-      demoWrap.classList.remove("is-transitioning");
-      demoWrap.style.height = collapsed ? "0px" : "";
-      return;
-    }
-
-    const startHeight = demoWrap.getBoundingClientRect().height;
-    if (!collapsed) {
-      demoWrap.classList.remove("collapsed");
-    }
-    const endHeight = collapsed ? 0 : demoWrap.scrollHeight;
-
-    demoWrap.classList.add("is-transitioning");
-    demoWrap.style.height = `${startHeight}px`;
-    demoWrap.getBoundingClientRect();
-    demoWrap.classList.toggle("collapsed", collapsed);
-    demoWrap.style.height = `${endHeight}px`;
-
-    const finishTransition = () => {
-      demoWrap.classList.remove("is-transitioning");
-      demoWrap.style.height = collapsed ? "0px" : "";
-      cleanupDemoWrapTransition();
-    };
-
-    const onTransitionEnd = (event) => {
-      if (event.target !== demoWrap || event.propertyName !== "height") {
-        return;
-      }
-
-      finishTransition();
-    };
-
-    demoWrap.addEventListener("transitionend", onTransitionEnd);
-    const transitionFallback = window.setTimeout(finishTransition, 600);
-    demoWrapTransitionCleanup = () => {
-      demoWrap.removeEventListener("transitionend", onTransitionEnd);
-      window.clearTimeout(transitionFallback);
-    };
   }
 
   function buildLockIcon() {
@@ -349,10 +235,11 @@ function initHero() {
 
   Object.keys(HERO_LINKS).forEach(setPanelCtas);
 
-  setCollapsed(shouldCollapse);
+  demoWrap.classList.remove("collapsed", "is-transitioning");
+  demoWrap.style.height = "";
   syncPrecollapsedClass(false);
 
-  function switchTab(dataP, dataH, dataCta, dataCta2, label) {
+  function switchTab(dataP, dataH, label) {
     hero
       .querySelectorAll("#aivia-tabs .dk-t")
       .forEach((button) => button.classList.remove("on"));
@@ -373,19 +260,6 @@ function initHero() {
     }
 
     headline.innerHTML = dataH;
-    const links = HERO_LINKS[dataP];
-    if (persistPrimary) {
-      const locked = isLockedFeature(dataP);
-      persistPrimary.href = locked ? AIVIA_PLANS_URL : links?.primary || "#";
-      persistPrimary.target = "";
-      persistPrimary.rel = "";
-      persistPrimary.classList.toggle("ct--locked", locked);
-      setPrimaryCtaContent(persistPrimary, dataCta, locked);
-    }
-    if (persistSecondary) {
-      persistSecondary.textContent = dataCta2;
-      persistSecondary.href = links?.secondary || "#";
-    }
 
     if (mobileSelText) {
       mobileSelText.textContent = label;
@@ -405,8 +279,6 @@ function initHero() {
       switchTab(
         tab.dataset.p,
         tab.dataset.h,
-        tab.dataset.cta,
-        tab.dataset.cta2,
         getDisplayLabel(tab)
       );
     });
@@ -425,8 +297,6 @@ function initHero() {
       switchTab(
         option.dataset.p,
         option.dataset.h,
-        option.dataset.cta,
-        option.dataset.cta2,
         getDisplayLabel(option)
       );
       if (mobileSel && mobileDd) {
@@ -443,31 +313,11 @@ function initHero() {
     }
   });
 
-  toggleBtn.addEventListener("click", () => {
-    const isCollapsed = demoWrap.classList.contains("collapsed");
-    const nextCollapsed = !isCollapsed;
-    const shouldPersistCollapseState = resolveLoggedInState(
-      currentHeroIsLoggedIn
-    );
-
-    setCollapsed(nextCollapsed, { animate: true });
-    if (shouldPersistCollapseState) {
-      localStorage.setItem(STORAGE_KEY_COLLAPSED, nextCollapsed.toString());
-    }
-
-    if (shouldPersistCollapseState && preparedHeroState && isHeroRoute()) {
-      preparedHeroState.shouldCollapse = nextCollapsed;
-      preparedHeroState.consumed = true;
-    }
-  });
-
   const activeTab = hero.querySelector("#aivia-tabs .dk-t.on");
   if (activeTab) {
     switchTab(
       activeTab.dataset.p,
       activeTab.dataset.h,
-      activeTab.dataset.cta,
-      activeTab.dataset.cta2,
       getDisplayLabel(activeTab)
     );
   }

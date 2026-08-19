@@ -134,7 +134,6 @@ function initHero() {
   const mobileSel = hero.querySelector("#aivia-mobile-sel");
   const mobileDd = hero.querySelector("#aivia-mobile-dd");
   const mobileSelText = hero.querySelector("#aivia-mobile-sel-text");
-  const suitePreview = hero.querySelector("#aivia-suite-preview");
   const currentUser = User.current();
   const featureAccess = getAiviaFeatureAccess(currentUser, currentSiteSettings);
 
@@ -305,27 +304,6 @@ function initHero() {
         mobileDd.classList.remove("open");
       }
     });
-  });
-
-  suitePreview?.addEventListener("click", (event) => {
-    const componentsPage = document.getElementById("components");
-
-    if (!componentsPage) {
-      return;
-    }
-
-    event.preventDefault();
-    const siteHeader =
-      document.querySelector(".d-header-wrap") ||
-      document.querySelector(".d-header");
-    const headerHeight = siteHeader?.getBoundingClientRect().height || 0;
-    const targetTop =
-      componentsPage.getBoundingClientRect().top +
-      window.scrollY -
-      headerHeight -
-      12;
-
-    window.scrollTo({ top: Math.max(0, targetTop), behavior: "smooth" });
   });
 
   document.addEventListener("click", () => {

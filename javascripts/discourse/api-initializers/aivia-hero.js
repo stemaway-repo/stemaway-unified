@@ -276,11 +276,7 @@ function initHero() {
 
   hero.querySelectorAll("#aivia-tabs .dk-t").forEach((tab) => {
     tab.addEventListener("click", () => {
-      switchTab(
-        tab.dataset.p,
-        tab.dataset.h,
-        getDisplayLabel(tab)
-      );
+      switchTab(tab.dataset.p, tab.dataset.h, getDisplayLabel(tab));
     });
   });
 
@@ -294,11 +290,7 @@ function initHero() {
 
   hero.querySelectorAll(".dk-mobile-opt").forEach((option) => {
     option.addEventListener("click", () => {
-      switchTab(
-        option.dataset.p,
-        option.dataset.h,
-        getDisplayLabel(option)
-      );
+      switchTab(option.dataset.p, option.dataset.h, getDisplayLabel(option));
       if (mobileSel && mobileDd) {
         mobileSel.classList.remove("open");
         mobileDd.classList.remove("open");
@@ -315,11 +307,7 @@ function initHero() {
 
   const activeTab = hero.querySelector("#aivia-tabs .dk-t.on");
   if (activeTab) {
-    switchTab(
-      activeTab.dataset.p,
-      activeTab.dataset.h,
-      getDisplayLabel(activeTab)
-    );
+    switchTab(activeTab.dataset.p, activeTab.dataset.h, getDisplayLabel(activeTab));
   }
 }
 

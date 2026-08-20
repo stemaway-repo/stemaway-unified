@@ -142,10 +142,10 @@
   overflow: hidden;
   font-family: "DM Sans", sans-serif;
   background:
-    radial-gradient(ellipse 48% 42% at 50% 0%, rgb(42, 91, 68, 0.34), transparent 76%),
-    radial-gradient(ellipse 42% 40% at 88% 100%, rgb(102, 57, 32, 0.22), transparent 76%),
-    radial-gradient(ellipse 38% 38% at 10% 100%, rgb(30, 55, 91, 0.32), transparent 78%),
-    linear-gradient(180deg, #181c19 0%, #151916 100%);
+    radial-gradient(ellipse 48% 42% at 50% 0%, rgb(91, 151, 121, 0.14), transparent 76%),
+    radial-gradient(ellipse 42% 40% at 88% 100%, rgb(190, 160, 111, 0.09), transparent 76%),
+    radial-gradient(ellipse 38% 38% at 10% 100%, rgb(104, 143, 177, 0.1), transparent 78%),
+    linear-gradient(180deg, #fdfefc 0%, #f4f7f4 100%);
 }
 
 #aivia-hero::before {
@@ -153,8 +153,8 @@
   z-index: 0;
   inset: 0;
   background-image:
-    linear-gradient(rgb(188, 211, 199, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(188, 211, 199, 0.04) 1px, transparent 1px);
+    linear-gradient(rgb(45, 90, 74, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(45, 90, 74, 0.045) 1px, transparent 1px);
   background-position: center top;
   background-size: 60px 60px;
   pointer-events: none;
@@ -190,14 +190,14 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 78% 62% at 50% 38%, rgb(31, 64, 52, 0.34), transparent 72%);
+  background: radial-gradient(ellipse 78% 62% at 50% 38%, rgb(94, 151, 124, 0.1), transparent 72%);
   pointer-events: none;
   z-index: 0;
 }
 
 .dk-head {
   text-align: center;
-  margin-bottom: 52px;
+  margin-bottom: 38px;
   position: relative;
   z-index: 1;
 }
@@ -215,7 +215,7 @@
 .dk-tagline-main {
   max-width: 100%;
   margin: 0 0 0.5rem;
-  color: #f4f6f5;
+  color: #17231f;
   font-size: 17px;
   font-weight: 500;
   letter-spacing: 0.005em;
@@ -225,38 +225,13 @@
 
 .dk-tagline-detail {
   max-width: 100%;
-  margin: 0 0 1rem;
-  color: rgb(244, 246, 245, 0.72);
+  margin: 0;
+  color: #5f6f68;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.5;
   text-wrap: balance;
-}
-
-.dk-tagline-audience {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0 0.28em;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 6px 16px;
-  border: 1px solid rgb(94, 234, 212, 0.4);
-  border-radius: 999px;
-  background: rgb(94, 234, 212, 0.1);
-  color: #5eead4;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
-  text-align: center;
-  white-space: normal;
-
-  > span {
-    white-space: nowrap;
-  }
 }
 
 .dk-rotating {
@@ -269,7 +244,7 @@
 .dk-rotating-title {
   font-size: 40px;
   font-weight: 300;
-  color: #fff;
+  color: #17231f;
   margin: 0;
   line-height: 1.2;
   letter-spacing: -0.5px;
@@ -280,7 +255,7 @@
   font-style: italic;
   font-weight: 400;
   font-family: Georgia, serif;
-  background: linear-gradient(135deg, #4a8b6e, #7ecba4);
+  background: linear-gradient(135deg, #34775d, #5fa582);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -297,17 +272,17 @@
   display: inline-flex;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgb(255, 255, 255, 0.08);
-  background: rgb(255, 255, 255, 0.04);
+  border: 1px solid rgb(45, 90, 74, 0.16);
+  background: rgb(255, 255, 255, 0.72);
   backdrop-filter: blur(14px) saturate(140%);
-  box-shadow: 0 1px 0 rgb(255, 255, 255, 0.04) inset, 0 8px 24px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 #fff inset, 0 8px 24px rgb(45, 90, 74, 0.09);
 }
 
 .dk-t {
   padding: 11px 24px;
   font-size: 13px;
   font-weight: 500;
-  color: rgb(255, 255, 255, 0.6);
+  color: #66756f;
   cursor: pointer;
   border: none;
   background: none;
@@ -317,7 +292,7 @@
 }
 
 .dk-t.on {
-  color: #fff;
+  color: #193d31;
   background: none;
 }
 
@@ -328,13 +303,13 @@
   left: 22%;
   right: 22%;
   height: 2px;
-  background: #5eead4;
+  background: #2f9176;
   border-radius: 1px;
-  box-shadow: 0 0 8px rgb(94, 234, 212, 0.5);
+  box-shadow: 0 0 8px rgb(47, 145, 118, 0.2);
 }
 
 .dk-t:hover:not(.on) {
-  color: rgb(255, 255, 255, 0.85);
+  color: #244b3e;
 }
 
 .dk-mobile-nav {
@@ -350,10 +325,10 @@
   justify-content: space-between;
   width: 100%;
   padding: 12px 16px;
-  background: rgb(255, 255, 255, 0.08);
-  border: 1px solid rgb(255, 255, 255, 0.12);
+  background: rgb(255, 255, 255, 0.88);
+  border: 1px solid rgb(45, 90, 74, 0.18);
   border-radius: 10px;
-  color: #fff;
+  color: #193d31;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -373,13 +348,13 @@
   top: calc(100% + 4px);
   left: 0;
   right: 0;
-  background: rgb(20, 25, 30, 0.97);
+  background: rgb(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
-  border: 1px solid rgb(255, 255, 255, 0.1);
+  border: 1px solid rgb(45, 90, 74, 0.14);
   border-radius: 10px;
   overflow: hidden;
   display: none;
-  box-shadow: 0 12px 32px rgb(0, 0, 0, 0.4);
+  box-shadow: 0 12px 32px rgb(45, 90, 74, 0.14);
 }
 
 .dk-mobile-dd.open {
@@ -389,9 +364,9 @@
 .dk-mobile-opt {
   padding: 12px 16px;
   font-size: 13px;
-  color: #cbd5e1;
+  color: #5f6f68;
   cursor: pointer;
-  border-bottom: 1px solid rgb(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgb(45, 90, 74, 0.08);
   transition: all 0.15s;
 }
 
@@ -400,12 +375,12 @@
 }
 
 .dk-mobile-opt:hover, .dk-mobile-opt.active {
-  color: #fff;
-  background: rgb(255, 255, 255, 0.08);
+  color: #193d31;
+  background: rgb(45, 90, 74, 0.07);
 }
 
 .dk-mobile-opt.active {
-  color: #34d399;
+  color: #25785f;
 }
 
 .dk-glass {
@@ -560,48 +535,314 @@
 }
 
 .dk-panel-body {
+  border: 0;
   border-radius: 18px;
   overflow: hidden;
-  background: #f6f5f2;
+  background: transparent;
   padding: 26px 26px 28px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  box-shadow:
-    0 0 0 1px rgb(255, 255, 255, 0.06),
-    0 4px 8px rgb(0, 0, 0, 0.08),
-    0 12px 28px rgb(0, 0, 0, 0.16),
-    0 30px 60px rgb(0, 0, 0, 0.28);
+  box-shadow: none;
 }
 
 .dk-panel-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 8%;
-  right: 8%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgb(255, 255, 255, 0.2), transparent);
-  z-index: 2;
+  display: none;
 }
 
 .dk-panel-body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(180deg, rgb(45, 90, 74, 0.03), transparent);
-  pointer-events: none;
-  border-radius: 18px 18px 0 0;
-  z-index: 0;
+  display: none;
 }
 
 .dk-panel-body > * {
   position: relative;
   z-index: 1;
+}
+
+.dk-panel--mapping {
+  .dk-panel-body {
+    padding: 10px 6px 18px;
+    overflow: visible;
+  }
+
+  .dk-panel-header--mapping {
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 0 4px 16px;
+    border-bottom: 1px solid rgb(45, 90, 74, 0.13);
+  }
+
+  .dk-panel-header-copy {
+    align-items: center;
+    flex-direction: row;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .dk-panel-sub {
+    color: #45574f;
+    font-size: 14.5px;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+  }
+
+  .dk-cohort-layout {
+    gap: 18px;
+  }
+
+  .dk-radar-card,
+  .dk-chat {
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 0;
+    border-color: rgb(45, 90, 74, 0.16);
+    border-radius: 14px;
+    background: linear-gradient(180deg, #fff 0%, #fafcfb 100%);
+    box-shadow:
+      0 1px 2px rgb(45, 90, 74, 0.04),
+      0 8px 22px rgb(45, 90, 74, 0.08);
+  }
+
+  .dk-radar-card {
+    display: flex;
+    align-items: center;
+    padding: 22px 24px;
+  }
+
+  .dk-radar-layout {
+    width: 100%;
+  }
+
+  .dk-radar-chart text {
+    font-family: "DM Sans", sans-serif;
+    letter-spacing: 0.01em;
+  }
+
+  .dk-chat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dk-chat .dk-activity-header {
+    padding: 16px 20px 12px;
+    border-bottom-color: rgb(45, 90, 74, 0.1);
+    background: rgb(45, 90, 74, 0.025);
+  }
+
+  .dk-chat .dk-activity-title {
+    font-size: 10.5px;
+    letter-spacing: 0.09em;
+  }
+
+  .dk-chat-inner {
+    justify-content: center;
+    flex: 1;
+    gap: 14px;
+    padding: 18px 20px 20px;
+  }
+
+  .dk-msg-text,
+  .dk-msg-bubble--user {
+    font-size: 11.5px;
+  }
+
+  .dk-radar-card::before {
+    position: absolute;
+    top: 0;
+    right: 18px;
+    left: 18px;
+    height: 2px;
+    border-radius: 0 0 2px 2px;
+    background: linear-gradient(90deg, transparent, #4a8b6e, transparent);
+    content: "";
+    opacity: 0.55;
+  }
+
+  .dk-mapping-label {
+    border: 1px solid rgb(45, 90, 74, 0.18);
+    background: linear-gradient(135deg, #edf6f1, #e3f0e9);
+    box-shadow: none;
+    color: #245b49;
+
+    svg {
+      color: #318166;
+    }
+  }
+}
+
+.dk-panel--evaluations {
+  .dk-panel-body {
+    padding: 10px 6px 18px;
+    overflow: visible;
+  }
+
+  .dk-prescreen-split {
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .dk-prescreen-left,
+  .dk-eval-panel {
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 0;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .dk-prescreen-left {
+    gap: 14px;
+  }
+
+  .dk-rubric-card,
+  .dk-link-block,
+  .dk-eval-panel {
+    border: 1px solid rgb(45, 90, 74, 0.16);
+    border-radius: 14px;
+    box-shadow:
+      0 1px 2px rgb(45, 90, 74, 0.04),
+      0 8px 22px rgb(45, 90, 74, 0.08);
+  }
+
+  .dk-rubric-card {
+    flex: 1;
+    padding: 18px;
+    background: linear-gradient(180deg, #fff 0%, #fafcfb 100%);
+  }
+
+  .dk-rubric-header {
+    margin-bottom: 16px;
+    padding-bottom: 13px;
+    border-bottom-color: rgb(45, 90, 74, 0.1);
+  }
+
+  .dk-rubric-title {
+    font-size: 13.5px;
+    letter-spacing: 0.005em;
+  }
+
+  .dk-rubric-customize {
+    padding: 6px 10px;
+    border-color: rgb(45, 90, 74, 0.18);
+    background: #f2f7f4;
+    transition:
+      background-color 0.18s ease,
+      border-color 0.18s ease;
+
+    &:hover {
+      border-color: rgb(45, 90, 74, 0.3);
+      background: #e8f2ed;
+    }
+  }
+
+  .dk-rubric-body {
+    gap: 16px;
+  }
+
+  .dk-rubric-section-label {
+    color: #72837c;
+    font-size: 9.5px;
+  }
+
+  .dk-rubric-chips {
+    gap: 6px;
+  }
+
+  .dk-rubric-chip {
+    border-color: rgb(45, 90, 74, 0.17);
+    background: #f2f8f5;
+  }
+
+  .dk-rubric-chip--wildcard {
+    border-color: rgb(178, 132, 22, 0.2);
+    background: #fcf8eb;
+  }
+
+  .dk-link-block {
+    padding: 15px 16px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #edf7f2 0%, #e5f1eb 100%);
+  }
+
+  .dk-link-block::before {
+    display: none;
+  }
+
+  .dk-link-label {
+    margin-bottom: 9px;
+    color: #245b49;
+    font-size: 9.5px;
+  }
+
+  .dk-link-url-wrap {
+    border-color: rgb(45, 90, 74, 0.14);
+    background: rgb(255, 255, 255, 0.86);
+    box-shadow: 0 1px 2px rgb(45, 90, 74, 0.04);
+  }
+
+  .dk-eval-panel {
+    overflow: hidden;
+    background: linear-gradient(180deg, #fff 0%, #f7faf8 100%);
+  }
+
+  .dk-eval-topbar {
+    padding: 13px 18px;
+    border-radius: 13px 13px 0 0;
+    background: linear-gradient(135deg, #264f42, #34705b);
+  }
+
+  .dk-eval-name {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+  }
+
+  .dk-eval-status,
+  .dk-eval-timer span {
+    font-size: 8.5px;
+  }
+
+  .dk-eval-progress {
+    padding: 15px 20px 9px;
+  }
+
+  .dk-eval-q {
+    margin: 14px 16px 10px;
+    padding: 11px 14px;
+    border-color: rgb(45, 90, 74, 0.12);
+    border-radius: 10px 10px 10px 3px;
+    background: #fff;
+    font-size: 11.5px;
+    box-shadow: 0 4px 14px rgb(45, 90, 74, 0.06);
+  }
+
+  .dk-eval-a {
+    margin-right: 16px;
+    margin-bottom: 12px;
+    padding: 10px 13px;
+    border-color: rgb(45, 90, 74, 0.16);
+    border-radius: 10px 10px 3px 10px;
+    background: #eef6f2;
+    box-shadow: 0 3px 10px rgb(45, 90, 74, 0.05);
+    color: #29463b;
+    font-size: 11px;
+  }
+
+  .dk-eval-rubric-scoring {
+    margin: 14px 16px 18px;
+    padding: 15px 16px 16px;
+    border-color: rgb(45, 90, 74, 0.12);
+    background: #fff;
+    box-shadow: 0 4px 14px rgb(45, 90, 74, 0.05);
+  }
+
+  .dk-eval-scoring-title {
+    margin-bottom: 13px;
+    color: #376756;
+  }
+
+  .dk-eval-bar-track {
+    background: rgb(45, 90, 74, 0.1);
+  }
 }
 
 .dk-panel-header {
@@ -3233,16 +3474,25 @@
 
 /* RESPONSIVE */
 @media (width <= 768px) {
+  #aivia-hero {
+    padding-inline: 12px;
+  }
+
+  .dk {
+    padding-block: 42px 46px;
+  }
+
   .dk-tabs {
     display: none !important;
   }
 
   .dk-mobile-nav {
     display: block;
+    margin-bottom: 18px;
   }
 
   .dk-stage {
-    padding: 0 20px;
+    padding: 0 12px;
   }
 
   .dk-head {
@@ -3262,15 +3512,13 @@
     font-size: 13px;
   }
 
-  .dk-tagline-audience {
-    max-width: 360px;
-    padding: 7px 14px;
-    font-size: 11.5px;
-  }
-
   .dk-rotating-title {
     font-size: 28px;
     min-height: 64px;
+  }
+
+  .dk-rotating {
+    margin-bottom: 24px;
   }
 
   .dk-panel-body {
@@ -3281,6 +3529,88 @@
     align-items: stretch;
     flex-direction: column;
     gap: 14px;
+  }
+
+  .dk-panel--mapping {
+    .dk-panel-body {
+      padding: 8px 0 16px;
+    }
+
+    .dk-panel-header--mapping {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+      padding-inline: 2px;
+    }
+
+    .dk-panel-header-copy {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .dk-panel-sub {
+      font-size: 13.5px;
+    }
+
+    .dk-radar-card,
+    .dk-chat {
+      height: auto;
+    }
+
+    .dk-radar-card {
+      padding: 20px 14px;
+    }
+
+    .dk-chat .dk-activity-header {
+      padding: 14px 16px 10px;
+    }
+
+    .dk-chat-inner {
+      gap: 13px;
+      padding: 17px 16px 18px;
+    }
+
+    .dk-msg {
+      gap: 10px;
+    }
+  }
+
+  .dk-panel--evaluations {
+    .dk-panel-body {
+      padding: 8px 0 16px;
+    }
+
+    .dk-prescreen-left,
+    .dk-eval-panel {
+      height: auto;
+    }
+
+    .dk-rubric-card {
+      padding: 16px;
+    }
+
+    .dk-eval-topbar {
+      padding-inline: 14px;
+    }
+
+    .dk-eval-q,
+    .dk-eval-rubric-scoring {
+      margin-inline: 12px;
+    }
+
+    .dk-eval-a {
+      margin-right: 12px;
+    }
+
+    .dk-eval-bar-row {
+      grid-template-columns: 105px minmax(52px, 1fr) 28px;
+      gap: 8px;
+    }
+
+    .dk-eval-bar-label {
+      line-height: 1.25;
+    }
   }
 
   .dk-panel-catalog-link {
@@ -3409,8 +3739,16 @@
 }
 
 @media (width <= 480px) {
+  #aivia-hero {
+    padding-inline: 10px;
+  }
+
+  .dk {
+    padding-block: 36px 40px;
+  }
+
   .dk-stage {
-    padding: 0 16px;
+    padding: 0;
   }
 
   .dk-rotating-title {
@@ -3419,7 +3757,7 @@
   }
 
   .dk-head {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
 
   .dk-tagline-main {
@@ -3430,21 +3768,47 @@
 
   .dk-tagline-detail {
     max-width: 320px;
-    margin-bottom: 0.875rem;
+    margin-bottom: 0;
     font-size: 13px;
-    line-height: 1.45;
-  }
-
-  .dk-tagline-audience {
-    width: auto;
-    max-width: 100%;
-    padding: 7px 10px;
-    font-size: 11px;
     line-height: 1.45;
   }
 
   .dk-panel-body {
     padding: 16px 14px 20px;
+  }
+
+  .dk-mobile-sel,
+  .dk-mobile-opt {
+    padding: 11px 13px;
+  }
+
+  .dk-panel--mapping {
+    .dk-radar-card {
+      padding: 18px 10px;
+    }
+
+    .dk-chat-inner {
+      padding-inline: 14px;
+    }
+  }
+
+  .dk-panel--evaluations {
+    .dk-rubric-card,
+    .dk-link-block {
+      padding: 15px 14px;
+    }
+
+    .dk-eval-topbar {
+      padding-inline: 12px;
+    }
+
+    .dk-eval-progress {
+      padding-inline: 12px;
+    }
+
+    .dk-eval-rubric-scoring {
+      padding-inline: 13px;
+    }
   }
 
   .dk-domain-card {
@@ -3706,7 +4070,7 @@
   gap: 7px;
 
   &:not(.on) {
-    color: rgb(255, 255, 255, 0.74);
+    color: #52665e;
   }
 }
 

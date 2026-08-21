@@ -221,8 +221,8 @@
   max-width: 100%;
   margin: 0 0 0.5rem;
   color: #17231f;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: 0.005em;
   line-height: 1.45;
   text-wrap: balance;
@@ -232,8 +232,8 @@
   max-width: 100%;
   margin: 0;
   color: #5f6f68;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 500;
   letter-spacing: 0.01em;
   line-height: 1.5;
   text-wrap: balance;
@@ -251,8 +251,8 @@
 }
 
 .dk-rotating-title {
-  font-size: 40px;
-  font-weight: 300;
+  font-size: 44px;
+  font-weight: 400;
   color: #17231f;
   margin: 0;
   line-height: 1.2;
@@ -262,7 +262,7 @@
 
 .dk-rotating-title em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   font-family: Georgia, serif;
   background: linear-gradient(135deg, #34775d, #5fa582);
   background-clip: text;
@@ -3537,16 +3537,16 @@
   }
 
   .dk-tagline-main {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .dk-tagline-detail {
     max-width: 480px;
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .dk-rotating-title {
-    font-size: 28px;
+    font-size: 32px;
     min-height: 0;
   }
 
@@ -3789,7 +3789,7 @@
   }
 
   .dk-rotating-title {
-    font-size: 24px;
+    font-size: 28px;
     min-height: auto;
   }
 
@@ -3799,14 +3799,14 @@
 
   .dk-tagline-main {
     max-width: 310px;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.4;
   }
 
   .dk-tagline-detail {
     max-width: 320px;
     margin-bottom: 0;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.45;
   }
 

@@ -36,13 +36,13 @@ en:
         subtitle: "Compare all AIVIA plans side by side"
       inside_aivia:
         title: "How it works"
-        subtitle: "See how the AIVIA evaluation engine works"
+        subtitle: "See how AIVIA evaluations and workspaces work"
       context_pack:
         title: "Custom prescreen"
         subtitle: "Customize how the AI probes and scores candidates"
       scenarios:
         title: "Scenario library"
-        subtitle: "Explore the engineering scenarios behind the interviews"
+        subtitle: "Explore the AIVIA catalog of engineering components and failure modes"
       report_breakdown:
         title: "Interview alignment"
         subtitle: "See exactly how candidates reason, score, and rank"

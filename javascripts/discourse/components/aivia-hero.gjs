@@ -220,7 +220,7 @@ export default <template>
               </div>
             </div>
             {{!--
-            <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/aivia/mapping">Explore
+            <div class="vw-cta"><a class="ct ct-p" href="https://stemaway.com/aivia/scenarios">Explore
                 mapping</a><a class="ct ct-s" href="https://stemaway.com/aivia/inside-aivia">Learn more</a></div>
             --}}
           </div>
@@ -651,9 +651,118 @@ export default <template>
 
         </div>
       </div>
+
+      <section class="dk-component-showcase" aria-label="Example AIVIA components">
+        <p class="dk-component-showcase__intro">Components and failure modes power resume mapping, search,
+          evaluation questions, follow-ups, and scoring.</p>
+        <div class="dk-component-showcase__track">
+          <button class="dk-component-tile dk-component-tile--agentic" type="button" aria-expanded="false"
+            data-component="KV cache manager">
+            <span class="dk-component-tile__inner">
+              <span class="dk-component-tile__front">
+                <span class="dk-component-tile__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8">
+                    <path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z" />
+                  </svg>
+                </span>
+                <span class="dk-component-tile__name">KV cache manager</span>
+                <span class="dk-component-tile__domain">LLM &amp; Agentic Systems</span>
+                <span class="dk-component-tile__cue">↗ See failure modes</span>
+              </span>
+              <span class="dk-component-tile__back">
+                <span class="dk-component-tile__back-label">Failure modes</span>
+                <span class="dk-component-tile__back-name">KV cache manager</span>
+                <span class="dk-component-tile__failure">Cross-request cache contamination from missing session
+                  isolation</span>
+                <span class="dk-component-tile__failure">LRU eviction drops system-prompt entries in long
+                  conversations</span>
+                <span class="dk-component-tile__back-cue">↗ Flip back</span>
+              </span>
+            </span>
+          </button>
+          <button class="dk-component-tile dk-component-tile--retrieval" type="button" aria-expanded="false"
+            data-component="RAG pipeline">
+            <span class="dk-component-tile__inner">
+              <span class="dk-component-tile__front">
+                <span class="dk-component-tile__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8">
+                    <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8z" />
+                  </svg>
+                </span>
+                <span class="dk-component-tile__name">RAG pipeline</span>
+                <span class="dk-component-tile__domain">LLM &amp; Agentic Systems</span>
+                <span class="dk-component-tile__cue">↗ See failure modes</span>
+              </span>
+              <span class="dk-component-tile__back">
+                <span class="dk-component-tile__back-label">Failure modes</span>
+                <span class="dk-component-tile__back-name">RAG pipeline</span>
+                <span class="dk-component-tile__failure">Stale document retrieval produces confident, well-cited
+                  wrong answers</span>
+                <span class="dk-component-tile__failure">Context overflow truncates the most relevant document at
+                  token boundary</span>
+                <span class="dk-component-tile__back-cue">↗ Flip back</span>
+              </span>
+            </span>
+          </button>
+          <button class="dk-component-tile dk-component-tile--mlops" type="button" aria-expanded="false"
+            data-component="Feature store">
+            <span class="dk-component-tile__inner">
+              <span class="dk-component-tile__front">
+                <span class="dk-component-tile__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8">
+                    <path d="M12 2L3 7l9 5 9-5-9-5z" />
+                    <path d="M3 12l9 5 9-5M3 17l9 5 9-5" />
+                  </svg>
+                </span>
+                <span class="dk-component-tile__name">Feature store</span>
+                <span class="dk-component-tile__domain">MLOps &amp; ML Platform</span>
+                <span class="dk-component-tile__cue">↗ See failure modes</span>
+              </span>
+              <span class="dk-component-tile__back">
+                <span class="dk-component-tile__back-label">Failure modes</span>
+                <span class="dk-component-tile__back-name">Feature store</span>
+                <span class="dk-component-tile__failure">Training-serving skew from offline batch vs. online
+                  point-in-time lookups</span>
+                <span class="dk-component-tile__failure">Backfill job overwrites live features with historical
+                  values</span>
+                <span class="dk-component-tile__back-cue">↗ Flip back</span>
+              </span>
+            </span>
+          </button>
+          <button class="dk-component-tile dk-component-tile--effectiveness" type="button" aria-expanded="false"
+            data-component="Incident response">
+            <span class="dk-component-tile__inner">
+              <span class="dk-component-tile__front">
+                <span class="dk-component-tile__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 22v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2" />
+                  </svg>
+                </span>
+                <span class="dk-component-tile__name">Incident response</span>
+                <span class="dk-component-tile__domain">Engineering Effectiveness</span>
+                <span class="dk-component-tile__cue">↗ See failure modes</span>
+              </span>
+              <span class="dk-component-tile__back">
+                <span class="dk-component-tile__back-label">Failure modes</span>
+                <span class="dk-component-tile__back-name">Incident response</span>
+                <span class="dk-component-tile__failure">Premature root cause declaration stops investigation too
+                  early</span>
+                <span class="dk-component-tile__failure">Escalation trigger missed because severity was assessed on
+                  symptoms, not blast radius</span>
+                <span class="dk-component-tile__back-cue">↗ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </div>
+      </section>
       {{!-- Collapsed-state actions are retained here for possible restoration.
       <div class="vw-cta" id="aivia-persist-cta" style="display:none">
-        <a class="ct ct-p" href="https://stemaway.com/aivia/mapping" id="aivia-persist-primary">Explore
+        <a class="ct ct-p" href="https://stemaway.com/aivia/scenarios" id="aivia-persist-primary">Explore
           mapping</a>
         <a class="ct ct-s" href="https://stemaway.com/aivia/inside-aivia" id="aivia-persist-secondary">Learn more</a>
       </div>

@@ -7,7 +7,7 @@ const PRECOLLAPSED_CLASS = "aivia-hero-precollapsed";
 const AIVIA_PLANS_URL = "/aivia/plans";
 const HERO_LINKS = {
   s: {
-    primary: "/aivia/mapping",
+    primary: "/aivia/scenarios",
     secondary: "/aivia/inside-aivia",
   },
   p: {
@@ -295,6 +295,26 @@ function initHero() {
         mobileSel.classList.remove("open");
         mobileDd.classList.remove("open");
       }
+    });
+  });
+
+  hero.querySelectorAll(".dk-component-tile").forEach((card) => {
+    const component = card.dataset.component || "component";
+
+    const updateCardState = (isFlipped) => {
+      card.classList.toggle("is-flipped", isFlipped);
+      card.setAttribute("aria-expanded", isFlipped ? "true" : "false");
+      card.setAttribute(
+        "aria-label",
+        isFlipped
+          ? `Show ${component} summary`
+          : `Show failure modes for ${component}`
+      );
+    };
+
+    updateCardState(false);
+    card.addEventListener("click", () => {
+      updateCardState(!card.classList.contains("is-flipped"));
     });
   });
 

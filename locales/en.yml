@@ -4,6 +4,8 @@ en:
       coming_soon: "Coming Soon"
     my_aivia:
       label: "My AIVIA"
+    primary_menu:
+      label: "AIVIA navigation"
     primary:
       hiring: "Hiring"
       academia: "Academia"

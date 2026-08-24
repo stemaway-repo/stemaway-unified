@@ -116,6 +116,18 @@ function buildBriefcaseIcon() {
   return svg;
 }
 
+function buildNavigationIcon() {
+  const svg = createMenuIcon();
+
+  appendSvgShape(svg, "path", {
+    d: "M12 2 2 7l10 5 10-5-10-5Z",
+  });
+  appendSvgShape(svg, "path", { d: "m2 12 10 5 10-5" });
+  appendSvgShape(svg, "path", { d: "m2 17 10 5 10-5" });
+
+  return svg;
+}
+
 function buildToggleIcon(menuKey) {
   if (menuKey === "my_aivia") {
     return buildBriefcaseIcon();
@@ -358,6 +370,60 @@ function buildMyAiviaDropdown(currentPath, currentUser) {
   return dropdown;
 }
 
+function buildPrimaryMobileLink(item, currentPath) {
+  const link = document.createElement("a");
+  const activePaths = item.activePaths || [item.href];
+  const isActive = activePaths.some(
+    (path) => normalizeAiviaHeaderThemePath(path) === currentPath
+  );
+
+  link.className = "aivia-header-nav__mobile-menu-item";
+  link.href = item.href;
+  link.textContent = t(item.labelKey);
+
+  if (isActive) {
+    link.classList.add("is-active");
+    link.setAttribute("aria-current", "page");
+  }
+
+  return link;
+}
+
+function buildPrimaryMobileDropdown(currentPath) {
+  const dropdown = document.createElement("div");
+  dropdown.className =
+    "aivia-header-nav__dropdown aivia-header-nav__dropdown--primary-mobile";
+
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "aivia-header-nav__toggle";
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-haspopup", "true");
+  toggle.setAttribute("aria-label", t("aivia_header_nav.primary_menu.label"));
+  toggle.setAttribute("aria-controls", "aivia-primary-mobile-menu");
+  toggle.dataset.aiviaHeaderDropdown = "primary_menu";
+
+  const iconWrapper = document.createElement("span");
+  iconWrapper.className = "aivia-header-nav__toggle-icon";
+  iconWrapper.append(buildNavigationIcon());
+  toggle.append(iconWrapper);
+
+  const panel = document.createElement("nav");
+  panel.id = "aivia-primary-mobile-menu";
+  panel.className = "aivia-header-nav__menu";
+  panel.setAttribute(
+    "aria-label",
+    t("aivia_header_nav.primary_menu.label")
+  );
+
+  PRIMARY_LINKS.forEach((item) => {
+    panel.append(buildPrimaryMobileLink(item, currentPath));
+  });
+
+  dropdown.append(toggle, panel);
+  return dropdown;
+}
+
 function buildNav(currentPath, currentUser, includePrimaryLinks, showMyAivia) {
   const nav = document.createElement("div");
   nav.className = "aivia-header-nav";
@@ -366,6 +432,7 @@ function buildNav(currentPath, currentUser, includePrimaryLinks, showMyAivia) {
     PRIMARY_LINKS.forEach((item) => {
       nav.append(buildPrimaryLink(item, currentPath));
     });
+    nav.append(buildPrimaryMobileDropdown(currentPath));
   }
 
   if (showMyAivia) {

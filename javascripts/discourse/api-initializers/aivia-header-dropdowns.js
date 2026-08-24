@@ -7,97 +7,27 @@ import {
   shouldUseAiviaHeaderTheme,
 } from "../lib/aivia-header-theme";
 
-const MENU_CONFIG = [
+const PRIMARY_LINKS = [
   {
-    key: "use_cases",
-    sections: [
-      {
-        key: "employers",
-        items: [
-          "hiring",
-          "freelance",
-          "internships",
-          "project_mentorship",
-          "plans",
-        ],
-      },
-      {
-        key: "candidates",
-        items: ["verified"],
-      },
-      // {
-      //   key: "labs",
-      //   items: ["project_mentorship"],
-      // },
-    ],
+    href: "/hiring",
+    labelKey: "aivia_header_nav.primary.hiring",
+    activePaths: ["/hiring", "/full-time", "/aivia/hiring", "/aivia/full-time"],
   },
   {
-    key: "the_tech",
-    sections: [
-      {
-        key: "core",
-        items: [
-          "inside_aivia",
-          "context_pack",
-          "scenarios",
-          "report_breakdown",
-        ],
-      },
-    ],
+    href: "/aivia/academia",
+    labelKey: "aivia_header_nav.primary.academia",
+  },
+  {
+    href: "/aivia/career",
+    labelKey: "aivia_header_nav.primary.career",
+  },
+  {
+    href: "/aivia/inside-aivia",
+    labelKey: "aivia_header_nav.primary.the_tech",
   },
 ];
 
 const MENU_ITEMS = {
-  hiring: {
-    href: "/hiring",
-    titleKey: "aivia_header_nav.items.hiring.title",
-    subtitleKey: "aivia_header_nav.items.hiring.subtitle",
-  },
-  freelance: {
-    href: "/aivia/freelance",
-    titleKey: "aivia_header_nav.items.freelance.title",
-    subtitleKey: "aivia_header_nav.items.freelance.subtitle",
-  },
-  internships: {
-    href: "/aivia/internships",
-    titleKey: "aivia_header_nav.items.internships.title",
-    subtitleKey: "aivia_header_nav.items.internships.subtitle",
-  },
-  verified: {
-    href: "/aivia/verified",
-    titleKey: "aivia_header_nav.items.verified.title",
-    subtitleKey: "aivia_header_nav.items.verified.subtitle",
-  },
-  project_mentorship: {
-    href: "/aivia/mentorship",
-    titleKey: "aivia_header_nav.items.project_mentorship.title",
-    subtitleKey: "aivia_header_nav.items.project_mentorship.subtitle",
-  },
-  plans: {
-    href: "/aivia/plans",
-    titleKey: "aivia_header_nav.items.plans.title",
-    subtitleKey: "aivia_header_nav.items.plans.subtitle",
-  },
-  inside_aivia: {
-    href: "/aivia/inside-aivia",
-    titleKey: "aivia_header_nav.items.inside_aivia.title",
-    subtitleKey: "aivia_header_nav.items.inside_aivia.subtitle",
-  },
-  context_pack: {
-    href: "/aivia/context-pack",
-    titleKey: "aivia_header_nav.items.context_pack.title",
-    subtitleKey: "aivia_header_nav.items.context_pack.subtitle",
-  },
-  scenarios: {
-    href: "/aivia/mapping",
-    titleKey: "aivia_header_nav.items.scenarios.title",
-    subtitleKey: "aivia_header_nav.items.scenarios.subtitle",
-  },
-  report_breakdown: {
-    href: "/aivia/report-breakdown",
-    titleKey: "aivia_header_nav.items.report_breakdown.title",
-    subtitleKey: "aivia_header_nav.items.report_breakdown.subtitle",
-  },
   my_aivia_evaluations: {
     href: "/my/aivia-dashboard",
     titleKey: "aivia_header_nav.items.my_aivia_evaluations.title",
@@ -169,22 +99,6 @@ function appendSvgShape(svg, tagName, attributes) {
   svg.append(node);
 }
 
-function buildCompassIcon() {
-  const svg = createMenuIcon();
-  appendSvgShape(svg, "circle", { cx: "12", cy: "12", r: "8.5" });
-  appendSvgShape(svg, "path", { d: "M12 6.8l2.5 5.2L12 17.2 9.5 12 12 6.8Z" });
-  appendSvgShape(svg, "path", { d: "M12 6.8V17.2" });
-  return svg;
-}
-
-function buildLayersIcon() {
-  const svg = createMenuIcon();
-  appendSvgShape(svg, "path", { d: "M12 4 3.5 8.5 12 13 20.5 8.5 12 4Z" });
-  appendSvgShape(svg, "path", { d: "M5.3 13 12 16.5 18.7 13" });
-  appendSvgShape(svg, "path", { d: "M5.3 17 12 20.5 18.7 17" });
-  return svg;
-}
-
 function buildBriefcaseIcon() {
   const svg = createMenuIcon();
   appendSvgShape(svg, "rect", {
@@ -203,13 +117,8 @@ function buildBriefcaseIcon() {
 }
 
 function buildToggleIcon(menuKey) {
-  switch (menuKey) {
-    case "use_cases":
-      return buildCompassIcon();
-    case "the_tech":
-      return buildLayersIcon();
-    case "my_aivia":
-      return buildBriefcaseIcon();
+  if (menuKey === "my_aivia") {
+    return buildBriefcaseIcon();
   }
 }
 
@@ -243,6 +152,25 @@ function closeAllDropdowns(root) {
   root
     .querySelectorAll(".aivia-header-nav__dropdown.is-open")
     .forEach((dropdown) => setDropdownState(dropdown, false));
+}
+
+function buildPrimaryLink(item, currentPath) {
+  const link = document.createElement("a");
+  const activePaths = item.activePaths || [item.href];
+  const isActive = activePaths.some(
+    (path) => normalizeAiviaHeaderThemePath(path) === currentPath
+  );
+
+  link.className = "aivia-header-nav__link";
+  link.href = item.href;
+  link.textContent = t(item.labelKey);
+
+  if (isActive) {
+    link.classList.add("is-active");
+    link.setAttribute("aria-current", "page");
+  }
+
+  return link;
 }
 
 function buildMenuItem(itemKey, currentPath) {
@@ -430,17 +358,17 @@ function buildMyAiviaDropdown(currentPath, currentUser) {
   return dropdown;
 }
 
-function buildNav(currentPath, currentUser, includeMarketingMenus) {
+function buildNav(currentPath, currentUser, includePrimaryLinks, showMyAivia) {
   const nav = document.createElement("div");
   nav.className = "aivia-header-nav";
 
-  if (includeMarketingMenus) {
-    MENU_CONFIG.forEach((menu) => {
-      nav.append(buildDropdown(menu, currentPath));
+  if (includePrimaryLinks) {
+    PRIMARY_LINKS.forEach((item) => {
+      nav.append(buildPrimaryLink(item, currentPath));
     });
   }
 
-  if (currentUser) {
+  if (showMyAivia) {
     nav.append(buildMyAiviaDropdown(currentPath, currentUser));
   }
 
@@ -477,9 +405,10 @@ function syncHeaderNav(api) {
   const isAdminPage =
     currentPath === "/admin" || currentPath.startsWith("/admin/");
   const currentUser = api.getCurrentUser();
-  const showMarketingMenus = shouldUseAiviaHeaderTheme(router);
+  const showPrimaryLinks = shouldUseAiviaHeaderTheme(router);
+  const showMyAivia = Boolean(currentUser && !showPrimaryLinks);
 
-  if (isAdminPage || (!showMarketingMenus && !currentUser)) {
+  if (isAdminPage || (!showPrimaryLinks && !currentUser)) {
     return;
   }
 
@@ -493,7 +422,7 @@ function syncHeaderNav(api) {
     return;
   }
 
-  const nav = buildNav(currentPath, currentUser, showMarketingMenus);
+  const nav = buildNav(currentPath, currentUser, showPrimaryLinks, showMyAivia);
 
   headerIcons.insertBefore(nav, hamburger);
 }

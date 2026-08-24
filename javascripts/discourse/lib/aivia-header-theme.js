@@ -11,6 +11,8 @@ const AIVIA_MARKETING_PATHS = new Set([
   "/hiring",
   "/aivia/full-time",
   "/aivia/hiring",
+  "/aivia/academia",
+  "/aivia/career",
   "/aivia/plans",
   "/aivia/freelance",
   "/aivia/internships",

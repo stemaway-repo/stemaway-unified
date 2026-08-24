@@ -21,4 +21,15 @@ export default class LoginPreferencesBanner extends Component {
   get body() {
     return i18n(themePrefix("login_preferences_banner.body"));
   }
+
+  <template>
+{{#if this.canDisplay}}
+  <section class="login-preferences-promo">
+    <div class="login-preferences-promo__content">
+      <h1 class="login-preferences-promo__title">{{this.title}}</h1>
+      <p class="login-preferences-promo__body">{{this.body}}</p>
+    </div>
+  </section>
+{{/if}}
+  </template>
 }

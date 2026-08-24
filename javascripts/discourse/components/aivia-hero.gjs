@@ -1,3 +1,4 @@
+export default <template>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet"
@@ -76,7 +77,7 @@
       <div class="dk-demo-wrap" id="aivia-demo-wrap">
         <div class="dk-glass">
 
-          <!-- ==================== MAPPING: CATALOG + ASK AIVIA ==================== -->
+          {{! ==================== MAPPING: CATALOG + ASK AIVIA ==================== }}
           <div id="aivia-s" class="vw on">
             <div class="dk-panel dk-panel--mapping">
               <div class="dk-panel-body">
@@ -95,9 +96,9 @@
                   </div>
                 </div>
 
-                <!-- Catalog map + Ask AIVIA -->
+                {{! Catalog map + Ask AIVIA }}
                 <div class="dk-cohort-layout">
-                  <!-- Left: bright domain map repurposed from Cohorts -->
+                  {{! Left: bright domain map repurposed from Cohorts }}
                   <div class="dk-radar-card">
                     <div class="dk-radar-bg"></div>
                     <div class="dk-radar-layout">
@@ -160,7 +161,7 @@
                     </div>
                   </div>
 
-                  <!-- Right: Ask AIVIA -->
+                  {{! Right: Ask AIVIA }}
                   <div class="dk-chat">
                     <div class="dk-chat-shimmer"></div>
                     <div class="dk-activity-header">
@@ -224,7 +225,7 @@
             --}}
           </div>
 
-          <!-- ==================== EVALUATIONS (CURRENT PRESCREEN DEMO) ==================== -->
+          {{! ==================== EVALUATIONS (CURRENT PRESCREEN DEMO) ==================== }}
           <div id="aivia-p" class="vw">
             <div class="dk-panel dk-panel--evaluations">
               <div class="dk-panel-body">
@@ -243,7 +244,7 @@
                   </div>
                 </div>
                 <div class="dk-prescreen-split">
-                  <!-- Left: Rubric card (customizable) + Link block -->
+                  {{! Left: Rubric card (customizable) + Link block }}
                   <div class="dk-prescreen-left">
                     <div class="dk-rubric-card">
                       <div class="dk-rubric-header">
@@ -288,7 +289,7 @@
                       </div>
                     </div>
 
-                    <!-- Link block (unchanged) -->
+                    {{! Link block (unchanged) }}
                     <div class="dk-link-block">
                       <div class="dk-link-label">Evaluation link ready</div>
                       <div class="dk-link-url-wrap">
@@ -305,7 +306,7 @@
                     </div>
                   </div>
 
-                  <!-- Right: focused live eval -->
+                  {{! Right: focused live eval }}
                   <div class="dk-eval-panel">
                     <div class="dk-eval-topbar">
                       <div class="dk-eval-brand"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
@@ -322,7 +323,7 @@
                           <path d="M12 6v6l4 2" />
                         </svg><span>4:42</span></div>
                     </div>
-                    <!-- Progress -->
+                    {{! Progress }}
                     <div class="dk-eval-progress">
                       <div class="dk-eval-step dk-eval-step--active">
                         <div class="dk-eval-circle dk-eval-circle--active">1</div><span>Q1</span>
@@ -344,13 +345,13 @@
                           </svg></div><span>Voice</span>
                       </div>
                     </div>
-                    <!-- Q -->
+                    {{! Q }}
                     <div class="dk-eval-q">Walk me through debugging hot-entry eviction under memory pressure.</div>
-                    <!-- A -->
+                    {{! A }}
                     <div class="dk-eval-a-wrap">
                       <div class="dk-eval-a">I'd check eviction policy metrics against the memory threshold first.</div>
                     </div>
-                    <!-- Rubric scoring (hero) -->
+                    {{! Rubric scoring (hero) }}
                     <div class="dk-eval-rubric-scoring">
                       <div class="dk-eval-scoring-title">
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -393,7 +394,7 @@
             --}}
           </div>
 
-          <!-- ==================== HIRING WORKSPACE (CURRENT INTERVIEW DEMO) ==================== -->
+          {{! ==================== HIRING WORKSPACE (CURRENT INTERVIEW DEMO) ==================== }}
           <div id="aivia-i" class="vw">
             <div class="dk-panel">
               <div class="dk-panel-body">
@@ -490,7 +491,7 @@
             --}}
           </div>
 
-          <!-- ==================== CAREER WORKSPACE (CURRENT CAREER TOOLS DEMO) ==================== -->
+          {{! ==================== CAREER WORKSPACE (CURRENT CAREER TOOLS DEMO) ==================== }}
           <div id="aivia-c" class="vw">
             <div class="dk-panel">
               <div class="dk-panel-body">
@@ -503,15 +504,15 @@
                   <p class="dk-panel-sub">Verified results you own and control</p>
                 </div>
 
-                <!-- Portfolio stack: [main + peek eval] | [AI Career Assistant] -->
+                {{! Portfolio stack: [main + peek eval] | [AI Career Assistant] }}
                 <div class="dk-portfolio-stack">
-                  <!-- Left column: main eval + peek of next -->
+                  {{! Left column: main eval + peek of next }}
                   <div class="dk-portfolio-left">
-                    <!-- Main eval card -->
+                    {{! Main eval card }}
                     <div class="dk-eval-card">
                       <div class="dk-eval-card-accent"></div>
                       <div class="dk-eval-card-inner">
-                        <!-- Header -->
+                        {{! Header }}
                         <div class="dk-eval-card-header">
                           <div>
                             <div class="dk-eval-card-title">KV cache manager: emphasis on debug</div>
@@ -528,7 +529,7 @@
                           </div>
                         </div>
 
-                        <!-- Scores inline -->
+                        {{! Scores inline }}
                         <div class="dk-scores-row">
                           <span class="dk-scores-label">Fixed rubric:</span>
                           <span class="dk-score"><span class="dk-score-dot"></span>Tradeoff Analysis <b>5/5</b></span>
@@ -543,7 +544,7 @@
                           <span class="dk-score-more">...</span>
                         </div>
 
-                        <!-- Resume tags -->
+                        {{! Resume tags }}
                         <div class="dk-resume-section">
                           <div class="dk-resume-label">Resume tags</div>
                           <div class="dk-resume-tags">
@@ -565,7 +566,7 @@
                           </div>
                         </div>
 
-                        <!-- Action bar -->
+                        {{! Action bar }}
                         <div class="dk-action-bar">
                           <div class="dk-actions-left">
                             <div class="dk-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -598,7 +599,7 @@
                       </div>
                     </div>
 
-                    <!-- Peek of next eval card (thin sliver with fade) -->
+                    {{! Peek of next eval card (thin sliver with fade) }}
                     <div class="dk-eval-card dk-eval-card--peek">
                       <div class="dk-eval-card-accent"></div>
                       <div class="dk-eval-card-inner">
@@ -612,7 +613,7 @@
                     </div>
                   </div>
 
-                  <!-- AI Career Assistant entry card -->
+                  {{! AI Career Assistant entry card }}
                   <div class="dk-assistant-card">
                     <div class="dk-assistant-card-accent"></div>
                     <div class="dk-assistant-card-header">
@@ -661,3 +662,4 @@
     </div>
   </div>
 </div>
+</template>

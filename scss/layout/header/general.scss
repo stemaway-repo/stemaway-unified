@@ -185,6 +185,53 @@ body.aivia-homepage-nav .hamburger-dropdown {
   margin-right: 0.35rem;
 }
 
+.aivia-header-nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  color: #626b66;
+  font-size: 0.88rem;
+  font-weight: 550;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.aivia-header-nav__link::after {
+  content: "";
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.27rem;
+  left: 0.7rem;
+  height: 2px;
+  border-radius: 999px;
+  background: #4a8b6e;
+  opacity: 0;
+  transform: scaleX(0.55);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.aivia-header-nav__link:hover,
+.aivia-header-nav__link.is-active,
+.aivia-header-nav__link[aria-current="page"] {
+  background: #f4f6f2;
+  color: #245342;
+}
+
+.aivia-header-nav__link.is-active::after,
+.aivia-header-nav__link[aria-current="page"]::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
 .aivia-header-nav__dropdown {
   position: relative;
 }
@@ -538,6 +585,21 @@ body.aivia-homepage-nav {
     color: rgba(242, 240, 233, 0.78);
   }
 
+  .aivia-header-nav__link {
+    color: rgb(242 240 233 / 78%);
+  }
+
+  .aivia-header-nav__link:hover,
+  .aivia-header-nav__link.is-active,
+  .aivia-header-nav__link[aria-current="page"] {
+    background: rgb(205 162 116 / 10%);
+    color: #f2f0e9;
+  }
+
+  .aivia-header-nav__link::after {
+    background: #63d8bd;
+  }
+
   .aivia-header-nav__action:hover,
   .aivia-header-nav__action.is-active,
   .aivia-header-nav__action[aria-current="page"] {
@@ -641,6 +703,18 @@ body.aivia-homepage-nav .d-header .panel {
       display: flex !important;
       gap: 0.1rem !important;
       margin-right: 0.2rem !important;
+    }
+
+    .aivia-header-nav__link {
+      min-height: 2.2rem;
+      padding: 0.4rem 0.38rem;
+      font-size: 0.74rem;
+    }
+
+    .aivia-header-nav__link::after {
+      right: 0.38rem;
+      bottom: 0.17rem;
+      left: 0.38rem;
     }
 
     .aivia-header-nav__dropdown {

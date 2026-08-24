@@ -4,48 +4,15 @@ en:
       coming_soon: "Coming Soon"
     my_aivia:
       label: "My AIVIA"
-    use_cases:
-      label: "Solutions"
-    the_tech:
-      label: "The tech"
+    primary:
+      hiring: "Hiring"
+      academia: "Academia"
+      career: "Career"
+      the_tech: "The Tech"
     sections:
-      employers: "Solutions"
-      candidates: "For candidates"
-      labs: ""
-      core: "The tech"
       my_aivia_candidates: "Candidate tools"
       my_aivia_hiring: "Hiring tools"
     items:
-      hiring:
-        title: "Hiring"
-        subtitle: "Discover pre-evaluated talent · Create custom evaluations · Walk into interviews knowing exactly what to ask"
-      freelance:
-        title: "Special hiring: Freelance"
-        subtitle: "Hiring, tuned for freelance — with AI-tracked engagements."
-      internships:
-        title: "Special hiring: Interns"
-        subtitle: "Hiring, tuned for interns — with full cohort management."
-      verified:
-        title: "Get discovered"
-        subtitle: "One evaluation, visibility across all roles"
-      project_mentorship:
-        title: "Special hiring: Mentors"
-        subtitle: "Turn research interests into buildable technical projects"
-      plans:
-        title: "Plans & pricing"
-        subtitle: "Compare all AIVIA plans side by side"
-      inside_aivia:
-        title: "How it works"
-        subtitle: "See how AIVIA evaluations and workspaces work"
-      context_pack:
-        title: "Custom prescreen"
-        subtitle: "Customize how the AI probes and scores candidates"
-      scenarios:
-        title: "Scenario library"
-        subtitle: "Explore the AIVIA catalog of engineering components and failure modes"
-      report_breakdown:
-        title: "Interview alignment"
-        subtitle: "See exactly how candidates reason, score, and rank"
       my_aivia_evaluations:
         title: "Evaluations"
         subtitle: "View your dashboard, results, and evaluation history"
@@ -82,4 +49,4 @@ en:
       description: "Use the quick links on the right to explore the site."
   login_preferences_banner:
     title: "You've hit a members-only page"
-    body: "Candidate tools are free — create an AIVIA account to take evaluations, build your portfolio, and own every result. Team features (evaluation builder, search, interview, cohorts) require a plan — see AIVIA Solutions in the main nav for details."
+    body: "Candidate tools are free — create an AIVIA account to take evaluations, build your portfolio, and own every result. Team features (evaluation builder, search, interview, cohorts) require a plan — see Hiring in the main nav for details."

@@ -724,6 +724,21 @@ body.aivia-homepage-nav .d-header .panel {
    MOBILE: SHOW AIVIA NAV + REPOSITION DROPDOWN
    ============================================ */
 @media (max-width: 767px) {
+  html:has(body.aivia-header-nav-scroll-locked) {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+  }
+
+  body.aivia-header-nav-scroll-locked {
+    position: fixed !important;
+    top: var(--aivia-header-scroll-lock-offset, 0) !important;
+    right: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden !important;
+    overscroll-behavior: none;
+  }
+
   body:has(.aivia-header-nav__dropdown.is-open) #main-outlet-wrapper,
   body:has(.aivia-header-nav__dropdown.is-open) .below-site-header-outlet,
   body:has(.aivia-header-nav__dropdown.is-open) #main-outlet {

@@ -158,6 +158,33 @@ function setDropdownState(dropdown, expanded) {
   const toggle = dropdown.querySelector(".aivia-header-nav__toggle");
   dropdown.classList.toggle("is-open", expanded);
   toggle?.setAttribute("aria-expanded", expanded ? "true" : "false");
+  queueMicrotask(syncMobileScrollLock);
+}
+
+let lockedScrollPosition = null;
+
+function syncMobileScrollLock() {
+  const shouldLock =
+    window.matchMedia("(max-width: 767px)").matches &&
+    Boolean(document.querySelector(".aivia-header-nav__dropdown.is-open"));
+
+  if (shouldLock && lockedScrollPosition === null) {
+    lockedScrollPosition = window.scrollY;
+    document.body.style.setProperty(
+      "--aivia-header-scroll-lock-offset",
+      `-${lockedScrollPosition}px`
+    );
+    document.body.classList.add("aivia-header-nav-scroll-locked");
+    return;
+  }
+
+  if (!shouldLock && lockedScrollPosition !== null) {
+    const scrollPosition = lockedScrollPosition;
+    lockedScrollPosition = null;
+    document.body.classList.remove("aivia-header-nav-scroll-locked");
+    document.body.style.removeProperty("--aivia-header-scroll-lock-offset");
+    window.scrollTo(0, scrollPosition);
+  }
 }
 
 function closeAllDropdowns(root) {
@@ -463,7 +490,12 @@ function syncHeaderNav(api) {
     return;
   }
 
-  headerIcons.querySelector(".aivia-header-nav")?.remove();
+  const existingNav = headerIcons.querySelector(".aivia-header-nav");
+
+  if (existingNav) {
+    closeAllDropdowns(existingNav);
+    existingNav.remove();
+  }
 
   const router = api.container.lookup("service:router");
   const currentPath = normalizeAiviaHeaderThemePath(
@@ -526,6 +558,8 @@ function bindGlobalHandlers() {
       .querySelectorAll(".aivia-header-nav")
       .forEach((nav) => closeAllDropdowns(nav));
   });
+
+  window.addEventListener("resize", syncMobileScrollLock);
 
   globalHandlersBound = true;
 }

@@ -1,4 +1,7 @@
 en:
+  aivia_hero:
+    followup: "Ask a follow-up..."
+    followup_preview: "Follow-up message composer preview"
   aivia_header_nav:
     labels:
       coming_soon: "Coming Soon"

@@ -16,6 +16,7 @@ const PRIMARY_LINKS = [
   {
     href: "/aivia/academia",
     labelKey: "aivia_header_nav.primary.academia",
+    activePathPrefixes: ["/aivia/faculty-workspace"],
   },
   {
     href: "/aivia/career",
@@ -193,12 +194,23 @@ function closeAllDropdowns(root) {
     .forEach((dropdown) => setDropdownState(dropdown, false));
 }
 
+function isPrimaryLinkActive(item, currentPath) {
+  const activePaths = item.activePaths || [item.href];
+  const activePathPrefixes = item.activePathPrefixes || [];
+
+  return (
+    activePaths.some(
+      (path) => normalizeAiviaHeaderThemePath(path) === currentPath
+    ) ||
+    activePathPrefixes.some((prefix) =>
+      currentPath.startsWith(normalizeAiviaHeaderThemePath(prefix))
+    )
+  );
+}
+
 function buildPrimaryLink(item, currentPath) {
   const link = document.createElement("a");
-  const activePaths = item.activePaths || [item.href];
-  const isActive = activePaths.some(
-    (path) => normalizeAiviaHeaderThemePath(path) === currentPath
-  );
+  const isActive = isPrimaryLinkActive(item, currentPath);
 
   link.className = "aivia-header-nav__link";
   link.href = item.href;
@@ -399,10 +411,7 @@ function buildMyAiviaDropdown(currentPath, currentUser) {
 
 function buildPrimaryMobileLink(item, currentPath) {
   const link = document.createElement("a");
-  const activePaths = item.activePaths || [item.href];
-  const isActive = activePaths.some(
-    (path) => normalizeAiviaHeaderThemePath(path) === currentPath
-  );
+  const isActive = isPrimaryLinkActive(item, currentPath);
 
   link.className = "aivia-header-nav__mobile-menu-item";
   link.href = item.href;
@@ -499,7 +508,7 @@ function syncHeaderNav(api) {
 
   const router = api.container.lookup("service:router");
   const currentPath = normalizeAiviaHeaderThemePath(
-    router?.currentURL || window.location.pathname
+    window.location.pathname || router?.currentURL
   );
   const isAdminPage =
     currentPath === "/admin" || currentPath.startsWith("/admin/");

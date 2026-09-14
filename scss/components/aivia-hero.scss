@@ -4601,3 +4601,448 @@
   pointer-events: none;
   will-change: height, opacity;
 }
+
+// Keep the light product surfaces scoped independently of the site header.
+#aivia-hero {
+  --hero-ink: #172033;
+  --hero-muted: #647087;
+  --hero-accent: #197c74;
+  --hero-line: #d6e2df;
+  background:
+    radial-gradient(
+      ellipse 58% 52% at 50% 48%,
+      rgb(91, 151, 121, 0.09),
+      transparent 78%
+    ),
+    #f7faf9;
+
+  .dk-stage::after,
+  .dk-radar-bg,
+  .dk-radar-ring,
+  .dk-chat-shimmer {
+    display: none;
+  }
+
+  .dk * {
+    letter-spacing: 0;
+  }
+
+  .dk-tagline-main,
+  .dk-rotating-title {
+    color: var(--hero-ink);
+  }
+
+  .dk-tagline-detail,
+  .dk-panel-sub,
+  .dk-component-showcase__intro {
+    color: var(--hero-muted);
+  }
+
+  .dk-rotating-title {
+    font-family: Georgia, serif;
+  }
+
+  .dk-rotating-title em {
+    background: none;
+    color: var(--hero-accent);
+    -webkit-text-fill-color: currentcolor;
+  }
+
+  .dk-tabs {
+    border: 1px solid var(--hero-line);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .dk-t {
+    color: var(--hero-muted);
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+
+    &.on {
+      background: var(--hero-accent);
+      color: #fff;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &:hover:not(.on) {
+      background: #eaf5f3;
+      color: #12645e;
+    }
+  }
+
+  .dk-mobile-sel {
+    border-color: var(--hero-accent);
+    border-radius: 8px;
+    background: var(--hero-accent);
+    color: #fff;
+  }
+
+  .dk-mobile-dd {
+    border-color: var(--hero-line);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgb(23, 32, 51, 0.08);
+  }
+
+  .dk-mobile-opt.active,
+  .dk-mobile-opt:hover {
+    background: #eaf5f3;
+    color: #12645e;
+  }
+
+  .dk-panel-header,
+  .dk-component-showcase {
+    border-color: var(--hero-line);
+  }
+
+  .dk-mapping-label {
+    border: 0;
+    border-radius: 0;
+    padding-inline: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #12645e;
+
+    svg {
+      color: inherit;
+    }
+  }
+
+  .dk-panel-sub strong {
+    color: var(--hero-ink);
+  }
+
+  .dk-radar-card,
+  .dk-chat,
+  .dk-rubric-card,
+  .dk-link-block,
+  .dk-eval-panel {
+    border: 1px solid var(--hero-line);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: none;
+  }
+
+  .dk-radar-card::before {
+    display: none;
+  }
+
+  .dk-radar-sweep {
+    display: block;
+    width: min(31%, 92px);
+    height: 2px;
+    opacity: 0.82;
+
+    &::after {
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, rgb(25, 136, 127, 0.78), rgb(25, 136, 127, 0.06));
+      box-shadow: 0 0 5px rgb(25, 136, 127, 0.2);
+    }
+  }
+
+  .dk-radar-chart {
+    svg {
+      max-width: 340px;
+    }
+
+    text {
+      fill: #237365;
+    }
+
+    text[fill="#b8860b"] {
+      fill: #966a13;
+    }
+
+    line,
+    polygon:not([filter]) {
+      stroke: #d6e2e7;
+      stroke-width: 0.65;
+    }
+
+    polygon[stroke-dasharray] {
+      stroke-dasharray: none;
+      opacity: 1;
+    }
+
+    polygon[filter] {
+      fill: rgb(100, 215, 185, 0.28);
+      stroke: #19887f;
+      stroke-width: 1.4;
+      stroke-linejoin: round;
+      filter: none;
+    }
+
+    .dk-radar-dot {
+      r: 3.4px;
+      stroke-width: 1;
+      animation: none;
+      filter: none;
+    }
+
+    .dk-radar-dot--g {
+      fill: #82dfc3;
+      stroke: #19887f;
+    }
+
+    .dk-radar-dot--a {
+      fill: #f7d975;
+      stroke: #ac831c;
+    }
+  }
+
+  .dk-chat .dk-activity-header {
+    border-bottom: 0;
+    background: transparent;
+  }
+
+  .dk-chat .dk-activity-title {
+    text-transform: none;
+    font-size: 12px;
+  }
+
+  .dk-chat-divider {
+    display: none;
+  }
+
+  .dk-chat .dk-activity-pulse {
+    display: inline-block;
+    background: #2ac896;
+    box-shadow: 0 0 0 3px rgb(42, 200, 150, 0.12), 0 0 10px rgb(42, 200, 150, 0.35);
+    animation: none;
+  }
+
+  .dk-chat-followup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 42px;
+    margin: 0 20px 18px;
+    padding: 4px 4px 4px 12px;
+    border: 1px solid var(--hero-line);
+    border-radius: 6px;
+    background: #fbfdfc;
+    box-sizing: border-box;
+  }
+
+  .dk-chat-followup__placeholder {
+    flex: 1;
+    min-width: 0;
+    color: var(--hero-muted);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .dk-chat-followup__send {
+    display: grid;
+    place-items: center;
+    flex: 0 0 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: var(--hero-accent);
+    color: #fff;
+
+    .d-icon {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .dk-activity-title {
+    color: var(--hero-ink);
+  }
+
+  .dk-msg-bubble--user {
+    border: 1px solid #e0e6eb;
+    border-radius: 6px;
+    background: #f3f6f8;
+    color: var(--hero-ink);
+    box-shadow: none;
+  }
+
+  .dk-msg-text {
+    color: #526174;
+  }
+
+  .dk-msg-avatar {
+    border-radius: 6px;
+    background: #f0f5f7;
+    box-shadow: none;
+
+    svg {
+      stroke: #31526e;
+    }
+  }
+
+  .dk-msg-content {
+    min-width: 0;
+  }
+
+  .dk-msg-tags {
+    flex-wrap: wrap;
+  }
+
+  .dk-tag--lg {
+    border-radius: 4px;
+    text-transform: none;
+    box-shadow: none;
+  }
+
+  .dk-tag--purple {
+    border-color: transparent;
+    background: #e3efff;
+    color: #365b8a;
+  }
+
+  .dk-tag--green {
+    border-color: transparent;
+    background: #dcf3e7;
+    color: #376453;
+  }
+
+  .dk-rubric-title,
+  .dk-eval-name,
+  .dk-eval-timer span {
+    color: var(--hero-ink);
+  }
+
+  .dk-rubric-section-label,
+  .dk-eval-status {
+    color: var(--hero-muted);
+  }
+
+  .dk-rubric-chip {
+    border-color: #d5e1f1;
+    background: #eef4fc;
+    color: #365b8a;
+  }
+
+  .dk-rubric-chip--wildcard {
+    border-color: #cee1d8;
+    background: #edf6f0;
+    color: #376453;
+  }
+
+  .dk-eval-topbar {
+    border-bottom: 1px solid var(--hero-line);
+    border-radius: 7px 7px 0 0;
+    background: #f7faf9;
+
+    svg {
+      stroke: var(--hero-accent);
+    }
+  }
+
+  .dk-eval-q,
+  .dk-eval-a,
+  .dk-eval-rubric-scoring,
+  .dk-link-url-wrap {
+    border-radius: 6px;
+    box-shadow: none;
+  }
+
+  .dk-eval-q {
+    background: #fbfdfc;
+  }
+
+  .dk-eval-rubric-scoring {
+    border: 0;
+    border-top: 1px solid var(--hero-line);
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .dk-eval-bar-fill {
+    background: #478c76;
+    box-shadow: none;
+  }
+
+  .dk-eval-bar-fill--amber {
+    background: #c49832;
+  }
+
+  .dk-component-tile__front,
+  .dk-component-tile__back {
+    border: 1px solid var(--hero-line);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: none;
+    text-align: left;
+  }
+
+  .dk-component-tile__front {
+    align-items: center;
+    padding-inline: 18px;
+    border-color: color-mix(in srgb, var(--component-accent) 24%, white);
+    background: color-mix(in srgb, var(--component-accent) 7%, white);
+    text-align: center;
+  }
+
+  .dk-component-tile:hover .dk-component-tile__front {
+    border-color: color-mix(in srgb, var(--component-accent) 40%, white);
+    background: color-mix(in srgb, var(--component-accent) 11%, white);
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--component-accent) 10%, transparent);
+    transform: translateY(-3px);
+  }
+
+  .dk-component-tile__icon {
+    border: 1px solid color-mix(in srgb, var(--component-accent) 22%, white);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--component-accent) 12%, white);
+    box-shadow: none;
+    color: var(--component-accent);
+    justify-content: center;
+  }
+
+  .dk-component-tile__name,
+  .dk-component-tile__back-name,
+  .dk-component-tile__failure {
+    color: var(--hero-ink);
+  }
+
+  .dk-component-tile__domain {
+    color: color-mix(in srgb, var(--component-accent) 80%, #172033);
+  }
+
+  .dk-component-tile__cue,
+  .dk-component-tile__back-cue,
+  .dk-component-tile__back-label {
+    color: #12645e;
+  }
+
+  .dk-component-tile__failure {
+    border-color: var(--hero-line);
+  }
+
+  .dk-mobile-sel:focus-visible,
+  .dk-component-tile:focus-visible {
+    outline: 2px solid var(--hero-accent);
+    outline-offset: 3px;
+  }
+
+  .dk-t:focus-visible {
+    outline: 2px solid var(--hero-accent);
+    outline-offset: -4px;
+
+    &.on {
+      outline-color: #fff;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dk-radar-sweep {
+      animation: none;
+    }
+
+    .dk-component-tile:hover .dk-component-tile__front {
+      transform: none;
+    }
+  }
+}

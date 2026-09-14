@@ -52,7 +52,10 @@ export function shouldUseAiviaHeaderTheme(router) {
   }
 
   return Boolean(
-    isHomepageRoute || isHomepagePath || AIVIA_MARKETING_PATHS.has(currentPath)
+    isHomepageRoute ||
+      isHomepagePath ||
+      AIVIA_MARKETING_PATHS.has(currentPath) ||
+      /^\/aivia\/faculty-workspace\/[a-z0-9-]+$/.test(currentPath)
   );
 }
 

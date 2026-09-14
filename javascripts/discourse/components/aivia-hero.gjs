@@ -1,3 +1,12 @@
+/* global themePrefix */
+
+import dIcon from "discourse/ui-kit/helpers/d-icon";
+import { i18n } from "discourse-i18n";
+
+const followupLabel = () => i18n(themePrefix("aivia_hero.followup"));
+const followupPreviewLabel = () =>
+  i18n(themePrefix("aivia_hero.followup_preview"));
+
 export default <template>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -149,9 +158,9 @@ export default <template>
                             fill="#b8860b">AI Hardware</text>
                           <text x="150" y="224" text-anchor="middle" font-size="10" font-weight="600"
                             fill="#2D5A4A">AI Security</text>
-                          <text x="68" y="153" text-anchor="end" font-size="10" font-weight="600" fill="#b8860b">
-                            <tspan x="68" dy="0">Bio &amp; Clinical</tspan>
-                            <tspan x="68" dy="12">AI</tspan>
+                          <text x="42" y="153" text-anchor="middle" font-size="10" font-weight="600" fill="#b8860b">
+                            <tspan x="42" dy="0">Bio &amp;</tspan>
+                            <tspan x="42" dy="12">Clinical AI</tspan>
                           </text>
                           <text x="68" y="73" text-anchor="end" font-size="10" font-weight="600"
                             fill="#2D5A4A">Physical AI</text>
@@ -214,6 +223,10 @@ export default <template>
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <div class="dk-chat-followup" role="img" aria-label={{followupPreviewLabel}}>
+                      <span class="dk-chat-followup__placeholder">{{followupLabel}}</span>
+                      <span class="dk-chat-followup__send" aria-hidden="true">{{dIcon "paper-plane"}}</span>
                     </div>
                   </div>
                 </div>

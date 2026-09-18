@@ -242,21 +242,31 @@ function initHero() {
   function switchTab(dataP, dataH, label) {
     hero
       .querySelectorAll("#aivia-tabs .dk-t")
-      .forEach((button) => button.classList.remove("on"));
+      .forEach((button) => {
+        button.classList.remove("on");
+        button.setAttribute("aria-selected", "false");
+        button.setAttribute("tabindex", "-1");
+      });
     hero
       .querySelectorAll(".vw")
-      .forEach((panel) => panel.classList.remove("on"));
+      .forEach((panel) => {
+        panel.classList.remove("on");
+        panel.setAttribute("aria-hidden", "true");
+      });
 
     const matchingTab = hero.querySelector(
       `#aivia-tabs .dk-t[data-p="${dataP}"]`
     );
     if (matchingTab) {
       matchingTab.classList.add("on");
+      matchingTab.setAttribute("aria-selected", "true");
+      matchingTab.removeAttribute("tabindex");
     }
 
     const panel = hero.querySelector(`#aivia-${dataP}`);
     if (panel) {
       panel.classList.add("on");
+      panel.removeAttribute("aria-hidden");
     }
 
     headline.innerHTML = dataH;
@@ -267,11 +277,25 @@ function initHero() {
 
     hero
       .querySelectorAll(".dk-mobile-opt")
-      .forEach((option) => option.classList.remove("active"));
+      .forEach((option) => {
+        option.classList.remove("active");
+        option.setAttribute("aria-selected", "false");
+      });
     const matchingOpt = hero.querySelector(`.dk-mobile-opt[data-p="${dataP}"]`);
     if (matchingOpt) {
       matchingOpt.classList.add("active");
+      matchingOpt.setAttribute("aria-selected", "true");
     }
+  }
+
+  function setMobileMenuOpen(isOpen) {
+    if (!mobileSel || !mobileDd) {
+      return;
+    }
+
+    mobileSel.classList.toggle("open", isOpen);
+    mobileSel.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    mobileDd.classList.toggle("open", isOpen);
   }
 
   hero.querySelectorAll("#aivia-tabs .dk-t").forEach((tab) => {
@@ -283,18 +307,14 @@ function initHero() {
   if (mobileSel && mobileDd) {
     mobileSel.addEventListener("click", (event) => {
       event.stopPropagation();
-      mobileSel.classList.toggle("open");
-      mobileDd.classList.toggle("open");
+      setMobileMenuOpen(!mobileDd.classList.contains("open"));
     });
   }
 
   hero.querySelectorAll(".dk-mobile-opt").forEach((option) => {
     option.addEventListener("click", () => {
       switchTab(option.dataset.p, option.dataset.h, getDisplayLabel(option));
-      if (mobileSel && mobileDd) {
-        mobileSel.classList.remove("open");
-        mobileDd.classList.remove("open");
-      }
+      setMobileMenuOpen(false);
     });
   });
 
@@ -302,8 +322,13 @@ function initHero() {
     const component = card.dataset.component || "component";
 
     const updateCardState = (isFlipped) => {
+      const front = card.querySelector(".dk-component-tile__front");
+      const back = card.querySelector(".dk-component-tile__back");
+
       card.classList.toggle("is-flipped", isFlipped);
       card.setAttribute("aria-expanded", isFlipped ? "true" : "false");
+      front?.setAttribute("aria-hidden", isFlipped ? "true" : "false");
+      back?.setAttribute("aria-hidden", isFlipped ? "false" : "true");
       card.setAttribute(
         "aria-label",
         isFlipped
@@ -319,10 +344,7 @@ function initHero() {
   });
 
   document.addEventListener("click", () => {
-    if (mobileSel && mobileDd) {
-      mobileSel.classList.remove("open");
-      mobileDd.classList.remove("open");
-    }
+    setMobileMenuOpen(false);
   });
 
   const activeTab = hero.querySelector("#aivia-tabs .dk-t.on");

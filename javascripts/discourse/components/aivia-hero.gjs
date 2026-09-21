@@ -5,14 +5,11 @@
     s → #aivia-s  Mapper            (was "the Mapping"; letter kept so the tab JS is unchanged)
     u → #aivia-u  Universal Search  (NEW panel)
     p → #aivia-p  Evaluator         (was "the Evaluations"; letter kept)
-    i → #aivia-i  Hiring Workspace  (not tabbed; unchanged)
-    c → #aivia-c  Career Workspace  (not tabbed; unchanged)
 
   Default "on" tab is the Mapper. The #aivia-headline text, the .dk-t.on button,
   the .dk-mobile-opt.active option, #aivia-mobile-sel-text and the .vw.on panel
   are all set to it below and must stay in sync if you change the default.
 
-  Requires the SCSS additions in aivia-hero-additions.scss.
 */
 
 export default <template>
@@ -101,10 +98,8 @@ export default <template>
                 <div class="dk-cohort-layout">
                   {{! Left: domain radar }}
                   <div class="dk-radar-card">
-                    <div class="dk-radar-bg"></div>
                     <div class="dk-radar-layout">
                       <div class="dk-radar-chart">
-                        <div class="dk-radar-ring"></div>
                         <div class="dk-radar-sweep"></div>
                         <svg width="300" height="230" viewBox="0 0 300 230">
                           <defs>
@@ -248,19 +243,16 @@ export default <template>
                   </div>
                   <div class="dk-search__meta-row">
                     <span class="dk-search__note">Indexed by AIVIA Components.</span>
-                    <span class="dk-search__count">6 results · people, roles, labs, papers, talks, repos</span>
                   </div>
                   <div class="dk-search__matched">
-                    <span class="dk-search__matched-label">Matched components</span>
-                    <span class="dk-tag dk-tag--purple dk-tag--lg"><i class="dk-hit dk-hit--kv" aria-hidden="true"></i>KV cache manager</span>
-                    <span class="dk-tag dk-tag--purple dk-tag--lg"><i class="dk-hit dk-hit--rt" aria-hidden="true"></i>Transformer serving runtime</span>
+                    <span class="dk-tag dk-tag--purple dk-tag--lg">KV cache manager</span>
+                    <span class="dk-tag dk-tag--purple dk-tag--lg">Transformer serving runtime</span>
                   </div>
 
                   <ul class="dk-search__results" aria-label="Example search results">
                     <li class="dk-search__result dk-search__result--people">
                       <span class="dk-search__head">
                         <span class="dk-search__type">People</span>
-                        <span class="dk-search__hits" role="img" aria-label="Matched on KV cache manager"><i class="dk-hit dk-hit--kv" title="Matched on KV cache manager"></i></span>
                       </span>
                       <span class="dk-search__name">Priya N.</span>
                       <span class="dk-search__meta">Inference systems · 8 yrs</span>
@@ -272,7 +264,6 @@ export default <template>
                     <li class="dk-search__result dk-search__result--role">
                       <span class="dk-search__head">
                         <span class="dk-search__type">Role</span>
-                        <span class="dk-search__hits" role="img" aria-label="Matched on KV cache manager"><i class="dk-hit dk-hit--kv" title="Matched on KV cache manager"></i></span>
                       </span>
                       <span class="dk-search__name">Senior Engineer, LLM Inference</span>
                       <span class="dk-search__meta">Open · Hybrid</span>
@@ -281,7 +272,6 @@ export default <template>
                     <li class="dk-search__result dk-search__result--lab">
                       <span class="dk-search__head">
                         <span class="dk-search__type">Lab</span>
-                        <span class="dk-search__hits" role="img" aria-label="Matched on Transformer serving runtime, KV cache manager"><i class="dk-hit dk-hit--rt" title="Matched on Transformer serving runtime"></i><i class="dk-hit dk-hit--kv" title="Matched on KV cache manager"></i></span>
                       </span>
                       <span class="dk-search__name">Inference Systems Group</span>
                       <span class="dk-search__meta">4 papers on the map</span>
@@ -290,23 +280,13 @@ export default <template>
                     <li class="dk-search__result dk-search__result--paper">
                       <span class="dk-search__head">
                         <span class="dk-search__type">Paper</span>
-                        <span class="dk-search__hits" role="img" aria-label="Matched on KV cache manager"><i class="dk-hit dk-hit--kv" title="Matched on KV cache manager"></i></span>
                       </span>
                       <span class="dk-search__name">Eviction policies for long-context serving</span>
                       <span class="dk-search__meta">2026</span>
                     </li>
-                    <li class="dk-search__result dk-search__result--talk">
-                      <span class="dk-search__head">
-                        <span class="dk-search__type">Talk</span>
-                        <span class="dk-search__hits" role="img" aria-label="Matched on KV cache manager"><i class="dk-hit dk-hit--kv" title="Matched on KV cache manager"></i></span>
-                      </span>
-                      <span class="dk-search__name">Serving 1M-token contexts without eviction storms</span>
-                      <span class="dk-search__meta">MLSys 2026 · workshop</span>
-                    </li>
                     <li class="dk-search__result dk-search__result--repo">
                       <span class="dk-search__head">
                         <span class="dk-search__type">Repo</span>
-                        <span class="dk-search__hits" role="img" aria-label="Matched on KV cache manager"><i class="dk-hit dk-hit--kv" title="Matched on KV cache manager"></i></span>
                       </span>
                       <span class="dk-search__name">paged-kv</span>
                       <span class="dk-search__meta">Open source · 2.1k stars</span>
@@ -337,7 +317,7 @@ export default <template>
                   </div>
                 </div>
                 <div class="dk-prescreen-split">
-                  {{! Left: map breadcrumb + rubric card + link block }}
+                  {{! Left: map breadcrumb + rubric card }}
                   <div class="dk-prescreen-left">
                     <div class="dk-eval-crumb">
                       <span class="dk-eval-crumb__label">Mapped to</span>
@@ -387,21 +367,6 @@ export default <template>
                             <span class="dk-rubric-chip-add">+ Add</span>
                           </div>
                         </div>
-                      </div>
-                    </div>
-
-                    <div class="dk-link-block">
-                      <div class="dk-link-label">Evaluation link ready</div>
-                      <div class="dk-link-url-wrap">
-                        <span class="dk-link-icon">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                          </svg>
-                        </span>
-                        <span class="dk-link-url">aivia.app/e/kv-cache-debug-a7f2</span>
-                        <button class="dk-link-copy-btn">Copy</button>
                       </div>
                     </div>
                   </div>
@@ -479,244 +444,6 @@ export default <template>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {{! ==================== HIRING WORKSPACE (not tabbed; unchanged) ==================== }}
-          <div id="aivia-i" class="vw">
-            <div class="dk-panel">
-              <div class="dk-panel-body">
-                <div class="dk-hiring-workspace">
-                  <div class="dk-hiring-breadcrumb">
-                    <span class="dk-hiring-breadcrumb-path">AIVIA hiring assistant</span>
-                    <span class="dk-hiring-breadcrumb-separator">›</span>
-                    <span class="dk-hiring-breadcrumb-role">Autonomy Safety Engineer</span>
-                    <span class="dk-hiring-status">Mapped</span>
-                  </div>
-
-                  <div class="dk-hiring-mapping">
-                    <div class="dk-hiring-mapping-header">
-                      <span>Evaluation mapping</span>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 20h4l10.5-10.5a1.5 1.5 0 0 0-4-4L4 16v4" />
-                        <path d="m13.5 6.5 4 4" />
-                      </svg>
-                    </div>
-                    <div class="dk-hiring-mapping-body">
-                      <div class="dk-hiring-mapping-label">Engineering components</div>
-                      <div class="dk-hiring-pill-row">
-                        <span class="dk-hiring-pill">perception_eval_framework</span>
-                        <span class="dk-hiring-pill">safety_watchdog</span>
-                        <span class="dk-hiring-pill">safety_case_evidence_system</span>
-                      </div>
-                      <div class="dk-hiring-mapping-label">Failure modes</div>
-                      <div class="dk-hiring-pill-row">
-                        <span class="dk-hiring-pill dk-hiring-pill--failure">perception_eval_slice_blindness</span>
-                        <span class="dk-hiring-pill dk-hiring-pill--failure">release_gate_mismatch</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="dk-hiring-stage-grid">
-                    <div class="dk-hiring-stage">
-                      <div class="dk-hiring-stage-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M7 20h10M6 6l6-1 6 1M12 3v17M9 12 6 6l-3 6a3 3 0 0 0 6 0M21 12l-3-6-3 6a3 3 0 0 0 6 0" />
-                        </svg>
-                      </div>
-                      <span>Talent search &amp; rank</span>
-                    </div>
-                    <div class="dk-hiring-stage">
-                      <div class="dk-hiring-stage-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                          <path d="m9 12 2 2 4-4" />
-                        </svg>
-                      </div>
-                      <span>Adaptive AI prescreening</span>
-                    </div>
-                    <div class="dk-hiring-stage">
-                      <div class="dk-hiring-stage-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round" stroke-linejoin="round">
-                          <circle cx="9" cy="7" r="4" />
-                          <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M16 3.13a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0-3-3.85" />
-                        </svg>
-                      </div>
-                      <span>Proactive talent watch</span>
-                    </div>
-                    <div class="dk-hiring-stage">
-                      <div class="dk-hiring-stage-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
-                          <rect x="9" y="3" width="6" height="4" rx="2" />
-                          <path d="m9 12 2 2 4-4" />
-                        </svg>
-                      </div>
-                      <span>Instant interview kit</span>
-                    </div>
-                  </div>
-
-                  <div class="dk-hiring-chat-input">
-                    <span>Ask me anything about this role…</span>
-                    <div class="dk-hiring-chat-send" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {{! ==================== CAREER WORKSPACE (not tabbed; rubric labels updated to match Evaluator) ==================== }}
-          <div id="aivia-c" class="vw">
-            <div class="dk-panel">
-              <div class="dk-panel-body">
-                <div class="dk-panel-header">
-                  <div class="dk-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2">
-                      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                      <circle cx="12" cy="7" r="4" />
-                    </svg> Your portfolio</div>
-                  <p class="dk-panel-sub">Verified results you own and control</p>
-                </div>
-
-                <div class="dk-portfolio-stack">
-                  <div class="dk-portfolio-left">
-                    <div class="dk-eval-card">
-                      <div class="dk-eval-card-accent"></div>
-                      <div class="dk-eval-card-inner">
-                        <div class="dk-eval-card-header">
-                          <div>
-                            <div class="dk-eval-card-title">KV cache manager: emphasis on debug</div>
-                            <div class="dk-eval-card-date">Completed Apr 2, 2026</div>
-                          </div>
-                          <div class="dk-level-badge">
-                            <div class="dk-level-ring">
-                              <div class="dk-level-inner">
-                                <div class="dk-level-label">Level</div>
-                                <div class="dk-level-num">3</div>
-                              </div>
-                            </div>
-                            <div class="dk-level-text">Proficient</div>
-                          </div>
-                        </div>
-
-                        <div class="dk-scores-row">
-                          <span class="dk-scores-label">Fixed rubric:</span>
-                          <span class="dk-score"><span class="dk-score-dot"></span>Isolation <b>5/5</b></span>
-                          <span class="dk-score-sep">·</span>
-                          <span class="dk-score"><span class="dk-score-dot dk-score-dot--amber"></span>Evidence
-                            <b>3/5</b></span>
-                          <span class="dk-score-more">...</span>
-                        </div>
-                        <div class="dk-scores-row">
-                          <span class="dk-scores-label">From the map:</span>
-                          <span class="dk-score"><span class="dk-score-dot"></span>KV cache eviction failure <b>5/5</b></span>
-                          <span class="dk-score-more">...</span>
-                        </div>
-
-                        <div class="dk-resume-section">
-                          <div class="dk-resume-label">Resume tags</div>
-                          <div class="dk-resume-tags">
-                            <span class="dk-resume-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                                stroke="#5b21b6" stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M12 6v6l4 2" />
-                              </svg> Technical depth</span>
-                            <span class="dk-resume-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                                stroke="#5b21b6" stroke-width="2">
-                                <path
-                                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                              </svg> Systematic reasoning</span>
-                            <span class="dk-resume-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                                stroke="#5b21b6" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <path d="M21 21l-4.35-4.35" />
-                              </svg> Diagnostic instinct</span>
-                          </div>
-                        </div>
-
-                        <div class="dk-action-bar">
-                          <div class="dk-actions-left">
-                            <div class="dk-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                stroke="#2D5A4A" stroke-width="1.5">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                              </svg><span>Detailed report</span></div>
-                            <div class="dk-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                stroke="#2D5A4A" stroke-width="1.5">
-                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
-                                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                              </svg><span>Voice</span><svg width="8" height="8" viewBox="0 0 24 24" fill="none"
-                                stroke="#2D5A4A" stroke-width="2.5">
-                                <polygon points="5 3 19 12 5 21 5 3" />
-                              </svg></div>
-                            <div class="dk-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                stroke="#2D5A4A" stroke-width="1.5">
-                                <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8" />
-                                <polyline points="16 6 12 2 8 6" />
-                                <line x1="12" y1="2" x2="12" y2="15" />
-                              </svg><span>Share</span></div>
-                          </div>
-                          <div class="dk-actions-right">
-                            <span class="dk-toggle-label">On resume</span>
-                            <div class="dk-toggle">
-                              <div class="dk-toggle-knob"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="dk-eval-card dk-eval-card--peek">
-                      <div class="dk-eval-card-accent"></div>
-                      <div class="dk-eval-card-inner">
-                        <div class="dk-eval-card-header">
-                          <div>
-                            <div class="dk-eval-card-title">Vector search optimizer: query rewriter focus</div>
-                            <div class="dk-eval-card-date">Completed Mar 18, 2026</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="dk-assistant-card">
-                    <div class="dk-assistant-card-accent"></div>
-                    <div class="dk-assistant-card-header">
-                      <div class="dk-assistant-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white"
-                          stroke-width="1.8">
-                          <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                          <path d="M2 17l10 5 10-5" />
-                          <path d="M2 12l10 5 10-5" />
-                        </svg>
-                      </div>
-                      <div class="dk-assistant-card-copy">
-                        <div class="dk-assistant-card-name">AI Career Assistant</div>
-                        <div class="dk-assistant-card-desc">Verified career guidance from your AIVIA results</div>
-                      </div>
-                    </div>
-                    <div class="dk-assistant-card-prompts">
-                      <div class="dk-assistant-card-prompt"><span class="dk-assistant-card-arrow">›</span>Match my evals
-                        to a job</div>
-                      <div class="dk-assistant-card-prompt"><span class="dk-assistant-card-arrow">›</span>Prepare me for
-                        an interview</div>
-                      <div class="dk-assistant-card-prompt"><span class="dk-assistant-card-arrow">›</span>How can I
-                        improve?</div>
-                    </div>
-                    <a href="#" class="dk-assistant-card-cta">Start a conversation</a>
                   </div>
                 </div>
               </div>

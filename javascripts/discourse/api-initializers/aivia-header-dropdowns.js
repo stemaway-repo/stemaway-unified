@@ -9,7 +9,7 @@ import {
 
 const PRIMARY_LINKS = [
   {
-    href: "/hiring",
+    href: "/aivia/hiring",
     labelKey: "aivia_header_nav.primary.hiring",
     activePaths: ["/hiring", "/full-time", "/aivia/hiring", "/aivia/full-time"],
   },

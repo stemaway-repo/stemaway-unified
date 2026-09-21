@@ -1969,6 +1969,7 @@
     background: transparent;
     box-shadow: none;
     color: #12645e;
+    font-weight: 800;
 
     svg {
       color: inherit;
@@ -2223,8 +2224,17 @@
   --hero-accent-deep: #146a63;
   font-family: inherit;
   background:
-    radial-gradient(ellipse 58% 52% at 50% 48%, rgb(91, 151, 121, 0.11), transparent 78%),
-    #eaf1ee;
+    radial-gradient(ellipse 48% 42% at 50% 0%, rgb(91, 151, 121, 0.1), transparent 76%),
+    radial-gradient(ellipse 42% 40% at 88% 100%, rgb(190, 160, 111, 0.06), transparent 76%),
+    radial-gradient(ellipse 38% 38% at 10% 100%, rgb(104, 143, 177, 0.07), transparent 78%),
+    linear-gradient(180deg, #eef4f1 0%, #eaf1ee 100%);
+
+  @media (width >= 1280px) {
+    background:
+      radial-gradient(ellipse 560px 380px at 0% 10%, rgb(104, 143, 177, 0.045), transparent 72%),
+      radial-gradient(ellipse 600px 420px at 100% 92%, rgb(190, 160, 111, 0.04), transparent 74%),
+      linear-gradient(180deg, #e3eae7 0%, #dce5e1 100%);
+  }
 
   /* ---------- Contrast lift for all tab contents ---------- */
   .dk-radar-card,
@@ -2977,6 +2987,7 @@
   /* ---------- Component showcase intro: two lines, lead line prominent ---------- */
   .dk-component-showcase {
     margin-top: clamp(28px, 3.4svh, 36px);
+    margin-bottom: clamp(28px, 3.4svh, 40px);
     padding-top: clamp(28px, 3.4svh, 36px);
     border-color: var(--hero-line-strong);
   }
@@ -3204,6 +3215,13 @@
 
     .dk-component-showcase__follow {
       font-size: 19px;
+    }
+
+    .dk-component-tile__name {
+      font-size: 14px;
+      line-height: 1.2;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .dk-component-showcase__intro {

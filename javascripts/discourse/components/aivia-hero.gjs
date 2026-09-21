@@ -16,7 +16,7 @@ export default <template>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;0,700&display=swap">
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@500;0,700&display=swap">
 <div id="aivia-hero">
   <div class="dk">
     <div class="dk-stage">
@@ -90,8 +90,8 @@ export default <template>
                       </svg>
                       AIVIA MAPPER
                     </div>
-                    <p class="dk-panel-sub">“Caching” is a keyword. “KV cache manager” is an AIVIA Component.
-                      Components say what someone built, and how it fails.</p>
+                    <p class="dk-panel-sub">Beyond keywords: AIVIA Components map what teams build, and how systems
+                      fail.</p>
                   </div>
                 </div>
 
@@ -319,8 +319,7 @@ export default <template>
                       </svg>
                       AIVIA EVALUATOR
                     </div>
-                    <p class="dk-panel-sub">Resumes claim. The map knows what to test. The evaluation turns claims
-                      into evidence.</p>
+                    <p class="dk-panel-sub">The map knows what to test. The evaluation turns claims into evidence.</p>
                   </div>
                 </div>
                 <div class="dk-prescreen-split">
@@ -477,8 +476,8 @@ export default <template>
 
       <section class="dk-component-showcase" aria-label="Example AIVIA components">
         <p class="dk-component-showcase__intro">
-          <span class="dk-component-showcase__lead">A peek into AIVIA’s component map: core AI domains and the
-            engineering around them.</span>
+          <span class="dk-component-showcase__lead">A preview of AIVIA’s component map: core AI domains and the
+            engineering behind them.</span>
           <span class="dk-component-showcase__follow">Every component: <em>search by it</em>, <em>grade on it</em>,
             <em>ask about it</em>.</span>
         </p>

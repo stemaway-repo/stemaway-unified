@@ -284,6 +284,13 @@ export default <template>
                       <span class="dk-search__name">Eviction policies for long-context serving</span>
                       <span class="dk-search__meta">2026</span>
                     </li>
+                    <li class="dk-search__result dk-search__result--talk">
+                      <span class="dk-search__head">
+                        <span class="dk-search__type">Talk</span>
+                      </span>
+                      <span class="dk-search__name">Serving 1M-token contexts without eviction storms</span>
+                      <span class="dk-search__meta">MLSys 2026 · workshop</span>
+                    </li>
                     <li class="dk-search__result dk-search__result--repo">
                       <span class="dk-search__head">
                         <span class="dk-search__type">Repo</span>
@@ -367,6 +374,21 @@ export default <template>
                             <span class="dk-rubric-chip-add">+ Add</span>
                           </div>
                         </div>
+                      </div>
+                    </div>
+
+                    <div class="dk-link-block">
+                      <div class="dk-link-label">Evaluation link ready</div>
+                      <div class="dk-link-url-wrap">
+                        <span class="dk-link-icon" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                          </svg>
+                        </span>
+                        <span class="dk-link-url">aivia.app/e/kv-cache-debug-a7f2</span>
+                        <button class="dk-link-copy-btn" type="button">Copy</button>
                       </div>
                     </div>
                   </div>

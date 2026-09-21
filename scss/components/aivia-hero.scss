@@ -2363,6 +2363,70 @@
     background: rgb(45, 90, 74, 0.14);
   }
 
+  .dk-link-block {
+    padding: 15px 16px;
+    overflow: hidden;
+    border: 1px solid var(--hero-line-strong);
+    border-radius: 8px;
+    background: #e6f3ec;
+    box-shadow: 0 1px 2px rgb(23, 32, 51, 0.05), 0 10px 26px rgb(45, 90, 74, 0.09);
+  }
+
+  .dk-link-label {
+    margin-bottom: 9px;
+    color: #245b49;
+    font-size: 9.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .dk-link-url-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    overflow: hidden;
+    border: 1px solid var(--hero-line-strong);
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  .dk-link-icon {
+    display: flex;
+    flex: 0 0 auto;
+    color: #2d5a4a;
+  }
+
+  .dk-link-url {
+    overflow: hidden;
+    flex: 1;
+    color: #1a1d1a;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .dk-link-copy-btn {
+    flex: 0 0 auto;
+    padding: 4px 9px;
+    border: 1px solid #c5e8d7;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #edf8f2, #d4eddf);
+    color: #2d5a4a;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9.5px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+    transition: background-color 0.15s ease;
+  }
+
+  .dk-link-copy-btn:hover {
+    background: #d4eddf;
+  }
+
   /* ---------- Tabs: more contrast against the pale background ---------- */
   .dk-tabs {
     border-color: var(--hero-line-strong);
@@ -2724,6 +2788,11 @@
   }
 
   .dk-search__result--repo {
+    --result-accent: #b07d12;
+    --result-tint: #f6ebcf;
+  }
+
+  .dk-search__result--talk {
     --result-accent: #b07d12;
     --result-tint: #f6ebcf;
   }
@@ -3331,6 +3400,11 @@
     .dk-search__results {
       gap: 0;
       border-top: 1px solid #d6e2df;
+    }
+
+    .dk-search__result--talk,
+    .dk-panel--evaluations .dk-link-block {
+      display: none;
     }
 
     .dk-search__result {

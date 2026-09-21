@@ -2988,7 +2988,7 @@
   .dk-component-showcase {
     margin-top: clamp(28px, 3.4svh, 36px);
     margin-bottom: clamp(28px, 3.4svh, 40px);
-    padding-top: clamp(28px, 3.4svh, 36px);
+    padding-top: clamp(36px, 4.2svh, 46px);
     border-color: var(--hero-line-strong);
   }
 
@@ -3393,7 +3393,7 @@
     /* Showcase — more room above, slightly larger text, centered */
     .dk-component-showcase {
       margin-top: 40px;
-      padding-top: 28px;
+      padding-top: 36px;
       border-top: 0;
     }
 

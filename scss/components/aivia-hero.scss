@@ -95,7 +95,7 @@
   position: absolute;
   z-index: 0;
   inset: 0;
-  background-image: linear-gradient(rgb(45, 90, 74, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgb(45, 90, 74, 0.045) 1px, transparent 1px);
+  background-image: linear-gradient(rgb(var(--primary-rgb), 0.03) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--primary-rgb), 0.03) 1px, transparent 1px);
   background-position: center top;
   background-size: 60px 60px;
   pointer-events: none;
@@ -2222,19 +2222,9 @@
 
   --hero-line-strong: #b9cdc8;
   --hero-accent-deep: #146a63;
+  --hero-background: #fafaf8;
   font-family: inherit;
-  background:
-    radial-gradient(ellipse 48% 42% at 50% 0%, rgb(91, 151, 121, 0.1), transparent 76%),
-    radial-gradient(ellipse 42% 40% at 88% 100%, rgb(190, 160, 111, 0.06), transparent 76%),
-    radial-gradient(ellipse 38% 38% at 10% 100%, rgb(104, 143, 177, 0.07), transparent 78%),
-    linear-gradient(180deg, #eef4f1 0%, #eaf1ee 100%);
-
-  @media (width >= 1280px) {
-    background:
-      radial-gradient(ellipse 560px 380px at 0% 10%, rgb(104, 143, 177, 0.045), transparent 72%),
-      radial-gradient(ellipse 600px 420px at 100% 92%, rgb(190, 160, 111, 0.04), transparent 74%),
-      linear-gradient(180deg, #e3eae7 0%, #dce5e1 100%);
-  }
+  background: var(--hero-background);
 
   /* ---------- Contrast lift for all tab contents ---------- */
   .dk-radar-card,

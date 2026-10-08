@@ -15,6 +15,13 @@ A theme component to have a unified design language/style for the [STEM-Away&reg
 
 **Version**: 2.0
 
+## Homepage hero
+
+The hero uses the hiring page's light cream surface (`#fafaf8`) at every viewport
+width, with a faint neutral grid. Its `--hero-background` token in
+`scss/components/aivia-hero.scss` controls the surface independently of the accent
+colors.
+
 ## Installation
 
 1. On your discourse website, navigate to:

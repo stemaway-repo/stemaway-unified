@@ -1,9 +1,22 @@
 .d-header {
+  --aivia-wordmark-color: #9bc2a1;
+  --aivia-wordmark-dot-color: var(--aivia-wordmark-color);
+
+  body:not(.aivia-homepage-nav) &,
+  body:has(.faculty-workspace) & {
+    --aivia-wordmark-color: color-mix(
+      in srgb,
+      var(--header_primary) 70%,
+      var(--stemaway-primary-500)
+    );
+    --aivia-wordmark-dot-color: var(--stemaway-primary-500);
+  }
+
   .aivia-wordmark {
     display: inline-flex;
     align-items: center;
     padding: 0.5em;
-    color: #9bc2a1;
+    color: var(--aivia-wordmark-color);
     font-family: Inter, -apple-system, system-ui, sans-serif;
     font-size: 26px;
     font-weight: 500;
@@ -15,13 +28,13 @@
   .aivia-wordmark__dot {
     display: inline-block;
     margin: 0 0.04em;
-    color: inherit;
+    color: var(--aivia-wordmark-dot-color);
     transform: translateY(-0.02em);
   }
 
   .title a:hover .aivia-wordmark,
   .title a:focus-visible .aivia-wordmark {
-    color: #9bc2a1;
+    color: var(--aivia-wordmark-color);
   }
 }
 

@@ -1,4 +1,4 @@
-.user-menu {
+.user-menu:not(.aivia-account-menu) {
   .quick-access-panel {
     border-top: none;
 
@@ -19,34 +19,34 @@
 }
 
 /* ---------- CONTAINER ---------- */
-.user-menu.revamped {
-  border: 1px solid rgba(45, 90, 74, 0.08);
+.user-menu.revamped:not(.aivia-account-menu) {
+  border: 1px solid rgb(45, 90, 74, 0.08);
   border-radius: 14px;
-  background: #ffffff;
+  background: #fff;
   box-shadow:
-    0 2px 4px rgba(45, 90, 74, 0.03),
-    0 8px 16px rgba(45, 90, 74, 0.06),
-    0 24px 48px rgba(17, 24, 39, 0.1),
-    0 48px 80px rgba(17, 24, 39, 0.06);
+    0 2px 4px rgb(45, 90, 74, 0.03),
+    0 8px 16px rgb(45, 90, 74, 0.06),
+    0 24px 48px rgb(17, 24, 39, 0.1),
+    0 48px 80px rgb(17, 24, 39, 0.06);
   overflow: hidden;
 }
 
 /* ---------- TAB RAIL ---------- */
-.user-menu.revamped .menu-tabs-container {
+.user-menu.revamped:not(.aivia-account-menu) .menu-tabs-container {
   background: #fafbf9;
-  border-right: 1px solid rgba(45, 90, 74, 0.06);
+  border-right: 1px solid rgb(45, 90, 74, 0.06);
 }
 
-.user-menu.revamped .bottom-tabs {
-  border-top: 1px solid rgba(45, 90, 74, 0.06);
+.user-menu.revamped:not(.aivia-account-menu) .bottom-tabs {
+  border-top: 1px solid rgb(45, 90, 74, 0.06);
 }
 
-.user-menu.revamped .tabs-list .btn {
+.user-menu.revamped:not(.aivia-account-menu) .tabs-list .btn {
   border-radius: 0;
 }
 
 /* ---------- TAB ICONS (NEUMORPHIC) ---------- */
-.user-menu.revamped .tabs-list .btn .d-icon {
+.user-menu.revamped:not(.aivia-account-menu) .tabs-list .btn .d-icon {
   border: none;
   border-radius: 10px;
   color: #5d6c62;
@@ -58,43 +58,49 @@
     box-shadow 0.25s ease;
 }
 
-.user-menu.revamped .tabs-list .btn:not(.active):hover .d-icon,
-.user-menu.revamped .tabs-list .btn:not(.active):focus-visible .d-icon {
+.user-menu.revamped:not(.aivia-account-menu)
+  .tabs-list
+  .btn:not(.active):hover
+  .d-icon,
+.user-menu.revamped:not(.aivia-account-menu)
+  .tabs-list
+  .btn:not(.active):focus-visible
+  .d-icon {
   background: #f4f6f2;
   color: #2d5a4a;
   box-shadow:
-    inset 2px 2px 4px rgba(45, 90, 74, 0.06),
-    inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+    inset 2px 2px 4px rgb(45, 90, 74, 0.06),
+    inset -2px -2px 4px rgb(255, 255, 255, 0.8);
 }
 
-.user-menu.revamped .tabs-list .btn.active .d-icon {
+.user-menu.revamped:not(.aivia-account-menu) .tabs-list .btn.active .d-icon {
   background: linear-gradient(145deg, #eef3ee, #f8faf7);
   color: #2d5a4a;
   box-shadow:
-    inset 3px 3px 6px rgba(45, 90, 74, 0.12),
-    inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+    inset 3px 3px 6px rgb(45, 90, 74, 0.12),
+    inset -3px -3px 6px rgb(255, 255, 255, 0.9);
 }
 
-.user-menu.revamped .tabs-list .badge-notification {
+.user-menu.revamped:not(.aivia-account-menu) .tabs-list .badge-notification {
   background: #c45d35;
   color: #fff;
   box-shadow: 0 0 0 2px #fafbf9;
 }
 
 /* ---------- QUICK ACCESS PANEL ---------- */
-.user-menu.revamped .quick-access-panel {
+.user-menu.revamped:not(.aivia-account-menu) .quick-access-panel {
   background: transparent;
   border-right: none;
   padding: 0.6rem 0.6rem 0 0.6rem;
 }
 
-.user-menu.revamped .quick-access-panel ul {
+.user-menu.revamped:not(.aivia-account-menu) .quick-access-panel ul {
   display: grid;
   gap: 0.2rem;
 }
 
 /* ---------- LIST ITEMS (DEFAULT) ---------- */
-.user-menu.revamped .quick-access-panel li {
+.user-menu.revamped:not(.aivia-account-menu) .quick-access-panel li {
   border: none;
   border-radius: 10px;
   background: transparent;
@@ -104,104 +110,155 @@
     box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.user-menu.revamped .quick-access-panel li.read {
+.user-menu.revamped:not(.aivia-account-menu) .quick-access-panel li.read {
   background: transparent;
   opacity: 0.85;
 }
 
 /* ---------- LIST ITEMS (HOVER — NEUMORPHIC) ---------- */
-.user-menu.revamped .quick-access-panel li:hover {
+.user-menu.revamped:not(.aivia-account-menu) .quick-access-panel li:hover {
   background: #f4f6f2;
   border-color: transparent;
   box-shadow:
-    inset 2px 2px 5px rgba(45, 90, 74, 0.08),
-    inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+    inset 2px 2px 5px rgb(45, 90, 74, 0.08),
+    inset -2px -2px 5px rgb(255, 255, 255, 0.8);
 }
 
 /* ---------- UNREAD / PENDING (INNER GLOW, NO LEFT BAR) ---------- */
-.user-menu.revamped .quick-access-panel li.unread,
-.user-menu.revamped .quick-access-panel li.pending,
-.user-menu.revamped .quick-access-panel li.notification.unread,
-.user-menu.revamped .quick-access-panel li.notification.pending {
-  background: linear-gradient(90deg,
-      rgba(74, 139, 110, 0.1) 0%,
-      rgba(74, 139, 110, 0.04) 60%,
-      rgba(74, 139, 110, 0.02) 100%);
+.user-menu.revamped:not(.aivia-account-menu) .quick-access-panel li.unread,
+.user-menu.revamped:not(.aivia-account-menu) .quick-access-panel li.pending,
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.unread,
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.pending {
+  background: linear-gradient(
+    90deg,
+    rgb(74, 139, 110, 0.1) 0%,
+    rgb(74, 139, 110, 0.04) 60%,
+    rgb(74, 139, 110, 0.02) 100%
+  );
   border-color: transparent;
   box-shadow:
-    inset 6px 0 16px -4px rgba(74, 139, 110, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    inset 6px 0 16px -4px rgb(74, 139, 110, 0.3),
+    inset 0 1px 0 rgb(255, 255, 255, 0.6);
 }
 
-.user-menu.revamped .quick-access-panel li.notification.unread a,
-.user-menu.revamped .quick-access-panel li.notification.pending a {
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.unread
+  a,
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.pending
+  a {
   background: transparent;
   border-radius: 10px;
 }
 
-.user-menu.revamped .quick-access-panel li.unread:hover,
-.user-menu.revamped .quick-access-panel li.pending:hover,
-.user-menu.revamped .quick-access-panel li.notification.unread:hover,
-.user-menu.revamped .quick-access-panel li.notification.pending:hover {
-  background: linear-gradient(90deg,
-      rgba(74, 139, 110, 0.15) 0%,
-      rgba(74, 139, 110, 0.06) 60%,
-      rgba(74, 139, 110, 0.03) 100%);
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.unread:hover,
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.pending:hover,
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.unread:hover,
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.pending:hover {
+  background: linear-gradient(
+    90deg,
+    rgb(74, 139, 110, 0.15) 0%,
+    rgb(74, 139, 110, 0.06) 60%,
+    rgb(74, 139, 110, 0.03) 100%
+  );
   box-shadow:
-    inset 6px 0 20px -4px rgba(74, 139, 110, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7),
-    inset 2px 2px 5px rgba(45, 90, 74, 0.06),
-    inset -2px -2px 5px rgba(255, 255, 255, 0.6);
+    inset 6px 0 20px -4px rgb(74, 139, 110, 0.4),
+    inset 0 1px 0 rgb(255, 255, 255, 0.7),
+    inset 2px 2px 5px rgb(45, 90, 74, 0.06),
+    inset -2px -2px 5px rgb(255, 255, 255, 0.6);
 }
 
-.user-menu.revamped .quick-access-panel li.notification.unread:hover a,
-.user-menu.revamped .quick-access-panel li.notification.pending:hover a {
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.unread:hover
+  a,
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.pending:hover
+  a {
   background: transparent;
 }
 
 /* ---------- UNREAD TEXT & ICONS ---------- */
-.user-menu.revamped .quick-access-panel li.unread .item-label,
-.user-menu.revamped .quick-access-panel li.pending .item-label {
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.unread
+  .item-label,
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.pending
+  .item-label {
   color: #234739;
   font-weight: 650;
 }
 
-.user-menu.revamped .quick-access-panel li.notification.unread .d-icon,
-.user-menu.revamped .quick-access-panel li.notification.pending .d-icon {
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.unread
+  .d-icon,
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.pending
+  .d-icon {
   color: #2d5a4a;
 }
 
-.user-menu.revamped .quick-access-panel li.notification.unread .item-description,
-.user-menu.revamped .quick-access-panel li.notification.pending .item-description {
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.unread
+  .item-description,
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li.notification.pending
+  .item-description {
   color: #456457;
 }
 
 /* ---------- LINK PADDING ---------- */
-.user-menu.revamped .quick-access-panel li a {
+.user-menu.revamped:not(.aivia-account-menu) .quick-access-panel li a {
   padding: 0.7rem 0.85rem;
   gap: 0.75rem;
   border-radius: 10px;
 }
 
-.user-menu.revamped .quick-access-panel li .d-icon {
+.user-menu.revamped:not(.aivia-account-menu) .quick-access-panel li .d-icon {
   color: #5d6c62;
   margin-right: 0;
   transition: color 0.2s ease;
 }
 
-.user-menu.revamped .quick-access-panel li:hover .d-icon {
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  li:hover
+  .d-icon {
   color: #2d5a4a;
 }
 
 /* ---------- TYPOGRAPHY ---------- */
-.user-menu.revamped .quick-access-panel .item-label {
+.user-menu.revamped:not(.aivia-account-menu) .quick-access-panel .item-label {
   color: #1a1d1a;
   font-size: 0.88rem;
   font-weight: 550;
   letter-spacing: -0.005em;
 }
 
-.user-menu.revamped .quick-access-panel .item-description {
+.user-menu.revamped:not(.aivia-account-menu)
+  .quick-access-panel
+  .item-description {
   color: #6b7a70;
   font-size: 0.8rem;
   line-height: 1.4;
@@ -209,13 +266,13 @@
 }
 
 /* ---------- BOTTOM BUTTONS (NEUMORPHIC) ---------- */
-.user-menu.revamped .panel-body-bottom {
+.user-menu.revamped:not(.aivia-account-menu) .panel-body-bottom {
   padding: 0.6rem;
   gap: 0.4rem;
-  border-top: 1px solid rgba(45, 90, 74, 0.06);
+  border-top: 1px solid rgb(45, 90, 74, 0.06);
 }
 
-.user-menu.revamped .panel-body-bottom .btn {
+.user-menu.revamped:not(.aivia-account-menu) .panel-body-bottom .btn {
   border: none;
   border-radius: 10px;
   background: transparent;
@@ -228,29 +285,32 @@
     color 0.2s ease;
 }
 
-.user-menu.revamped .panel-body-bottom .btn .d-icon {
+.user-menu.revamped:not(.aivia-account-menu) .panel-body-bottom .btn .d-icon {
   color: #5d6c62;
   transition: color 0.2s ease;
 }
 
-.user-menu.revamped .panel-body-bottom .btn:hover {
+.user-menu.revamped:not(.aivia-account-menu) .panel-body-bottom .btn:hover {
   background: #f4f6f2;
   color: #0f1a15;
   box-shadow:
-    inset 2px 2px 5px rgba(45, 90, 74, 0.08),
-    inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+    inset 2px 2px 5px rgb(45, 90, 74, 0.08),
+    inset -2px -2px 5px rgb(255, 255, 255, 0.8);
   transform: none;
 }
 
-.user-menu.revamped .panel-body-bottom .btn:hover .d-icon {
+.user-menu.revamped:not(.aivia-account-menu)
+  .panel-body-bottom
+  .btn:hover
+  .d-icon {
   color: #2d5a4a;
 }
 
-.user-menu.revamped .panel-body-bottom .btn:active {
+.user-menu.revamped:not(.aivia-account-menu) .panel-body-bottom .btn:active {
   transform: none;
   box-shadow:
-    inset 3px 3px 6px rgba(45, 90, 74, 0.12),
-    inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+    inset 3px 3px 6px rgb(45, 90, 74, 0.12),
+    inset -3px -3px 6px rgb(255, 255, 255, 0.9);
 }
 
 /* ---------- HIDDEN DISCOURSE DEFAULTS ---------- */
@@ -266,18 +326,18 @@
 }
 
 /* ---------- MOBILE (tablets & phones) ---------- */
-@media (max-width: 767px) {
-  .user-menu.revamped {
+@media (width <= 767px) {
+  .user-menu.revamped:not(.aivia-account-menu) {
     width: min(calc(100vw - 0.75rem), 21.75rem);
     max-width: calc(100vw - 0.75rem);
     border-radius: 16px;
   }
 
-  .user-menu.revamped .panel-body-contents {
+  .user-menu.revamped:not(.aivia-account-menu) .panel-body-contents {
     align-items: stretch;
   }
 
-  .user-menu.revamped .menu-tabs-container {
+  .user-menu.revamped:not(.aivia-account-menu) .menu-tabs-container {
     flex: 0 0 2.85rem;
     width: 2.85rem;
     padding-block: 0.3rem;
@@ -285,12 +345,12 @@
     overflow-x: hidden;
   }
 
-  .user-menu.revamped .top-tabs,
-  .user-menu.revamped .bottom-tabs {
+  .user-menu.revamped:not(.aivia-account-menu) .top-tabs,
+  .user-menu.revamped:not(.aivia-account-menu) .bottom-tabs {
     align-items: center;
   }
 
-  .user-menu.revamped .tabs-list .btn {
+  .user-menu.revamped:not(.aivia-account-menu) .tabs-list .btn {
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -298,7 +358,7 @@
     padding: 0.1rem;
   }
 
-  .user-menu.revamped .tabs-list .btn .d-icon {
+  .user-menu.revamped:not(.aivia-account-menu) .tabs-list .btn .d-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -310,19 +370,19 @@
     line-height: 1;
   }
 
-  .user-menu.revamped .tabs-list .btn svg {
+  .user-menu.revamped:not(.aivia-account-menu) .tabs-list .btn svg {
     width: 0.95rem;
     height: 0.95rem;
   }
 
-  .user-menu.revamped .tabs-list .badge-notification {
+  .user-menu.revamped:not(.aivia-account-menu) .tabs-list .badge-notification {
     right: 0;
     top: 0;
     font-size: 0.62rem;
     box-shadow: 0 0 0 2px #fafbf9;
   }
 
-  .user-menu.revamped .quick-access-panel {
+  .user-menu.revamped:not(.aivia-account-menu) .quick-access-panel {
     width: auto;
     flex: 1 1 auto;
     min-width: 0;
@@ -331,52 +391,54 @@
     max-height: calc(100dvh - 7rem);
   }
 
-  .user-menu.revamped .quick-access-panel li a {
+  .user-menu.revamped:not(.aivia-account-menu) .quick-access-panel li a {
     padding: 0.8rem 0.85rem;
   }
 
-  .user-menu.revamped .quick-access-panel .item-label {
+  .user-menu.revamped:not(.aivia-account-menu) .quick-access-panel .item-label {
     font-size: 0.86rem;
   }
 
-  .user-menu.revamped .quick-access-panel .item-description {
+  .user-menu.revamped:not(.aivia-account-menu)
+    .quick-access-panel
+    .item-description {
     font-size: 0.78rem;
   }
 
-  .user-menu.revamped .panel-body-bottom {
+  .user-menu.revamped:not(.aivia-account-menu) .panel-body-bottom {
     padding: 0.55rem;
   }
 
-  .user-menu.revamped .panel-body-bottom .btn {
+  .user-menu.revamped:not(.aivia-account-menu) .panel-body-bottom .btn {
     min-height: 44px;
   }
 }
 
 /* ---------- SMALL PHONES ---------- */
-@media (max-width: 480px) {
-  .user-menu.revamped {
+@media (width <= 480px) {
+  .user-menu.revamped:not(.aivia-account-menu) {
     max-width: calc(100vw - 0.5rem);
   }
 
-  .user-menu.revamped .menu-tabs-container {
+  .user-menu.revamped:not(.aivia-account-menu) .menu-tabs-container {
     flex-basis: 2.65rem;
     width: 2.65rem;
     padding-inline: 0.12rem;
   }
 
-  .user-menu.revamped .tabs-list .btn .d-icon {
+  .user-menu.revamped:not(.aivia-account-menu) .tabs-list .btn .d-icon {
     width: 1.7rem;
     height: 1.7rem;
     padding: 0.3rem;
     font-size: 0.82rem;
   }
 
-  .user-menu.revamped .tabs-list .btn svg {
+  .user-menu.revamped:not(.aivia-account-menu) .tabs-list .btn svg {
     width: 0.88rem;
     height: 0.88rem;
   }
 
-  .user-menu.revamped .quick-access-panel {
+  .user-menu.revamped:not(.aivia-account-menu) .quick-access-panel {
     max-width: calc(100% - 2.65rem);
     max-height: calc(100dvh - 6.5rem);
   }

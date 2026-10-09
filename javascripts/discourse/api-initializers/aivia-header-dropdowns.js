@@ -29,13 +29,31 @@ const PRIMARY_LINKS = [
 ];
 
 const MENU_ITEMS = {
+  my_aivia_lab_index: {
+    href: "/aivia/faculty-workspace",
+    titleKey: "aivia_header_nav.items.my_aivia_lab_index.title",
+    subtitleKey: "aivia_header_nav.items.my_aivia_lab_index.subtitle",
+  },
+  my_aivia_lab_workspaces: {
+    href: "/aivia/my-lab-workspaces",
+    titleKey: "aivia_header_nav.items.my_aivia_lab_workspaces.title",
+    subtitleKey: "aivia_header_nav.items.my_aivia_lab_workspaces.subtitle",
+  },
+  my_aivia_setup: {
+    href: "/my/aivia-dashboard?tab=setup",
+    tab: "setup",
+    titleKey: "aivia_header_nav.items.my_aivia_setup.title",
+    subtitleKey: "aivia_header_nav.items.my_aivia_setup.subtitle",
+  },
   my_aivia_evaluations: {
-    href: "/my/aivia-dashboard",
+    href: "/my/aivia-dashboard?tab=evaluations",
+    tab: "evaluations",
     titleKey: "aivia_header_nav.items.my_aivia_evaluations.title",
     subtitleKey: "aivia_header_nav.items.my_aivia_evaluations.subtitle",
   },
   my_aivia_mentorship: {
-    href: "/my/aivia-dashboard/mentorship",
+    href: "/my/aivia-dashboard?tab=mentorship",
+    tab: "mentorship",
     titleKey: "aivia_header_nav.items.my_aivia_mentorship.title",
     subtitleKey: "aivia_header_nav.items.my_aivia_mentorship.subtitle",
   },
@@ -45,7 +63,8 @@ const MENU_ITEMS = {
     subtitleKey: "aivia_header_nav.items.my_aivia_resume.subtitle",
   },
   my_aivia_profile: {
-    href: "/my/preferences/profile",
+    href: "/my/aivia-dashboard?tab=profile",
+    tab: "profile",
     titleKey: "aivia_header_nav.items.my_aivia_profile.title",
     subtitleKey: "aivia_header_nav.items.my_aivia_profile.subtitle",
   },
@@ -224,8 +243,12 @@ function buildPrimaryLink(item, currentPath) {
   return link;
 }
 
-function buildMenuItem(itemKey, currentPath) {
+function buildMenuItem(itemKey, currentPath, currentUser) {
   const item = MENU_ITEMS[itemKey];
+  const href =
+    currentUser && item.href.startsWith("/my/")
+      ? `${currentUser.path}${item.href.slice(3)}`
+      : item.href;
   const link = document.createElement(item.disabled ? "div" : "a");
   link.className = "aivia-header-nav__item";
 
@@ -233,12 +256,15 @@ function buildMenuItem(itemKey, currentPath) {
     link.classList.add("is-disabled");
     link.setAttribute("aria-disabled", "true");
   } else {
-    link.href = item.href;
+    link.href = href;
   }
 
   if (
     !item.disabled &&
-    normalizeAiviaHeaderThemePath(item.href) === currentPath
+    normalizeAiviaHeaderThemePath(href) === currentPath &&
+    (!item.tab ||
+      item.tab ===
+        (new URLSearchParams(window.location.search).get("tab") || "setup"))
   ) {
     link.classList.add("is-active");
     link.setAttribute("aria-current", "page");
@@ -272,7 +298,7 @@ function buildMenuItem(itemKey, currentPath) {
   return link;
 }
 
-function buildSection(sectionKey, items, currentPath) {
+function buildSection(sectionKey, items, currentPath, currentUser) {
   const section = document.createElement("div");
   section.className = "aivia-header-nav__section";
 
@@ -284,7 +310,7 @@ function buildSection(sectionKey, items, currentPath) {
   }
 
   items.forEach((itemKey) => {
-    section.append(buildMenuItem(itemKey, currentPath));
+    section.append(buildMenuItem(itemKey, currentPath, currentUser));
   });
 
   return section;
@@ -331,33 +357,31 @@ function buildDropdown(menu, currentPath, options = {}) {
   const sections = options.sections || menu.sections;
 
   sections.forEach((section) => {
-    panel.append(buildSection(section.key, section.items, currentPath));
+    panel.append(
+      buildSection(section.key, section.items, currentPath, options.currentUser)
+    );
   });
 
   dropdown.append(toggle, panel);
   return dropdown;
 }
 
-function isMyAiviaPath(currentPath) {
-  return (
-    currentPath.startsWith("/my/aivia-dashboard") ||
-    currentPath.startsWith("/my/resume") ||
-    currentPath.startsWith("/my/aivia-talent") ||
-    currentPath.startsWith("/my/preferences/profile")
-  );
-}
-
 function getMyAiviaSections(currentUser) {
   const isAdmin = !!currentUser?.admin;
   const featureAccess = getMyAiviaFeatureAccess(currentUser);
+  const labSection = {
+    key: "my_aivia_labs",
+    items: ["my_aivia_lab_index", "my_aivia_lab_workspaces"],
+  };
 
   const candidateSection = {
     key: "my_aivia_candidates",
     items: [
+      "my_aivia_setup",
+      "my_aivia_profile",
+      "my_aivia_resume",
       "my_aivia_evaluations",
       "my_aivia_mentorship",
-      "my_aivia_resume",
-      "my_aivia_profile",
     ],
   };
 
@@ -384,29 +408,20 @@ function getMyAiviaSections(currentUser) {
     items: hiringItems,
   };
 
-  if (isAdmin) {
-    return [candidateSection, hiringSection];
-  }
-
-  if (hiringItems.length) {
-    return [hiringSection];
-  }
-
-  return [candidateSection];
+  return [
+    labSection,
+    candidateSection,
+    ...(hiringItems.length ? [hiringSection] : []),
+  ];
 }
 
 function buildMyAiviaDropdown(currentPath, currentUser) {
   const sections = getMyAiviaSections(currentUser);
-  const dropdown = buildDropdown({ key: "my_aivia", sections }, currentPath, {
+  return buildDropdown({ key: "my_aivia", sections }, currentPath, {
     sections,
+    currentUser,
     className: "aivia-header-nav__dropdown--my-aivia",
   });
-
-  if (isMyAiviaPath(currentPath)) {
-    dropdown.classList.add("has-active-item");
-  }
-
-  return dropdown;
 }
 
 function buildPrimaryMobileLink(item, currentPath) {
@@ -447,10 +462,7 @@ function buildPrimaryMobileDropdown(currentPath) {
   const panel = document.createElement("nav");
   panel.id = "aivia-primary-mobile-menu";
   panel.className = "aivia-header-nav__menu";
-  panel.setAttribute(
-    "aria-label",
-    t("aivia_header_nav.primary_menu.label")
-  );
+  panel.setAttribute("aria-label", t("aivia_header_nav.primary_menu.label"));
 
   PRIMARY_LINKS.forEach((item) => {
     panel.append(buildPrimaryMobileLink(item, currentPath));
@@ -460,7 +472,7 @@ function buildPrimaryMobileDropdown(currentPath) {
   return dropdown;
 }
 
-function buildNav(currentPath, currentUser, includePrimaryLinks, showMyAivia) {
+function buildNav(currentPath, currentUser, includePrimaryLinks) {
   const nav = document.createElement("div");
   nav.className = "aivia-header-nav";
 
@@ -471,9 +483,7 @@ function buildNav(currentPath, currentUser, includePrimaryLinks, showMyAivia) {
     nav.append(buildPrimaryMobileDropdown(currentPath));
   }
 
-  if (showMyAivia) {
-    nav.append(buildMyAiviaDropdown(currentPath, currentUser));
-  }
+  nav.append(buildMyAiviaDropdown(currentPath, currentUser));
 
   nav.addEventListener("click", (event) => {
     const toggle = event.target.closest(".aivia-header-nav__toggle");
@@ -510,15 +520,8 @@ function syncHeaderNav(api) {
   const currentPath = normalizeAiviaHeaderThemePath(
     window.location.pathname || router?.currentURL
   );
-  const isAdminPage =
-    currentPath === "/admin" || currentPath.startsWith("/admin/");
   const currentUser = api.getCurrentUser();
   const showPrimaryLinks = shouldUseAiviaHeaderTheme(router);
-  const showMyAivia = Boolean(currentUser && !showPrimaryLinks);
-
-  if (isAdminPage || (!showPrimaryLinks && !currentUser)) {
-    return;
-  }
 
   const hamburger = Array.from(headerIcons.children).find(
     (child) =>
@@ -526,13 +529,9 @@ function syncHeaderNav(api) {
       child.querySelector(".hamburger-dropdown")
   );
 
-  if (!hamburger) {
-    return;
-  }
+  const nav = buildNav(currentPath, currentUser, showPrimaryLinks);
 
-  const nav = buildNav(currentPath, currentUser, showPrimaryLinks, showMyAivia);
-
-  headerIcons.insertBefore(nav, hamburger);
+  headerIcons.insertBefore(nav, hamburger || headerIcons.firstElementChild);
 }
 
 let globalHandlersBound = false;

@@ -1,5 +1,5 @@
 .d-header {
-  box-shadow: 0px 1px 9px -3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 9px -3px rgb(0, 0, 0, 0.25);
 
   #site-logo {
     height: 2.5em;
@@ -57,12 +57,8 @@
 }
 
 .d-header-icons .current-user .badge-notification {
-  top: 2px;
-  border: 2.5px solid white;
-}
-
-a.unread-high-priority-notifications {
-  background-color: #e62626;
+  // The account menu renders one combined unread badge instead of core's icon badges.
+  display: none;
 }
 
 .drop-down-mode .d-header-icons .active .icon {
@@ -80,7 +76,7 @@ a.unread-high-priority-notifications {
 
 /* Migrated from stemaway-ui-addons/main-test.scss */
 .d-header {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgb(0, 0, 0, 0.05);
   border-bottom: none;
   position: relative;
   transition: all 0.3s ease;
@@ -95,9 +91,9 @@ a.unread-high-priority-notifications {
   height: 2px;
   background: linear-gradient(
     90deg,
-    rgba(76, 175, 80, 0.2) 0%,
-    rgba(76, 175, 80, 0.8) 50%,
-    rgba(76, 175, 80, 0.2) 100%
+    rgb(76, 175, 80, 0.2) 0%,
+    rgb(76, 175, 80, 0.8) 50%,
+    rgb(76, 175, 80, 0.2) 100%
   );
   opacity: 0.8;
   transition: opacity 0.3s ease;
@@ -107,9 +103,9 @@ a.unread-high-priority-notifications {
   opacity: 1;
   background: linear-gradient(
     90deg,
-    rgba(76, 175, 80, 0.3) 0%,
-    rgba(76, 175, 80, 1) 50%,
-    rgba(76, 175, 80, 0.3) 100%
+    rgb(76, 175, 80, 0.3) 0%,
+    rgb(76, 175, 80, 1) 50%,
+    rgb(76, 175, 80, 0.3) 100%
   );
 }
 
@@ -127,7 +123,7 @@ a.unread-high-priority-notifications {
 }
 
 .d-header .current-user img.avatar:hover {
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  box-shadow: 0 0 5px rgb(76, 175, 80, 0.5);
   transform: scale(1.05);
 }
 
@@ -154,8 +150,8 @@ a.unread-high-priority-notifications {
   display: none;
 }
 
-/* Hide generic Discourse hamburger on aivia homepage */
-body.aivia-homepage-nav .hamburger-dropdown {
+body:not(.aivia-admin-navigation) .d-header .hamburger-dropdown,
+body:not(.aivia-admin-navigation) .d-header .header-sidebar-toggle {
   display: none;
 }
 
@@ -185,51 +181,55 @@ body.aivia-homepage-nav .hamburger-dropdown {
   margin-right: 0.35rem;
 }
 
-.aivia-header-nav__link {
-  position: relative;
+.aivia-header-nav__link,
+.aivia-header-nav__toggle {
   display: inline-flex;
+  box-sizing: border-box;
   align-items: center;
   min-height: 2.5rem;
-  padding: 0.5rem 0.7rem;
-  border-radius: 8px;
-  color: #626b66;
-  font-size: 0.88rem;
-  font-weight: 550;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--aivia-header-control-color, var(--primary-high));
+  font-size: 0.92rem;
+  font-weight: 500;
   line-height: 1;
-  text-decoration: none;
-  white-space: nowrap;
   transition:
-    color 0.18s ease,
-    background-color 0.18s ease;
+    color 0.2s ease,
+    background-color 0.2s ease;
 }
 
-.aivia-header-nav__link::after {
-  content: "";
-  position: absolute;
-  right: 0.7rem;
-  bottom: 0.27rem;
-  left: 0.7rem;
-  height: 2px;
-  border-radius: 999px;
-  background: #4a8b6e;
-  opacity: 0;
-  transform: scaleX(0.55);
-  transition:
-    opacity 0.18s ease,
-    transform 0.18s ease;
+.aivia-header-nav__link {
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &.is-active::after,
+  &[aria-current="page"]::after {
+    position: absolute;
+    inset-inline: 0.8rem;
+    inset-block-end: 0.27rem;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--stemaway-primary-500);
+    content: "";
+  }
 }
 
 .aivia-header-nav__link:hover,
 .aivia-header-nav__link.is-active,
-.aivia-header-nav__link[aria-current="page"] {
-  background: #f4f6f2;
-  color: #245342;
+.aivia-header-nav__link[aria-current="page"],
+.aivia-header-nav__toggle:hover,
+.aivia-header-nav__dropdown.is-open .aivia-header-nav__toggle {
+  background: var(--primary-very-low);
+  color: var(--aivia-header-control-color, var(--primary));
 }
 
-.aivia-header-nav__link.is-active::after,
-.aivia-header-nav__link[aria-current="page"]::after {
-  opacity: 1;
-  transform: scaleX(1);
+.aivia-header-nav__link:focus-visible,
+.aivia-header-nav__toggle:focus-visible {
+  outline: 2px solid var(--tertiary);
+  outline-offset: 2px;
 }
 
 .aivia-header-nav__dropdown {
@@ -299,37 +299,17 @@ body.aivia-homepage-nav .hamburger-dropdown {
   background: #f4f6f2;
   color: #2d5a4a;
   box-shadow:
-    inset 2px 2px 4px rgba(45, 90, 74, 0.06),
-    inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+    inset 2px 2px 4px rgb(45, 90, 74, 0.06),
+    inset -2px -2px 4px rgb(255, 255, 255, 0.8);
 }
 
 /* ---------- TOGGLE BUTTON ---------- */
 .aivia-header-nav__toggle {
-  display: inline-flex;
-  align-items: center;
   gap: 0.4rem;
-  min-height: 2.5rem;
-  padding: 0.5rem 0.8rem;
-  border: none;
-  border-radius: 10px;
-  background: transparent;
-  color: #6f706c;
-  font-size: 0.92rem;
-  font-weight: 500;
-  line-height: 1;
   cursor: pointer;
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease;
 }
 
-.aivia-header-nav__toggle:hover,
-.aivia-header-nav__dropdown.is-open .aivia-header-nav__toggle,
-.aivia-header-nav__dropdown.has-active-item .aivia-header-nav__toggle {
-  background: #f4f6f2;
-  color: #2d5a4a;
-}
-
+body:not(.aivia-homepage-nav) .aivia-header-nav__link,
 body:not(.aivia-homepage-nav)
   .aivia-header-nav__dropdown--my-aivia
   .aivia-header-nav__toggle-label {
@@ -364,8 +344,8 @@ body:not(.aivia-homepage-nav)
   height: 1.15rem;
   margin-left: 0.05rem;
   border-radius: 999px;
-  background: rgba(74, 139, 110, 0.08);
-  box-shadow: inset 0 0 0 1px rgba(74, 139, 110, 0.12);
+  background: rgb(74, 139, 110, 0.08);
+  box-shadow: inset 0 0 0 1px rgb(74, 139, 110, 0.12);
   transition:
     transform 0.18s ease,
     background-color 0.18s ease,
@@ -378,14 +358,14 @@ body:not(.aivia-homepage-nav)
   width: 0.32rem;
   height: 0.32rem;
   margin-top: -0.08rem;
-  border-right: 1.4px solid currentColor;
-  border-bottom: 1.4px solid currentColor;
+  border-right: 1.4px solid currentcolor;
+  border-bottom: 1.4px solid currentcolor;
   transform: rotate(45deg);
 }
 
 body.aivia-homepage-nav .aivia-header-nav__chevron {
-  background: rgba(205, 162, 116, 0.12);
-  box-shadow: inset 0 0 0 1px rgba(205, 162, 116, 0.16);
+  background: rgb(205, 162, 116, 0.12);
+  box-shadow: inset 0 0 0 1px rgb(205, 162, 116, 0.16);
 }
 
 .aivia-header-nav__dropdown.is-open .aivia-header-nav__chevron {
@@ -404,15 +384,25 @@ body.aivia-homepage-nav .aivia-header-nav__chevron {
   z-index: 1001;
   display: none;
   width: min(24rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 6rem);
+  overflow-y: auto;
   padding: 0.6rem;
-  border: 1px solid rgba(45, 90, 74, 0.08);
-  border-radius: 14px;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcfa 100%);
+}
+
+.aivia-header-nav__menu,
+.user-menu.aivia-account-menu {
+  border: 1px solid rgb(var(--primary-rgb), 0.08);
+  border-radius: 0.875rem;
+  background: linear-gradient(
+    180deg,
+    var(--secondary),
+    color-mix(in srgb, var(--secondary) 80%, var(--stemaway-primary-100))
+  );
   box-shadow:
-    0 2px 4px rgba(45, 90, 74, 0.03),
-    0 8px 16px rgba(45, 90, 74, 0.06),
-    0 24px 48px rgba(17, 24, 39, 0.1),
-    0 48px 80px rgba(17, 24, 39, 0.06);
+    0 2px 4px rgb(var(--primary-rgb), 0.03),
+    0 8px 16px rgb(var(--primary-rgb), 0.06),
+    0 24px 48px rgb(var(--primary-rgb), 0.1),
+    0 48px 80px rgb(var(--primary-rgb), 0.06);
 }
 
 .aivia-header-nav__dropdown.is-open .aivia-header-nav__menu {
@@ -423,7 +413,7 @@ body.aivia-homepage-nav .aivia-header-nav__chevron {
 .aivia-header-nav__section + .aivia-header-nav__section {
   margin-top: 0.5rem;
   padding-top: 0.6rem;
-  border-top: 1px solid rgba(45, 90, 74, 0.06);
+  border-top: 1px solid rgb(45, 90, 74, 0.06);
 }
 
 /* ---------- SECTION LABELS ---------- */
@@ -443,11 +433,15 @@ body.aivia-homepage-nav .aivia-header-nav__chevron {
   display: block;
   padding: 0.75rem 0.95rem;
   margin-bottom: 0.15rem;
-  border: none;
-  border-radius: 10px;
-  background: transparent;
   color: #1a1d1a;
   text-decoration: none;
+}
+
+.aivia-header-nav__item,
+.user-menu.aivia-account-menu .aivia-account-menu__link {
+  border: none;
+  border-radius: 0.625rem;
+  background: transparent;
   box-shadow: none;
   transition:
     background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
@@ -456,12 +450,14 @@ body.aivia-homepage-nav .aivia-header-nav__chevron {
 }
 
 /* ---------- NEUMORPHIC HOVER ---------- */
-.aivia-header-nav__item:hover {
-  background: #f4f6f2;
-  color: #0f1a15;
+.aivia-header-nav__item:hover,
+.user-menu.aivia-account-menu .aivia-account-menu__link:hover,
+.user-menu.aivia-account-menu .aivia-account-menu__link:focus-visible {
+  background: var(--stemaway-primary-100);
+  color: var(--primary);
   box-shadow:
-    inset 2px 2px 5px rgba(45, 90, 74, 0.08),
-    inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+    inset 2px 2px 5px rgb(var(--primary-rgb), 0.08),
+    inset -2px -2px 5px rgb(var(--secondary-rgb), 0.8);
 }
 
 /* ---------- NEUMORPHIC ACTIVE ---------- */
@@ -470,8 +466,8 @@ body.aivia-homepage-nav .aivia-header-nav__chevron {
   background: linear-gradient(145deg, #eef3ee, #f8faf7);
   color: #2d5a4a;
   box-shadow:
-    inset 3px 3px 6px rgba(45, 90, 74, 0.12),
-    inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+    inset 3px 3px 6px rgb(45, 90, 74, 0.12),
+    inset -3px -3px 6px rgb(255, 255, 255, 0.9);
 }
 
 /* ---------- DISABLED ITEMS ---------- */
@@ -498,6 +494,11 @@ body.aivia-homepage-nav .aivia-header-nav__chevron {
 .aivia-header-nav__item-title {
   display: block;
   color: #000;
+}
+
+.aivia-header-nav__item-title,
+.aivia-account-menu__link {
+  font-family: var(--font-family);
   font-size: 0.92rem;
   font-weight: 600;
   line-height: 1.3;
@@ -515,7 +516,7 @@ body.aivia-homepage-nav .aivia-header-nav__chevron {
   align-items: center;
   padding: 0.16rem 0.42rem;
   border-radius: 999px;
-  background: rgba(74, 139, 110, 0.12);
+  background: rgb(74, 139, 110, 0.12);
   color: #2d5a4a;
   font-size: 0.64rem;
   font-weight: 650;
@@ -562,7 +563,7 @@ body.aivia-homepage-nav {
       min-height: 2.5rem;
       padding: 0.55rem 1rem;
       border-radius: 10px;
-      border: 1px solid rgba(205, 162, 116, 0.16);
+      border: 1px solid rgb(205, 162, 116, 0.16);
       box-shadow: none;
       font-size: 0.92rem;
       font-weight: 500;
@@ -574,22 +575,22 @@ body.aivia-homepage-nav {
     }
 
     .d-header .header-buttons .btn .d-icon {
-      color: currentColor !important;
+      color: currentcolor !important;
     }
 
     .d-header .header-buttons .sign-up-button,
     .d-header .header-buttons .login-button {
-      background: rgba(255, 255, 255, 0.03) !important;
-      color: rgba(242, 240, 233, 0.88) !important;
-      border-color: rgba(205, 162, 116, 0.16) !important;
+      background: rgb(255, 255, 255, 0.03) !important;
+      color: rgb(242, 240, 233, 0.88) !important;
+      border-color: rgb(205, 162, 116, 0.16) !important;
       box-shadow: none !important;
     }
 
     .d-header .header-buttons .btn:hover,
     .d-header .header-buttons .btn:focus {
-      background: rgba(205, 162, 116, 0.1) !important;
+      background: rgb(205, 162, 116, 0.1) !important;
       color: #f2f0e9 !important;
-      border-color: rgba(205, 162, 116, 0.28) !important;
+      border-color: rgb(205, 162, 116, 0.28) !important;
     }
   }
 
@@ -619,41 +620,29 @@ body.aivia-homepage-nav {
   }
 
   .aivia-header-nav__action {
-    color: rgba(242, 240, 233, 0.78);
-  }
-
-  .aivia-header-nav__link {
-    color: rgb(242 240 233 / 78%);
-  }
-
-  .aivia-header-nav__link:hover,
-  .aivia-header-nav__link.is-active,
-  .aivia-header-nav__link[aria-current="page"] {
-    background: rgb(205 162 116 / 10%);
-    color: #f2f0e9;
-  }
-
-  .aivia-header-nav__link::after {
-    background: #63d8bd;
+    color: rgb(242, 240, 233, 0.78);
   }
 
   .aivia-header-nav__action:hover,
   .aivia-header-nav__action.is-active,
   .aivia-header-nav__action[aria-current="page"] {
-    background: rgba(205, 162, 116, 0.12);
+    background: rgb(205, 162, 116, 0.12);
     color: #f2f0e9;
     box-shadow: none;
   }
 
+  .aivia-header-nav__link,
   .aivia-header-nav__toggle {
-    color: rgba(242, 240, 233, 0.78);
+    color: var(--aivia-header-control-color, rgb(242, 240, 233, 0.78));
   }
 
+  .aivia-header-nav__link:hover,
+  .aivia-header-nav__link.is-active,
+  .aivia-header-nav__link[aria-current="page"],
   .aivia-header-nav__toggle:hover,
-  .aivia-header-nav__dropdown.is-open .aivia-header-nav__toggle,
-  .aivia-header-nav__dropdown.has-active-item .aivia-header-nav__toggle {
-    background: rgba(205, 162, 116, 0.12);
-    color: #f2f0e9;
+  .aivia-header-nav__dropdown.is-open .aivia-header-nav__toggle {
+    background: rgb(205, 162, 116, 0.12);
+    color: var(--aivia-header-control-color, #f2f0e9);
   }
 
   .d-header-wrap {
@@ -663,9 +652,8 @@ body.aivia-homepage-nav {
   .d-header {
     background: linear-gradient(135deg, #17211f 0%, #131b1d 48%, #111827 100%);
     backdrop-filter: none;
-    -webkit-backdrop-filter: none;
     box-shadow: none;
-    border-bottom: 2px solid rgba(205, 162, 116, 0.25);
+    border-bottom: 2px solid rgb(205, 162, 116, 0.25);
   }
 
   .d-header::after {
@@ -680,14 +668,17 @@ body.aivia-homepage-nav {
   .d-header .ai-bot-button svg,
   .d-header .hamburger-dropdown svg,
   .d-header .d-header-icons .d-icon {
-    color: rgba(242, 240, 233, 0.72) !important;
+    color: var(
+      --aivia-header-control-color,
+      rgb(242, 240, 233, 0.72)
+    ) !important;
   }
 
   .d-header .d-header-icons .icon:hover,
   .discourse-no-touch .d-header-icons .icon:hover,
   .discourse-no-touch .d-header-icons .icon:focus,
   .drop-down-mode .d-header-icons .active .icon {
-    background-color: rgba(205, 162, 116, 0.08);
+    background-color: rgb(205, 162, 116, 0.08);
   }
 
   .d-header .d-header-icons .icon:hover svg,
@@ -696,11 +687,7 @@ body.aivia-homepage-nav {
   .discourse-no-touch .d-header-icons .icon:focus .d-icon,
   .drop-down-mode .d-header-icons .active .icon svg,
   .drop-down-mode .d-header-icons .active .icon .d-icon {
-    color: #cda274 !important;
-  }
-
-  .d-header .current-user .badge-notification {
-    border-color: rgba(26, 36, 33, 0.88);
+    color: var(--aivia-header-control-color, #cda274) !important;
   }
 }
 
@@ -723,7 +710,7 @@ body.aivia-homepage-nav .d-header .panel {
 /* ============================================
    MOBILE: SHOW AIVIA NAV + REPOSITION DROPDOWN
    ============================================ */
-@media (max-width: 767px) {
+@media (width <= 767px) {
   html:has(body.aivia-header-nav-scroll-locked) {
     overflow: hidden !important;
     overscroll-behavior: none;
@@ -810,23 +797,10 @@ body.aivia-homepage-nav .d-header .panel {
       margin-right: 0.2rem !important;
     }
 
-    .aivia-header-nav__dropdown--primary-mobile
-      .aivia-header-nav__toggle {
+    .aivia-header-nav__dropdown--primary-mobile .aivia-header-nav__toggle {
       border-color: rgb(99, 216, 189, 0.24);
       background: rgb(99, 216, 189, 0.08);
       color: #d8fff5;
-    }
-
-    .aivia-header-nav__link {
-      min-height: 2.2rem;
-      padding: 0.4rem 0.38rem;
-      font-size: 0.74rem;
-    }
-
-    .aivia-header-nav__link::after {
-      right: 0.38rem;
-      bottom: 0.17rem;
-      left: 0.38rem;
     }
 
     .aivia-header-nav__dropdown {
@@ -851,10 +825,6 @@ body.aivia-homepage-nav .d-header .panel {
       padding: 0.7rem 0.85rem !important;
     }
 
-    .aivia-header-nav__item-title {
-      font-size: 0.9rem !important;
-    }
-
     .aivia-header-nav__item-subtitle {
       font-size: 0.76rem !important;
     }
@@ -868,9 +838,8 @@ body.aivia-homepage-nav .d-header .panel {
       right: 0 !important;
       bottom: 0 !important;
       z-index: 1000000 !important;
-      background: rgba(17, 24, 39, 0.1) !important;
+      background: rgb(17, 24, 39, 0.1) !important;
       backdrop-filter: blur(4px) !important;
-      -webkit-backdrop-filter: blur(4px) !important;
       pointer-events: auto !important;
       animation: aivia-backdrop-fade 0.2s ease-out !important;
     }
@@ -906,10 +875,6 @@ body.aivia-homepage-nav .d-header .panel {
       padding: 0.7rem 0.85rem !important;
     }
 
-    .aivia-header-nav__dropdown--my-aivia .aivia-header-nav__item-title {
-      font-size: 0.9rem !important;
-    }
-
     .aivia-header-nav__dropdown--my-aivia .aivia-header-nav__item-subtitle {
       font-size: 0.76rem !important;
     }
@@ -922,17 +887,21 @@ body.aivia-homepage-nav .d-header .panel {
       right: 0 !important;
       bottom: 0 !important;
       z-index: 1000000 !important;
-      background: rgba(17, 24, 39, 0.1) !important;
+      background: rgb(17, 24, 39, 0.1) !important;
       backdrop-filter: blur(4px) !important;
-      -webkit-backdrop-filter: blur(4px) !important;
       pointer-events: auto !important;
       animation: aivia-backdrop-fade 0.2s ease-out !important;
     }
   }
+
+  .aivia-header-nav__item-title,
+  .aivia-account-menu__link {
+    font-size: 0.9rem;
+  }
 }
 
 /* ---------- MOBILE HEADER SIZING ---------- */
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .d-header .wrap {
     padding-inline: 0.4rem;
   }
@@ -970,15 +939,10 @@ body.aivia-homepage-nav .d-header .panel {
     width: 2rem;
     height: 2rem;
   }
-
-  .d-header-icons .current-user .badge-notification {
-    top: 1px;
-    right: 1px;
-  }
 }
 
 /* ---------- TABLET REFINEMENTS ---------- */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (width >= 768px) and (width <= 1024px) {
   .aivia-header-nav {
     margin-right: 0.2rem;
   }
@@ -992,7 +956,8 @@ body.aivia-homepage-nav .d-header .panel {
     width: min(20rem, calc(100vw - 2rem));
   }
 
-  .aivia-header-nav__item-title {
+  .aivia-header-nav__item-title,
+  .aivia-account-menu__link {
     font-size: 0.84rem;
   }
 
@@ -1008,7 +973,7 @@ body.aivia-homepage-nav .d-header .panel {
 /* ============================================
    NARROW MOBILE: COLLAPSE TO ICON-ONLY (<= 480px)
    ============================================ */
-@media (max-width: 570px) {
+@media (width <= 570px) {
   .d-header {
     #site-logo {
       height: 2.4rem;

@@ -3,6 +3,20 @@ en:
     followup: "Ask a follow-up..."
     followup_preview: "Follow-up message composer preview"
   aivia_header_nav:
+    account_menu: "Account menu"
+    account_menu_with_unread:
+      one: "Account menu (%{count} unread item)"
+      other: "Account menu (%{count} unread items)"
+    notifications: "Notifications"
+    notifications_with_unread:
+      one: "Notifications (%{count} unread)"
+      other: "Notifications (%{count} unread)"
+    messages: "Messages"
+    messages_with_unread:
+      one: "Messages (%{count} unread)"
+      other: "Messages (%{count} unread)"
+    my_account: "My account"
+    logout: "Log out"
     labels:
       coming_soon: "Coming Soon"
     my_aivia:
@@ -15,21 +29,31 @@ en:
       career: "Career"
       the_tech: "The Tech"
     sections:
+      my_aivia_labs: "Lab tools"
       my_aivia_candidates: "Candidate tools"
       my_aivia_hiring: "Hiring tools"
     items:
+      my_aivia_lab_index:
+        title: "Search lab index"
+        subtitle: "Find published labs and explore their technical work"
+      my_aivia_lab_workspaces:
+        title: "My lab workspaces"
+        subtitle: "Open and manage your lab workspaces"
+      my_aivia_setup:
+        title: "Setup"
+        subtitle: "Build and refine your AIVIA component map"
       my_aivia_evaluations:
         title: "Evaluations"
-        subtitle: "View your dashboard, results, and evaluation history"
+        subtitle: "View results and evaluation history"
       my_aivia_mentorship:
         title: "Mentorship"
-        subtitle: "Manage mentor and mentee activity in AIVIA"
+        subtitle: "Manage mentor and mentee activity"
       my_aivia_resume:
-        title: "Resume"
-        subtitle: "Open and manage your resume page"
+        title: "AIVIA Resume"
+        subtitle: "Open your one-click AIVIA resume"
       my_aivia_profile:
         title: "Profile"
-        subtitle: "Update your public profile and preferences"
+        subtitle: "Manage your public profile and preferences"
       my_aivia_discover_talent:
         title: "Discover talent"
         subtitle: "Search pre-evaluated candidates"

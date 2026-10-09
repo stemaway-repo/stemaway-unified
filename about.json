@@ -7,6 +7,13 @@
   "license_url": null,
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
+  "tests": {
+    "requiredPlugins": [
+      "stemaway-ui-addons",
+      "stemaway-tiered-tagging",
+      "stemaway-project-generation"
+    ]
+  },
   "assets": {
     "stem-bulb": "assets/stem-bulb.png",
     "aivia_favicon_16": "assets/aivia-favicon-16.png",

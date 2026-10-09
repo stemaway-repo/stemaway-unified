@@ -15,11 +15,17 @@ function syncHomepageHeaderClass(api) {
     "aivia-homepage-route",
     shouldUseAiviaHomepageTheme(router)
   );
+  document.body.classList.toggle(
+    "aivia-admin-navigation",
+    Boolean(api.getCurrentUser()?.admin)
+  );
 }
 
 export default apiInitializer((api) => {
   const updateHeaderTheme = () => syncHomepageHeaderClass(api);
 
   api.onPageChange(updateHeaderTheme);
+  api.onAppEvent("current-user:refresh", updateHeaderTheme);
+  api.onAppEvent("logout", updateHeaderTheme);
   updateHeaderTheme();
 });

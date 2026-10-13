@@ -11,20 +11,24 @@ const PRIMARY_LINKS = [
   {
     href: "/aivia/hiring",
     labelKey: "aivia_header_nav.primary.hiring",
+    subtitleKey: "aivia_header_nav.primary_subtitles.hiring",
     activePaths: ["/hiring", "/full-time", "/aivia/hiring", "/aivia/full-time"],
   },
   {
     href: "/aivia/academia",
     labelKey: "aivia_header_nav.primary.academia",
+    subtitleKey: "aivia_header_nav.primary_subtitles.academia",
     activePathPrefixes: ["/aivia/faculty-workspace"],
   },
   {
     href: "/aivia/career",
     labelKey: "aivia_header_nav.primary.career",
+    subtitleKey: "aivia_header_nav.primary_subtitles.career",
   },
   {
     href: "/aivia/inside-aivia",
     labelKey: "aivia_header_nav.primary.the_tech",
+    subtitleKey: "aivia_header_nav.primary_subtitles.the_tech",
   },
 ];
 
@@ -430,7 +434,13 @@ function buildPrimaryMobileLink(item, currentPath) {
 
   link.className = "aivia-header-nav__mobile-menu-item";
   link.href = item.href;
-  link.textContent = t(item.labelKey);
+  const title = document.createElement("span");
+  title.className = "aivia-header-nav__item-title";
+  title.textContent = t(item.labelKey);
+  const subtitle = document.createElement("span");
+  subtitle.className = "aivia-header-nav__item-subtitle";
+  subtitle.textContent = t(item.subtitleKey);
+  link.append(title, subtitle);
 
   if (isActive) {
     link.classList.add("is-active");
@@ -463,6 +473,11 @@ function buildPrimaryMobileDropdown(currentPath) {
   panel.id = "aivia-primary-mobile-menu";
   panel.className = "aivia-header-nav__menu";
   panel.setAttribute("aria-label", t("aivia_header_nav.primary_menu.label"));
+
+  const heading = document.createElement("div");
+  heading.className = "aivia-header-nav__section-label";
+  heading.textContent = t("aivia_header_nav.primary_menu.heading");
+  panel.append(heading);
 
   PRIMARY_LINKS.forEach((item) => {
     panel.append(buildPrimaryMobileLink(item, currentPath));

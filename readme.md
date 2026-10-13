@@ -59,14 +59,31 @@ reset inside the account panel. Its links own hover and keyboard focus styling;
 verify hover on a row that does not hold keyboard focus, since core styles differ
 between those states.
 
-Notifications and Messages link to their full lists and show red badges in the
-upper right of their menu items. The avatar shows a combined unread count via the
+Notifications and Messages link to their full lists and show compact red badges
+centered vertically at the end of their menu rows. Badge geometry belongs in
+`scss/components/aivia-account-menu.scss`; the menu's inline padding token keeps
+the badge inset aligned with the row gutter. Avatar badges retain separate corner
+positioning and sizing. The avatar shows a combined unread count via the
 `user-dropdown-notifications__after` outlet. The notification total already
 includes messages, so the two counts are not added together. All badges use the
 current user's counters, update through Discourse's notification MessageBus, and
 disappear when those counters clear. Counts above 99 display as `99+`; accessible
 labels retain the full count. Do not disturb suppresses the avatar badge as in
 core. The menu has touch-sized rows and a viewport-bounded scrolling area.
+Dismiss all is a compact text-and-checkmark utility aligned to the end of the
+Notifications and Messages group. Its separate class avoids navigation-row hover
+surfaces; hover and keyboard focus underline the label, and coarse pointers get
+a larger touch target. It appears while notifications remain unread, including
+previously seen alerts without a new-count badge. It marks all notification
+records as read, including message alerts;
+it does not mark message topics as read. The theme's `aivia-notification-dismissal`
+service uses Discourse's confirmation dialog for important notifications and its
+`/notifications/mark-read` endpoint. The service blocks repeat requests even when
+the menu is reopened and reports failures through the standard error dialog.
+Badge counts come from Discourse's authoritative notification MessageBus updates,
+so a completed request cannot erase a newer unread count. Successful dismissal
+is announced to screen readers and returns focus to Notifications when the menu
+is still open.
 
 Navigation acceptance tests run with `bin/qunit --theme-id <id> --qunit-path
 /theme-qunit`. The theme's `tests.requiredPlugins` metadata loads the dependencies
@@ -75,6 +92,16 @@ Theme QUnit omits theme stylesheets. Tests verify the role class controlling hea
 visibility; check its rendered appearance on the local site as well.
 
 ## Installation
+
+The header menu styles include the October 12 workspace and dashboard email's
+navigation refinements. Mobile navigation headings and descriptions are translated
+markup in `aivia-header-dropdowns.js`, not CSS-generated content. All dropdown
+surfaces use theme palette variables; the mobile backdrop starts below the header
+and respects reduced motion. Faculty pages provide local header color variables
+and route activity comes from `aria-current`, including hover underlines for
+inactive links. Remove the matching admin-editor override blocks after deploying
+these styles to avoid their `!important` rules taking precedence. See the UI plugin's
+`docs/workspace-dashboard-menu-style-migration.md` for the migration scope.
 
 1. On your discourse website, navigate to:
 

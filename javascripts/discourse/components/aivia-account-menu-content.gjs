@@ -3,6 +3,7 @@
 import Component from "@glimmer/component";
 import { concat } from "@ember/helper";
 import { on } from "@ember/modifier";
+import { action } from "@ember/object";
 import { service } from "@ember/service";
 import routeAction from "discourse/helpers/route-action";
 import getURL from "discourse/lib/get-url";
@@ -10,6 +11,7 @@ import dIcon from "discourse/ui-kit/helpers/d-icon";
 import { i18n } from "discourse-i18n";
 
 export default class AiviaAccountMenuContent extends Component {
+  @service aiviaNotificationDismissal;
   @service currentUser;
 
   get notificationCount() {
@@ -22,6 +24,14 @@ export default class AiviaAccountMenuContent extends Component {
       "new_personal_messages_notifications_count"
     );
     return count > 99 ? "99+" : count;
+  }
+
+  @action
+  async dismissNotifications(event) {
+    const menu = event.currentTarget.closest(".aivia-account-menu__items");
+    if ((await this.aiviaNotificationDismissal.dismiss()) && menu.isConnected) {
+      menu.querySelector(".aivia-account-menu__link")?.focus();
+    }
   }
 
   <template>
@@ -74,6 +84,40 @@ export default class AiviaAccountMenuContent extends Component {
           {{/if}}
         </a>
       </li>
+      {{#if this.aiviaNotificationDismissal.showDismiss}}
+        <li class="aivia-account-menu__dismiss">
+          <button
+            type="button"
+            class="aivia-account-menu__dismiss-button"
+            disabled={{this.aiviaNotificationDismissal.isDismissing}}
+            aria-disabled={{if
+              this.aiviaNotificationDismissal.isBusy
+              "true"
+              "false"
+            }}
+            aria-busy={{if
+              this.aiviaNotificationDismissal.isDismissing
+              "true"
+              "false"
+            }}
+            title={{i18n
+              (themePrefix "aivia_header_nav.dismiss_notifications_tooltip")
+            }}
+            {{on "click" this.dismissNotifications}}
+          >
+            {{dIcon "check"}}
+            <span>
+              {{#if this.aiviaNotificationDismissal.isDismissing}}
+                {{i18n
+                  (themePrefix "aivia_header_nav.dismissing_notifications")
+                }}
+              {{else}}
+                {{i18n (themePrefix "aivia_header_nav.dismiss_notifications")}}
+              {{/if}}
+            </span>
+          </button>
+        </li>
+      {{/if}}
       <li>
         <a
           class="aivia-account-menu__link"

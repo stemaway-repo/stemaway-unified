@@ -15,6 +15,10 @@ en:
     messages_with_unread:
       one: "Messages (%{count} unread)"
       other: "Messages (%{count} unread)"
+    dismiss_notifications: "Dismiss all"
+    dismiss_notifications_tooltip: "Mark all notifications and message alerts as read"
+    dismissing_notifications: "Dismissing…"
+    notifications_dismissed: "Notifications and message alerts dismissed."
     my_account: "My account"
     logout: "Log out"
     labels:
@@ -23,11 +27,17 @@ en:
       label: "My AIVIA"
     primary_menu:
       label: "AIVIA navigation"
+      heading: "Explore AIVIA"
     primary:
       hiring: "Hiring"
       academia: "Academia"
       career: "Career"
       the_tech: "The Tech"
+    primary_subtitles:
+      hiring: "Source and evaluate technical talent by component"
+      academia: "Map your lab, get insights, connect to industry"
+      career: "Map your work, prove your skills, get discovered"
+      the_tech: "Explore AIVIA evaluations, components, and evidence"
     sections:
       my_aivia_labs: "Lab tools"
       my_aivia_candidates: "Candidate tools"

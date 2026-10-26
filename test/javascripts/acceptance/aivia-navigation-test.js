@@ -611,7 +611,7 @@ acceptance("AIVIA navigation | guests", function (needs) {
       .dom(MY_AIVIA)
       .hasAttribute("aria-expanded", "true", "opens My AIVIA on mobile");
     assert
-      .dom('.aivia-header-nav__item[href="/aivia/faculty-workspace"]')
+      .dom('.aivia-header-nav__item[href="/aivia/lab-workspace"]')
       .isVisible("lab tools are accessible in the mobile menu");
 
     await visit("/t/internationalization-localization/280");

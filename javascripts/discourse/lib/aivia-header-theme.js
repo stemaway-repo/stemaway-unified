@@ -12,13 +12,13 @@ const AIVIA_MARKETING_PATHS = new Set([
   "/aivia/full-time",
   "/aivia/hiring",
   "/aivia/academia",
-  "/aivia/faculty-workspace",
+  "/aivia/lab-workspace",
   "/aivia/my-lab-workspaces",
-  "/aivia/faculty-workspace-bu",
-  "/aivia/faculty-workspace-sample",
-  "/aivia/faculty-workspace-mit-drl",
-  "/aivia/faculty-workspace-harvard-madsys",
-  "/aivia/faculty-workspace-tufts-hri",
+  "/aivia/lab-workspace-bu",
+  "/aivia/lab-workspace-sample",
+  "/aivia/lab-workspace-mit-drl",
+  "/aivia/lab-workspace-harvard-madsys",
+  "/aivia/lab-workspace-tufts-hri",
   "/aivia/career",
   "/aivia/plans",
   "/aivia/freelance",
@@ -57,7 +57,7 @@ export function shouldUseAiviaHeaderTheme(router) {
     isHomepageRoute ||
     isHomepagePath ||
     AIVIA_MARKETING_PATHS.has(currentPath) ||
-    /^\/aivia\/faculty-workspace\/[a-z0-9-]+$/.test(currentPath)
+    /^\/aivia\/(?:lab|faculty)-workspace\/[a-z0-9-]+$/.test(currentPath)
   );
 }
 

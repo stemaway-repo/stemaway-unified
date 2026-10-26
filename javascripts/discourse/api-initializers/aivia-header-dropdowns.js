@@ -18,7 +18,7 @@ const PRIMARY_LINKS = [
     href: "/aivia/academia",
     labelKey: "aivia_header_nav.primary.academia",
     subtitleKey: "aivia_header_nav.primary_subtitles.academia",
-    activePathPrefixes: ["/aivia/faculty-workspace"],
+    activePathPrefixes: ["/aivia/lab-workspace"],
   },
   {
     href: "/aivia/career",
@@ -34,7 +34,7 @@ const PRIMARY_LINKS = [
 
 const MENU_ITEMS = {
   my_aivia_lab_index: {
-    href: "/aivia/faculty-workspace",
+    href: "/aivia/lab-workspace",
     titleKey: "aivia_header_nav.items.my_aivia_lab_index.title",
     subtitleKey: "aivia_header_nav.items.my_aivia_lab_index.subtitle",
   },

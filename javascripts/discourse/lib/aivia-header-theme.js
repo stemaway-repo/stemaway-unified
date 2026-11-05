@@ -57,6 +57,8 @@ export function shouldUseAiviaHeaderTheme(router) {
     isHomepageRoute ||
     isHomepagePath ||
     AIVIA_MARKETING_PATHS.has(currentPath) ||
+    currentPath === "/aivia/hiring-workspace" ||
+    currentPath.startsWith("/aivia/hiring-workspace/") ||
     /^\/aivia\/(?:lab|faculty)-workspace\/[a-z0-9-]+$/.test(currentPath)
   );
 }

@@ -27,12 +27,22 @@ colors.
 The `home-logo-contents` connector renders the AIVIA wordmark on every Discourse
 header, including categories, topics, and user pages. White headers share the
 wordmark colors in `scss/components/aivia-wordmark.scss`; dark marketing headers
-keep the light wordmark. Workspace styles do not override the logo colors.
+keep the light wordmark. Hiring supplies scoped palette tokens for its light
+header without changing the shared logo markup.
 
 My AIVIA appears in the header on every page, including homepage, forum, user,
 and admin pages, and for guests. It lists Lab tools, Candidate tools, and any
 Hiring tools available to the signed-in user. Candidate links open the matching
 dashboard tab or AIVIA resume. Personal tools retain their normal login requirements.
+The Hiring workspace entry uses `can_find_hiring_workspace` from the hiring
+plugin, with `can_access_hiring_workspace` as a compatibility fallback. Company
+members and site admins can still find the entry while the feature is disabled;
+it opens a status page without granting access to company tools. Updating the
+local theme files requires refreshing the installed development theme before
+browser checks or theme QUnit. No live theme update is implied.
+Hiring workspace routes use the same primary navigation as the lab workspace,
+with Hiring marked as the current destination. The hiring plugin sets light
+header and readable wordmark tokens only while `hiring-workspace-page` is active.
 The closed My AIVIA button stays neutral. The menu's expanded state controls its
 active appearance, and the current destination is highlighted inside the menu.
 Hiring, Academia, Career, and The Tech share My AIVIA's 40px control height,

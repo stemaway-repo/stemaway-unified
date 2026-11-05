@@ -43,6 +43,9 @@ en:
       my_aivia_candidates: "Candidate tools"
       my_aivia_hiring: "Hiring tools"
     items:
+      my_aivia_hiring_workspace:
+        title: "Hiring workspace"
+        subtitle: "Company roles, candidates and Universal Search"
       my_aivia_lab_index:
         title: "Search lab index"
         subtitle: "Find published labs and explore their technical work"

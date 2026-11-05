@@ -13,6 +13,7 @@ const PRIMARY_LINKS = [
     labelKey: "aivia_header_nav.primary.hiring",
     subtitleKey: "aivia_header_nav.primary_subtitles.hiring",
     activePaths: ["/hiring", "/full-time", "/aivia/hiring", "/aivia/full-time"],
+    activePathPrefixes: ["/aivia/hiring-workspace"],
   },
   {
     href: "/aivia/academia",
@@ -33,6 +34,11 @@ const PRIMARY_LINKS = [
 ];
 
 const MENU_ITEMS = {
+  my_aivia_hiring_workspace: {
+    href: "/aivia/hiring-workspace",
+    titleKey: "aivia_header_nav.items.my_aivia_hiring_workspace.title",
+    subtitleKey: "aivia_header_nav.items.my_aivia_hiring_workspace.subtitle",
+  },
   my_aivia_lab_index: {
     href: "/aivia/lab-workspace",
     titleKey: "aivia_header_nav.items.my_aivia_lab_index.title",
@@ -390,6 +396,12 @@ function getMyAiviaSections(currentUser) {
   };
 
   const hiringItems = [];
+  if (
+    currentUser?.can_find_hiring_workspace ||
+    currentUser?.can_access_hiring_workspace
+  ) {
+    hiringItems.push("my_aivia_hiring_workspace");
+  }
 
   if (isAdmin || featureAccess.search) {
     hiringItems.push("my_aivia_discover_talent");

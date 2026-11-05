@@ -480,6 +480,24 @@ acceptance("AIVIA navigation | administrators", function (needs) {
   });
 });
 
+acceptance("AIVIA navigation | hiring workspace entry", function (needs) {
+  stubNavigationRequests(needs);
+  needs.user({
+    can_find_hiring_workspace: true,
+    can_access_hiring_workspace: false,
+  });
+  needs.settings({ aivia_hiring_workspace_enabled: false });
+
+  test("keeps the workspace discoverable while its tools are disabled", async function (assert) {
+    await visit("/");
+    await click(MY_AIVIA);
+
+    assert
+      .dom('.aivia-header-nav__dropdown--my-aivia a[href="/aivia/hiring-workspace"]')
+      .isVisible("My AIVIA includes the authorized workspace entry");
+  });
+});
+
 acceptance("AIVIA navigation | mobile account menu", function (needs) {
   stubNavigationRequests(needs, { admin: false, moderator: false });
   needs.user({

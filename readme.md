@@ -69,31 +69,55 @@ reset inside the account panel. Its links own hover and keyboard focus styling;
 verify hover on a row that does not hold keyboard focus, since core styles differ
 between those states.
 
-Notifications and Messages link to their full lists and show compact red badges
-centered vertically at the end of their menu rows. Badge geometry belongs in
-`scss/components/aivia-account-menu.scss`; the menu's inline padding token keeps
-the badge inset aligned with the row gutter. Avatar badges retain separate corner
-positioning and sizing. The avatar shows a combined unread count via the
-`user-dropdown-notifications__after` outlet. The notification total already
-includes messages, so the two counts are not added together. All badges use the
-current user's counters, update through Discourse's notification MessageBus, and
-disappear when those counters clear. Counts above 99 display as `99+`; accessible
-labels retain the full count. Do not disturb suppresses the avatar badge as in
-core. The menu has touch-sized rows and a viewport-bounded scrolling area.
-Dismiss all is a compact text-and-checkmark utility aligned to the end of the
-Notifications and Messages group. Its separate class avoids navigation-row hover
-surfaces; hover and keyboard focus underline the label, and coarse pointers get
-a larger touch target. It appears while notifications remain unread, including
-previously seen alerts without a new-count badge. It marks all notification
-records as read, including message alerts;
-it does not mark message topics as read. The theme's `aivia-notification-dismissal`
-service uses Discourse's confirmation dialog for important notifications and its
-`/notifications/mark-read` endpoint. The service blocks repeat requests even when
-the menu is reopened and reports failures through the standard error dialog.
-Badge counts come from Discourse's authoritative notification MessageBus updates,
-so a completed request cannot erase a newer unread count. Successful dismissal
-is announced to screen readers and returns focus to Notifications when the menu
-is still open.
+Notifications and Messages use separate counts. The avatar combines non-message
+notification alerts with new/unread private-message conversations, including shared
+group inboxes. A conversation addressed to multiple groups counts once; a group
+summary alert does not count as another message. Counts over 99 display as `99+`
+while accessible labels retain the full number. Do not disturb still suppresses
+the avatar badge.
+
+The account panel shows the five most recently active accessible conversations,
+with escaped subjects, inbox labels, dates, and unread markers. Opening the panel
+does not read notifications or conversations. The Updates heading contains Dismiss
+all; My account and Log out have a separate footer. The panel scrolls within the
+viewport and retains 44px navigation and utility targets on phones.
+
+The theme's `aivia-account-inbox` service reads
+`GET /aivia/account-inbox.json` from `stemaway-ui-addons` on initial load and panel
+opening. It coalesces refreshes from the existing notification and private-message
+tracking MessageBus channels, including group channels whose summarized alert
+count has not changed. Requests are serialized; an event received during a request
+queues another refresh. The service cleans up subscriptions and timers and uses no
+persistent browser storage. Failures show inline retry without hiding account
+actions. The endpoint accepts no target user, rechecks access on every request,
+uses the core private-message topic query and tracking report, excludes archived
+conversations from recent previews, and returns `Cache-Control: private, no-store`.
+Unread status follows Discourse's new/unread conversation tracking preferences.
+
+Dismiss all appears while notification records remain unread, including seen
+alerts without a new-count badge. The `aivia-notification-dismissal` service uses
+Discourse's confirmation dialog for important alerts and
+`PUT /notifications/mark-read`. It dismisses notification records, including group
+summaries and personal-message alerts; it does not read message topics. An unread
+conversation therefore retains its inbox and avatar count after dismissal. The
+service blocks concurrent duplicate requests, reports failures through the standard
+error dialog, announces success, and restores focus to Notifications if open.
+Server refreshes and notification updates preserve newer arrivals.
+
+This panel requires updating both `stemaway-unified` (theme component) and
+`stemaway-ui-addons` (authorized inbox endpoint). No form delivery, email routing,
+notification subscription preferences, site settings, or migrations change.
+
+Account inbox QA (November 6, 2026): notification and PM MessageBus arrivals,
+unchanged group summaries, late responses, read status, dismissal confirmation and
+concurrency, errors/retry, escaped subjects, and admin/member navigation are
+covered by the navigation QUnit suite. The UI plugin's
+`spec/requests/stemaway_ui_addons/account_inbox_controller_spec.rb` covers
+recipient scoping, group membership and revocation, duplicate group recipients,
+preview limits, archival/deletion, and read-only behavior. Browser checks used
+isolated test conversations at 1280×800, 390×844, and 320×640, confirming no
+horizontal overflow and controls at least 44px tall. Actual local admin-inbox
+subjects were inspected without reading conversations or dismissing alerts.
 
 Navigation acceptance tests run with `bin/qunit --theme-id <id> --qunit-path
 /theme-qunit`. The theme's `tests.requiredPlugins` metadata loads the dependencies

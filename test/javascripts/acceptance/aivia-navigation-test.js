@@ -60,6 +60,18 @@ function stubNavigationRequests(needs, userOverrides = {}, extraRequests) {
       return helper.response(userResponse);
     });
     server.put("/notifications/mark-read", () => helper.response({}));
+    server.get("/aivia/account-inbox.json", () => {
+      const user = loggedInUser();
+      const messages = user.new_personal_messages_notifications_count || 0;
+      return helper.response({
+        notification_count: Math.max(
+          0,
+          (user.all_unread_notifications_count || 0) - messages
+        ),
+        message_count: messages,
+        messages: [],
+      });
+    });
     extraRequests?.(server, helper);
   });
 }
@@ -94,11 +106,16 @@ acceptance("AIVIA navigation | signed-in users", function (needs) {
     const userPath = loggedInUser().path;
     assert
       .dom(".aivia-account-menu__items > li")
-      .exists({ count: 5 }, "the popup includes navigation and dismissal");
+      .exists(
+        { count: 4 },
+        "the popup keeps account navigation separate from dismissal"
+      );
     assert
       .dom('.aivia-account-menu__link[href$="/notifications"]')
       .hasAttribute("href", `${userPath}/notifications`, "opens notifications");
-    assert.dom(NOTIFICATION_BADGE).hasText("3", "shows unread notifications");
+    assert
+      .dom(NOTIFICATION_BADGE)
+      .hasText("1", "counts non-message notifications separately");
     assert
       .dom('.aivia-account-menu__link[href$="/messages"]')
       .hasAttribute("href", `${userPath}/messages`, "opens messages");
@@ -138,7 +155,7 @@ acceptance("AIVIA navigation | signed-in users", function (needs) {
     await click("#toggle-current-user");
     assert
       .dom(".aivia-account-menu__items > li")
-      .exists({ count: 5 }, "the forum uses the same account menu");
+      .exists({ count: 4 }, "the forum uses the same account menu");
 
     await visit("/t/internationalization-localization/280");
     await click("#toggle-current-user");
@@ -160,7 +177,10 @@ acceptance("AIVIA navigation | signed-in users", function (needs) {
       .hasText("4", "a new notification updates the avatar");
     assert
       .dom(NOTIFICATION_BADGE)
-      .hasText("4", "the notification item updates without reloading");
+      .hasText(
+        "2",
+        "the notification item updates without double-counting messages"
+      );
     assert.dom(MESSAGE_BADGE).hasText("2", "the message count stays separate");
 
     await publishToMessageBus(
@@ -350,7 +370,7 @@ acceptance("AIVIA navigation | notification dismissal", function (needs) {
         "shows the server error"
       );
     assert.dom(AVATAR_BADGE).hasText("3", "the avatar count is preserved");
-    assert.dom(NOTIFICATION_BADGE).hasText("3", "notifications remain unread");
+    assert.dom(NOTIFICATION_BADGE).hasText("1", "notifications remain unread");
     assert.dom(MESSAGE_BADGE).hasText("2", "message alerts remain unread");
 
     await click(".dialog-footer .btn-primary");
@@ -446,7 +466,7 @@ acceptance("AIVIA navigation | notification dismissal", function (needs) {
       .hasText("2", "a late response preserves the newer total");
     assert
       .dom(NOTIFICATION_BADGE)
-      .hasText("2", "new notifications remain visible");
+      .hasText("1", "new notifications remain visible");
     assert.dom(MESSAGE_BADGE).hasText("1", "new message alerts remain visible");
   });
 });
@@ -493,7 +513,9 @@ acceptance("AIVIA navigation | hiring workspace entry", function (needs) {
     await click(MY_AIVIA);
 
     assert
-      .dom('.aivia-header-nav__dropdown--my-aivia a[href="/aivia/hiring-workspace"]')
+      .dom(
+        '.aivia-header-nav__dropdown--my-aivia a[href="/aivia/hiring-workspace"]'
+      )
       .isVisible("My AIVIA includes the authorized workspace entry");
   });
 });
@@ -550,10 +572,10 @@ acceptance("AIVIA navigation | mobile account menu", function (needs) {
     await click("#toggle-current-user");
     assert
       .dom(".aivia-account-menu__items > li")
-      .exists({ count: 5 }, "navigation and dismissal are available on mobile");
+      .exists({ count: 4 }, "account navigation is available on mobile");
     assert
       .dom(NOTIFICATION_BADGE)
-      .hasText("99+", "large notification counts stay compact");
+      .hasText("19", "notification counts exclude message conversations");
     assert
       .dom(MESSAGE_BADGE)
       .hasText("99+", "large message counts stay compact");
@@ -635,5 +657,268 @@ acceptance("AIVIA navigation | guests", function (needs) {
     await visit("/t/internationalization-localization/280");
 
     assert.dom(MY_AIVIA).isVisible("My AIVIA is available on topic pages");
+  });
+});
+
+acceptance("AIVIA navigation | account inbox", function (needs) {
+  let inbox;
+  let inboxRequests;
+
+  needs.hooks.beforeEach(() => {
+    inbox = { notification_count: 1, message_count: 0, messages: [] };
+    inboxRequests = 0;
+  });
+  needs.user({
+    ...notificationCounts(1, 0),
+    groups: [{ id: 41, name: "admins", has_messages: true }],
+  });
+  stubNavigationRequests(needs, {}, (server, helper) => {
+    server.get("/aivia/account-inbox.json", () => {
+      inboxRequests++;
+      return helper.response(inbox);
+    });
+  });
+
+  const message = {
+    id: 991,
+    title: "Hiring sample request: Cumulus Labs",
+    url: "/t/hiring-sample-request/991/1",
+    group_names: ["admins"],
+    last_posted_at: "2026-11-06T15:00:00Z",
+    unread: true,
+  };
+
+  function groupUpdate(topicId) {
+    return publishToMessageBus(
+      "/private-message-topic-tracking-state/group/41",
+      {
+        topic_id: topicId,
+        message_type: "new_topic",
+        payload: {
+          highest_post_number: 1,
+          last_read_post_number: null,
+          group_ids: [41],
+          created_by_user_id: -1,
+        },
+      }
+    );
+  }
+
+  test("group messages update the badge and show their subjects without personal-message alerts", async function (assert) {
+    await visit("/latest");
+    await click("#toggle-current-user");
+    assert.dom(AVATAR_BADGE).hasText("1", "starts with one notification");
+
+    inbox = { notification_count: 1, message_count: 1, messages: [message] };
+    await groupUpdate(message.id);
+
+    assert.dom(AVATAR_BADGE).hasText("2", "adds the actual group conversation");
+    assert
+      .dom(NOTIFICATION_BADGE)
+      .hasText("1", "keeps notification alerts separate");
+    assert.dom(MESSAGE_BADGE).hasText("1", "counts the group inbox message");
+    assert
+      .dom(".aivia-account-menu__message")
+      .hasAttribute("href", message.url, "opens the individual conversation");
+    assert
+      .dom(".aivia-account-menu__message-title")
+      .hasText(message.title, "shows the message subject");
+    assert
+      .dom(".aivia-account-menu__message-meta")
+      .includesText("admins inbox", "identifies its shared inbox");
+    assert
+      .dom(".aivia-account-menu__unread-dot .sr-only")
+      .hasText("Unread message", "announces the unread marker");
+    assert.strictEqual(
+      loggedInUser().new_personal_messages_notifications_count,
+      0,
+      "needs no personal notification"
+    );
+
+    inbox = {
+      notification_count: 1,
+      message_count: 2,
+      messages: [
+        {
+          ...message,
+          id: 992,
+          title: "Company access request: Piris Labs",
+          url: "/t/company-access-request/992/1",
+        },
+        message,
+      ],
+    };
+    await groupUpdate(992);
+    assert
+      .dom(AVATAR_BADGE)
+      .hasText(
+        "3",
+        "another form increments the count even when the group summary is unchanged"
+      );
+    assert
+      .dom(".aivia-account-menu__message")
+      .exists({ count: 2 }, "shows both individual requests");
+  });
+
+  test("an arrival during an inbox refresh is retained after an older response", async function (assert) {
+    await visit("/latest");
+    await click("#toggle-current-user");
+    let pendingRequest;
+    inbox = { notification_count: 1, message_count: 1, messages: [message] };
+    pretender.get(
+      "/aivia/account-inbox.json",
+      (request) => {
+        pendingRequest = request;
+        return response(cloneJSON(inbox));
+      },
+      true
+    );
+
+    const firstArrival = groupUpdate(message.id);
+    await waitUntil(() => pendingRequest);
+    inbox = {
+      notification_count: 1,
+      message_count: 2,
+      messages: [
+        {
+          ...message,
+          id: 992,
+          title: "Company access request: Piris Labs",
+          url: "/t/company-access-request/992/1",
+        },
+        message,
+      ],
+    };
+    pretender.get("/aivia/account-inbox.json", () => response(inbox));
+    const secondArrival = groupUpdate(992);
+    pretender.resolve(pendingRequest);
+    await Promise.all([firstArrival, secondArrival]);
+
+    assert
+      .dom(AVATAR_BADGE)
+      .hasText("3", "refreshes again after the older snapshot");
+    assert
+      .dom(".aivia-account-menu__message")
+      .exists({ count: 2 }, "retains both incoming conversations");
+  });
+
+  test("reading a conversation updates the badge and unread treatment", async function (assert) {
+    inbox = { notification_count: 0, message_count: 1, messages: [message] };
+    await visit("/latest");
+    await click("#toggle-current-user");
+    assert
+      .dom(".aivia-account-menu__message")
+      .hasClass("is-unread", "marks the unread conversation");
+
+    inbox = {
+      notification_count: 0,
+      message_count: 0,
+      messages: [{ ...message, unread: false }],
+    };
+    await publishToMessageBus(
+      `/private-message-topic-tracking-state/user/${loggedInUser().id}`,
+      {
+        topic_id: message.id,
+        message_type: "read",
+        payload: {
+          last_read_post_number: 1,
+          highest_post_number: 1,
+          notification_level: 3,
+          group_ids: [41],
+        },
+      }
+    );
+
+    assert.dom(AVATAR_BADGE).doesNotExist("reading clears the message count");
+    assert
+      .dom(".aivia-account-menu__message")
+      .doesNotHaveClass("is-unread", "keeps a read recent preview");
+    assert
+      .dom(".aivia-account-menu__unread-dot")
+      .doesNotExist("removes its unread marker");
+  });
+
+  test("dismissal belongs to the Updates heading and leaves unread conversations intact", async function (assert) {
+    inbox = { notification_count: 1, message_count: 1, messages: [message] };
+    await visit("/latest");
+    await click("#toggle-current-user");
+
+    assert
+      .dom(`.aivia-account-menu__heading ${DISMISS_NOTIFICATIONS}`)
+      .exists("groups dismissal with the section heading");
+    assert
+      .dom(`.aivia-account-menu__items ${DISMISS_NOTIFICATIONS}`)
+      .doesNotExist("keeps the action out of navigation rows");
+    await click(DISMISS_NOTIFICATIONS);
+    inbox = { notification_count: 0, message_count: 1, messages: [message] };
+    await publishToMessageBus(
+      `/notification/${loggedInUser().id}`,
+      notificationCounts(0, 0)
+    );
+
+    assert
+      .dom(AVATAR_BADGE)
+      .hasText("1", "the unread conversation keeps its badge");
+    assert
+      .dom(MESSAGE_BADGE)
+      .hasText("1", "the inbox count survives alert dismissal");
+    assert
+      .dom(DISMISS_NOTIFICATIONS)
+      .doesNotExist("dismissal hides when alerts are cleared");
+    assert
+      .dom(".aivia-account-menu__message")
+      .hasClass("is-unread", "does not mark the conversation read");
+  });
+
+  test("a failed inbox request provides retry without hiding account actions", async function (assert) {
+    pretender.get("/aivia/account-inbox.json", () => response(500, {}));
+    await visit("/latest");
+    await click("#toggle-current-user");
+
+    assert
+      .dom(".aivia-account-menu__status")
+      .includesText("Messages couldn’t be loaded.", "explains the failure");
+    assert.dom(ACCOUNT_LINK).isVisible("account preferences remain usable");
+    pretender.get("/aivia/account-inbox.json", () =>
+      response({ notification_count: 0, message_count: 1, messages: [message] })
+    );
+    await click(".aivia-account-menu__retry");
+
+    assert
+      .dom(".aivia-account-menu__message-title")
+      .hasText(message.title, "retry restores the message list");
+    assert
+      .dom(".aivia-account-menu__retry")
+      .doesNotExist("clears the error after recovery");
+  });
+
+  test("message titles render as text and permission refreshes remove old previews", async function (assert) {
+    const title = '<img src="invalid" onerror="alert(1)"> Request';
+    inbox = {
+      notification_count: 0,
+      message_count: 1,
+      messages: [{ ...message, title }],
+    };
+    await visit("/latest");
+    await click("#toggle-current-user");
+
+    assert
+      .dom(".aivia-account-menu__message-title")
+      .hasText(title, "escapes the supplied subject");
+    assert
+      .dom(".aivia-account-menu__message img")
+      .doesNotExist("does not render subject HTML");
+    inbox = { notification_count: 0, message_count: 0, messages: [] };
+    await groupUpdate(message.id);
+    assert
+      .dom(".aivia-account-menu__message")
+      .doesNotExist("drops inaccessible previews after refresh");
+    assert
+      .dom(".aivia-account-menu__status")
+      .hasText("No recent messages.", "shows the empty inbox");
+    assert.true(
+      inboxRequests >= 2,
+      "refreshes through the authenticated server endpoint"
+    );
   });
 });

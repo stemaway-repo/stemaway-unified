@@ -10,6 +10,7 @@ import { i18n } from "discourse-i18n";
 
 export default class AiviaNotificationDismissal extends Service {
   @service a11y;
+  @service aiviaAccountInbox;
   @service currentUser;
   @service modal;
 
@@ -62,6 +63,7 @@ export default class AiviaNotificationDismissal extends Service {
 
       this.isDismissing = true;
       await ajax("/notifications/mark-read", { type: "PUT" });
+      this.aiviaAccountInbox.refresh();
 
       // The notification MessageBus updates counts, including new arrivals.
       postRNWebviewMessage("markRead", "1");

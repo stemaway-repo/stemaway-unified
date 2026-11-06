@@ -8,15 +8,11 @@ import { service } from "@ember/service";
 import { i18n } from "discourse-i18n";
 
 export default class AiviaAccountAvatarBadge extends Component {
-  @service currentUser;
+  @service aiviaAccountInbox;
   @service notifications;
 
   get unreadCount() {
-    // The notification total already includes personal messages.
-    return Math.max(
-      this.currentUser.get("all_unread_notifications_count") || 0,
-      this.currentUser.get("new_personal_messages_notifications_count") || 0
-    );
+    return this.aiviaAccountInbox.unreadCount;
   }
 
   get displayCount() {
